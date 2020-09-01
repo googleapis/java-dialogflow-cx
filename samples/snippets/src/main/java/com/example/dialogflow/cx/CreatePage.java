@@ -28,68 +28,71 @@ import com.google.cloud.dialogflow.cx.v3beta1.Page;
 import com.google.cloud.dialogflow.cx.v3beta1.PagesClient;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text;
-import java.io.IOException;
 import java.util.List;
 
 public class CreatePage {
 
   // Create a page in the specified agent.
   public static Page createPage(
+      PagesClient pagesClient,
       String displayName,
       String projectId,
       String locationId,
       String agentId,
       String flowId,
       List<String> entryTexts)
-      throws ApiException, IOException {
-    // Instantiates a client
-    try (PagesClient pagesClient = PagesClient.create()) {
-      // Set the flow name using the projectID (my-project-id), locationID (global), agentID (UUID)
-      // and flowID (UUID).
-      FlowName parent = FlowName.of(projectId, locationId, agentId, flowId);
+      throws ApiException {
+    // Set the flow name using the projectID (my-project-id), locationID (global), agentID (UUID)
+    // and flowID (UUID).
+    FlowName parent = FlowName.of(projectId, locationId, agentId, flowId);
 
-      // Build the entry fulfillment based on entry texts.
-      Fulfillment.Builder entryFulfillmentBuilder = Fulfillment.newBuilder();
-      for (String entryText : entryTexts) {
-        entryFulfillmentBuilder.addMessages(
-            ResponseMessage.newBuilder()
-                // Text ("Hi")
-                .setText(Text.newBuilder().addText(entryText).build())
-                .build());
-      }
-
-      // Build the form for the new page.
-      // Note: hard coding parameters for simplicity.
-      FillBehavior fillBehavior =
-          FillBehavior.newBuilder()
-              .setInitialPromptFulfillment(
-                  Fulfillment.newBuilder()
-                      .addMessages(
-                          ResponseMessage.newBuilder()
-                              .setText(Text.newBuilder().addText("What would you like?").build())
-                              .build())
-                      .build())
-              .build();
-      Form form =
-          Form.newBuilder()
-              .addParameters(
-                  Parameter.newBuilder()
-                      .setDisplayName("param")
-                      .setRequired(true)
-                      .setEntityType("projects/-/locations/-/agents/-/entityTypes/sys.any")
-                      .setFillBehavior(fillBehavior)
-                      .build())
-              .build();
-
-      // Build the page.
-      Page page = Page.newBuilder().setDisplayName(displayName).setForm(form).build();
-
-      // Performs the create page request.
-      Page response = pagesClient.createPage(parent, page);
-      System.out.format("Page created: %s\n", response);
-
-      return response;
+    // Build the entry fulfillment based on entry texts.
+    Fulfillment.Builder entryFulfillmentBuilder = Fulfillment.newBuilder();
+    for (String entryText : entryTexts) {
+      entryFulfillmentBuilder.addMessages(
+          ResponseMessage.newBuilder()
+              // Text ("Hi")
+              .setText(Text.newBuilder().addText(entryText).build())
+              .build());
     }
+    Fulfillment entryFulfillment = entryFulfillmentBuilder.build();
+
+    // Build the form for the new page.
+    // Note: hard coding parameters for simplicity.
+    FillBehavior fillBehavior =
+        FillBehavior.newBuilder()
+            .setInitialPromptFulfillment(
+                Fulfillment.newBuilder()
+                    .addMessages(
+                        ResponseMessage.newBuilder()
+                            .setText(Text.newBuilder().addText("What would you like?").build())
+                            .build())
+                    .build())
+            .build();
+    Form form =
+        Form.newBuilder()
+            .addParameters(
+                Parameter.newBuilder()
+                    .setDisplayName("param")
+                    .setRequired(true)
+                    .setEntityType("projects/-/locations/-/agents/-/entityTypes/sys.any")
+                    .setFillBehavior(fillBehavior)
+                    .build())
+            .build();
+
+    // Build the page.
+    Page page =
+        Page.newBuilder()
+            .setDisplayName(displayName)
+            .setEntryFulfillment(entryFulfillment)
+            .setForm(form)
+            .build();
+
+    // Performs the create page request.
+    Page response = pagesClient.createPage(parent, page);
+    System.out.format("Page created: %s\n", response);
+
+    return response;
   }
 }
 // [END dialogflow_cx_create_page]

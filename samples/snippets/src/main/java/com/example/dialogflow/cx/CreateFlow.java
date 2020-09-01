@@ -26,7 +26,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.Fulfillment;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage;
 import com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.Text;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -35,45 +34,43 @@ public class CreateFlow {
 
   // Create a flow in the specified agent.
   public static Flow createFlow(
+      FlowsClient flowsClient,
       String displayName,
       String projectId,
       String locationId,
       String agentId,
       Map<String, String> eventsToFulfillmentMessages)
-      throws ApiException, IOException {
-    // Instantiates a client.
-    try (FlowsClient flowsClient = FlowsClient.create()) {
-      // Set the project agent name using the projectID (my-project-id), locationID (global), and
-      // agentID (UUID).
-      AgentName parent = AgentName.of(projectId, locationId, agentId);
+      throws ApiException {
+    // Set the project agent name using the projectID (my-project-id), locationID (global), and
+    // agentID (UUID).
+    AgentName parent = AgentName.of(projectId, locationId, agentId);
 
-      // Build the EventHandlers for the flow using the mapping from events to fulfillment messages.
-      List<EventHandler> eventHandlers = new ArrayList<>();
-      for (Map.Entry<String, String> item : eventsToFulfillmentMessages.entrySet()) {
-        eventHandlers.add(
-            EventHandler.newBuilder()
-                .setEvent(item.getKey()) // Event (sys.no-match-default)
-                .setTriggerFulfillment(
-                    Fulfillment.newBuilder()
-                        // Text ("Sorry, could you say that again?")
-                        .addMessages(
-                            ResponseMessage.newBuilder()
-                                .setText(Text.newBuilder().addText(item.getValue()).build())
-                                .build())
-                        .build())
-                .build());
-      }
-
-      // Build the flow.
-      Flow flow =
-          Flow.newBuilder().setDisplayName(displayName).addAllEventHandlers(eventHandlers).build();
-
-      // Performs the create flow request.
-      Flow response = flowsClient.createFlow(parent, flow);
-      System.out.format("Flow created: %s\n", response);
-
-      return response;
+    // Build the EventHandlers for the flow using the mapping from events to fulfillment messages.
+    List<EventHandler> eventHandlers = new ArrayList<>();
+    for (Map.Entry<String, String> item : eventsToFulfillmentMessages.entrySet()) {
+      eventHandlers.add(
+          EventHandler.newBuilder()
+              .setEvent(item.getKey()) // Event (sys.no-match-default)
+              .setTriggerFulfillment(
+                  Fulfillment.newBuilder()
+                      // Text ("Sorry, could you say that again?")
+                      .addMessages(
+                          ResponseMessage.newBuilder()
+                              .setText(Text.newBuilder().addText(item.getValue()).build())
+                              .build())
+                      .build())
+              .build());
     }
+
+    // Build the flow.
+    Flow flow =
+        Flow.newBuilder().setDisplayName(displayName).addAllEventHandlers(eventHandlers).build();
+
+    // Performs the create flow request.
+    Flow response = flowsClient.createFlow(parent, flow);
+    System.out.format("Flow created: %s\n", response);
+
+    return response;
   }
 }
 // [END dialogflow_cx_create_flow]

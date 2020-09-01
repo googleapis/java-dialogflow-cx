@@ -30,6 +30,26 @@
       <artifactId>google-cloud-dialogflow-cx</artifactId>
       <version>0.1.0</version>
     </dependency>
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-dialogflow-cx</artifactId>
+      <version>0.1.0</version>
+      <classifier>tests</classifier>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+      <version>1.58.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
+      <version>0.1.1-SNAPSHOT</version>
+    </dependency>
 
     <dependency>
       <groupId>junit</groupId>
