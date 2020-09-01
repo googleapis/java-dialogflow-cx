@@ -142,14 +142,6 @@ public class DetectIntentTest {
             .build();
     mockSessions.addResponse(expectedResponse);
 
-    SessionName session =
-        SessionName.ofProjectLocationAgentSessionName(
-            "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
-
-    TextInput.Builder textInput = TextInput.newBuilder().setText("Hi");
-    QueryInput queryInput =
-        QueryInput.newBuilder().setText(textInput).setLanguageCode("en-US").build();
-
     List<String> texts = new ArrayList<>();
     texts.add("Hi");
     Map<String, QueryResult> actualResponse =
@@ -162,7 +154,13 @@ public class DetectIntentTest {
     Assert.assertEquals(1, actualRequests.size());
     DetectIntentRequest actualRequest = (DetectIntentRequest) actualRequests.get(0);
 
+    SessionName session =
+        SessionName.ofProjectLocationAgentSessionName(
+            "[PROJECT]", "[LOCATION]", "[AGENT]", "[SESSION]");
     Assert.assertEquals(session, SessionName.parse(actualRequest.getSession()));
+    TextInput.Builder textInput = TextInput.newBuilder().setText("Hi");
+    QueryInput queryInput =
+        QueryInput.newBuilder().setText(textInput).setLanguageCode("en-US").build();
     Assert.assertEquals(queryInput, actualRequest.getQueryInput());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
