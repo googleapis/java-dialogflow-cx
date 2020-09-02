@@ -31,6 +31,7 @@
       <artifactId>google-cloud-dialogflow-cx</artifactId>
       <version>0.1.0</version>
     </dependency>
+    <!-- [END dialogflow_cx_install_without_bom] -->
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dialogflow-cx</artifactId>
@@ -51,7 +52,6 @@
       <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
       <version>0.1.1-SNAPSHOT</version>
     </dependency>
-    <!-- [END dialogflow_cx_install_without_bom] -->
 
     <dependency>
       <groupId>junit</groupId>
