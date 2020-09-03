@@ -37,77 +37,75 @@ public class DetectIntentStream {
 
   // DialogFlow API Detect Intent sample with audio files processes as an audio stream.
   public static void detectIntentStream(
-      SessionsClient sessionsClient,
-      String projectId,
-      String locationId,
-      String agentId,
-      String sessionId,
-      String audioFilePath)
+      String projectId, String locationId, String agentId, String sessionId, String audioFilePath)
       throws ApiException, IOException {
-    // Set the session name using the projectID (my-project-id), locationID (global), agentID
-    // (UUID), and sessionId (UUID).
-    // Using the same `sessionId` between requests allows continuation of the conversation.
-    SessionName session = SessionName.of(projectId, locationId, agentId, sessionId);
+    // Instantiates a client
+    try (SessionsClient sessionsClient = SessionsClient.create()) {
+      // Set the session name using the projectID (my-project-id), locationID (global), agentID
+      // (UUID), and sessionId (UUID).
+      // Using the same `sessionId` between requests allows continuation of the conversation.
+      SessionName session = SessionName.of(projectId, locationId, agentId, sessionId);
 
-    // Instructs the speech recognizer how to process the audio content.
-    // Note: hard coding audioEncoding and sampleRateHertz for simplicity.
-    // Audio encoding of the audio content sent in the query request.
-    InputAudioConfig inputAudioConfig =
-        InputAudioConfig.newBuilder()
-            .setAudioEncoding(AudioEncoding.AUDIO_ENCODING_LINEAR_16)
-            .setSampleRateHertz(16000) // sampleRateHertz = 16000
-            .build();
+      // Instructs the speech recognizer how to process the audio content.
+      // Note: hard coding audioEncoding and sampleRateHertz for simplicity.
+      // Audio encoding of the audio content sent in the query request.
+      InputAudioConfig inputAudioConfig =
+          InputAudioConfig.newBuilder()
+              .setAudioEncoding(AudioEncoding.AUDIO_ENCODING_LINEAR_16)
+              .setSampleRateHertz(16000) // sampleRateHertz = 16000
+              .build();
 
-    // Build the AudioInput with the InputAudioConfig.
-    AudioInput audioInput = AudioInput.newBuilder().setConfig(inputAudioConfig).build();
+      // Build the AudioInput with the InputAudioConfig.
+      AudioInput audioInput = AudioInput.newBuilder().setConfig(inputAudioConfig).build();
 
-    // Build the query with the InputAudioConfig.
-    QueryInput queryInput =
-        QueryInput.newBuilder()
-            .setAudio(audioInput)
-            .setLanguageCode("en-US") // languageCode = "en-US"
-            .build();
+      // Build the query with the InputAudioConfig.
+      QueryInput queryInput =
+          QueryInput.newBuilder()
+              .setAudio(audioInput)
+              .setLanguageCode("en-US") // languageCode = "en-US"
+              .build();
 
-    // Create the Bidirectional stream
-    BidiStream<StreamingDetectIntentRequest, StreamingDetectIntentResponse> bidiStream =
-        sessionsClient.streamingDetectIntentCallable().call();
+      // Create the Bidirectional stream
+      BidiStream<StreamingDetectIntentRequest, StreamingDetectIntentResponse> bidiStream =
+          sessionsClient.streamingDetectIntentCallable().call();
 
-    // The first request must **only** contain the audio configuration:
-    bidiStream.send(
-        StreamingDetectIntentRequest.newBuilder()
-            .setSession(session.toString())
-            .setQueryInput(queryInput)
-            .build());
+      // The first request must **only** contain the audio configuration:
+      bidiStream.send(
+          StreamingDetectIntentRequest.newBuilder()
+              .setSession(session.toString())
+              .setQueryInput(queryInput)
+              .build());
 
-    try (FileInputStream audioStream = new FileInputStream(audioFilePath)) {
-      // Subsequent requests must **only** contain the audio data.
-      // Following messages: audio chunks. We just read the file in fixed-size chunks. In reality
-      // you would split the user input by time.
-      byte[] buffer = new byte[4096];
-      int bytes;
-      while ((bytes = audioStream.read(buffer)) != -1) {
-        AudioInput subAudioInput =
-            AudioInput.newBuilder().setAudio(ByteString.copyFrom(buffer, 0, bytes)).build();
-        QueryInput subQueryInput =
-            QueryInput.newBuilder()
-                .setAudio(subAudioInput)
-                .setLanguageCode("en-US") // languageCode = "en-US"
-                .build();
-        bidiStream.send(
-            StreamingDetectIntentRequest.newBuilder().setQueryInput(subQueryInput).build());
+      try (FileInputStream audioStream = new FileInputStream(audioFilePath)) {
+        // Subsequent requests must **only** contain the audio data.
+        // Following messages: audio chunks. We just read the file in fixed-size chunks. In reality
+        // you would split the user input by time.
+        byte[] buffer = new byte[4096];
+        int bytes;
+        while ((bytes = audioStream.read(buffer)) != -1) {
+          AudioInput subAudioInput =
+              AudioInput.newBuilder().setAudio(ByteString.copyFrom(buffer, 0, bytes)).build();
+          QueryInput subQueryInput =
+              QueryInput.newBuilder()
+                  .setAudio(subAudioInput)
+                  .setLanguageCode("en-US") // languageCode = "en-US"
+                  .build();
+          bidiStream.send(
+              StreamingDetectIntentRequest.newBuilder().setQueryInput(subQueryInput).build());
+        }
       }
-    }
 
-    // Tell the service you are done sending data.
-    bidiStream.closeSend();
+      // Tell the service you are done sending data.
+      bidiStream.closeSend();
 
-    for (StreamingDetectIntentResponse response : bidiStream) {
-      QueryResult queryResult = response.getDetectIntentResponse().getQueryResult();
-      System.out.println("====================");
-      System.out.format("Query Text: '%s'\n", queryResult.getText());
-      System.out.format(
-          "Detected Intent: %s (confidence: %f)\n",
-          queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
+      for (StreamingDetectIntentResponse response : bidiStream) {
+        QueryResult queryResult = response.getDetectIntentResponse().getQueryResult();
+        System.out.println("====================");
+        System.out.format("Query Text: '%s'\n", queryResult.getText());
+        System.out.format(
+            "Detected Intent: %s (confidence: %f)\n",
+            queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
+      }
     }
   }
 }
