@@ -20,8 +20,10 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
+import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.UUID;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -38,24 +40,28 @@ public class CreateFlowIT {
       System.getenv()
           .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
   private static Map<String, String> EVENT_TO_FULFILLMENT_MESSAGES =
-      Map.of("event-1", "message-1", "event-2", "message-2");
+      ImmutableMap.of("event-1", "message-1", "event-2", "message-2");
+  private static String newFlowName;
+
+  @After
+  public void tearDown() throws Exception {
+    // Delete the newly created Flow.
+    if (newFlowName != null) {
+      try (FlowsClient flowsClient = FlowsClient.create()) {
+        flowsClient.deleteFlow(newFlowName);
+      }
+    }
+  }
 
   @Test
   public void testCreateFlow() throws Exception {
     Flow result =
         CreateFlow.createFlow(
             DISPLAY_NAME, PROJECT_ID, LOCATION, AGENT_ID, EVENT_TO_FULFILLMENT_MESSAGES);
+    newFlowName = result.getName();
+
     assertEquals(result.getDisplayName(), DISPLAY_NAME);
     // Number of added event handlers + 2 default event handlers.
     assertEquals(result.getEventHandlersCount(), EVENT_TO_FULFILLMENT_MESSAGES.size() + 2);
-
-    // Delete the newly created Flow.
-    deleteFlow(result.getName());
-  }
-
-  private void deleteFlow(String flowName) throws Exception {
-    try (FlowsClient flowsClient = FlowsClient.create()) {
-      flowsClient.deleteFlow(flowName);
-    }
   }
 }

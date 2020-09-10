@@ -23,6 +23,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.PagesClient;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -40,22 +41,26 @@ public class CreatePageIT {
           .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
   private static String DEFAULT_START_FLOW_ID = "00000000-0000-0000-0000-000000000000";
   private static List<String> ENTRY_TEXTS = Arrays.asList("Hi", "Hello", "How can I help you?");
+  private static String newPageName;
+
+  @After
+  public void tearDown() throws Exception {
+    // Delete the newly created Page.
+    if (newPageName != null) {
+      try (PagesClient pagesClient = PagesClient.create()) {
+        pagesClient.deletePage(newPageName);
+      }
+    }
+  }
 
   @Test
   public void testCreatePage() throws Exception {
     Page result =
         CreatePage.createPage(
             DISPLAY_NAME, PROJECT_ID, LOCATION, AGENT_ID, DEFAULT_START_FLOW_ID, ENTRY_TEXTS);
+    newPageName = result.getName();
+
     assertEquals(result.getDisplayName(), DISPLAY_NAME);
     assertEquals(result.getEntryFulfillment().getMessagesCount(), ENTRY_TEXTS.size());
-
-    // Delete the newly created Page.
-    deletePage(result.getName());
-  }
-
-  private void deletePage(String pageName) throws Exception {
-    try (PagesClient pagesClient = PagesClient.create()) {
-      pagesClient.deletePage(pageName);
-    }
   }
 }
