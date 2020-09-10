@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow.cx;
+package dialogflow.cx;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,9 +32,11 @@ import org.junit.runners.JUnit4;
 public class CreateFlowIT {
 
   private static String DISPLAY_NAME = "flow-" + UUID.randomUUID().toString();
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION = "global";
-  private static String AGENT_ID = System.getenv().get("DIALOGFLOW_CX_AGENT_ID");
+  private static String AGENT_ID =
+      System.getenv()
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
   private static Map<String, String> EVENT_TO_FULFILLMENT_MESSAGES =
       Map.of("event-1", "message-1", "event-2", "message-2");
 

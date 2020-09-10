@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow.cx;
+package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -34,9 +34,11 @@ import org.junit.runners.JUnit4;
 public class DetectIntentStreamIT {
 
   private static String AUDIO_FILE_PATH = "resources/book_a_room.wav";
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION = "global";
-  private static String AGENT_ID = System.getenv().get("DIALOGFLOW_CX_AGENT_ID");
+  private static String AGENT_ID =
+      System.getenv()
+          .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
   private static String SESSION_ID = UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
 

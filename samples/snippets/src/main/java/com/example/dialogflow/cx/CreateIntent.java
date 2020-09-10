@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow.cx;
+package dialogflow.cx;
 
 // [START dialogflow_cx_create_intent]
 
