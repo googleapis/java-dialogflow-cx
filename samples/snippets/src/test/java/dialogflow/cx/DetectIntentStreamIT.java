@@ -41,16 +41,18 @@ public class DetectIntentStreamIT {
           .getOrDefault("DIALOGFLOW_CX_AGENT_ID", "b8d0e85d-0741-4e6d-a66a-3671184b7b93");
   private static String SESSION_ID = UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
+  private PrintStream original;
 
   @Before
   public void setUp() {
+    original = System.out;
     bout = new ByteArrayOutputStream();
     System.setOut(new PrintStream(bout));
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    System.setOut(original);
     bout.reset();
   }
 
@@ -62,6 +64,6 @@ public class DetectIntentStreamIT {
     String output = bout.toString();
 
     assertThat(output).contains("Detected Intent");
-    assertThat(output).contains("book");
+    assertThat(output).contains("Query Text");
   }
 }
