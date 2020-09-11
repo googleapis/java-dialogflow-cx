@@ -64,6 +64,6 @@ public class DetectIntentStreamIT {
     String output = bout.toString();
 
     assertThat(output).contains("Detected Intent");
-    assertThat(output).contains("Query Text");
+    assertThat(output).contains("book");
   }
 }

@@ -101,7 +101,7 @@ public class DetectIntentStream {
       for (StreamingDetectIntentResponse response : bidiStream) {
         QueryResult queryResult = response.getDetectIntentResponse().getQueryResult();
         System.out.println("====================");
-        System.out.format("Query Text: '%s'\n", queryResult.getText());
+        System.out.format("Query Text: '%s'\n", queryResult.getTranscript());
         System.out.format(
             "Detected Intent: %s (confidence: %f)\n",
             queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
