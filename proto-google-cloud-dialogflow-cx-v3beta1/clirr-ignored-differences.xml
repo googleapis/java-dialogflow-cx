@@ -16,4 +16,16 @@
     <className>com/google/cloud/dialogflow/cx/v3beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 0.2.0 is released -->
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/cloud/dialogflow/cx/v3beta1/NluSettings</className>
+    <field>ENABLE_SPELL_CORRECTION_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/cloud/dialogflow/cx/v3beta1/NluSettings*</className>
+    <method>* *EnableSpellCorrection(*)</method>
+  </difference>
 </differences>
