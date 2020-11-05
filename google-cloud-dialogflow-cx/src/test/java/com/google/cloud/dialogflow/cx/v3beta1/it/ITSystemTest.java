@@ -79,7 +79,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.Version;
 import com.google.cloud.dialogflow.cx.v3beta1.VersionsClient;
-import com.google.cloud.dialogflow.cx.v3beta1.WebhooksClient;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -101,7 +100,6 @@ public class ITSystemTest {
   private static SessionsClient sessionsClient;
   private static TransitionRouteGroupsClient transitionRouteGroupsClient;
   private static VersionsClient versionsClient;
-  private static WebhooksClient webhooksClient;
   private static String agentName;
   private static String entityTypesName;
   private static String flowName;
@@ -273,11 +271,14 @@ public class ITSystemTest {
   public void listAgentsTest() {
     ListAgentsRequest request = ListAgentsRequest.newBuilder().setParent(PARENT.toString()).build();
     Iterable<Agent> agents = agentsClient.listAgents(request).iterateAll();
+    boolean isAgentExists = false;
     for (Agent agent : agents) {
       if (agentName.equals(agent.getName())) {
         assertAgentDetails(agent);
+        isAgentExists = true;
       }
     }
+    assertTrue(isAgentExists);
   }
 
   @Test
@@ -330,11 +331,14 @@ public class ITSystemTest {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder().setParent(agentName).build();
     Iterable<EntityType> entityTypes = entityTypesClient.listEntityTypes(request).iterateAll();
+    boolean isEntityTypeExists = false;
     for (EntityType entityType : entityTypes) {
       if (entityTypesName.equals(entityType.getName())) {
         assertEntityTypesDetails(entityType);
+        isEntityTypeExists = true;
       }
     }
+    assertTrue(isEntityTypeExists);
   }
 
   @Test
@@ -364,11 +368,14 @@ public class ITSystemTest {
     ListFlowsRequest request = ListFlowsRequest.newBuilder().setParent(agentName).build();
     FlowsClient.ListFlowsPagedResponse pagedListResponse = flowsClient.listFlows(request);
     List<Flow> flows = Lists.newArrayList(pagedListResponse.iterateAll());
+    boolean isFlowExists = false;
     for (Flow flow : flows) {
       if (flow.getName().equals(flowName)) {
         assertFlowDetails(flow);
+        isFlowExists = true;
       }
     }
+    assertTrue(isFlowExists);
   }
 
   @Test
@@ -390,11 +397,14 @@ public class ITSystemTest {
     ListIntentsRequest request = ListIntentsRequest.newBuilder().setParent(agentName).build();
     IntentsClient.ListIntentsPagedResponse pagedListResponse = intentsClient.listIntents(request);
     List<Intent> intents = Lists.newArrayList(pagedListResponse.iterateAll());
+    boolean isIntentExists = false;
     for (Intent intent : intents) {
       if (intent.getName().equals(intentsName)) {
         assertIntentDetails(intent);
+        isIntentExists = true;
       }
     }
+    assertTrue(isIntentExists);
   }
 
   @Test
@@ -422,11 +432,14 @@ public class ITSystemTest {
     ListPagesRequest request = ListPagesRequest.newBuilder().setParent(flowName).build();
     PagesClient.ListPagesPagedResponse pagedListResponse = pagesClient.listPages(request);
     List<Page> pages = Lists.newArrayList(pagedListResponse.iterateAll());
+    boolean isPageExists = false;
     for (Page page : pages) {
       if (page.getName().equals(pageName)) {
         assertPageDetails(page);
+        isPageExists = true;
       }
     }
+    assertTrue(isPageExists);
   }
 
   @Test
@@ -477,11 +490,14 @@ public class ITSystemTest {
     TransitionRouteGroupsClient.ListTransitionRouteGroupsPagedResponse pagedListResponse =
         transitionRouteGroupsClient.listTransitionRouteGroups(routeGroupsRequest);
     List<TransitionRouteGroup> routeGroups = Lists.newArrayList(pagedListResponse.iterateAll());
+    boolean isTransitionRouteGroupNameExists = false;
     for (TransitionRouteGroup routeGroup : routeGroups) {
       if (routeGroup.getName().equals(transitionRouteGroupName)) {
         assertTransitionRouteGroupsDetails(routeGroup);
+        isTransitionRouteGroupNameExists = true;
       }
     }
+    assertTrue(isTransitionRouteGroupNameExists);
   }
 
   @Test
@@ -517,11 +533,14 @@ public class ITSystemTest {
     VersionsClient.ListVersionsPagedResponse pagedListResponse =
         versionsClient.listVersions(versionsRequest);
     List<Version> versions = Lists.newArrayList(pagedListResponse.iterateAll());
+    boolean isVersionNameExists = false;
     for (Version version : versions) {
-      if (version.getName().equals(version)) {
+      if (version.getName().equals(versionName)) {
         assertVersionDetails(version);
+        isVersionNameExists = true;
       }
     }
+    assertTrue(isVersionNameExists);
   }
 
   @Test
