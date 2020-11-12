@@ -80,7 +80,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-cx-v3</artifactId>
-        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3:current} -->
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -90,7 +90,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-cx-v3</artifactId>
-        <version>0.3.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
+        <version>0.3.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
       </dependency>
 
       <dependency>
