@@ -25,7 +25,15 @@ import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * A session represents an interaction with a user. You retrieve user input
+ * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
+ * user intent and respond.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3beta1/session.proto")
@@ -263,10 +271,27 @@ public final class SessionsGrpc {
     return SessionsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A session represents an interaction with a user. You retrieve user input
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
+   * user intent and respond.
+   * </pre>
+   */
   public abstract static class SessionsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result. This method is not idempotent, because it may cause session
+     * entity types to be updated, which in turn might affect results of future
+     * queries.
+     * </pre>
+     */
     public void detectIntent(
         com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
@@ -274,7 +299,15 @@ public final class SessionsGrpc {
       asyncUnimplementedUnaryCall(getDetectIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query in audio format in a streaming fashion
+     * and returns structured, actionable data as a result. This method is only
+     * available via the gRPC API (not REST).
+     * </pre>
+     */
     public io.grpc.stub.StreamObserver<
             com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest>
         streamingDetectIntent(
@@ -284,7 +317,14 @@ public final class SessionsGrpc {
       return asyncUnimplementedStreamingCall(getStreamingDetectIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns preliminary intent match results, doesn't change the session
+     * status.
+     * </pre>
+     */
     public void matchIntent(
         com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse>
@@ -292,7 +332,15 @@ public final class SessionsGrpc {
       asyncUnimplementedUnaryCall(getMatchIntentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * </pre>
+     */
     public void fulfillIntent(
         com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse>
@@ -335,7 +383,15 @@ public final class SessionsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A session represents an interaction with a user. You retrieve user input
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
+   * user intent and respond.
+   * </pre>
+   */
   public static final class SessionsStub extends io.grpc.stub.AbstractAsyncStub<SessionsStub> {
     private SessionsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -346,7 +402,16 @@ public final class SessionsGrpc {
       return new SessionsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result. This method is not idempotent, because it may cause session
+     * entity types to be updated, which in turn might affect results of future
+     * queries.
+     * </pre>
+     */
     public void detectIntent(
         com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
@@ -357,7 +422,15 @@ public final class SessionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query in audio format in a streaming fashion
+     * and returns structured, actionable data as a result. This method is only
+     * available via the gRPC API (not REST).
+     * </pre>
+     */
     public io.grpc.stub.StreamObserver<
             com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest>
         streamingDetectIntent(
@@ -369,7 +442,14 @@ public final class SessionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns preliminary intent match results, doesn't change the session
+     * status.
+     * </pre>
+     */
     public void matchIntent(
         com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse>
@@ -380,7 +460,15 @@ public final class SessionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * </pre>
+     */
     public void fulfillIntent(
         com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse>
@@ -392,7 +480,15 @@ public final class SessionsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A session represents an interaction with a user. You retrieve user input
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
+   * user intent and respond.
+   * </pre>
+   */
   public static final class SessionsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<SessionsBlockingStub> {
     private SessionsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -404,26 +500,58 @@ public final class SessionsGrpc {
       return new SessionsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result. This method is not idempotent, because it may cause session
+     * entity types to be updated, which in turn might affect results of future
+     * queries.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse detectIntent(
         com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
       return blockingUnaryCall(getChannel(), getDetectIntentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns preliminary intent match results, doesn't change the session
+     * status.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse matchIntent(
         com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request) {
       return blockingUnaryCall(getChannel(), getMatchIntentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse fulfillIntent(
         com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request) {
       return blockingUnaryCall(getChannel(), getFulfillIntentMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * A session represents an interaction with a user. You retrieve user input
+   * and pass it to the [DetectIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.DetectIntent] method to determine
+   * user intent and respond.
+   * </pre>
+   */
   public static final class SessionsFutureStub
       extends io.grpc.stub.AbstractFutureStub<SessionsFutureStub> {
     private SessionsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -435,7 +563,16 @@ public final class SessionsGrpc {
       return new SessionsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Processes a natural language query and returns structured, actionable data
+     * as a result. This method is not idempotent, because it may cause session
+     * entity types to be updated, which in turn might affect results of future
+     * queries.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse>
         detectIntent(com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest request) {
@@ -443,7 +580,14 @@ public final class SessionsGrpc {
           getChannel().newCall(getDetectIntentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns preliminary intent match results, doesn't change the session
+     * status.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse>
         matchIntent(com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest request) {
@@ -451,7 +595,15 @@ public final class SessionsGrpc {
           getChannel().newCall(getMatchIntentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Fulfills a matched intent returned by [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent].
+     * Must be called after [MatchIntent][google.cloud.dialogflow.cx.v3beta1.Sessions.MatchIntent], with input from
+     * [MatchIntentResponse][google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse]. Otherwise, the behavior is undefined.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentResponse>
         fulfillIntent(com.google.cloud.dialogflow.cx.v3beta1.FulfillIntentRequest request) {

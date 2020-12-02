@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3beta1/flow.proto")
@@ -338,24 +344,48 @@ public final class FlowsGrpc {
     return FlowsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
+   * </pre>
+   */
   public abstract static class FlowsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a flow in the specified agent.
+     * </pre>
+     */
     public void createFlow(
         com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Flow> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateFlowMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified flow.
+     * </pre>
+     */
     public void deleteFlow(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteFlowMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all flows in the specified agent.
+     * </pre>
+     */
     public void listFlows(
         com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse>
@@ -363,21 +393,40 @@ public final class FlowsGrpc {
       asyncUnimplementedUnaryCall(getListFlowsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified flow.
+     * </pre>
+     */
     public void getFlow(
         com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Flow> responseObserver) {
       asyncUnimplementedUnaryCall(getGetFlowMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified flow.
+     * </pre>
+     */
     public void updateFlow(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Flow> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateFlowMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified flow. Note that only the flow in 'draft' environment
+     * is trained.
+     * </pre>
+     */
     public void trainFlow(
         com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -428,7 +477,13 @@ public final class FlowsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
+   * </pre>
+   */
   public static final class FlowsStub extends io.grpc.stub.AbstractAsyncStub<FlowsStub> {
     private FlowsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -439,7 +494,13 @@ public final class FlowsGrpc {
       return new FlowsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a flow in the specified agent.
+     * </pre>
+     */
     public void createFlow(
         com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Flow> responseObserver) {
@@ -447,7 +508,13 @@ public final class FlowsGrpc {
           getChannel().newCall(getCreateFlowMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified flow.
+     * </pre>
+     */
     public void deleteFlow(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -455,7 +522,13 @@ public final class FlowsGrpc {
           getChannel().newCall(getDeleteFlowMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all flows in the specified agent.
+     * </pre>
+     */
     public void listFlows(
         com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse>
@@ -464,7 +537,13 @@ public final class FlowsGrpc {
           getChannel().newCall(getListFlowsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified flow.
+     * </pre>
+     */
     public void getFlow(
         com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Flow> responseObserver) {
@@ -472,7 +551,13 @@ public final class FlowsGrpc {
           getChannel().newCall(getGetFlowMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified flow.
+     * </pre>
+     */
     public void updateFlow(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Flow> responseObserver) {
@@ -480,7 +565,14 @@ public final class FlowsGrpc {
           getChannel().newCall(getUpdateFlowMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified flow. Note that only the flow in 'draft' environment
+     * is trained.
+     * </pre>
+     */
     public void trainFlow(
         com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -489,7 +581,13 @@ public final class FlowsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
+   * </pre>
+   */
   public static final class FlowsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<FlowsBlockingStub> {
     private FlowsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -501,44 +599,87 @@ public final class FlowsGrpc {
       return new FlowsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a flow in the specified agent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.Flow createFlow(
         com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest request) {
       return blockingUnaryCall(getChannel(), getCreateFlowMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified flow.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteFlow(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteFlowMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all flows in the specified agent.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse listFlows(
         com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest request) {
       return blockingUnaryCall(getChannel(), getListFlowsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified flow.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.Flow getFlow(
         com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest request) {
       return blockingUnaryCall(getChannel(), getGetFlowMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified flow.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.Flow updateFlow(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateFlowMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified flow. Note that only the flow in 'draft' environment
+     * is trained.
+     * </pre>
+     */
     public com.google.longrunning.Operation trainFlow(
         com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request) {
       return blockingUnaryCall(getChannel(), getTrainFlowMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
+   * </pre>
+   */
   public static final class FlowsFutureStub
       extends io.grpc.stub.AbstractFutureStub<FlowsFutureStub> {
     private FlowsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -550,7 +691,13 @@ public final class FlowsGrpc {
       return new FlowsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a flow in the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Flow>
         createFlow(com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest request) {
@@ -558,28 +705,52 @@ public final class FlowsGrpc {
           getChannel().newCall(getCreateFlowMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified flow.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteFlow(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteFlowMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all flows in the specified agent.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse>
         listFlows(com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest request) {
       return futureUnaryCall(getChannel().newCall(getListFlowsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified flow.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Flow>
         getFlow(com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetFlowMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified flow.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Flow>
         updateFlow(com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest request) {
@@ -587,7 +758,14 @@ public final class FlowsGrpc {
           getChannel().newCall(getUpdateFlowMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified flow. Note that only the flow in 'draft' environment
+     * is trained.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         trainFlow(com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request) {
       return futureUnaryCall(getChannel().newCall(getTrainFlowMethod(), getCallOptions()), request);
