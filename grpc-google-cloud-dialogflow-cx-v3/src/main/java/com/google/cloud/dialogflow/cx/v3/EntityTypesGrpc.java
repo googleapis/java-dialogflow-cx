@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3.EntityType].
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3/entity_type.proto")
@@ -306,22 +300,10 @@ public final class EntityTypesGrpc {
     return EntityTypesFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3.EntityType].
-   * </pre>
-   */
+  /** */
   public abstract static class EntityTypesImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
+    /** */
     public void listEntityTypes(
         com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse>
@@ -329,13 +311,7 @@ public final class EntityTypesGrpc {
       asyncUnimplementedUnaryCall(getListEntityTypesMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified entity type.
-     * </pre>
-     */
+    /** */
     public void getEntityType(
         com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.EntityType>
@@ -343,13 +319,7 @@ public final class EntityTypesGrpc {
       asyncUnimplementedUnaryCall(getGetEntityTypeMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an entity type in the specified agent.
-     * </pre>
-     */
+    /** */
     public void createEntityType(
         com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.EntityType>
@@ -357,13 +327,7 @@ public final class EntityTypesGrpc {
       asyncUnimplementedUnaryCall(getCreateEntityTypeMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified entity type.
-     * </pre>
-     */
+    /** */
     public void updateEntityType(
         com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.EntityType>
@@ -371,13 +335,7 @@ public final class EntityTypesGrpc {
       asyncUnimplementedUnaryCall(getUpdateEntityTypeMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified entity type.
-     * </pre>
-     */
+    /** */
     public void deleteEntityType(
         com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -425,13 +383,7 @@ public final class EntityTypesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3.EntityType].
-   * </pre>
-   */
+  /** */
   public static final class EntityTypesStub
       extends io.grpc.stub.AbstractAsyncStub<EntityTypesStub> {
     private EntityTypesStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -443,13 +395,7 @@ public final class EntityTypesGrpc {
       return new EntityTypesStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
+    /** */
     public void listEntityTypes(
         com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse>
@@ -460,13 +406,7 @@ public final class EntityTypesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified entity type.
-     * </pre>
-     */
+    /** */
     public void getEntityType(
         com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.EntityType>
@@ -477,13 +417,7 @@ public final class EntityTypesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an entity type in the specified agent.
-     * </pre>
-     */
+    /** */
     public void createEntityType(
         com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.EntityType>
@@ -494,13 +428,7 @@ public final class EntityTypesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified entity type.
-     * </pre>
-     */
+    /** */
     public void updateEntityType(
         com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.EntityType>
@@ -511,13 +439,7 @@ public final class EntityTypesGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified entity type.
-     * </pre>
-     */
+    /** */
     public void deleteEntityType(
         com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -528,13 +450,7 @@ public final class EntityTypesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3.EntityType].
-   * </pre>
-   */
+  /** */
   public static final class EntityTypesBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<EntityTypesBlockingStub> {
     private EntityTypesBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -547,63 +463,33 @@ public final class EntityTypesGrpc {
       return new EntityTypesBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse listEntityTypes(
         com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest request) {
       return blockingUnaryCall(getChannel(), getListEntityTypesMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified entity type.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.EntityType getEntityType(
         com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest request) {
       return blockingUnaryCall(getChannel(), getGetEntityTypeMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an entity type in the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.EntityType createEntityType(
         com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateEntityTypeMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified entity type.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.EntityType updateEntityType(
         com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateEntityTypeMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified entity type.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteEntityType(
         com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest request) {
       return blockingUnaryCall(
@@ -611,13 +497,7 @@ public final class EntityTypesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [EntityTypes][google.cloud.dialogflow.cx.v3.EntityType].
-   * </pre>
-   */
+  /** */
   public static final class EntityTypesFutureStub
       extends io.grpc.stub.AbstractFutureStub<EntityTypesFutureStub> {
     private EntityTypesFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -630,13 +510,7 @@ public final class EntityTypesGrpc {
       return new EntityTypesFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all entity types in the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListEntityTypesResponse>
         listEntityTypes(com.google.cloud.dialogflow.cx.v3.ListEntityTypesRequest request) {
@@ -644,13 +518,7 @@ public final class EntityTypesGrpc {
           getChannel().newCall(getListEntityTypesMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified entity type.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.EntityType>
         getEntityType(com.google.cloud.dialogflow.cx.v3.GetEntityTypeRequest request) {
@@ -658,13 +526,7 @@ public final class EntityTypesGrpc {
           getChannel().newCall(getGetEntityTypeMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an entity type in the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.EntityType>
         createEntityType(com.google.cloud.dialogflow.cx.v3.CreateEntityTypeRequest request) {
@@ -672,13 +534,7 @@ public final class EntityTypesGrpc {
           getChannel().newCall(getCreateEntityTypeMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified entity type.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.EntityType>
         updateEntityType(com.google.cloud.dialogflow.cx.v3.UpdateEntityTypeRequest request) {
@@ -686,13 +542,7 @@ public final class EntityTypesGrpc {
           getChannel().newCall(getUpdateEntityTypeMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified entity type.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEntityType(com.google.cloud.dialogflow.cx.v3.DeleteEntityTypeRequest request) {
       return futureUnaryCall(

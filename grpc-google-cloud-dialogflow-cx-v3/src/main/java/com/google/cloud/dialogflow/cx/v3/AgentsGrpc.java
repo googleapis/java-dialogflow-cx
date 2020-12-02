@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3/agent.proto")
@@ -386,22 +380,10 @@ public final class AgentsGrpc {
     return AgentsFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
-   * </pre>
-   */
+  /** */
   public abstract static class AgentsImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all agents in the specified location.
-     * </pre>
-     */
+    /** */
     public void listAgents(
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
@@ -409,80 +391,42 @@ public final class AgentsGrpc {
       asyncUnimplementedUnaryCall(getListAgentsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified agent.
-     * </pre>
-     */
+    /** */
     public void getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
       asyncUnimplementedUnaryCall(getGetAgentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an agent in the specified location.
-     * </pre>
-     */
+    /** */
     public void createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateAgentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified agent.
-     * </pre>
-     */
+    /** */
     public void updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateAgentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified agent.
-     * </pre>
-     */
+    /** */
     public void deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteAgentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports the specified agent to a binary file.
-     * </pre>
-     */
+    /** */
     public void exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getExportAgentMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Restores the specified agent from a binary file.
-     * Replaces the current agent with a new one. Note that all existing resources
-     * in agent (e.g. intents, entity types, flows) will be removed.
-     * </pre>
-     */
+    /** */
     public void restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -539,13 +483,7 @@ public final class AgentsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
-   * </pre>
-   */
+  /** */
   public static final class AgentsStub extends io.grpc.stub.AbstractAsyncStub<AgentsStub> {
     private AgentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -556,13 +494,7 @@ public final class AgentsGrpc {
       return new AgentsStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all agents in the specified location.
-     * </pre>
-     */
+    /** */
     public void listAgents(
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
@@ -571,13 +503,7 @@ public final class AgentsGrpc {
           getChannel().newCall(getListAgentsMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified agent.
-     * </pre>
-     */
+    /** */
     public void getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
@@ -585,13 +511,7 @@ public final class AgentsGrpc {
           getChannel().newCall(getGetAgentMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an agent in the specified location.
-     * </pre>
-     */
+    /** */
     public void createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
@@ -601,13 +521,7 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified agent.
-     * </pre>
-     */
+    /** */
     public void updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Agent> responseObserver) {
@@ -617,13 +531,7 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified agent.
-     * </pre>
-     */
+    /** */
     public void deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -633,13 +541,7 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports the specified agent to a binary file.
-     * </pre>
-     */
+    /** */
     public void exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -649,15 +551,7 @@ public final class AgentsGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Restores the specified agent from a binary file.
-     * Replaces the current agent with a new one. Note that all existing resources
-     * in agent (e.g. intents, entity types, flows) will be removed.
-     * </pre>
-     */
+    /** */
     public void restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -668,13 +562,7 @@ public final class AgentsGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
-   * </pre>
-   */
+  /** */
   public static final class AgentsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<AgentsBlockingStub> {
     private AgentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -686,100 +574,50 @@ public final class AgentsGrpc {
       return new AgentsBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all agents in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.ListAgentsResponse listAgents(
         com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request) {
       return blockingUnaryCall(getChannel(), getListAgentsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.Agent getAgent(
         com.google.cloud.dialogflow.cx.v3.GetAgentRequest request) {
       return blockingUnaryCall(getChannel(), getGetAgentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an agent in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.Agent createAgent(
         com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request) {
       return blockingUnaryCall(getChannel(), getCreateAgentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.Agent updateAgent(
         com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateAgentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteAgent(
         com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports the specified agent to a binary file.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation exportAgent(
         com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request) {
       return blockingUnaryCall(getChannel(), getExportAgentMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Restores the specified agent from a binary file.
-     * Replaces the current agent with a new one. Note that all existing resources
-     * in agent (e.g. intents, entity types, flows) will be removed.
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation restoreAgent(
         com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request) {
       return blockingUnaryCall(getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Agents][google.cloud.dialogflow.cx.v3.Agent].
-   * </pre>
-   */
+  /** */
   public static final class AgentsFutureStub
       extends io.grpc.stub.AbstractFutureStub<AgentsFutureStub> {
     private AgentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -791,13 +629,7 @@ public final class AgentsGrpc {
       return new AgentsFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all agents in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListAgentsResponse>
         listAgents(com.google.cloud.dialogflow.cx.v3.ListAgentsRequest request) {
@@ -805,26 +637,14 @@ public final class AgentsGrpc {
           getChannel().newCall(getListAgentsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Agent>
         getAgent(com.google.cloud.dialogflow.cx.v3.GetAgentRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetAgentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates an agent in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Agent>
         createAgent(com.google.cloud.dialogflow.cx.v3.CreateAgentRequest request) {
@@ -832,13 +652,7 @@ public final class AgentsGrpc {
           getChannel().newCall(getCreateAgentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Agent>
         updateAgent(com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest request) {
@@ -846,41 +660,21 @@ public final class AgentsGrpc {
           getChannel().newCall(getUpdateAgentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified agent.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteAgent(com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteAgentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Exports the specified agent to a binary file.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         exportAgent(com.google.cloud.dialogflow.cx.v3.ExportAgentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getExportAgentMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Restores the specified agent from a binary file.
-     * Replaces the current agent with a new one. Note that all existing resources
-     * in agent (e.g. intents, entity types, flows) will be removed.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         restoreAgent(com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest request) {
       return futureUnaryCall(
