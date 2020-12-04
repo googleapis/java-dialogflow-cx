@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing [Environments][google.cloud.dialogflow.cx.v3.Environment].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3/environment.proto")
@@ -352,10 +358,22 @@ public final class EnvironmentsGrpc {
     return EnvironmentsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Environments][google.cloud.dialogflow.cx.v3.Environment].
+   * </pre>
+   */
   public abstract static class EnvironmentsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public void listEnvironments(
         com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>
@@ -363,7 +381,13 @@ public final class EnvironmentsGrpc {
       asyncUnimplementedUnaryCall(getListEnvironmentsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void getEnvironment(
         com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Environment>
@@ -371,28 +395,52 @@ public final class EnvironmentsGrpc {
       asyncUnimplementedUnaryCall(getGetEnvironmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public void createEnvironment(
         com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateEnvironmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void updateEnvironment(
         com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdateEnvironmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteEnvironmentMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void lookupEnvironmentHistory(
         com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request,
         io.grpc.stub.StreamObserver<
@@ -447,7 +495,13 @@ public final class EnvironmentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Environments][google.cloud.dialogflow.cx.v3.Environment].
+   * </pre>
+   */
   public static final class EnvironmentsStub
       extends io.grpc.stub.AbstractAsyncStub<EnvironmentsStub> {
     private EnvironmentsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -459,7 +513,13 @@ public final class EnvironmentsGrpc {
       return new EnvironmentsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public void listEnvironments(
         com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>
@@ -470,7 +530,13 @@ public final class EnvironmentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void getEnvironment(
         com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.Environment>
@@ -481,7 +547,13 @@ public final class EnvironmentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public void createEnvironment(
         com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -491,7 +563,13 @@ public final class EnvironmentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void updateEnvironment(
         com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -501,7 +579,13 @@ public final class EnvironmentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -511,7 +595,13 @@ public final class EnvironmentsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public void lookupEnvironmentHistory(
         com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request,
         io.grpc.stub.StreamObserver<
@@ -524,7 +614,13 @@ public final class EnvironmentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Environments][google.cloud.dialogflow.cx.v3.Environment].
+   * </pre>
+   */
   public static final class EnvironmentsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<EnvironmentsBlockingStub> {
     private EnvironmentsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -537,41 +633,77 @@ public final class EnvironmentsGrpc {
       return new EnvironmentsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse listEnvironments(
         com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListEnvironmentsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.Environment getEnvironment(
         com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request) {
       return blockingUnaryCall(getChannel(), getGetEnvironmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public com.google.longrunning.Operation createEnvironment(
         com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateEnvironmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.longrunning.Operation updateEnvironment(
         com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateEnvironmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteEnvironment(
         com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteEnvironmentMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse
         lookupEnvironmentHistory(
             com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest request) {
@@ -580,7 +712,13 @@ public final class EnvironmentsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Environments][google.cloud.dialogflow.cx.v3.Environment].
+   * </pre>
+   */
   public static final class EnvironmentsFutureStub
       extends io.grpc.stub.AbstractFutureStub<EnvironmentsFutureStub> {
     private EnvironmentsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -593,7 +731,13 @@ public final class EnvironmentsGrpc {
       return new EnvironmentsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all environments in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListEnvironmentsResponse>
         listEnvironments(com.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest request) {
@@ -601,7 +745,13 @@ public final class EnvironmentsGrpc {
           getChannel().newCall(getListEnvironmentsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.Environment>
         getEnvironment(com.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest request) {
@@ -609,28 +759,52 @@ public final class EnvironmentsGrpc {
           getChannel().newCall(getGetEnvironmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Environment][google.cloud.dialogflow.cx.v3.Environment] in the specified [Agent][google.cloud.dialogflow.cx.v3.Agent].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createEnvironment(com.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateEnvironmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         updateEnvironment(com.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getUpdateEnvironmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteEnvironment(com.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteEnvironmentMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Looks up the history of the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryResponse>
         lookupEnvironmentHistory(

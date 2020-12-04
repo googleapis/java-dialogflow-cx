@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3beta1/version.proto")
@@ -341,10 +347,22 @@ public final class VersionsGrpc {
     return VersionsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
+   * </pre>
+   */
   public abstract static class VersionsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public void listVersions(
         com.google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse>
@@ -352,7 +370,13 @@ public final class VersionsGrpc {
       asyncUnimplementedUnaryCall(getListVersionsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public void getVersion(
         com.google.cloud.dialogflow.cx.v3beta1.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Version>
@@ -360,14 +384,26 @@ public final class VersionsGrpc {
       asyncUnimplementedUnaryCall(getGetVersionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public void createVersion(
         com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateVersionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public void updateVersion(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Version>
@@ -375,14 +411,26 @@ public final class VersionsGrpc {
       asyncUnimplementedUnaryCall(getUpdateVersionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public void deleteVersion(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteVersionMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Loads a specified version to draft version.
+     * </pre>
+     */
     public void loadVersion(
         com.google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -434,7 +482,13 @@ public final class VersionsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
+   * </pre>
+   */
   public static final class VersionsStub extends io.grpc.stub.AbstractAsyncStub<VersionsStub> {
     private VersionsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -445,7 +499,13 @@ public final class VersionsGrpc {
       return new VersionsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public void listVersions(
         com.google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse>
@@ -456,7 +516,13 @@ public final class VersionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public void getVersion(
         com.google.cloud.dialogflow.cx.v3beta1.GetVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Version>
@@ -465,7 +531,13 @@ public final class VersionsGrpc {
           getChannel().newCall(getGetVersionMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public void createVersion(
         com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -475,7 +547,13 @@ public final class VersionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public void updateVersion(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Version>
@@ -486,7 +564,13 @@ public final class VersionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public void deleteVersion(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -496,7 +580,13 @@ public final class VersionsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Loads a specified version to draft version.
+     * </pre>
+     */
     public void loadVersion(
         com.google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -507,7 +597,13 @@ public final class VersionsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
+   * </pre>
+   */
   public static final class VersionsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<VersionsBlockingStub> {
     private VersionsBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -519,44 +615,86 @@ public final class VersionsGrpc {
       return new VersionsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse listVersions(
         com.google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest request) {
       return blockingUnaryCall(getChannel(), getListVersionsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.Version getVersion(
         com.google.cloud.dialogflow.cx.v3beta1.GetVersionRequest request) {
       return blockingUnaryCall(getChannel(), getGetVersionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public com.google.longrunning.Operation createVersion(
         com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest request) {
       return blockingUnaryCall(getChannel(), getCreateVersionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3beta1.Version updateVersion(
         com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest request) {
       return blockingUnaryCall(getChannel(), getUpdateVersionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteVersion(
         com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest request) {
       return blockingUnaryCall(getChannel(), getDeleteVersionMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Loads a specified version to draft version.
+     * </pre>
+     */
     public com.google.longrunning.Operation loadVersion(
         com.google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest request) {
       return blockingUnaryCall(getChannel(), getLoadVersionMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [Versions][google.cloud.dialogflow.cx.v3beta1.Version].
+   * </pre>
+   */
   public static final class VersionsFutureStub
       extends io.grpc.stub.AbstractFutureStub<VersionsFutureStub> {
     private VersionsFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -568,7 +706,13 @@ public final class VersionsGrpc {
       return new VersionsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.ListVersionsResponse>
         listVersions(com.google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest request) {
@@ -576,7 +720,13 @@ public final class VersionsGrpc {
           getChannel().newCall(getListVersionsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Version>
         getVersion(com.google.cloud.dialogflow.cx.v3beta1.GetVersionRequest request) {
@@ -584,14 +734,26 @@ public final class VersionsGrpc {
           getChannel().newCall(getGetVersionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         createVersion(com.google.cloud.dialogflow.cx.v3beta1.CreateVersionRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateVersionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Version>
         updateVersion(com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest request) {
@@ -599,14 +761,26 @@ public final class VersionsGrpc {
           getChannel().newCall(getUpdateVersionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteVersion(com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteVersionMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Loads a specified version to draft version.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         loadVersion(com.google.cloud.dialogflow.cx.v3beta1.LoadVersionRequest request) {
       return futureUnaryCall(

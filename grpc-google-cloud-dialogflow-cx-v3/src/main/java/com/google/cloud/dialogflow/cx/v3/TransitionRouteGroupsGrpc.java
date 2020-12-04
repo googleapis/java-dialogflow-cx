@@ -22,7 +22,13 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * Service for managing [TransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3/transition_route_group.proto")
@@ -338,10 +344,22 @@ public final class TransitionRouteGroupsGrpc {
     return TransitionRouteGroupsFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [TransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * </pre>
+   */
   public abstract static class TransitionRouteGroupsImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all transition route groups in the specified flow.
+     * </pre>
+     */
     public void listTransitionRouteGroups(
         com.google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsRequest request,
         io.grpc.stub.StreamObserver<
@@ -350,7 +368,13 @@ public final class TransitionRouteGroupsGrpc {
       asyncUnimplementedUnaryCall(getListTransitionRouteGroupsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public void getTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.GetTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
@@ -358,7 +382,13 @@ public final class TransitionRouteGroupsGrpc {
       asyncUnimplementedUnaryCall(getGetTransitionRouteGroupMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+     * </pre>
+     */
     public void createTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
@@ -366,7 +396,13 @@ public final class TransitionRouteGroupsGrpc {
       asyncUnimplementedUnaryCall(getCreateTransitionRouteGroupMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public void updateTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.UpdateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
@@ -374,7 +410,13 @@ public final class TransitionRouteGroupsGrpc {
       asyncUnimplementedUnaryCall(getUpdateTransitionRouteGroupMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public void deleteTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -422,7 +464,13 @@ public final class TransitionRouteGroupsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [TransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * </pre>
+   */
   public static final class TransitionRouteGroupsStub
       extends io.grpc.stub.AbstractAsyncStub<TransitionRouteGroupsStub> {
     private TransitionRouteGroupsStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -435,7 +483,13 @@ public final class TransitionRouteGroupsGrpc {
       return new TransitionRouteGroupsStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all transition route groups in the specified flow.
+     * </pre>
+     */
     public void listTransitionRouteGroups(
         com.google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsRequest request,
         io.grpc.stub.StreamObserver<
@@ -447,7 +501,13 @@ public final class TransitionRouteGroupsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public void getTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.GetTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
@@ -458,7 +518,13 @@ public final class TransitionRouteGroupsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+     * </pre>
+     */
     public void createTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
@@ -469,7 +535,13 @@ public final class TransitionRouteGroupsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public void updateTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.UpdateTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
@@ -480,7 +552,13 @@ public final class TransitionRouteGroupsGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public void deleteTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -491,7 +569,13 @@ public final class TransitionRouteGroupsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [TransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * </pre>
+   */
   public static final class TransitionRouteGroupsBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<TransitionRouteGroupsBlockingStub> {
     private TransitionRouteGroupsBlockingStub(
@@ -505,7 +589,13 @@ public final class TransitionRouteGroupsGrpc {
       return new TransitionRouteGroupsBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all transition route groups in the specified flow.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsResponse
         listTransitionRouteGroups(
             com.google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsRequest request) {
@@ -513,28 +603,52 @@ public final class TransitionRouteGroupsGrpc {
           getChannel(), getListTransitionRouteGroupsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup getTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.GetTransitionRouteGroupRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetTransitionRouteGroupMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup createTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateTransitionRouteGroupMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup updateTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.UpdateTransitionRouteGroupRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateTransitionRouteGroupMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteTransitionRouteGroup(
         com.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest request) {
       return blockingUnaryCall(
@@ -542,7 +656,13 @@ public final class TransitionRouteGroupsGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * Service for managing [TransitionRouteGroups][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+   * </pre>
+   */
   public static final class TransitionRouteGroupsFutureStub
       extends io.grpc.stub.AbstractFutureStub<TransitionRouteGroupsFutureStub> {
     private TransitionRouteGroupsFutureStub(
@@ -556,7 +676,13 @@ public final class TransitionRouteGroupsGrpc {
       return new TransitionRouteGroupsFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all transition route groups in the specified flow.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsResponse>
         listTransitionRouteGroups(
@@ -565,7 +691,13 @@ public final class TransitionRouteGroupsGrpc {
           getChannel().newCall(getListTransitionRouteGroupsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
         getTransitionRouteGroup(
@@ -574,7 +706,13 @@ public final class TransitionRouteGroupsGrpc {
           getChannel().newCall(getGetTransitionRouteGroupMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup] in the specified flow.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
         createTransitionRouteGroup(
@@ -583,7 +721,13 @@ public final class TransitionRouteGroupsGrpc {
           getChannel().newCall(getCreateTransitionRouteGroupMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.TransitionRouteGroup>
         updateTransitionRouteGroup(
@@ -592,7 +736,13 @@ public final class TransitionRouteGroupsGrpc {
           getChannel().newCall(getUpdateTransitionRouteGroupMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified [TransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroup].
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTransitionRouteGroup(
             com.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest request) {
