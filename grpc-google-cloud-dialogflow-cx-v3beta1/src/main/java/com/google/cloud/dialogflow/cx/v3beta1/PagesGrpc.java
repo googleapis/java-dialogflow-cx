@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3beta1/page.proto")
@@ -301,22 +295,10 @@ public final class PagesGrpc {
     return PagesFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
-   * </pre>
-   */
+  /** */
   public abstract static class PagesImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all pages in the specified flow.
-     * </pre>
-     */
+    /** */
     public void listPages(
         com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse>
@@ -324,52 +306,28 @@ public final class PagesGrpc {
       asyncUnimplementedUnaryCall(getListPagesMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified page.
-     * </pre>
-     */
+    /** */
     public void getPage(
         com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
       asyncUnimplementedUnaryCall(getGetPageMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a page in the specified flow.
-     * </pre>
-     */
+    /** */
     public void createPage(
         com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
       asyncUnimplementedUnaryCall(getCreatePageMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified page.
-     * </pre>
-     */
+    /** */
     public void updatePage(
         com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
       asyncUnimplementedUnaryCall(getUpdatePageMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified page.
-     * </pre>
-     */
+    /** */
     public void deletePage(
         com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -414,13 +372,7 @@ public final class PagesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
-   * </pre>
-   */
+  /** */
   public static final class PagesStub extends io.grpc.stub.AbstractAsyncStub<PagesStub> {
     private PagesStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -431,13 +383,7 @@ public final class PagesGrpc {
       return new PagesStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all pages in the specified flow.
-     * </pre>
-     */
+    /** */
     public void listPages(
         com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse>
@@ -446,13 +392,7 @@ public final class PagesGrpc {
           getChannel().newCall(getListPagesMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified page.
-     * </pre>
-     */
+    /** */
     public void getPage(
         com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
@@ -460,13 +400,7 @@ public final class PagesGrpc {
           getChannel().newCall(getGetPageMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a page in the specified flow.
-     * </pre>
-     */
+    /** */
     public void createPage(
         com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
@@ -474,13 +408,7 @@ public final class PagesGrpc {
           getChannel().newCall(getCreatePageMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified page.
-     * </pre>
-     */
+    /** */
     public void updatePage(
         com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.Page> responseObserver) {
@@ -488,13 +416,7 @@ public final class PagesGrpc {
           getChannel().newCall(getUpdatePageMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified page.
-     * </pre>
-     */
+    /** */
     public void deletePage(
         com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -503,13 +425,7 @@ public final class PagesGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
-   * </pre>
-   */
+  /** */
   public static final class PagesBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<PagesBlockingStub> {
     private PagesBlockingStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -521,74 +437,38 @@ public final class PagesGrpc {
       return new PagesBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all pages in the specified flow.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse listPages(
         com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest request) {
       return blockingUnaryCall(getChannel(), getListPagesMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified page.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3beta1.Page getPage(
         com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest request) {
       return blockingUnaryCall(getChannel(), getGetPageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a page in the specified flow.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3beta1.Page createPage(
         com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest request) {
       return blockingUnaryCall(getChannel(), getCreatePageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified page.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3beta1.Page updatePage(
         com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest request) {
       return blockingUnaryCall(getChannel(), getUpdatePageMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified page.
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deletePage(
         com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest request) {
       return blockingUnaryCall(getChannel(), getDeletePageMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
-   * </pre>
-   */
+  /** */
   public static final class PagesFutureStub
       extends io.grpc.stub.AbstractFutureStub<PagesFutureStub> {
     private PagesFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -600,39 +480,21 @@ public final class PagesGrpc {
       return new PagesFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all pages in the specified flow.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.ListPagesResponse>
         listPages(com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest request) {
       return futureUnaryCall(getChannel().newCall(getListPagesMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified page.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Page>
         getPage(com.google.cloud.dialogflow.cx.v3beta1.GetPageRequest request) {
       return futureUnaryCall(getChannel().newCall(getGetPageMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Creates a page in the specified flow.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Page>
         createPage(com.google.cloud.dialogflow.cx.v3beta1.CreatePageRequest request) {
@@ -640,13 +502,7 @@ public final class PagesGrpc {
           getChannel().newCall(getCreatePageMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified page.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3beta1.Page>
         updatePage(com.google.cloud.dialogflow.cx.v3beta1.UpdatePageRequest request) {
@@ -654,13 +510,7 @@ public final class PagesGrpc {
           getChannel().newCall(getUpdatePageMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified page.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deletePage(
         com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest request) {
       return futureUnaryCall(
