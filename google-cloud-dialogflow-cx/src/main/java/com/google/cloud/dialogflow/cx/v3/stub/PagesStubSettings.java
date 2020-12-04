@@ -54,7 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -136,7 +135,7 @@ public class PagesStubSettings extends StubSettings<PagesStubSettings> {
 
             @Override
             public Iterable<Page> extractResources(ListPagesResponse payload) {
-              return Objects.isNull(payload.getPagesList())
+              return payload.getPagesList() == null
                   ? ImmutableList.<Page>of()
                   : payload.getPagesList();
             }
