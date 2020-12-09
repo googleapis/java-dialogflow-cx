@@ -44,7 +44,7 @@ public class CreatePage {
       List<String> entryTexts)
       throws IOException, ApiException {
     PagesSettings.Builder pagesSettingsBuilder = PagesSettings.newBuilder();
-    if (locationId == "global") {
+    if (locationId.equals("global")) {
       pagesSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
     } else {
       pagesSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");

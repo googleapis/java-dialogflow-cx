@@ -40,7 +40,7 @@ public class CreateIntent {
       List<String> trainingPhrasesParts)
       throws IOException, ApiException {
     IntentsSettings.Builder intentsSettingsBuilder = IntentsSettings.newBuilder();
-    if (locationId == "global") {
+    if (locationId.equals("global")) {
       intentsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
     } else {
       intentsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");

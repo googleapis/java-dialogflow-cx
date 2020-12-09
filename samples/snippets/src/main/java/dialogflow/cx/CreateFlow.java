@@ -43,7 +43,7 @@ public class CreateFlow {
       Map<String, String> eventsToFulfillmentMessages)
       throws IOException, ApiException {
     FlowsSettings.Builder flowsSettingsBuilder = FlowsSettings.newBuilder();
-    if (locationId == "global") {
+    if (locationId.equals("global")) {
       flowsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
     } else {
       flowsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");

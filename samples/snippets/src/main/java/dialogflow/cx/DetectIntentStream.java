@@ -41,7 +41,7 @@ public class DetectIntentStream {
       String projectId, String locationId, String agentId, String sessionId, String audioFilePath)
       throws ApiException, IOException {
     SessionsSettings.Builder sessionsSettingsBuilder = SessionsSettings.newBuilder();
-    if (locationId == "global") {
+    if (locationId.equals("global")) {
       sessionsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
     } else {
       sessionsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");

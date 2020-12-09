@@ -44,7 +44,7 @@ public class DetectIntent {
       String languageCode)
       throws IOException, ApiException {
     SessionsSettings.Builder sessionsSettingsBuilder = SessionsSettings.newBuilder();
-    if (locationId == "global") {
+    if (locationId.equals("global")) {
       sessionsSettingsBuilder.setEndpoint("dialogflow.googleapis.com:443");
     } else {
       sessionsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
