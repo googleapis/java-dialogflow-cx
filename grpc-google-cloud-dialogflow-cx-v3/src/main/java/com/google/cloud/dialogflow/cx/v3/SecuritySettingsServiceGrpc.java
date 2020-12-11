@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service for managing security settings for Dialogflow.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/dialogflow/cx/v3/security_settings.proto")
@@ -342,22 +336,10 @@ public final class SecuritySettingsServiceGrpc {
     return SecuritySettingsServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing security settings for Dialogflow.
-   * </pre>
-   */
+  /** */
   public abstract static class SecuritySettingsServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Create security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public void createSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
@@ -365,14 +347,7 @@ public final class SecuritySettingsServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateSecuritySettingsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
-     * </pre>
-     */
+    /** */
     public void getSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
@@ -380,13 +355,7 @@ public final class SecuritySettingsServiceGrpc {
       asyncUnimplementedUnaryCall(getGetSecuritySettingsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public void updateSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
@@ -394,13 +363,7 @@ public final class SecuritySettingsServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateSecuritySettingsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public void listSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
@@ -408,13 +371,7 @@ public final class SecuritySettingsServiceGrpc {
       asyncUnimplementedUnaryCall(getListSecuritySettingsMethod(), responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public void deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -462,13 +419,7 @@ public final class SecuritySettingsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing security settings for Dialogflow.
-   * </pre>
-   */
+  /** */
   public static final class SecuritySettingsServiceStub
       extends io.grpc.stub.AbstractAsyncStub<SecuritySettingsServiceStub> {
     private SecuritySettingsServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -481,13 +432,7 @@ public final class SecuritySettingsServiceGrpc {
       return new SecuritySettingsServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Create security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public void createSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
@@ -498,14 +443,7 @@ public final class SecuritySettingsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
-     * </pre>
-     */
+    /** */
     public void getSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
@@ -516,13 +454,7 @@ public final class SecuritySettingsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public void updateSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.SecuritySettings>
@@ -533,13 +465,7 @@ public final class SecuritySettingsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public void listSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
@@ -550,13 +476,7 @@ public final class SecuritySettingsServiceGrpc {
           responseObserver);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public void deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -567,13 +487,7 @@ public final class SecuritySettingsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing security settings for Dialogflow.
-   * </pre>
-   */
+  /** */
   public static final class SecuritySettingsServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<SecuritySettingsServiceBlockingStub> {
     private SecuritySettingsServiceBlockingStub(
@@ -587,66 +501,35 @@ public final class SecuritySettingsServiceGrpc {
       return new SecuritySettingsServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Create security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings createSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateSecuritySettingsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings getSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetSecuritySettingsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.SecuritySettings updateSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.UpdateSecuritySettingsRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateSecuritySettingsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse listSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListSecuritySettingsMethod(), getCallOptions(), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public com.google.protobuf.Empty deleteSecuritySettings(
         com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request) {
       return blockingUnaryCall(
@@ -654,13 +537,7 @@ public final class SecuritySettingsServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service for managing security settings for Dialogflow.
-   * </pre>
-   */
+  /** */
   public static final class SecuritySettingsServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<SecuritySettingsServiceFutureStub> {
     private SecuritySettingsServiceFutureStub(
@@ -674,13 +551,7 @@ public final class SecuritySettingsServiceGrpc {
       return new SecuritySettingsServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Create security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.SecuritySettings>
         createSecuritySettings(
@@ -689,14 +560,7 @@ public final class SecuritySettingsServiceGrpc {
           getChannel().newCall(getCreateSecuritySettingsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Retrieves the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * The returned settings may be stale by up to 1 minute.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.SecuritySettings>
         getSecuritySettings(com.google.cloud.dialogflow.cx.v3.GetSecuritySettingsRequest request) {
@@ -704,13 +568,7 @@ public final class SecuritySettingsServiceGrpc {
           getChannel().newCall(getGetSecuritySettingsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.SecuritySettings>
         updateSecuritySettings(
@@ -719,13 +577,7 @@ public final class SecuritySettingsServiceGrpc {
           getChannel().newCall(getUpdateSecuritySettingsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Returns the list of all security settings in the specified location.
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.dialogflow.cx.v3.ListSecuritySettingsResponse>
         listSecuritySettings(
@@ -734,13 +586,7 @@ public final class SecuritySettingsServiceGrpc {
           getChannel().newCall(getListSecuritySettingsMethod(), getCallOptions()), request);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteSecuritySettings(
             com.google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest request) {
