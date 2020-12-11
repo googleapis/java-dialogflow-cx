@@ -309,8 +309,8 @@ public class WebhooksClient implements BackgroundResource {
    * Updates the specified webhook.
    *
    * @param webhook Required. The webhook to update.
-   * @param update_mask The mask to control which fields get updated. If the mask is not present,
-   *     all fields will be updated.
+   * @param updateMask The mask to control which fields get updated. If the mask is not present, all
+   *     fields will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Webhook updateWebhook(Webhook webhook, FieldMask updateMask) {

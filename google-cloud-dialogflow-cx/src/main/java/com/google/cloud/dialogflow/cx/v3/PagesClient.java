@@ -307,8 +307,8 @@ public class PagesClient implements BackgroundResource {
    * Updates the specified page.
    *
    * @param page Required. The page to update.
-   * @param update_mask The mask to control which fields get updated. If the mask is not present,
-   *     all fields will be updated.
+   * @param updateMask The mask to control which fields get updated. If the mask is not present, all
+   *     fields will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Page updatePage(Page page, FieldMask updateMask) {

@@ -369,7 +369,7 @@ public class FlowsClient implements BackgroundResource {
    * Updates the specified flow.
    *
    * @param flow Required. The flow to update.
-   * @param update_mask Required. The mask to control which fields get updated. If `update_mask` is
+   * @param updateMask Required. The mask to control which fields get updated. If `update_mask` is
    *     not specified, an error will be returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */

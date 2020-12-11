@@ -288,7 +288,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session
    *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment.
-   * @param session_entity_type Required. The session entity type to create.
+   * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType createSessionEntityType(
@@ -312,7 +312,7 @@ public class SessionEntityTypesClient implements BackgroundResource {
    *     ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session
    *     ID&gt;`. If `Environment ID` is not specified, we assume default 'draft' environment.
-   * @param session_entity_type Required. The session entity type to create.
+   * @param sessionEntityType Required. The session entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType createSessionEntityType(
@@ -355,14 +355,14 @@ public class SessionEntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified session entity type.
    *
-   * @param session_entity_type Required. The session entity type to update. Format:
+   * @param sessionEntityType Required. The session entity type to update. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type ID&gt;` or
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session
    *     ID&gt;/entityTypes/&lt;Entity Type ID&gt;`. If `Environment ID` is not specified, we assume
    *     default 'draft' environment.
-   * @param update_mask The mask to control which fields get updated.
+   * @param updateMask The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SessionEntityType updateSessionEntityType(

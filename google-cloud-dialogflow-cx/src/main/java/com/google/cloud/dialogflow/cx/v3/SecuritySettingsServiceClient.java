@@ -154,7 +154,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
-   * @param security_settings Required. The security settings to create.
+   * @param securitySettings Required. The security settings to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings createSecuritySettings(
@@ -174,7 +174,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
-   * @param security_settings Required. The security settings to create.
+   * @param securitySettings Required. The security settings to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final SecuritySettings createSecuritySettings(
@@ -269,9 +269,9 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings].
    *
-   * @param security_settings Required. [SecuritySettings] object that contains values for each of
+   * @param securitySettings Required. [SecuritySettings] object that contains values for each of
    *     the fields to update.
-   * @param update_mask Required. The mask to control which fields get updated. If the mask is not
+   * @param updateMask Required. The mask to control which fields get updated. If the mask is not
    *     present, all fields will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
