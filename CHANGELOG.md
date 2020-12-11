@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.4.2](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.4.1...v0.4.2) (2020-12-11)
+
+
+### Bug Fixes
+
+* change location in IT to be 'global' ([#103](https://www.github.com/googleapis/java-dialogflow-cx/issues/103)) ([4053872](https://www.github.com/googleapis/java-dialogflow-cx/commit/405387236262b9d04b074304f78f1cc1da4b662b))
+
 ### [0.4.1](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.4.0...v0.4.1) (2020-12-02)
 
 
