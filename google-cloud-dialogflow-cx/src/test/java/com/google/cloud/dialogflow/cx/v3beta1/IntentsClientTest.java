@@ -175,7 +175,7 @@ public class IntentsClientTest {
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
             .addAllParameters(new ArrayList<Intent.Parameter>())
             .setPriority(-1165461084)
@@ -220,7 +220,7 @@ public class IntentsClientTest {
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
             .addAllParameters(new ArrayList<Intent.Parameter>())
             .setPriority(-1165461084)
@@ -265,7 +265,7 @@ public class IntentsClientTest {
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
             .addAllParameters(new ArrayList<Intent.Parameter>())
             .setPriority(-1165461084)
@@ -313,7 +313,7 @@ public class IntentsClientTest {
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
             .addAllParameters(new ArrayList<Intent.Parameter>())
             .setPriority(-1165461084)
@@ -361,7 +361,7 @@ public class IntentsClientTest {
     Intent expectedResponse =
         Intent.newBuilder()
             .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
             .addAllParameters(new ArrayList<Intent.Parameter>())
             .setPriority(-1165461084)

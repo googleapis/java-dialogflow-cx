@@ -90,7 +90,7 @@ public class FlowsClientTest {
     Flow expectedResponse =
         Flow.newBuilder()
             .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
@@ -136,7 +136,7 @@ public class FlowsClientTest {
     Flow expectedResponse =
         Flow.newBuilder()
             .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
@@ -338,7 +338,7 @@ public class FlowsClientTest {
     Flow expectedResponse =
         Flow.newBuilder()
             .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
@@ -381,7 +381,7 @@ public class FlowsClientTest {
     Flow expectedResponse =
         Flow.newBuilder()
             .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
@@ -424,7 +424,7 @@ public class FlowsClientTest {
     Flow expectedResponse =
         Flow.newBuilder()
             .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())

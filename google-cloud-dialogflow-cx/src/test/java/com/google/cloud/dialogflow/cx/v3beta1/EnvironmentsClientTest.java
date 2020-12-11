@@ -182,7 +182,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -228,7 +228,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -272,7 +272,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -327,7 +327,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -382,7 +382,7 @@ public class EnvironmentsClientTest {
             .setName(
                 EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllVersionConfigs(new ArrayList<Environment.VersionConfig>())
             .setUpdateTime(Timestamp.newBuilder().build())
