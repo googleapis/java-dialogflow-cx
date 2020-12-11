@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -160,7 +159,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   public final ListTransitionRouteGroupsPagedResponse listTransitionRouteGroups(FlowName parent) {
     ListTransitionRouteGroupsRequest request =
         ListTransitionRouteGroupsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listTransitionRouteGroups(request);
   }
@@ -229,7 +228,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   public final TransitionRouteGroup getTransitionRouteGroup(TransitionRouteGroupName name) {
     GetTransitionRouteGroupRequest request =
         GetTransitionRouteGroupRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getTransitionRouteGroup(request);
   }
@@ -292,7 +291,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
       FlowName parent, TransitionRouteGroup transitionRouteGroup) {
     CreateTransitionRouteGroupRequest request =
         CreateTransitionRouteGroupRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setTransitionRouteGroup(transitionRouteGroup)
             .build();
     return createTransitionRouteGroup(request);
@@ -403,7 +402,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
   public final void deleteTransitionRouteGroup(TransitionRouteGroupName name) {
     DeleteTransitionRouteGroupRequest request =
         DeleteTransitionRouteGroupRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteTransitionRouteGroup(request);
   }

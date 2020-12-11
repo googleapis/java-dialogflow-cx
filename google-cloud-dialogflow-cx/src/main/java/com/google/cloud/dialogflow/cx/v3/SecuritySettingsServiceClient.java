@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -162,7 +161,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
       LocationName parent, SecuritySettings securitySettings) {
     CreateSecuritySettingsRequest request =
         CreateSecuritySettingsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setSecuritySettings(securitySettings)
             .build();
     return createSecuritySettings(request);
@@ -222,7 +221,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   public final SecuritySettings getSecuritySettings(SecuritySettingsName name) {
     GetSecuritySettingsRequest request =
         GetSecuritySettingsRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return getSecuritySettings(request);
   }
@@ -319,7 +318,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   public final ListSecuritySettingsPagedResponse listSecuritySettings(LocationName parent) {
     ListSecuritySettingsRequest request =
         ListSecuritySettingsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listSecuritySettings(request);
   }
@@ -385,7 +384,7 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   public final void deleteSecuritySettings(SecuritySettingsName name) {
     DeleteSecuritySettingsRequest request =
         DeleteSecuritySettingsRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteSecuritySettings(request);
   }

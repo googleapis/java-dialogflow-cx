@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -167,9 +166,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final ListAgentsPagedResponse listAgents(LocationName parent) {
     ListAgentsRequest request =
-        ListAgentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        ListAgentsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listAgents(request);
   }
 
@@ -227,7 +224,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final Agent getAgent(AgentName name) {
     GetAgentRequest request =
-        GetAgentRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getAgent(request);
   }
 
@@ -277,7 +274,7 @@ public class AgentsClient implements BackgroundResource {
   public final Agent createAgent(LocationName parent, Agent agent) {
     CreateAgentRequest request =
         CreateAgentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setAgent(agent)
             .build();
     return createAgent(request);
@@ -365,9 +362,7 @@ public class AgentsClient implements BackgroundResource {
    */
   public final void deleteAgent(AgentName name) {
     DeleteAgentRequest request =
-        DeleteAgentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteAgentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteAgent(request);
   }
 

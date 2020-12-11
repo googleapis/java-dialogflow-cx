@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -153,7 +152,7 @@ public class WebhooksClient implements BackgroundResource {
   public final ListWebhooksPagedResponse listWebhooks(AgentName parent) {
     ListWebhooksRequest request =
         ListWebhooksRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listWebhooks(request);
   }
@@ -213,9 +212,7 @@ public class WebhooksClient implements BackgroundResource {
    */
   public final Webhook getWebhook(WebhookName name) {
     GetWebhookRequest request =
-        GetWebhookRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetWebhookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getWebhook(request);
   }
 
@@ -265,7 +262,7 @@ public class WebhooksClient implements BackgroundResource {
   public final Webhook createWebhook(AgentName parent, Webhook webhook) {
     CreateWebhookRequest request =
         CreateWebhookRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setWebhook(webhook)
             .build();
     return createWebhook(request);
@@ -353,9 +350,7 @@ public class WebhooksClient implements BackgroundResource {
    */
   public final void deleteWebhook(WebhookName name) {
     DeleteWebhookRequest request =
-        DeleteWebhookRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteWebhookRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteWebhook(request);
   }
 

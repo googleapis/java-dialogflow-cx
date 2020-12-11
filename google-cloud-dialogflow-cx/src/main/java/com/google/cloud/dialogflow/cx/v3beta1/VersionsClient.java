@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -171,7 +170,7 @@ public class VersionsClient implements BackgroundResource {
   public final ListVersionsPagedResponse listVersions(FlowName parent) {
     ListVersionsRequest request =
         ListVersionsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listVersions(request);
   }
@@ -237,9 +236,7 @@ public class VersionsClient implements BackgroundResource {
    */
   public final Version getVersion(VersionName name) {
     GetVersionRequest request =
-        GetVersionRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getVersion(request);
   }
 
@@ -293,7 +290,7 @@ public class VersionsClient implements BackgroundResource {
       FlowName parent, Version version) {
     CreateVersionRequest request =
         CreateVersionRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setVersion(version)
             .build();
     return createVersionAsync(request);
@@ -400,9 +397,7 @@ public class VersionsClient implements BackgroundResource {
    */
   public final void deleteVersion(VersionName name) {
     DeleteVersionRequest request =
-        DeleteVersionRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteVersion(request);
   }
 
@@ -452,9 +447,7 @@ public class VersionsClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Struct> loadVersionAsync(VersionName name) {
     LoadVersionRequest request =
-        LoadVersionRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        LoadVersionRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return loadVersionAsync(request);
   }
 
