@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -169,7 +168,7 @@ public class FlowsClient implements BackgroundResource {
   public final Flow createFlow(AgentName parent, Flow flow) {
     CreateFlowRequest request =
         CreateFlowRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setFlow(flow)
             .build();
     return createFlow(request);
@@ -221,9 +220,7 @@ public class FlowsClient implements BackgroundResource {
    */
   public final void deleteFlow(FlowName name) {
     DeleteFlowRequest request =
-        DeleteFlowRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteFlow(request);
   }
 
@@ -271,9 +268,7 @@ public class FlowsClient implements BackgroundResource {
    */
   public final ListFlowsPagedResponse listFlows(AgentName parent) {
     ListFlowsRequest request =
-        ListFlowsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        ListFlowsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listFlows(request);
   }
 
@@ -331,7 +326,7 @@ public class FlowsClient implements BackgroundResource {
    */
   public final Flow getFlow(FlowName name) {
     GetFlowRequest request =
-        GetFlowRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getFlow(request);
   }
 
@@ -415,9 +410,7 @@ public class FlowsClient implements BackgroundResource {
    */
   public final OperationFuture<Empty, Struct> trainFlowAsync(FlowName name) {
     TrainFlowRequest request =
-        TrainFlowRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        TrainFlowRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return trainFlowAsync(request);
   }
 

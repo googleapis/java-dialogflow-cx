@@ -38,7 +38,6 @@ import com.google.protobuf.FieldMask;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -173,7 +172,7 @@ public class EnvironmentsClient implements BackgroundResource {
   public final ListEnvironmentsPagedResponse listEnvironments(AgentName parent) {
     ListEnvironmentsRequest request =
         ListEnvironmentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listEnvironments(request);
   }
@@ -242,9 +241,7 @@ public class EnvironmentsClient implements BackgroundResource {
    */
   public final Environment getEnvironment(EnvironmentName name) {
     GetEnvironmentRequest request =
-        GetEnvironmentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetEnvironmentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEnvironment(request);
   }
 
@@ -299,7 +296,7 @@ public class EnvironmentsClient implements BackgroundResource {
       AgentName parent, Environment environment) {
     CreateEnvironmentRequest request =
         CreateEnvironmentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setEnvironment(environment)
             .build();
     return createEnvironmentAsync(request);
@@ -423,7 +420,7 @@ public class EnvironmentsClient implements BackgroundResource {
   public final void deleteEnvironment(EnvironmentName name) {
     DeleteEnvironmentRequest request =
         DeleteEnvironmentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     deleteEnvironment(request);
   }
@@ -478,7 +475,7 @@ public class EnvironmentsClient implements BackgroundResource {
       EnvironmentName name) {
     LookupEnvironmentHistoryRequest request =
         LookupEnvironmentHistoryRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
+            .setName(name == null ? null : name.toString())
             .build();
     return lookupEnvironmentHistory(request);
   }

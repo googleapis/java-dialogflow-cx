@@ -244,7 +244,7 @@ public class SessionEntityTypeName implements ResourceName {
   public static List<String> toStringList(List<SessionEntityTypeName> values) {
     List<String> list = new ArrayList<>(values.size());
     for (SessionEntityTypeName value : values) {
-      if (Objects.isNull(value)) {
+      if (value == null) {
         list.add("");
       } else {
         list.add(value.toString());
@@ -260,26 +260,26 @@ public class SessionEntityTypeName implements ResourceName {
 
   @Override
   public Map<String, String> getFieldValuesMap() {
-    if (Objects.isNull(fieldValuesMap)) {
+    if (fieldValuesMap == null) {
       synchronized (this) {
-        if (Objects.isNull(fieldValuesMap)) {
+        if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (!Objects.isNull(project)) {
+          if (project != null) {
             fieldMapBuilder.put("project", project);
           }
-          if (!Objects.isNull(location)) {
+          if (location != null) {
             fieldMapBuilder.put("location", location);
           }
-          if (!Objects.isNull(agent)) {
+          if (agent != null) {
             fieldMapBuilder.put("agent", agent);
           }
-          if (!Objects.isNull(session)) {
+          if (session != null) {
             fieldMapBuilder.put("session", session);
           }
-          if (!Objects.isNull(entityType)) {
+          if (entityType != null) {
             fieldMapBuilder.put("entity_type", entityType);
           }
-          if (!Objects.isNull(environment)) {
+          if (environment != null) {
             fieldMapBuilder.put("environment", environment);
           }
           fieldValuesMap = fieldMapBuilder.build();
@@ -295,7 +295,7 @@ public class SessionEntityTypeName implements ResourceName {
 
   @Override
   public String toString() {
-    return !Objects.isNull(fixedValue) ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override

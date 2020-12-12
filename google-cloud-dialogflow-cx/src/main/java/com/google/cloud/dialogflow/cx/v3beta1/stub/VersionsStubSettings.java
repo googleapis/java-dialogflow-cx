@@ -62,7 +62,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -150,7 +149,7 @@ public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
 
             @Override
             public Iterable<Version> extractResources(ListVersionsResponse payload) {
-              return Objects.isNull(payload.getVersionsList())
+              return payload.getVersionsList() == null
                   ? ImmutableList.<Version>of()
                   : payload.getVersionsList();
             }

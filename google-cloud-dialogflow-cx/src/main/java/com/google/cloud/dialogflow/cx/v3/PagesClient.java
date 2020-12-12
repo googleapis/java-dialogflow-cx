@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -151,9 +150,7 @@ public class PagesClient implements BackgroundResource {
    */
   public final ListPagesPagedResponse listPages(FlowName parent) {
     ListPagesRequest request =
-        ListPagesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
-            .build();
+        ListPagesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
     return listPages(request);
   }
 
@@ -212,7 +209,7 @@ public class PagesClient implements BackgroundResource {
    */
   public final Page getPage(PageName name) {
     GetPageRequest request =
-        GetPageRequest.newBuilder().setName(Objects.isNull(name) ? null : name.toString()).build();
+        GetPageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getPage(request);
   }
 
@@ -263,7 +260,7 @@ public class PagesClient implements BackgroundResource {
   public final Page createPage(FlowName parent, Page page) {
     CreatePageRequest request =
         CreatePageRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setPage(page)
             .build();
     return createPage(request);
@@ -352,9 +349,7 @@ public class PagesClient implements BackgroundResource {
    */
   public final void deletePage(PageName name) {
     DeletePageRequest request =
-        DeletePageRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeletePageRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deletePage(request);
   }
 

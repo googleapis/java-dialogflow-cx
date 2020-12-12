@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -152,7 +151,7 @@ public class IntentsClient implements BackgroundResource {
   public final ListIntentsPagedResponse listIntents(AgentName parent) {
     ListIntentsRequest request =
         ListIntentsRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listIntents(request);
   }
@@ -212,9 +211,7 @@ public class IntentsClient implements BackgroundResource {
    */
   public final Intent getIntent(IntentName name) {
     GetIntentRequest request =
-        GetIntentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getIntent(request);
   }
 
@@ -264,7 +261,7 @@ public class IntentsClient implements BackgroundResource {
   public final Intent createIntent(AgentName parent, Intent intent) {
     CreateIntentRequest request =
         CreateIntentRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setIntent(intent)
             .build();
     return createIntent(request);
@@ -352,9 +349,7 @@ public class IntentsClient implements BackgroundResource {
    */
   public final void deleteIntent(IntentName name) {
     DeleteIntentRequest request =
-        DeleteIntentRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteIntentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteIntent(request);
   }
 

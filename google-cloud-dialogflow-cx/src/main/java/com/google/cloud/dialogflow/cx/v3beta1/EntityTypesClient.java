@@ -33,7 +33,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
@@ -155,7 +154,7 @@ public class EntityTypesClient implements BackgroundResource {
   public final ListEntityTypesPagedResponse listEntityTypes(AgentName parent) {
     ListEntityTypesRequest request =
         ListEntityTypesRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .build();
     return listEntityTypes(request);
   }
@@ -217,9 +216,7 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final EntityType getEntityType(EntityTypeName name) {
     GetEntityTypeRequest request =
-        GetEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        GetEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     return getEntityType(request);
   }
 
@@ -270,7 +267,7 @@ public class EntityTypesClient implements BackgroundResource {
   public final EntityType createEntityType(AgentName parent, EntityType entityType) {
     CreateEntityTypeRequest request =
         CreateEntityTypeRequest.newBuilder()
-            .setParent(Objects.isNull(parent) ? null : parent.toString())
+            .setParent(parent == null ? null : parent.toString())
             .setEntityType(entityType)
             .build();
     return createEntityType(request);
@@ -361,9 +358,7 @@ public class EntityTypesClient implements BackgroundResource {
    */
   public final void deleteEntityType(EntityTypeName name) {
     DeleteEntityTypeRequest request =
-        DeleteEntityTypeRequest.newBuilder()
-            .setName(Objects.isNull(name) ? null : name.toString())
-            .build();
+        DeleteEntityTypeRequest.newBuilder().setName(name == null ? null : name.toString()).build();
     deleteEntityType(request);
   }
 

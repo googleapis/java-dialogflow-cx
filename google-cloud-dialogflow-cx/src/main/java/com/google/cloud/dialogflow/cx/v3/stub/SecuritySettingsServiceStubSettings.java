@@ -54,7 +54,6 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -151,7 +150,7 @@ public class SecuritySettingsServiceStubSettings
             @Override
             public Iterable<SecuritySettings> extractResources(
                 ListSecuritySettingsResponse payload) {
-              return Objects.isNull(payload.getSecuritySettingsList())
+              return payload.getSecuritySettingsList() == null
                   ? ImmutableList.<SecuritySettings>of()
                   : payload.getSecuritySettingsList();
             }

@@ -61,7 +61,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -145,7 +144,7 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
 
             @Override
             public Iterable<Flow> extractResources(ListFlowsResponse payload) {
-              return Objects.isNull(payload.getFlowsList())
+              return payload.getFlowsList() == null
                   ? ImmutableList.<Flow>of()
                   : payload.getFlowsList();
             }

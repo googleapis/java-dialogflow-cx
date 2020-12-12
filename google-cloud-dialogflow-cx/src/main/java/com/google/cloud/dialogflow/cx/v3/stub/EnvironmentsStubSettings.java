@@ -63,7 +63,6 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
@@ -160,7 +159,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
             @Override
             public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
-              return Objects.isNull(payload.getEnvironmentsList())
+              return payload.getEnvironmentsList() == null
                   ? ImmutableList.<Environment>of()
                   : payload.getEnvironmentsList();
             }
@@ -205,7 +204,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
             @Override
             public Iterable<Environment> extractResources(
                 LookupEnvironmentHistoryResponse payload) {
-              return Objects.isNull(payload.getEnvironmentsList())
+              return payload.getEnvironmentsList() == null
                   ? ImmutableList.<Environment>of()
                   : payload.getEnvironmentsList();
             }
