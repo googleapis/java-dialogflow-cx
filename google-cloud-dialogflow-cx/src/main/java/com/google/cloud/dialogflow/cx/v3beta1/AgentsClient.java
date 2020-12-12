@@ -321,8 +321,8 @@ public class AgentsClient implements BackgroundResource {
    * Updates the specified agent.
    *
    * @param agent Required. The agent to update.
-   * @param update_mask The mask to control which fields get updated. If the mask is not present,
-   *     all fields will be updated.
+   * @param updateMask The mask to control which fields get updated. If the mask is not present, all
+   *     fields will be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Agent updateAgent(Agent agent, FieldMask updateMask) {

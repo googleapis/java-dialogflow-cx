@@ -261,7 +261,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
-   * @param entity_type Required. The entity type to create.
+   * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(AgentName parent, EntityType entityType) {
@@ -279,7 +279,7 @@ public class EntityTypesClient implements BackgroundResource {
    *
    * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
-   * @param entity_type Required. The entity type to create.
+   * @param entityType Required. The entity type to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType createEntityType(String parent, EntityType entityType) {
@@ -313,8 +313,8 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
-   * @param entity_type Required. The entity type to update.
-   * @param update_mask The mask to control which fields get updated.
+   * @param entityType Required. The entity type to update.
+   * @param updateMask The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EntityType updateEntityType(EntityType entityType, FieldMask updateMask) {

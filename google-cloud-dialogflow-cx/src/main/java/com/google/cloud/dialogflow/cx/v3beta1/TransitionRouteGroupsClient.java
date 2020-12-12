@@ -284,7 +284,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] for.
    *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/flows/&lt;Flow ID&gt;`.
-   * @param transition_route_group Required. The transition route group to create.
+   * @param transitionRouteGroup Required. The transition route group to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransitionRouteGroup createTransitionRouteGroup(
@@ -306,7 +306,7 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    *     [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup] for.
    *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/flows/&lt;Flow ID&gt;`.
-   * @param transition_route_group Required. The transition route group to create.
+   * @param transitionRouteGroup Required. The transition route group to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransitionRouteGroup createTransitionRouteGroup(
@@ -349,8 +349,8 @@ public class TransitionRouteGroupsClient implements BackgroundResource {
    * Updates the specified
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
    *
-   * @param transition_route_group Required. The transition route group to update.
-   * @param update_mask The mask to control which fields get updated.
+   * @param transitionRouteGroup Required. The transition route group to update.
+   * @param updateMask The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TransitionRouteGroup updateTransitionRouteGroup(

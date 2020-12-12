@@ -359,7 +359,7 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3.Environment].
    *
    * @param environment Required. The environment to update.
-   * @param update_mask Required. The mask to control which fields get updated.
+   * @param updateMask Required. The mask to control which fields get updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Environment, Struct> updateEnvironmentAsync(

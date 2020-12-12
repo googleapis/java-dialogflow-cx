@@ -139,11 +139,19 @@ public class GrpcVersionsStub extends VersionsStub {
         VersionsStubSettings.newBuilder().build(), clientContext, callableFactory);
   }
 
+  /**
+   * Constructs an instance of GrpcVersionsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
   protected GrpcVersionsStub(VersionsStubSettings settings, ClientContext clientContext)
       throws IOException {
     this(settings, clientContext, new GrpcVersionsCallableFactory());
   }
 
+  /**
+   * Constructs an instance of GrpcVersionsStub, using the given settings. This is protected so that
+   * it is easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   */
   protected GrpcVersionsStub(
       VersionsStubSettings settings,
       ClientContext clientContext,

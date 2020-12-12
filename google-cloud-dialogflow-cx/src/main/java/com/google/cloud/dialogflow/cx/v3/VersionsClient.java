@@ -350,7 +350,7 @@ public class VersionsClient implements BackgroundResource {
    * Updates the specified [Version][google.cloud.dialogflow.cx.v3.Version].
    *
    * @param version Required. The version to update.
-   * @param update_mask Required. The mask to control which fields get updated. Currently only
+   * @param updateMask Required. The mask to control which fields get updated. Currently only
    *     `description` and `display_name` can be updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
