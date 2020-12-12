@@ -180,7 +180,7 @@ public class VersionsClientTest {
             .setName(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setNluSettings(NluSettings.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -225,7 +225,7 @@ public class VersionsClientTest {
             .setName(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setNluSettings(NluSettings.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -269,7 +269,7 @@ public class VersionsClientTest {
             .setName(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setNluSettings(NluSettings.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -324,7 +324,7 @@ public class VersionsClientTest {
             .setName(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setNluSettings(NluSettings.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -379,7 +379,7 @@ public class VersionsClientTest {
             .setName(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
                     .toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setNluSettings(NluSettings.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())

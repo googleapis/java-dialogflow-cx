@@ -175,7 +175,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
@@ -219,7 +219,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
@@ -262,7 +262,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
@@ -308,7 +308,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
@@ -354,7 +354,7 @@ public class EntityTypesClientTest {
         EntityType.newBuilder()
             .setName(
                 EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)

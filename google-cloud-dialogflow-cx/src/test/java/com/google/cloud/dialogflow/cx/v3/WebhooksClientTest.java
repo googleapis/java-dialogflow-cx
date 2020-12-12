@@ -174,7 +174,7 @@ public class WebhooksClientTest {
     Webhook expectedResponse =
         Webhook.newBuilder()
             .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setTimeout(Duration.newBuilder().build())
             .setDisabled(true)
             .build();
@@ -215,7 +215,7 @@ public class WebhooksClientTest {
     Webhook expectedResponse =
         Webhook.newBuilder()
             .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setTimeout(Duration.newBuilder().build())
             .setDisabled(true)
             .build();
@@ -256,7 +256,7 @@ public class WebhooksClientTest {
     Webhook expectedResponse =
         Webhook.newBuilder()
             .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setTimeout(Duration.newBuilder().build())
             .setDisabled(true)
             .build();
@@ -300,7 +300,7 @@ public class WebhooksClientTest {
     Webhook expectedResponse =
         Webhook.newBuilder()
             .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setTimeout(Duration.newBuilder().build())
             .setDisabled(true)
             .build();
@@ -344,7 +344,7 @@ public class WebhooksClientTest {
     Webhook expectedResponse =
         Webhook.newBuilder()
             .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
-            .setDisplayName("display_name1615086568")
+            .setDisplayName("displayName1714148973")
             .setTimeout(Duration.newBuilder().build())
             .setDisabled(true)
             .build();

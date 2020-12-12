@@ -86,7 +86,7 @@ public class SessionsClientTest {
   public void detectIntentTest() throws Exception {
     DetectIntentResponse expectedResponse =
         DetectIntentResponse.newBuilder()
-            .setResponseId("response_id1847552473")
+            .setResponseId("responseId-633138884")
             .setQueryResult(QueryResult.newBuilder().build())
             .setOutputAudio(ByteString.EMPTY)
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
@@ -270,7 +270,7 @@ public class SessionsClientTest {
   public void fulfillIntentTest() throws Exception {
     FulfillIntentResponse expectedResponse =
         FulfillIntentResponse.newBuilder()
-            .setResponseId("response_id1847552473")
+            .setResponseId("responseId-633138884")
             .setQueryResult(QueryResult.newBuilder().build())
             .setOutputAudio(ByteString.EMPTY)
             .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())

@@ -89,8 +89,8 @@ public class SecuritySettingsServiceClientTest {
             .setName(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setInspectTemplate("inspect_template-159468987")
+            .setDisplayName("displayName1714148973")
+            .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -136,8 +136,8 @@ public class SecuritySettingsServiceClientTest {
             .setName(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setInspectTemplate("inspect_template-159468987")
+            .setDisplayName("displayName1714148973")
+            .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -183,8 +183,8 @@ public class SecuritySettingsServiceClientTest {
             .setName(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setInspectTemplate("inspect_template-159468987")
+            .setDisplayName("displayName1714148973")
+            .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -228,8 +228,8 @@ public class SecuritySettingsServiceClientTest {
             .setName(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setInspectTemplate("inspect_template-159468987")
+            .setDisplayName("displayName1714148973")
+            .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
@@ -271,8 +271,8 @@ public class SecuritySettingsServiceClientTest {
             .setName(
                 SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
                     .toString())
-            .setDisplayName("display_name1615086568")
-            .setInspectTemplate("inspect_template-159468987")
+            .setDisplayName("displayName1714148973")
+            .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);

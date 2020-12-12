@@ -177,11 +177,11 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
-            .setTimeZone("time_zone36848094")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setEnableStackdriverLogging(true)
@@ -224,11 +224,11 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
-            .setTimeZone("time_zone36848094")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setEnableStackdriverLogging(true)
@@ -271,11 +271,11 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
-            .setTimeZone("time_zone36848094")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setEnableStackdriverLogging(true)
@@ -321,11 +321,11 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
-            .setTimeZone("time_zone36848094")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setEnableStackdriverLogging(true)
@@ -371,11 +371,11 @@ public class AgentsClientTest {
     Agent expectedResponse =
         Agent.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-            .setDisplayName("display_name1615086568")
-            .setDefaultLanguageCode("default_language_code856575222")
-            .setTimeZone("time_zone36848094")
+            .setDisplayName("displayName1714148973")
+            .setDefaultLanguageCode("defaultLanguageCode2069633606")
+            .setTimeZone("timeZone-2077180903")
             .setDescription("description-1724546052")
-            .setAvatarUri("avatar_uri-402824826")
+            .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
             .setEnableStackdriverLogging(true)
@@ -498,7 +498,7 @@ public class AgentsClientTest {
     ExportAgentRequest request =
         ExportAgentRequest.newBuilder()
             .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-            .setAgentUri("agent_uri-1700713166")
+            .setAgentUri("agentUri1469149223")
             .build();
 
     ExportAgentResponse actualResponse = client.exportAgentAsync(request).get();
@@ -525,7 +525,7 @@ public class AgentsClientTest {
       ExportAgentRequest request =
           ExportAgentRequest.newBuilder()
               .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
-              .setAgentUri("agent_uri-1700713166")
+              .setAgentUri("agentUri1469149223")
               .build();
       client.exportAgentAsync(request).get();
       Assert.fail("No exception raised");
