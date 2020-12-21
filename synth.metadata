@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
-        "sha": "d5edca3dfa256fabcb10d86bb46ed7ca61ff0872"
+        "sha": "a0f57c16dbc5ba1d8aced9f1ca16b3d7af205deb"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e4d01555afeb93d2f3b467056ea884b092567d1b",
-        "internalRef": "346434847"
+        "sha": "fb36278c9343b7933fed2f19de153797ac27d8f2",
+        "internalRef": "348481983"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e4d01555afeb93d2f3b467056ea884b092567d1b",
-        "internalRef": "346434847"
+        "sha": "fb36278c9343b7933fed2f19de153797ac27d8f2",
+        "internalRef": "348481983"
       }
     },
     {
@@ -202,6 +202,8 @@
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/IntentsSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/PagesClient.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/PagesSettings.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsServiceClient.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsServiceSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityTypesClient.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityTypesSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionsClient.java",
@@ -233,6 +235,8 @@
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcIntentsStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcPagesCallableFactory.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcPagesStub.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcSecuritySettingsServiceCallableFactory.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcSecuritySettingsServiceStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcSessionEntityTypesCallableFactory.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcSessionEntityTypesStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/GrpcSessionsCallableFactory.java",
@@ -247,6 +251,8 @@
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/IntentsStubSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/PagesStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/PagesStubSettings.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/SecuritySettingsServiceStub.java",
+    "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/SecuritySettingsServiceStubSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/SessionEntityTypesStub.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/SessionEntityTypesStubSettings.java",
     "google-cloud-dialogflow-cx/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/stub/SessionsStub.java",
@@ -310,6 +316,8 @@
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockIntentsImpl.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockPages.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockPagesImpl.java",
+    "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockSecuritySettingsService.java",
+    "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockSecuritySettingsServiceImpl.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockSessionEntityTypes.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockSessionEntityTypesImpl.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockSessions.java",
@@ -321,6 +329,7 @@
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockWebhooks.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/MockWebhooksImpl.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/PagesClientTest.java",
+    "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsServiceClientTest.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityTypesClientTest.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/SessionsClientTest.java",
     "google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v3beta1/TransitionRouteGroupsClientTest.java",
@@ -344,6 +353,7 @@
     "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/FlowsGrpc.java",
     "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/IntentsGrpc.java",
     "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/PagesGrpc.java",
+    "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsServiceGrpc.java",
     "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityTypesGrpc.java",
     "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionsGrpc.java",
     "grpc-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/TransitionRouteGroupsGrpc.java",
@@ -659,6 +669,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreateIntentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreatePageRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreatePageRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreateSecuritySettingsRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreateSecuritySettingsRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreateSessionEntityTypeRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreateSessionEntityTypeRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/CreateTransitionRouteGroupRequest.java",
@@ -681,6 +693,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeleteIntentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeletePageRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeletePageRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeleteSecuritySettingsRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeleteSecuritySettingsRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeleteSessionEntityTypeRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeleteSessionEntityTypeRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/DeleteTransitionRouteGroupRequest.java",
@@ -736,6 +750,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetIntentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetPageRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetPageRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetSecuritySettingsRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetSecuritySettingsRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetSessionEntityTypeRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetSessionEntityTypeRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTransitionRouteGroupRequest.java",
@@ -777,6 +793,10 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListPagesRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListPagesResponse.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListPagesResponseOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSecuritySettingsRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSecuritySettingsRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSecuritySettingsResponse.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSecuritySettingsResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSessionEntityTypesRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSessionEntityTypesRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ListSessionEntityTypesResponse.java",
@@ -828,6 +848,10 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/ResponseMessageProto.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/RestoreAgentRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/RestoreAgentRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettings.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsName.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SecuritySettingsProto.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SentimentAnalysisResult.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SentimentAnalysisResultOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/SessionEntityType.java",
@@ -874,6 +898,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdateIntentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdatePageRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdatePageRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdateSecuritySettingsRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdateSecuritySettingsRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdateSessionEntityTypeRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdateSessionEntityTypeRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/UpdateTransitionRouteGroupRequest.java",
@@ -905,6 +931,7 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/intent.proto",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/page.proto",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/response_message.proto",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/security_settings.proto",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/session.proto",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/session_entity_type.proto",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/proto/google/cloud/dialogflow/cx/v3beta1/transition_route_group.proto",
