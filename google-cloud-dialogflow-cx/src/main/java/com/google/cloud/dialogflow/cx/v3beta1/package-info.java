@@ -56,6 +56,12 @@
  *
  * <p>Sample for PagesClient:
  *
+ * <p>======================= SecuritySettingsServiceClient =======================
+ *
+ * <p>Service Description: Service for managing security settings for Dialogflow.
+ *
+ * <p>Sample for SecuritySettingsServiceClient:
+ *
  * <p>======================= SessionsClient =======================
  *
  * <p>Service Description: A session represents an interaction with a user. You retrieve user input
