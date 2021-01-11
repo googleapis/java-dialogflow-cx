@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * ExperimentsSettings experimentsSettings = experimentsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ExperimentsSettings extends ClientSettings<ExperimentsSettings> {
 

@@ -91,7 +91,6 @@ import org.threeten.bp.Duration;
  * ExperimentsStubSettings experimentsSettings = experimentsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ExperimentsStubSettings extends StubSettings<ExperimentsStubSettings> {
   /** The default scopes of the service. */
