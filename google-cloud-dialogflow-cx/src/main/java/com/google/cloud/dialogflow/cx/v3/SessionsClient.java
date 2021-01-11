@@ -139,6 +139,9 @@ public class SessionsClient implements BackgroundResource {
    * method is not idempotent, because it may cause session entity types to be updated, which in
    * turn might affect results of future queries.
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -152,6 +155,9 @@ public class SessionsClient implements BackgroundResource {
    * method is not idempotent, because it may cause session entity types to be updated, which in
    * turn might affect results of future queries.
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
+   *
    * <p>Sample code:
    */
   public final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
@@ -163,6 +169,9 @@ public class SessionsClient implements BackgroundResource {
    * Processes a natural language query in audio format in a streaming fashion and returns
    * structured, actionable data as a result. This method is only available via the gRPC API (not
    * REST).
+   *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    *
    * <p>Sample code:
    */
