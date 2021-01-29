@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.5.0...v0.6.0) (2021-01-29)
+
+
+### Features
+
+* add experiment and security settings API docs: update comments on parameters and agent ([#124](https://www.github.com/googleapis/java-dialogflow-cx/issues/124)) ([06ee69a](https://www.github.com/googleapis/java-dialogflow-cx/commit/06ee69ac49cdd2f0cc6316e7613d120434dfb65f))
+
 ## [0.5.0](https://www.github.com/googleapis/java-dialogflow-cx/compare/v0.4.1...v0.5.0) (2020-12-15)
 
 
