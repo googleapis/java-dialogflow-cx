@@ -210,6 +210,7 @@ public class IntentsClient implements BackgroundResource {
    *       ListIntentsRequest.newBuilder()
    *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();
@@ -238,6 +239,7 @@ public class IntentsClient implements BackgroundResource {
    *       ListIntentsRequest.newBuilder()
    *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
    *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .build();

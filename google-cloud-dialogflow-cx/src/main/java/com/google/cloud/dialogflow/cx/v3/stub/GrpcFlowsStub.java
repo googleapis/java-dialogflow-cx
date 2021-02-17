@@ -328,42 +328,52 @@ public class GrpcFlowsStub extends FlowsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateFlowRequest, Flow> createFlowCallable() {
     return createFlowCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteFlowRequest, Empty> deleteFlowCallable() {
     return deleteFlowCallable;
   }
 
+  @Override
   public UnaryCallable<ListFlowsRequest, ListFlowsResponse> listFlowsCallable() {
     return listFlowsCallable;
   }
 
+  @Override
   public UnaryCallable<ListFlowsRequest, ListFlowsPagedResponse> listFlowsPagedCallable() {
     return listFlowsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFlowRequest, Flow> getFlowCallable() {
     return getFlowCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateFlowRequest, Flow> updateFlowCallable() {
     return updateFlowCallable;
   }
 
+  @Override
   public UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable() {
     return trainFlowCallable;
   }
 
+  @Override
   public OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable() {
     return trainFlowOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateFlowRequest, FlowValidationResult> validateFlowCallable() {
     return validateFlowCallable;
   }
 
+  @Override
   public UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
       getFlowValidationResultCallable() {
     return getFlowValidationResultCallable;

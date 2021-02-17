@@ -479,78 +479,95 @@ public class GrpcTestCasesStub extends TestCasesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListTestCasesRequest, ListTestCasesResponse> listTestCasesCallable() {
     return listTestCasesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTestCasesRequest, ListTestCasesPagedResponse>
       listTestCasesPagedCallable() {
     return listTestCasesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<BatchDeleteTestCasesRequest, Empty> batchDeleteTestCasesCallable() {
     return batchDeleteTestCasesCallable;
   }
 
+  @Override
   public UnaryCallable<GetTestCaseRequest, TestCase> getTestCaseCallable() {
     return getTestCaseCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTestCaseRequest, TestCase> createTestCaseCallable() {
     return createTestCaseCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTestCaseRequest, TestCase> updateTestCaseCallable() {
     return updateTestCaseCallable;
   }
 
+  @Override
   public UnaryCallable<RunTestCaseRequest, Operation> runTestCaseCallable() {
     return runTestCaseCallable;
   }
 
+  @Override
   public OperationCallable<RunTestCaseRequest, RunTestCaseResponse, RunTestCaseMetadata>
       runTestCaseOperationCallable() {
     return runTestCaseOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchRunTestCasesRequest, Operation> batchRunTestCasesCallable() {
     return batchRunTestCasesCallable;
   }
 
+  @Override
   public OperationCallable<
           BatchRunTestCasesRequest, BatchRunTestCasesResponse, BatchRunTestCasesMetadata>
       batchRunTestCasesOperationCallable() {
     return batchRunTestCasesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CalculateCoverageRequest, CalculateCoverageResponse>
       calculateCoverageCallable() {
     return calculateCoverageCallable;
   }
 
+  @Override
   public UnaryCallable<ImportTestCasesRequest, Operation> importTestCasesCallable() {
     return importTestCasesCallable;
   }
 
+  @Override
   public OperationCallable<ImportTestCasesRequest, ImportTestCasesResponse, ImportTestCasesMetadata>
       importTestCasesOperationCallable() {
     return importTestCasesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportTestCasesRequest, Operation> exportTestCasesCallable() {
     return exportTestCasesCallable;
   }
 
+  @Override
   public OperationCallable<ExportTestCasesRequest, ExportTestCasesResponse, ExportTestCasesMetadata>
       exportTestCasesOperationCallable() {
     return exportTestCasesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
       listTestCaseResultsCallable() {
     return listTestCaseResultsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTestCaseResultsRequest, ListTestCaseResultsPagedResponse>
       listTestCaseResultsPagedCallable() {
     return listTestCaseResultsPagedCallable;

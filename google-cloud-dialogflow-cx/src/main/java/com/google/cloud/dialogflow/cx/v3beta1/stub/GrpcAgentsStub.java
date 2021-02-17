@@ -368,51 +368,63 @@ public class GrpcAgentsStub extends AgentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable() {
     return listAgentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAgentsRequest, ListAgentsPagedResponse> listAgentsPagedCallable() {
     return listAgentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetAgentRequest, Agent> getAgentCallable() {
     return getAgentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateAgentRequest, Agent> createAgentCallable() {
     return createAgentCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAgentRequest, Agent> updateAgentCallable() {
     return updateAgentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAgentRequest, Empty> deleteAgentCallable() {
     return deleteAgentCallable;
   }
 
+  @Override
   public UnaryCallable<ExportAgentRequest, Operation> exportAgentCallable() {
     return exportAgentCallable;
   }
 
+  @Override
   public OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationCallable() {
     return exportAgentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return restoreAgentCallable;
   }
 
+  @Override
   public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
     return restoreAgentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable() {
     return validateAgentCallable;
   }
 
+  @Override
   public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable() {
     return getAgentValidationResultCallable;
