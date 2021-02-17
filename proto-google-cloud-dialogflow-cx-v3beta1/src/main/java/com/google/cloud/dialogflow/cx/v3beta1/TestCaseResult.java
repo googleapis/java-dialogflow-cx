@@ -220,13 +220,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Environment where the test was run. If not set, it indicates the draft
+   * Environment where the test was run. If not set, it indicates the draft
    * environment.
    * </pre>
    *
-   * <code>
-   * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The environment.
    */
@@ -246,13 +244,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Environment where the test was run. If not set, it indicates the draft
+   * Environment where the test was run. If not set, it indicates the draft
    * environment.
    * </pre>
    *
-   * <code>
-   * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for environment.
    */
@@ -993,13 +989,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>
-     * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The environment.
      */
@@ -1018,13 +1012,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>
-     * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for environment.
      */
@@ -1043,13 +1035,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>
-     * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The environment to set.
      * @return This builder for chaining.
@@ -1067,13 +1057,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>
-     * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1087,13 +1075,11 @@ public final class TestCaseResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Environment where the test was run. If not set, it indicates the draft
+     * Environment where the test was run. If not set, it indicates the draft
      * environment.
      * </pre>
      *
-     * <code>
-     * string environment = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string environment = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for environment to set.
      * @return This builder for chaining.
