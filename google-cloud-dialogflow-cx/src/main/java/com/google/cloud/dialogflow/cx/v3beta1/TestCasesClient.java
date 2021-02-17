@@ -379,9 +379,10 @@ public class TestCasesClient implements BackgroundResource {
    * Updates the specified test case.
    *
    * @param testCase Required. The test case to update.
-   * @param updateMask Required. The mask to specify which fields should be updated. Only a test
-   *     case's metadata and replayed_conversation_turns may be updated. The original
-   *     test_case_conversation_turns may not be updated.
+   * @param updateMask Required. The mask to specify which fields should be updated. The
+   *     [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+   *     [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be
+   *     updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestCase updateTestCase(TestCase testCase, FieldMask updateMask) {

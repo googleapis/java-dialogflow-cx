@@ -193,9 +193,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The mask to specify which fields should be updated. Only a test case's
-   * metadata and replayed_conversation_turns may be updated. The original
-   * test_case_conversation_turns may not be updated.
+   * Required. The mask to specify which fields should be updated. The
+   * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -211,9 +211,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The mask to specify which fields should be updated. Only a test case's
-   * metadata and replayed_conversation_turns may be updated. The original
-   * test_case_conversation_turns may not be updated.
+   * Required. The mask to specify which fields should be updated. The
+   * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -229,9 +229,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The mask to specify which fields should be updated. Only a test case's
-   * metadata and replayed_conversation_turns may be updated. The original
-   * test_case_conversation_turns may not be updated.
+   * Required. The mask to specify which fields should be updated. The
+   * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+   * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -817,9 +817,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -834,9 +834,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -857,9 +857,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -882,9 +882,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -904,9 +904,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -931,9 +931,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -954,9 +954,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -971,9 +971,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -992,9 +992,9 @@ public final class UpdateTestCaseRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The mask to specify which fields should be updated. Only a test case's
-     * metadata and replayed_conversation_turns may be updated. The original
-     * test_case_conversation_turns may not be updated.
+     * Required. The mask to specify which fields should be updated. The
+     * [`creationTime`][google.cloud.dialogflow.cx.v3beta1.TestCase.creation_time] and
+     * [`lastTestResult`][google.cloud.dialogflow.cx.v3beta1.TestCase.last_test_result] cannot be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
