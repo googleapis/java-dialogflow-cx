@@ -26,8 +26,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Service for managing
- * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+ * Service for managing [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
  * </pre>
  */
 @javax.annotation.Generated(
@@ -409,8 +408,7 @@ public final class ExperimentsGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   * Service for managing [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
    * </pre>
    */
   public abstract static class ExperimentsImplBase implements io.grpc.BindableService {
@@ -419,8 +417,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all experiments in the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Returns the list of all experiments in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void listExperiments(
@@ -434,8 +431,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public void getExperiment(
@@ -449,9 +445,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in
-     * the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void createExperiment(
@@ -465,8 +459,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public void updateExperiment(
@@ -480,8 +473,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public void deleteExperiment(
@@ -494,9 +486,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Starts the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from PENDING to RUNNING.
+     * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from PENDING to RUNNING.
      * </pre>
      */
     public void startExperiment(
@@ -510,9 +501,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Stops the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from RUNNING to DONE.
+     * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from RUNNING to DONE.
      * </pre>
      */
     public void stopExperiment(
@@ -581,8 +571,7 @@ public final class ExperimentsGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   * Service for managing [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
    * </pre>
    */
   public static final class ExperimentsStub
@@ -600,8 +589,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all experiments in the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Returns the list of all experiments in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void listExperiments(
@@ -618,8 +606,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public void getExperiment(
@@ -636,9 +623,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in
-     * the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public void createExperiment(
@@ -655,8 +640,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public void updateExperiment(
@@ -673,8 +657,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public void deleteExperiment(
@@ -690,9 +673,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Starts the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from PENDING to RUNNING.
+     * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from PENDING to RUNNING.
      * </pre>
      */
     public void startExperiment(
@@ -709,9 +691,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Stops the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from RUNNING to DONE.
+     * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from RUNNING to DONE.
      * </pre>
      */
     public void stopExperiment(
@@ -729,8 +710,7 @@ public final class ExperimentsGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   * Service for managing [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
    * </pre>
    */
   public static final class ExperimentsBlockingStub
@@ -749,8 +729,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all experiments in the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Returns the list of all experiments in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.ListExperimentsResponse listExperiments(
@@ -762,8 +741,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Experiment getExperiment(
@@ -775,9 +753,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in
-     * the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Experiment createExperiment(
@@ -790,8 +766,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Experiment updateExperiment(
@@ -804,8 +779,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public com.google.protobuf.Empty deleteExperiment(
@@ -818,9 +792,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Starts the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from PENDING to RUNNING.
+     * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from PENDING to RUNNING.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Experiment startExperiment(
@@ -832,9 +805,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Stops the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from RUNNING to DONE.
+     * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from RUNNING to DONE.
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Experiment stopExperiment(
@@ -847,8 +819,7 @@ public final class ExperimentsGrpc {
    *
    *
    * <pre>
-   * Service for managing
-   * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   * Service for managing [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
    * </pre>
    */
   public static final class ExperimentsFutureStub
@@ -867,8 +838,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Returns the list of all experiments in the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Returns the list of all experiments in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -882,8 +852,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Retrieves the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -897,9 +866,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in
-     * the specified
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -913,8 +880,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Updates the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -928,8 +894,7 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Deletes the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -942,9 +907,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Starts the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from PENDING to RUNNING.
+     * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from PENDING to RUNNING.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -958,9 +922,8 @@ public final class ExperimentsGrpc {
      *
      *
      * <pre>
-     * Stops the specified
-     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
-     * changes the state of experiment from RUNNING to DONE.
+     * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only changes the state of
+     * experiment from RUNNING to DONE.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

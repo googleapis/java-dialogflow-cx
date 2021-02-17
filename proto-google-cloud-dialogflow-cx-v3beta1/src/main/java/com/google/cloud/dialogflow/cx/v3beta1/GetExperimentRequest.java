@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.GetExperiment].
+ * The request message for [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.GetExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetExperimentRequest}
@@ -118,9 +117,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
    *
@@ -146,9 +144,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
    *
@@ -335,8 +332,7 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for
-   * [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.GetExperiment].
+   * The request message for [Experiments.GetExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.GetExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.GetExperimentRequest}
@@ -496,9 +492,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
      *
@@ -523,9 +518,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
      *
@@ -550,9 +544,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
      *
@@ -576,9 +569,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
      *
@@ -598,9 +590,8 @@ public final class GetExperimentRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-     * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
      *

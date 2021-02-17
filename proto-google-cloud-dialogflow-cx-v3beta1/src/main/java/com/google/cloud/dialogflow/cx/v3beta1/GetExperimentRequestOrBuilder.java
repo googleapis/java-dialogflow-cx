@@ -27,9 +27,8 @@ public interface GetExperimentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
    *
@@ -44,9 +43,8 @@ public interface GetExperimentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
-   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
    *

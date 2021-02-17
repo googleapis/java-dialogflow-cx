@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
+ * The request message for [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteExperimentRequest}
@@ -118,8 +117,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
@@ -146,8 +144,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the
-   * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+   * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
    * </pre>
@@ -335,8 +332,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for
-   * [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
+   * The request message for [Experiments.DeleteExperiment][google.cloud.dialogflow.cx.v3beta1.Experiments.DeleteExperiment].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.DeleteExperimentRequest}
@@ -499,8 +495,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -526,8 +521,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -553,8 +547,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -579,8 +572,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>
@@ -601,8 +593,7 @@ public final class DeleteExperimentRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the
-     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
+     * Required. The name of the [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
      * ID&gt;/environments/&lt;Environment ID&gt;/experiments/&lt;Experiment ID&gt;`.
      * </pre>

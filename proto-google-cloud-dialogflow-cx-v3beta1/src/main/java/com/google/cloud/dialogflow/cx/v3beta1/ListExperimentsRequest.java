@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
+ * The request message for [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListExperimentsRequest}
@@ -131,10 +130,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-   * to list all environments for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>
@@ -159,10 +157,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-   * to list all environments for. Format: `projects/&lt;Project
-   * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-   * ID&gt;`.
+   * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/environments/&lt;Environment ID&gt;`.
    * </pre>
    *
    * <code>
@@ -434,8 +431,7 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The request message for
-   * [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
+   * The request message for [Experiments.ListExperiments][google.cloud.dialogflow.cx.v3beta1.Experiments.ListExperiments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListExperimentsRequest}
@@ -611,10 +607,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -638,10 +633,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -665,10 +659,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -691,10 +684,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
@@ -713,10 +705,9 @@ public final class ListExperimentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]
-     * to list all environments for. Format: `projects/&lt;Project
-     * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
-     * ID&gt;`.
+     * Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to list all environments for.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/environments/&lt;Environment ID&gt;`.
      * </pre>
      *
      * <code>
