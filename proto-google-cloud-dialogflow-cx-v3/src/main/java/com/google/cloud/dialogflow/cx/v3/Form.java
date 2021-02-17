@@ -308,9 +308,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the parameter content should be redacted in text and
-     * audio. If the flag is set to true, the parameter content will be replaced
-     * by parameter name in both request and response.
+     * Indicates whether the parameter content should be redacted in log.  If
+     * redaction is enabled, the parameter content will be replaced by parameter
+     * name during logging.
      * Note: the parameter content is subject to redaction if either parameter
      * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3.EntityType.redact] is
      * enabled.
@@ -2885,9 +2885,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the parameter content should be redacted in text and
-     * audio. If the flag is set to true, the parameter content will be replaced
-     * by parameter name in both request and response.
+     * Indicates whether the parameter content should be redacted in log.  If
+     * redaction is enabled, the parameter content will be replaced by parameter
+     * name during logging.
      * Note: the parameter content is subject to redaction if either parameter
      * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3.EntityType.redact] is
      * enabled.
@@ -4109,9 +4109,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether the parameter content should be redacted in text and
-       * audio. If the flag is set to true, the parameter content will be replaced
-       * by parameter name in both request and response.
+       * Indicates whether the parameter content should be redacted in log.  If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
        * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3.EntityType.redact] is
        * enabled.
@@ -4129,9 +4129,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether the parameter content should be redacted in text and
-       * audio. If the flag is set to true, the parameter content will be replaced
-       * by parameter name in both request and response.
+       * Indicates whether the parameter content should be redacted in log.  If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
        * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3.EntityType.redact] is
        * enabled.
@@ -4152,9 +4152,9 @@ public final class Form extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether the parameter content should be redacted in text and
-       * audio. If the flag is set to true, the parameter content will be replaced
-       * by parameter name in both request and response.
+       * Indicates whether the parameter content should be redacted in log.  If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
        * Note: the parameter content is subject to redaction if either parameter
        * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3.EntityType.redact] is
        * enabled.
