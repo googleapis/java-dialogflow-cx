@@ -37,13 +37,6 @@
  *
  * <p>Sample for EnvironmentsClient:
  *
- * <p>======================= ExperimentsClient =======================
- *
- * <p>Service Description: Service for managing
- * [Experiments][google.cloud.dialogflow.cx.v3.Experiment].
- *
- * <p>Sample for ExperimentsClient:
- *
  * <p>======================= FlowsClient =======================
  *
  * <p>Service Description: Service for managing [Flows][google.cloud.dialogflow.cx.v3.Flow].
@@ -82,6 +75,13 @@
  * [SessionEntityTypes][google.cloud.dialogflow.cx.v3.SessionEntityType].
  *
  * <p>Sample for SessionEntityTypesClient:
+ *
+ * <p>======================= TestCasesClient =======================
+ *
+ * <p>Service Description: Service for managing [Test Cases][google.cloud.dialogflow.cx.v3.TestCase]
+ * and [Test Case Results][google.cloud.dialogflow.cx.v3.TestCaseResult].
+ *
+ * <p>Sample for TestCasesClient:
  *
  * <p>======================= TransitionRouteGroupsClient =======================
  *

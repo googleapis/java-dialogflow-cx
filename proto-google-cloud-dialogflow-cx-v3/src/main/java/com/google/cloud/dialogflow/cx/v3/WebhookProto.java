@@ -246,11 +246,14 @@ public final class WebhookProto {
           + "*/webhooks/*}\332A\004name\032x\312A\031dialogflow.goog"
           + "leapis.com\322AYhttps://www.googleapis.com/"
           + "auth/cloud-platform,https://www.googleap"
-          + "is.com/auth/dialogflowB\234\001\n!com.google.cl"
+          + "is.com/auth/dialogflowB\233\002\n!com.google.cl"
           + "oud.dialogflow.cx.v3B\014WebhookProtoP\001Z?go"
           + "ogle.golang.org/genproto/googleapis/clou"
           + "d/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.C"
-          + "loud.Dialogflow.Cx.V3b\006proto3"
+          + "loud.Dialogflow.Cx.V3\352A|\n\'servicedirecto"
+          + "ry.googleapis.com/Service\022Qprojects/{pro"
+          + "ject}/locations/{location}/namespaces/{n"
+          + "amespace}/services/{service}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -470,6 +473,7 @@ public final class WebhookProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
