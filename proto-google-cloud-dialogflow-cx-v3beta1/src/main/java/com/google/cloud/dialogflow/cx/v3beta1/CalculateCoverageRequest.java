@@ -153,12 +153,22 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Page transition coverage
+     * Page transition coverage.
      * </pre>
      *
      * <code>PAGE_TRANSITION = 2;</code>
      */
     PAGE_TRANSITION(2),
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>TRANSITION_ROUTE_GROUP = 3;</code>
+     */
+    TRANSITION_ROUTE_GROUP(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -186,12 +196,22 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Page transition coverage
+     * Page transition coverage.
      * </pre>
      *
      * <code>PAGE_TRANSITION = 2;</code>
      */
     public static final int PAGE_TRANSITION_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>TRANSITION_ROUTE_GROUP = 3;</code>
+     */
+    public static final int TRANSITION_ROUTE_GROUP_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -223,6 +243,8 @@ public final class CalculateCoverageRequest extends com.google.protobuf.Generate
           return INTENT;
         case 2:
           return PAGE_TRANSITION;
+        case 3:
+          return TRANSITION_ROUTE_GROUP;
         default:
           return null;
       }

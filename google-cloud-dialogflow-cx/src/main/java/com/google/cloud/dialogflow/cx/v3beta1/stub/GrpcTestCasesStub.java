@@ -319,6 +319,15 @@ public class GrpcTestCasesStub extends TestCasesStub {
     GrpcCallSettings<RunTestCaseRequest, Operation> runTestCaseTransportSettings =
         GrpcCallSettings.<RunTestCaseRequest, Operation>newBuilder()
             .setMethodDescriptor(runTestCaseMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RunTestCaseRequest>() {
+                  @Override
+                  public Map<String, String> extract(RunTestCaseRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<BatchRunTestCasesRequest, Operation> batchRunTestCasesTransportSettings =
         GrpcCallSettings.<BatchRunTestCasesRequest, Operation>newBuilder()

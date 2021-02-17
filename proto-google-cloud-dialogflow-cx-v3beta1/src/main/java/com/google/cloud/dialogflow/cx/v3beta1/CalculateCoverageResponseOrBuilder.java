@@ -89,7 +89,7 @@ public interface CalculateCoverageResponseOrBuilder
    *
    *
    * <pre>
-   * Transition coverage.
+   * Transition (excluding transition route groups) coverage.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage transition_coverage = 4;</code>
@@ -101,7 +101,7 @@ public interface CalculateCoverageResponseOrBuilder
    *
    *
    * <pre>
-   * Transition coverage.
+   * Transition (excluding transition route groups) coverage.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage transition_coverage = 4;</code>
@@ -113,13 +113,55 @@ public interface CalculateCoverageResponseOrBuilder
    *
    *
    * <pre>
-   * Transition coverage.
+   * Transition (excluding transition route groups) coverage.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3beta1.TransitionCoverage transition_coverage = 4;</code>
    */
   com.google.cloud.dialogflow.cx.v3beta1.TransitionCoverageOrBuilder
       getTransitionCoverageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Transition route group coverage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverage route_group_coverage = 6;
+   * </code>
+   *
+   * @return Whether the routeGroupCoverage field is set.
+   */
+  boolean hasRouteGroupCoverage();
+  /**
+   *
+   *
+   * <pre>
+   * Transition route group coverage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverage route_group_coverage = 6;
+   * </code>
+   *
+   * @return The routeGroupCoverage.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverage getRouteGroupCoverage();
+  /**
+   *
+   *
+   * <pre>
+   * Transition route group coverage.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverage route_group_coverage = 6;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupCoverageOrBuilder
+      getRouteGroupCoverageOrBuilder();
 
   public com.google.cloud.dialogflow.cx.v3beta1.CalculateCoverageResponse.CoverageTypeCase
       getCoverageTypeCase();

@@ -68,6 +68,18 @@ public final class TestCaseProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionCoverage_Transition_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_Transition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_Transition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_IntentCoverage_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_IntentCoverage_fieldAccessorTable;
@@ -191,243 +203,260 @@ public final class TestCaseProto {
           + "flow/cx/v3beta1/page.proto\0329google/cloud"
           + "/dialogflow/cx/v3beta1/response_message."
           + "proto\0320google/cloud/dialogflow/cx/v3beta"
-          + "1/session.proto\032#google/longrunning/oper"
-          + "ations.proto\032\033google/protobuf/empty.prot"
-          + "o\032 google/protobuf/field_mask.proto\032\034goo"
-          + "gle/protobuf/struct.proto\032\037google/protob"
-          + "uf/timestamp.proto\032\027google/rpc/status.pr"
-          + "oto\"\356\003\n\010TestCase\022\014\n\004name\030\001 \001(\t\022\014\n\004tags\030\002"
-          + " \003(\t\022\031\n\014display_name\030\003 \001(\tB\003\340A\002\022\r\n\005notes"
-          + "\030\004 \001(\t\022C\n\013test_config\030\r \001(\0132..google.clo"
-          + "ud.dialogflow.cx.v3beta1.TestConfig\022Z\n\034t"
-          + "est_case_conversation_turns\030\005 \003(\01324.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.Conversat"
-          + "ionTurn\0226\n\rcreation_time\030\n \001(\0132\032.google."
-          + "protobuf.TimestampB\003\340A\003\022L\n\020last_test_res"
-          + "ult\030\014 \001(\01322.google.cloud.dialogflow.cx.v"
-          + "3beta1.TestCaseResult:u\352Ar\n\"dialogflow.g"
-          + "oogleapis.com/TestCase\022Lprojects/{projec"
-          + "t}/locations/{location}/agents/{agent}/t"
-          + "estCases/{test_case}\"\265\003\n\016TestCaseResult\022"
-          + "\014\n\004name\030\001 \001(\t\022?\n\013environment\030\002 \001(\tB*\372A\'\n"
-          + "%dialogflow.googleapis.com/Environment\022P"
-          + "\n\022conversation_turns\030\003 \003(\01324.google.clou"
-          + "d.dialogflow.cx.v3beta1.ConversationTurn"
-          + "\022C\n\013test_result\030\004 \001(\0162..google.cloud.dia"
-          + "logflow.cx.v3beta1.TestResult\022-\n\ttest_ti"
-          + "me\030\005 \001(\0132\032.google.protobuf.Timestamp:\215\001\352"
-          + "A\211\001\n(dialogflow.googleapis.com/TestCaseR"
-          + "esult\022]projects/{project}/locations/{loc"
-          + "ation}/agents/{agent}/testCases/{test_ca"
-          + "se}/results/{result}\"\\\n\nTestConfig\022\033\n\023tr"
-          + "acking_parameters\030\001 \003(\t\0221\n\004flow\030\002 \001(\tB#\372"
-          + "A \n\036dialogflow.googleapis.com/Flow\"\277\006\n\020C"
-          + "onversationTurn\022R\n\nuser_input\030\001 \001(\0132>.go"
-          + "ogle.cloud.dialogflow.cx.v3beta1.Convers"
-          + "ationTurn.UserInput\022e\n\024virtual_agent_out"
-          + "put\030\002 \001(\0132G.google.cloud.dialogflow.cx.v"
-          + "3beta1.ConversationTurn.VirtualAgentOutp"
-          + "ut\032\234\001\n\tUserInput\022=\n\005input\030\005 \001(\0132..google"
-          + ".cloud.dialogflow.cx.v3beta1.QueryInput\022"
-          + "4\n\023injected_parameters\030\002 \001(\0132\027.google.pr"
-          + "otobuf.Struct\022\032\n\022is_webhook_enabled\030\003 \001("
-          + "\010\032\320\003\n\022VirtualAgentOutput\0223\n\022session_para"
-          + "meters\030\004 \001(\0132\027.google.protobuf.Struct\022O\n"
-          + "\013differences\030\005 \003(\01325.google.cloud.dialog"
-          + "flow.cx.v3beta1.TestRunDifferenceB\003\340A\003\0228"
-          + "\n\017diagnostic_info\030\006 \001(\0132\027.google.protobu"
-          + "f.StructB\006\340A\002\340A\004\022D\n\020triggered_intent\030\007 \001"
-          + "(\0132*.google.cloud.dialogflow.cx.v3beta1."
-          + "Intent\022>\n\014current_page\030\010 \001(\0132(.google.cl"
-          + "oud.dialogflow.cx.v3beta1.Page\022P\n\016text_r"
-          + "esponses\030\t \003(\01328.google.cloud.dialogflow"
-          + ".cx.v3beta1.ResponseMessage.Text\022\"\n\006stat"
-          + "us\030\n \001(\0132\022.google.rpc.Status\"\322\001\n\021TestRun"
-          + "Difference\022L\n\004type\030\001 \001(\0162>.google.cloud."
-          + "dialogflow.cx.v3beta1.TestRunDifference."
-          + "DiffType\022\023\n\013description\030\002 \001(\t\"Z\n\010DiffTyp"
-          + "e\022\031\n\025DIFF_TYPE_UNSPECIFIED\020\000\022\n\n\006INTENT\020\001"
-          + "\022\010\n\004PAGE\020\002\022\016\n\nPARAMETERS\020\003\022\r\n\tUTTERANCE\020"
-          + "\004\"\226\005\n\022TransitionCoverage\022V\n\013transitions\030"
-          + "\001 \003(\0132A.google.cloud.dialogflow.cx.v3bet"
-          + "a1.TransitionCoverage.Transition\022\026\n\016cove"
-          + "rage_score\030\002 \001(\002\032\214\001\n\016TransitionNode\0228\n\004p"
-          + "age\030\001 \001(\0132(.google.cloud.dialogflow.cx.v"
-          + "3beta1.PageH\000\0228\n\004flow\030\002 \001(\0132(.google.clo"
-          + "ud.dialogflow.cx.v3beta1.FlowH\000B\006\n\004kind\032"
-          + "\200\003\n\nTransition\022U\n\006source\030\001 \001(\0132E.google."
-          + "cloud.dialogflow.cx.v3beta1.TransitionCo"
-          + "verage.TransitionNode\022\r\n\005index\030\004 \001(\005\022U\n\006"
-          + "target\030\002 \001(\0132E.google.cloud.dialogflow.c"
-          + "x.v3beta1.TransitionCoverage.TransitionN"
-          + "ode\022\017\n\007covered\030\003 \001(\010\022O\n\020transition_route"
-          + "\030\005 \001(\01323.google.cloud.dialogflow.cx.v3be"
-          + "ta1.TransitionRouteH\000\022I\n\revent_handler\030\006"
-          + " \001(\01320.google.cloud.dialogflow.cx.v3beta"
-          + "1.EventHandlerH\000B\010\n\006detail\"\306\001\n\016IntentCov"
-          + "erage\022J\n\007intents\030\001 \003(\01329.google.cloud.di"
-          + "alogflow.cx.v3beta1.IntentCoverage.Inten"
-          + "t\022\026\n\016coverage_score\030\002 \001(\002\032P\n\006Intent\0225\n\006i"
-          + "ntent\030\001 \001(\tB%\372A\"\n dialogflow.googleapis."
-          + "com/Intent\022\017\n\007covered\030\002 \001(\010\"\200\002\n\030Calculat"
-          + "eCoverageRequest\0226\n\005agent\030\003 \001(\tB\'\340A\002\372A!\n"
-          + "\037dialogflow.googleapis.com/Agent\022\\\n\004type"
-          + "\030\002 \001(\0162I.google.cloud.dialogflow.cx.v3be"
-          + "ta1.CalculateCoverageRequest.CoverageTyp"
-          + "eB\003\340A\002\"N\n\014CoverageType\022\035\n\031COVERAGE_TYPE_"
-          + "UNSPECIFIED\020\000\022\n\n\006INTENT\020\001\022\023\n\017PAGE_TRANSI"
-          + "TION\020\002\"\207\002\n\031CalculateCoverageResponse\0223\n\005"
-          + "agent\030\005 \001(\tB$\372A!\n\037dialogflow.googleapis."
-          + "com/Agent\022M\n\017intent_coverage\030\002 \001(\01322.goo"
-          + "gle.cloud.dialogflow.cx.v3beta1.IntentCo"
-          + "verageH\000\022U\n\023transition_coverage\030\004 \001(\01326."
-          + "google.cloud.dialogflow.cx.v3beta1.Trans"
-          + "itionCoverageH\000B\017\n\rcoverage_type\"\223\002\n\024Lis"
-          + "tTestCasesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A"
-          + "$\022\"dialogflow.googleapis.com/TestCase\022\021\n"
-          + "\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022S\n\004"
-          + "view\030\004 \001(\0162E.google.cloud.dialogflow.cx."
-          + "v3beta1.ListTestCasesRequest.TestCaseVie"
-          + "w\"C\n\014TestCaseView\022\036\n\032TEST_CASE_VIEW_UNSP"
-          + "ECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002\"r\n\025ListTe"
-          + "stCasesResponse\022@\n\ntest_cases\030\001 \003(\0132,.go"
-          + "ogle.cloud.dialogflow.cx.v3beta1.TestCas"
-          + "e\022\027\n\017next_page_token\030\002 \001(\t\"\224\001\n\033BatchDele"
-          + "teTestCasesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372"
-          + "A$\022\"dialogflow.googleapis.com/TestCase\0229"
-          + "\n\005names\030\003 \003(\tB*\340A\002\372A$\n\"dialogflow.google"
-          + "apis.com/TestCase\"\231\001\n\025CreateTestCaseRequ"
-          + "est\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"dialogflow."
-          + "googleapis.com/TestCase\022D\n\ttest_case\030\002 \001"
-          + "(\0132,.google.cloud.dialogflow.cx.v3beta1."
-          + "TestCaseB\003\340A\002\"\223\001\n\025UpdateTestCaseRequest\022"
-          + "D\n\ttest_case\030\001 \001(\0132,.google.cloud.dialog"
-          + "flow.cx.v3beta1.TestCaseB\003\340A\002\0224\n\013update_"
-          + "mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003"
-          + "\340A\002\"N\n\022GetTestCaseRequest\0228\n\004name\030\001 \001(\tB"
-          + "*\340A\002\372A$\n\"dialogflow.googleapis.com/TestC"
-          + "ase\"\222\001\n\022RunTestCaseRequest\0228\n\004name\030\001 \001(\t"
-          + "B*\340A\002\372A$\n\"dialogflow.googleapis.com/Test"
-          + "Case\022B\n\013environment\030\002 \001(\tB-\340A\001\372A\'\n%dialo"
-          + "gflow.googleapis.com/Environment\"Y\n\023RunT"
-          + "estCaseResponse\022B\n\006result\030\002 \001(\01322.google"
-          + ".cloud.dialogflow.cx.v3beta1.TestCaseRes"
-          + "ult\"\025\n\023RunTestCaseMetadata\"\332\001\n\030BatchRunT"
-          + "estCasesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022"
-          + "\"dialogflow.googleapis.com/TestCase\022B\n\013e"
-          + "nvironment\030\002 \001(\tB-\340A\001\372A\'\n%dialogflow.goo"
-          + "gleapis.com/Environment\022>\n\ntest_cases\030\003 "
-          + "\003(\tB*\340A\002\372A$\n\"dialogflow.googleapis.com/T"
-          + "estCase\"`\n\031BatchRunTestCasesResponse\022C\n\007"
-          + "results\030\001 \003(\01322.google.cloud.dialogflow."
-          + "cx.v3beta1.TestCaseResult\"Z\n\031BatchRunTes"
-          + "tCasesMetadata\022=\n\006errors\030\001 \003(\0132-.google."
-          + "cloud.dialogflow.cx.v3beta1.TestError\"\232\001"
-          + "\n\tTestError\022:\n\ttest_case\030\001 \001(\tB\'\372A$\n\"dia"
-          + "logflow.googleapis.com/TestCase\022\"\n\006statu"
-          + "s\030\002 \001(\0132\022.google.rpc.Status\022-\n\ttest_time"
-          + "\030\003 \001(\0132\032.google.protobuf.Timestamp\"\204\001\n\026I"
-          + "mportTestCasesRequest\022:\n\006parent\030\001 \001(\tB*\340"
-          + "A\002\372A$\022\"dialogflow.googleapis.com/TestCas"
-          + "e\022\021\n\007gcs_uri\030\002 \001(\tH\000\022\021\n\007content\030\003 \001(\014H\000B"
-          + "\010\n\006source\"Q\n\027ImportTestCasesResponse\0226\n\005"
-          + "names\030\001 \003(\tB\'\372A$\n\"dialogflow.googleapis."
-          + "com/TestCase\"\\\n\027ImportTestCasesMetadata\022"
-          + "A\n\006errors\030\001 \003(\01321.google.cloud.dialogflo"
-          + "w.cx.v3beta1.TestCaseError\"t\n\rTestCaseEr"
-          + "ror\022?\n\ttest_case\030\001 \001(\0132,.google.cloud.di"
-          + "alogflow.cx.v3beta1.TestCase\022\"\n\006status\030\002"
-          + " \001(\0132\022.google.rpc.Status\"\241\002\n\026ExportTestC"
-          + "asesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"dia"
-          + "logflow.googleapis.com/TestCase\022\021\n\007gcs_u"
-          + "ri\030\002 \001(\tH\000\022Z\n\013data_format\030\003 \001(\0162E.google"
-          + ".cloud.dialogflow.cx.v3beta1.ExportTestC"
-          + "asesRequest.DataFormat\022\016\n\006filter\030\004 \001(\t\"="
-          + "\n\nDataFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020"
-          + "\000\022\010\n\004BLOB\020\001\022\010\n\004JSON\020\002B\r\n\013destination\"N\n\027"
-          + "ExportTestCasesResponse\022\021\n\007gcs_uri\030\001 \001(\t"
-          + "H\000\022\021\n\007content\030\002 \001(\014H\000B\r\n\013destination\"\031\n\027"
-          + "ExportTestCasesMetadata\"\225\001\n\032ListTestCase"
-          + "ResultsRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\022("
-          + "dialogflow.googleapis.com/TestCaseResult"
-          + "\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022"
-          + "\016\n\006filter\030\004 \001(\t\"\205\001\n\033ListTestCaseResultsR"
-          + "esponse\022M\n\021test_case_results\030\001 \003(\01322.goo"
+          + "1/session.proto\032?google/cloud/dialogflow"
+          + "/cx/v3beta1/transition_route_group.proto"
+          + "\032#google/longrunning/operations.proto\032\033g"
+          + "oogle/protobuf/empty.proto\032 google/proto"
+          + "buf/field_mask.proto\032\034google/protobuf/st"
+          + "ruct.proto\032\037google/protobuf/timestamp.pr"
+          + "oto\032\027google/rpc/status.proto\"\356\003\n\010TestCas"
+          + "e\022\014\n\004name\030\001 \001(\t\022\014\n\004tags\030\002 \003(\t\022\031\n\014display"
+          + "_name\030\003 \001(\tB\003\340A\002\022\r\n\005notes\030\004 \001(\t\022C\n\013test_"
+          + "config\030\r \001(\0132..google.cloud.dialogflow.c"
+          + "x.v3beta1.TestConfig\022Z\n\034test_case_conver"
+          + "sation_turns\030\005 \003(\01324.google.cloud.dialog"
+          + "flow.cx.v3beta1.ConversationTurn\0226\n\rcrea"
+          + "tion_time\030\n \001(\0132\032.google.protobuf.Timest"
+          + "ampB\003\340A\003\022L\n\020last_test_result\030\014 \001(\01322.goo"
           + "gle.cloud.dialogflow.cx.v3beta1.TestCase"
-          + "Result\022\027\n\017next_page_token\030\002 \001(\t*A\n\nTestR"
-          + "esult\022\033\n\027TEST_RESULT_UNSPECIFIED\020\000\022\n\n\006PA"
-          + "SSED\020\001\022\n\n\006FAILED\020\0022\317\024\n\tTestCases\022\322\001\n\rLis"
-          + "tTestCases\0228.google.cloud.dialogflow.cx."
-          + "v3beta1.ListTestCasesRequest\0329.google.cl"
-          + "oud.dialogflow.cx.v3beta1.ListTestCasesR"
-          + "esponse\"L\202\323\344\223\002=\022;/v3beta1/{parent=projec"
-          + "ts/*/locations/*/agents/*}/testCases\332A\006p"
-          + "arent\022\314\001\n\024BatchDeleteTestCases\022?.google."
-          + "cloud.dialogflow.cx.v3beta1.BatchDeleteT"
-          + "estCasesRequest\032\026.google.protobuf.Empty\""
-          + "[\202\323\344\223\002L\"G/v3beta1/{parent=projects/*/loc"
-          + "ations/*/agents/*}/testCases:batchDelete"
-          + ":\001*\332A\006parent\022\277\001\n\013GetTestCase\0226.google.cl"
-          + "oud.dialogflow.cx.v3beta1.GetTestCaseReq"
-          + "uest\032,.google.cloud.dialogflow.cx.v3beta"
-          + "1.TestCase\"J\202\323\344\223\002=\022;/v3beta1/{name=proje"
-          + "cts/*/locations/*/agents/*/testCases/*}\332"
-          + "A\004name\022\334\001\n\016CreateTestCase\0229.google.cloud"
-          + ".dialogflow.cx.v3beta1.CreateTestCaseReq"
-          + "uest\032,.google.cloud.dialogflow.cx.v3beta"
-          + "1.TestCase\"a\202\323\344\223\002H\";/v3beta1/{parent=pro"
-          + "jects/*/locations/*/agents/*}/testCases:"
-          + "\ttest_case\332A\020parent,test_case\022\353\001\n\016Update"
-          + "TestCase\0229.google.cloud.dialogflow.cx.v3"
-          + "beta1.UpdateTestCaseRequest\032,.google.clo"
-          + "ud.dialogflow.cx.v3beta1.TestCase\"p\202\323\344\223\002"
-          + "R2E/v3beta1/{test_case.name=projects/*/l"
-          + "ocations/*/agents/*/testCases/*}:\ttest_c"
-          + "ase\332A\025test_case,update_mask\022\324\001\n\013RunTestC"
-          + "ase\0226.google.cloud.dialogflow.cx.v3beta1"
-          + ".RunTestCaseRequest\032\035.google.longrunning"
-          + ".Operation\"n\202\323\344\223\002;\"6/v3beta1/projects/*/"
-          + "locations/*/agents/*/testCases:run:\001*\312A*"
-          + "\n\023RunTestCaseResponse\022\023RunTestCaseMetada"
-          + "ta\022\373\001\n\021BatchRunTestCases\022<.google.cloud."
-          + "dialogflow.cx.v3beta1.BatchRunTestCasesR"
-          + "equest\032\035.google.longrunning.Operation\"\210\001"
-          + "\202\323\344\223\002I\"D/v3beta1/{parent=projects/*/loca"
-          + "tions/*/agents/*}/testCases:batchRun:\001*\312"
-          + "A6\n\031BatchRunTestCasesResponse\022\031BatchRunT"
-          + "estCasesMetadata\022\346\001\n\021CalculateCoverage\022<"
-          + ".google.cloud.dialogflow.cx.v3beta1.Calc"
-          + "ulateCoverageRequest\032=.google.cloud.dial"
-          + "ogflow.cx.v3beta1.CalculateCoverageRespo"
-          + "nse\"T\202\323\344\223\002N\022L/v3beta1/{agent=projects/*/"
-          + "locations/*/agents/*}/testCases:calculat"
-          + "eCoverage\022\361\001\n\017ImportTestCases\022:.google.c"
-          + "loud.dialogflow.cx.v3beta1.ImportTestCas"
-          + "esRequest\032\035.google.longrunning.Operation"
-          + "\"\202\001\202\323\344\223\002G\"B/v3beta1/{parent=projects/*/l"
-          + "ocations/*/agents/*}/testCases:import:\001*"
-          + "\312A2\n\027ImportTestCasesResponse\022\027ImportTest"
-          + "CasesMetadata\022\361\001\n\017ExportTestCases\022:.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.ExportTes"
+          + "Result:u\352Ar\n\"dialogflow.googleapis.com/T"
+          + "estCase\022Lprojects/{project}/locations/{l"
+          + "ocation}/agents/{agent}/testCases/{test_"
+          + "case}\"\265\003\n\016TestCaseResult\022\014\n\004name\030\001 \001(\t\022?"
+          + "\n\013environment\030\002 \001(\tB*\372A\'\n%dialogflow.goo"
+          + "gleapis.com/Environment\022P\n\022conversation_"
+          + "turns\030\003 \003(\01324.google.cloud.dialogflow.cx"
+          + ".v3beta1.ConversationTurn\022C\n\013test_result"
+          + "\030\004 \001(\0162..google.cloud.dialogflow.cx.v3be"
+          + "ta1.TestResult\022-\n\ttest_time\030\005 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp:\215\001\352A\211\001\n(dialogflow"
+          + ".googleapis.com/TestCaseResult\022]projects"
+          + "/{project}/locations/{location}/agents/{"
+          + "agent}/testCases/{test_case}/results/{re"
+          + "sult}\"\\\n\nTestConfig\022\033\n\023tracking_paramete"
+          + "rs\030\001 \003(\t\0221\n\004flow\030\002 \001(\tB#\372A \n\036dialogflow."
+          + "googleapis.com/Flow\"\277\006\n\020ConversationTurn"
+          + "\022R\n\nuser_input\030\001 \001(\0132>.google.cloud.dial"
+          + "ogflow.cx.v3beta1.ConversationTurn.UserI"
+          + "nput\022e\n\024virtual_agent_output\030\002 \001(\0132G.goo"
+          + "gle.cloud.dialogflow.cx.v3beta1.Conversa"
+          + "tionTurn.VirtualAgentOutput\032\234\001\n\tUserInpu"
+          + "t\022=\n\005input\030\005 \001(\0132..google.cloud.dialogfl"
+          + "ow.cx.v3beta1.QueryInput\0224\n\023injected_par"
+          + "ameters\030\002 \001(\0132\027.google.protobuf.Struct\022\032"
+          + "\n\022is_webhook_enabled\030\003 \001(\010\032\320\003\n\022VirtualAg"
+          + "entOutput\0223\n\022session_parameters\030\004 \001(\0132\027."
+          + "google.protobuf.Struct\022O\n\013differences\030\005 "
+          + "\003(\01325.google.cloud.dialogflow.cx.v3beta1"
+          + ".TestRunDifferenceB\003\340A\003\0228\n\017diagnostic_in"
+          + "fo\030\006 \001(\0132\027.google.protobuf.StructB\006\340A\002\340A"
+          + "\004\022D\n\020triggered_intent\030\007 \001(\0132*.google.clo"
+          + "ud.dialogflow.cx.v3beta1.Intent\022>\n\014curre"
+          + "nt_page\030\010 \001(\0132(.google.cloud.dialogflow."
+          + "cx.v3beta1.Page\022P\n\016text_responses\030\t \003(\0132"
+          + "8.google.cloud.dialogflow.cx.v3beta1.Res"
+          + "ponseMessage.Text\022\"\n\006status\030\n \001(\0132\022.goog"
+          + "le.rpc.Status\"\322\001\n\021TestRunDifference\022L\n\004t"
+          + "ype\030\001 \001(\0162>.google.cloud.dialogflow.cx.v"
+          + "3beta1.TestRunDifference.DiffType\022\023\n\013des"
+          + "cription\030\002 \001(\t\"Z\n\010DiffType\022\031\n\025DIFF_TYPE_"
+          + "UNSPECIFIED\020\000\022\n\n\006INTENT\020\001\022\010\n\004PAGE\020\002\022\016\n\nP"
+          + "ARAMETERS\020\003\022\r\n\tUTTERANCE\020\004\"\226\005\n\022Transitio"
+          + "nCoverage\022V\n\013transitions\030\001 \003(\0132A.google."
+          + "cloud.dialogflow.cx.v3beta1.TransitionCo"
+          + "verage.Transition\022\026\n\016coverage_score\030\002 \001("
+          + "\002\032\214\001\n\016TransitionNode\0228\n\004page\030\001 \001(\0132(.goo"
+          + "gle.cloud.dialogflow.cx.v3beta1.PageH\000\0228"
+          + "\n\004flow\030\002 \001(\0132(.google.cloud.dialogflow.c"
+          + "x.v3beta1.FlowH\000B\006\n\004kind\032\200\003\n\nTransition\022"
+          + "U\n\006source\030\001 \001(\0132E.google.cloud.dialogflo"
+          + "w.cx.v3beta1.TransitionCoverage.Transiti"
+          + "onNode\022\r\n\005index\030\004 \001(\005\022U\n\006target\030\002 \001(\0132E."
+          + "google.cloud.dialogflow.cx.v3beta1.Trans"
+          + "itionCoverage.TransitionNode\022\017\n\007covered\030"
+          + "\003 \001(\010\022O\n\020transition_route\030\005 \001(\01323.google"
+          + ".cloud.dialogflow.cx.v3beta1.TransitionR"
+          + "outeH\000\022I\n\revent_handler\030\006 \001(\01320.google.c"
+          + "loud.dialogflow.cx.v3beta1.EventHandlerH"
+          + "\000B\010\n\006detail\"\341\003\n\034TransitionRouteGroupCove"
+          + "rage\022\\\n\tcoverages\030\001 \003(\0132I.google.cloud.d"
+          + "ialogflow.cx.v3beta1.TransitionRouteGrou"
+          + "pCoverage.Coverage\022\026\n\016coverage_score\030\002 \001"
+          + "(\002\032\312\002\n\010Coverage\022M\n\013route_group\030\001 \001(\01328.g"
+          + "oogle.cloud.dialogflow.cx.v3beta1.Transi"
+          + "tionRouteGroup\022i\n\013transitions\030\002 \003(\0132T.go"
+          + "ogle.cloud.dialogflow.cx.v3beta1.Transit"
+          + "ionRouteGroupCoverage.Coverage.Transitio"
+          + "n\022\026\n\016coverage_score\030\003 \001(\002\032l\n\nTransition\022"
+          + "M\n\020transition_route\030\001 \001(\01323.google.cloud"
+          + ".dialogflow.cx.v3beta1.TransitionRoute\022\017"
+          + "\n\007covered\030\002 \001(\010\"\306\001\n\016IntentCoverage\022J\n\007in"
+          + "tents\030\001 \003(\01329.google.cloud.dialogflow.cx"
+          + ".v3beta1.IntentCoverage.Intent\022\026\n\016covera"
+          + "ge_score\030\002 \001(\002\032P\n\006Intent\0225\n\006intent\030\001 \001(\t"
+          + "B%\372A\"\n dialogflow.googleapis.com/Intent\022"
+          + "\017\n\007covered\030\002 \001(\010\"\234\002\n\030CalculateCoverageRe"
+          + "quest\0226\n\005agent\030\003 \001(\tB\'\340A\002\372A!\n\037dialogflow"
+          + ".googleapis.com/Agent\022\\\n\004type\030\002 \001(\0162I.go"
+          + "ogle.cloud.dialogflow.cx.v3beta1.Calcula"
+          + "teCoverageRequest.CoverageTypeB\003\340A\002\"j\n\014C"
+          + "overageType\022\035\n\031COVERAGE_TYPE_UNSPECIFIED"
+          + "\020\000\022\n\n\006INTENT\020\001\022\023\n\017PAGE_TRANSITION\020\002\022\032\n\026T"
+          + "RANSITION_ROUTE_GROUP\020\003\"\351\002\n\031CalculateCov"
+          + "erageResponse\0223\n\005agent\030\005 \001(\tB$\372A!\n\037dialo"
+          + "gflow.googleapis.com/Agent\022M\n\017intent_cov"
+          + "erage\030\002 \001(\01322.google.cloud.dialogflow.cx"
+          + ".v3beta1.IntentCoverageH\000\022U\n\023transition_"
+          + "coverage\030\004 \001(\01326.google.cloud.dialogflow"
+          + ".cx.v3beta1.TransitionCoverageH\000\022`\n\024rout"
+          + "e_group_coverage\030\006 \001(\0132@.google.cloud.di"
+          + "alogflow.cx.v3beta1.TransitionRouteGroup"
+          + "CoverageH\000B\017\n\rcoverage_type\"\223\002\n\024ListTest"
+          + "CasesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"di"
+          + "alogflow.googleapis.com/TestCase\022\021\n\tpage"
+          + "_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022S\n\004view\030"
+          + "\004 \001(\0162E.google.cloud.dialogflow.cx.v3bet"
+          + "a1.ListTestCasesRequest.TestCaseView\"C\n\014"
+          + "TestCaseView\022\036\n\032TEST_CASE_VIEW_UNSPECIFI"
+          + "ED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002\"r\n\025ListTestCas"
+          + "esResponse\022@\n\ntest_cases\030\001 \003(\0132,.google."
+          + "cloud.dialogflow.cx.v3beta1.TestCase\022\027\n\017"
+          + "next_page_token\030\002 \001(\t\"\224\001\n\033BatchDeleteTes"
+          + "tCasesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"d"
+          + "ialogflow.googleapis.com/TestCase\0229\n\005nam"
+          + "es\030\003 \003(\tB*\340A\002\372A$\n\"dialogflow.googleapis."
+          + "com/TestCase\"\231\001\n\025CreateTestCaseRequest\022:"
+          + "\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"dialogflow.googl"
+          + "eapis.com/TestCase\022D\n\ttest_case\030\002 \001(\0132,."
+          + "google.cloud.dialogflow.cx.v3beta1.TestC"
+          + "aseB\003\340A\002\"\223\001\n\025UpdateTestCaseRequest\022D\n\tte"
+          + "st_case\030\001 \001(\0132,.google.cloud.dialogflow."
+          + "cx.v3beta1.TestCaseB\003\340A\002\0224\n\013update_mask\030"
+          + "\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\"N"
+          + "\n\022GetTestCaseRequest\0228\n\004name\030\001 \001(\tB*\340A\002\372"
+          + "A$\n\"dialogflow.googleapis.com/TestCase\"\222"
+          + "\001\n\022RunTestCaseRequest\0228\n\004name\030\001 \001(\tB*\340A\002"
+          + "\372A$\n\"dialogflow.googleapis.com/TestCase\022"
+          + "B\n\013environment\030\002 \001(\tB-\340A\001\372A\'\n%dialogflow"
+          + ".googleapis.com/Environment\"Y\n\023RunTestCa"
+          + "seResponse\022B\n\006result\030\002 \001(\01322.google.clou"
+          + "d.dialogflow.cx.v3beta1.TestCaseResult\"\025"
+          + "\n\023RunTestCaseMetadata\"\332\001\n\030BatchRunTestCa"
+          + "sesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"dial"
+          + "ogflow.googleapis.com/TestCase\022B\n\013enviro"
+          + "nment\030\002 \001(\tB-\340A\001\372A\'\n%dialogflow.googleap"
+          + "is.com/Environment\022>\n\ntest_cases\030\003 \003(\tB*"
+          + "\340A\002\372A$\n\"dialogflow.googleapis.com/TestCa"
+          + "se\"`\n\031BatchRunTestCasesResponse\022C\n\007resul"
+          + "ts\030\001 \003(\01322.google.cloud.dialogflow.cx.v3"
+          + "beta1.TestCaseResult\"Z\n\031BatchRunTestCase"
+          + "sMetadata\022=\n\006errors\030\001 \003(\0132-.google.cloud"
+          + ".dialogflow.cx.v3beta1.TestError\"\232\001\n\tTes"
+          + "tError\022:\n\ttest_case\030\001 \001(\tB\'\372A$\n\"dialogfl"
+          + "ow.googleapis.com/TestCase\022\"\n\006status\030\002 \001"
+          + "(\0132\022.google.rpc.Status\022-\n\ttest_time\030\003 \001("
+          + "\0132\032.google.protobuf.Timestamp\"\204\001\n\026Import"
+          + "TestCasesRequest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$"
+          + "\022\"dialogflow.googleapis.com/TestCase\022\021\n\007"
+          + "gcs_uri\030\002 \001(\tH\000\022\021\n\007content\030\003 \001(\014H\000B\010\n\006so"
+          + "urce\"Q\n\027ImportTestCasesResponse\0226\n\005names"
+          + "\030\001 \003(\tB\'\372A$\n\"dialogflow.googleapis.com/T"
+          + "estCase\"\\\n\027ImportTestCasesMetadata\022A\n\006er"
+          + "rors\030\001 \003(\01321.google.cloud.dialogflow.cx."
+          + "v3beta1.TestCaseError\"t\n\rTestCaseError\022?"
+          + "\n\ttest_case\030\001 \001(\0132,.google.cloud.dialogf"
+          + "low.cx.v3beta1.TestCase\022\"\n\006status\030\002 \001(\0132"
+          + "\022.google.rpc.Status\"\241\002\n\026ExportTestCasesR"
+          + "equest\022:\n\006parent\030\001 \001(\tB*\340A\002\372A$\022\"dialogfl"
+          + "ow.googleapis.com/TestCase\022\021\n\007gcs_uri\030\002 "
+          + "\001(\tH\000\022Z\n\013data_format\030\003 \001(\0162E.google.clou"
+          + "d.dialogflow.cx.v3beta1.ExportTestCasesR"
+          + "equest.DataFormat\022\016\n\006filter\030\004 \001(\t\"=\n\nDat"
+          + "aFormat\022\033\n\027DATA_FORMAT_UNSPECIFIED\020\000\022\010\n\004"
+          + "BLOB\020\001\022\010\n\004JSON\020\002B\r\n\013destination\"N\n\027Expor"
+          + "tTestCasesResponse\022\021\n\007gcs_uri\030\001 \001(\tH\000\022\021\n"
+          + "\007content\030\002 \001(\014H\000B\r\n\013destination\"\031\n\027Expor"
+          + "tTestCasesMetadata\"\225\001\n\032ListTestCaseResul"
+          + "tsRequest\022@\n\006parent\030\001 \001(\tB0\340A\002\372A*\022(dialo"
+          + "gflow.googleapis.com/TestCaseResult\022\021\n\tp"
+          + "age_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006fi"
+          + "lter\030\004 \001(\t\"\205\001\n\033ListTestCaseResultsRespon"
+          + "se\022M\n\021test_case_results\030\001 \003(\01322.google.c"
+          + "loud.dialogflow.cx.v3beta1.TestCaseResul"
+          + "t\022\027\n\017next_page_token\030\002 \001(\t*A\n\nTestResult"
+          + "\022\033\n\027TEST_RESULT_UNSPECIFIED\020\000\022\n\n\006PASSED\020"
+          + "\001\022\n\n\006FAILED\020\0022\330\024\n\tTestCases\022\322\001\n\rListTest"
+          + "Cases\0228.google.cloud.dialogflow.cx.v3bet"
+          + "a1.ListTestCasesRequest\0329.google.cloud.d"
+          + "ialogflow.cx.v3beta1.ListTestCasesRespon"
+          + "se\"L\202\323\344\223\002=\022;/v3beta1/{parent=projects/*/"
+          + "locations/*/agents/*}/testCases\332A\006parent"
+          + "\022\314\001\n\024BatchDeleteTestCases\022?.google.cloud"
+          + ".dialogflow.cx.v3beta1.BatchDeleteTestCa"
+          + "sesRequest\032\026.google.protobuf.Empty\"[\202\323\344\223"
+          + "\002L\"G/v3beta1/{parent=projects/*/location"
+          + "s/*/agents/*}/testCases:batchDelete:\001*\332A"
+          + "\006parent\022\277\001\n\013GetTestCase\0226.google.cloud.d"
+          + "ialogflow.cx.v3beta1.GetTestCaseRequest\032"
+          + ",.google.cloud.dialogflow.cx.v3beta1.Tes"
+          + "tCase\"J\202\323\344\223\002=\022;/v3beta1/{name=projects/*"
+          + "/locations/*/agents/*/testCases/*}\332A\004nam"
+          + "e\022\334\001\n\016CreateTestCase\0229.google.cloud.dial"
+          + "ogflow.cx.v3beta1.CreateTestCaseRequest\032"
+          + ",.google.cloud.dialogflow.cx.v3beta1.Tes"
+          + "tCase\"a\202\323\344\223\002H\";/v3beta1/{parent=projects"
+          + "/*/locations/*/agents/*}/testCases:\ttest"
+          + "_case\332A\020parent,test_case\022\353\001\n\016UpdateTestC"
+          + "ase\0229.google.cloud.dialogflow.cx.v3beta1"
+          + ".UpdateTestCaseRequest\032,.google.cloud.di"
+          + "alogflow.cx.v3beta1.TestCase\"p\202\323\344\223\002R2E/v"
+          + "3beta1/{test_case.name=projects/*/locati"
+          + "ons/*/agents/*/testCases/*}:\ttest_case\332A"
+          + "\025test_case,update_mask\022\335\001\n\013RunTestCase\0226"
+          + ".google.cloud.dialogflow.cx.v3beta1.RunT"
+          + "estCaseRequest\032\035.google.longrunning.Oper"
+          + "ation\"w\202\323\344\223\002D\"?/v3beta1/{name=projects/*"
+          + "/locations/*/agents/*/testCases/*}:run:\001"
+          + "*\312A*\n\023RunTestCaseResponse\022\023RunTestCaseMe"
+          + "tadata\022\373\001\n\021BatchRunTestCases\022<.google.cl"
+          + "oud.dialogflow.cx.v3beta1.BatchRunTestCa"
+          + "sesRequest\032\035.google.longrunning.Operatio"
+          + "n\"\210\001\202\323\344\223\002I\"D/v3beta1/{parent=projects/*/"
+          + "locations/*/agents/*}/testCases:batchRun"
+          + ":\001*\312A6\n\031BatchRunTestCasesResponse\022\031Batch"
+          + "RunTestCasesMetadata\022\346\001\n\021CalculateCovera"
+          + "ge\022<.google.cloud.dialogflow.cx.v3beta1."
+          + "CalculateCoverageRequest\032=.google.cloud."
+          + "dialogflow.cx.v3beta1.CalculateCoverageR"
+          + "esponse\"T\202\323\344\223\002N\022L/v3beta1/{agent=project"
+          + "s/*/locations/*/agents/*}/testCases:calc"
+          + "ulateCoverage\022\361\001\n\017ImportTestCases\022:.goog"
+          + "le.cloud.dialogflow.cx.v3beta1.ImportTes"
           + "tCasesRequest\032\035.google.longrunning.Opera"
           + "tion\"\202\001\202\323\344\223\002G\"B/v3beta1/{parent=projects"
-          + "/*/locations/*/agents/*}/testCases:expor"
-          + "t:\001*\312A2\n\027ExportTestCasesResponse\022\027Export"
-          + "TestCasesMetadata\022\356\001\n\023ListTestCaseResult"
-          + "s\022>.google.cloud.dialogflow.cx.v3beta1.L"
-          + "istTestCaseResultsRequest\032?.google.cloud"
-          + ".dialogflow.cx.v3beta1.ListTestCaseResul"
-          + "tsResponse\"V\202\323\344\223\002G\022E/v3beta1/{parent=pro"
-          + "jects/*/locations/*/agents/*/testCases/*"
-          + "}/results\332A\006parent\032x\312A\031dialogflow.google"
-          + "apis.com\322AYhttps://www.googleapis.com/au"
-          + "th/cloud-platform,https://www.googleapis"
-          + ".com/auth/dialogflowB\254\001\n&com.google.clou"
-          + "d.dialogflow.cx.v3beta1B\rTestCaseProtoP\001"
-          + "ZDgoogle.golang.org/genproto/googleapis/"
-          + "cloud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002"
-          + "\"Google.Cloud.Dialogflow.Cx.V3Beta1b\006pro"
-          + "to3"
+          + "/*/locations/*/agents/*}/testCases:impor"
+          + "t:\001*\312A2\n\027ImportTestCasesResponse\022\027Import"
+          + "TestCasesMetadata\022\361\001\n\017ExportTestCases\022:."
+          + "google.cloud.dialogflow.cx.v3beta1.Expor"
+          + "tTestCasesRequest\032\035.google.longrunning.O"
+          + "peration\"\202\001\202\323\344\223\002G\"B/v3beta1/{parent=proj"
+          + "ects/*/locations/*/agents/*}/testCases:e"
+          + "xport:\001*\312A2\n\027ExportTestCasesResponse\022\027Ex"
+          + "portTestCasesMetadata\022\356\001\n\023ListTestCaseRe"
+          + "sults\022>.google.cloud.dialogflow.cx.v3bet"
+          + "a1.ListTestCaseResultsRequest\032?.google.c"
+          + "loud.dialogflow.cx.v3beta1.ListTestCaseR"
+          + "esultsResponse\"V\202\323\344\223\002G\022E/v3beta1/{parent"
+          + "=projects/*/locations/*/agents/*/testCas"
+          + "es/*}/results\332A\006parent\032x\312A\031dialogflow.go"
+          + "ogleapis.com\322AYhttps://www.googleapis.co"
+          + "m/auth/cloud-platform,https://www.google"
+          + "apis.com/auth/dialogflowB\254\001\n&com.google."
+          + "cloud.dialogflow.cx.v3beta1B\rTestCasePro"
+          + "toP\001ZDgoogle.golang.org/genproto/googlea"
+          + "pis/cloud/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002"
+          + "DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1b"
+          + "\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -442,6 +471,7 @@ public final class TestCaseProto {
               com.google.cloud.dialogflow.cx.v3beta1.PageProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3beta1.SessionProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -550,8 +580,36 @@ public final class TestCaseProto {
             new java.lang.String[] {
               "Source", "Index", "Target", "Covered", "TransitionRoute", "EventHandler", "Detail",
             });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_IntentCoverage_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_descriptor =
         getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_descriptor,
+            new java.lang.String[] {
+              "Coverages", "CoverageScore",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_descriptor,
+            new java.lang.String[] {
+              "RouteGroup", "Transitions", "CoverageScore",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_Transition_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_Transition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_TransitionRouteGroupCoverage_Coverage_Transition_descriptor,
+            new java.lang.String[] {
+              "TransitionRoute", "Covered",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_IntentCoverage_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_dialogflow_cx_v3beta1_IntentCoverage_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_IntentCoverage_descriptor,
@@ -569,7 +627,7 @@ public final class TestCaseProto {
               "Intent", "Covered",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_CalculateCoverageRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_dialogflow_cx_v3beta1_CalculateCoverageRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_CalculateCoverageRequest_descriptor,
@@ -577,15 +635,15 @@ public final class TestCaseProto {
               "Agent", "Type",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_CalculateCoverageResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_dialogflow_cx_v3beta1_CalculateCoverageResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_CalculateCoverageResponse_descriptor,
             new java.lang.String[] {
-              "Agent", "IntentCoverage", "TransitionCoverage", "CoverageType",
+              "Agent", "IntentCoverage", "TransitionCoverage", "RouteGroupCoverage", "CoverageType",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCasesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCasesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCasesRequest_descriptor,
@@ -593,7 +651,7 @@ public final class TestCaseProto {
               "Parent", "PageSize", "PageToken", "View",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCasesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCasesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCasesResponse_descriptor,
@@ -601,7 +659,7 @@ public final class TestCaseProto {
               "TestCases", "NextPageToken",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchDeleteTestCasesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchDeleteTestCasesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_BatchDeleteTestCasesRequest_descriptor,
@@ -609,7 +667,7 @@ public final class TestCaseProto {
               "Parent", "Names",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreateTestCaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_dialogflow_cx_v3beta1_CreateTestCaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_CreateTestCaseRequest_descriptor,
@@ -617,7 +675,7 @@ public final class TestCaseProto {
               "Parent", "TestCase",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateTestCaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateTestCaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_UpdateTestCaseRequest_descriptor,
@@ -625,7 +683,7 @@ public final class TestCaseProto {
               "TestCase", "UpdateMask",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_GetTestCaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_dialogflow_cx_v3beta1_GetTestCaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_GetTestCaseRequest_descriptor,
@@ -633,7 +691,7 @@ public final class TestCaseProto {
               "Name",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseRequest_descriptor,
@@ -641,7 +699,7 @@ public final class TestCaseProto {
               "Name", "Environment",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseResponse_descriptor,
@@ -649,13 +707,13 @@ public final class TestCaseProto {
               "Result",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_RunTestCaseMetadata_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesRequest_descriptor,
@@ -663,7 +721,7 @@ public final class TestCaseProto {
               "Parent", "Environment", "TestCases",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesResponse_descriptor,
@@ -671,7 +729,7 @@ public final class TestCaseProto {
               "Results",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_BatchRunTestCasesMetadata_descriptor,
@@ -679,7 +737,7 @@ public final class TestCaseProto {
               "Errors",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_TestError_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_dialogflow_cx_v3beta1_TestError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_TestError_descriptor,
@@ -687,7 +745,7 @@ public final class TestCaseProto {
               "TestCase", "Status", "TestTime",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesRequest_descriptor,
@@ -695,7 +753,7 @@ public final class TestCaseProto {
               "Parent", "GcsUri", "Content", "Source",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesResponse_descriptor,
@@ -703,7 +761,7 @@ public final class TestCaseProto {
               "Names",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ImportTestCasesMetadata_descriptor,
@@ -711,7 +769,7 @@ public final class TestCaseProto {
               "Errors",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_TestCaseError_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_dialogflow_cx_v3beta1_TestCaseError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_TestCaseError_descriptor,
@@ -719,7 +777,7 @@ public final class TestCaseProto {
               "TestCase", "Status",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesRequest_descriptor,
@@ -727,7 +785,7 @@ public final class TestCaseProto {
               "Parent", "GcsUri", "DataFormat", "Filter", "Destination",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesResponse_descriptor,
@@ -735,13 +793,13 @@ public final class TestCaseProto {
               "GcsUri", "Content", "Destination",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ExportTestCasesMetadata_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCaseResultsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCaseResultsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCaseResultsRequest_descriptor,
@@ -749,7 +807,7 @@ public final class TestCaseProto {
               "Parent", "PageSize", "PageToken", "Filter",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCaseResultsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCaseResultsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ListTestCaseResultsResponse_descriptor,
@@ -777,6 +835,7 @@ public final class TestCaseProto {
     com.google.cloud.dialogflow.cx.v3beta1.PageProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3beta1.SessionProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
