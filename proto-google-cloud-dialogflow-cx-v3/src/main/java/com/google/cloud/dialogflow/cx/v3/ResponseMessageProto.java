@@ -48,13 +48,13 @@ public final class ResponseMessageProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_OutputAudioText_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -101,9 +101,9 @@ public final class ResponseMessageProto {
           + "gle.protobuf.Struct\032e\n\017OutputAudioText\022\016"
           + "\n\004text\030\001 \001(\tH\000\022\016\n\004ssml\030\002 \001(\tH\000\022(\n\033allow_"
           + "playback_interruption\030\003 \001(\010B\003\340A\003B\010\n\006sour"
-          + "ce\032M\n\tPlayAudio\022\026\n\taudio_uri\030\001 \001(\tB\003\340A\002\022"
-          + "(\n\033allow_playback_interruption\030\002 \001(\010B\003\340A"
-          + "\003\032\020\n\016EndInteraction\032\301\001\n\nMixedAudio\022S\n\010se"
+          + "ce\032\020\n\016EndInteraction\032M\n\tPlayAudio\022\026\n\taud"
+          + "io_uri\030\001 \001(\tB\003\340A\002\022(\n\033allow_playback_inte"
+          + "rruption\030\002 \001(\010B\003\340A\003\032\301\001\n\nMixedAudio\022S\n\010se"
           + "gments\030\001 \003(\0132A.google.cloud.dialogflow.c"
           + "x.v3.ResponseMessage.MixedAudio.Segment\032"
           + "^\n\007Segment\022\017\n\005audio\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\t"
@@ -179,24 +179,24 @@ public final class ResponseMessageProto {
             new java.lang.String[] {
               "Text", "Ssml", "AllowPlaybackInterruption", "Source",
             });
-    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor
             .getNestedTypes()
             .get(4);
+    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor
+            .getNestedTypes()
+            .get(5);
     internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_PlayAudio_descriptor,
             new java.lang.String[] {
               "AudioUri", "AllowPlaybackInterruption",
             });
-    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_descriptor =
-        internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor
-            .getNestedTypes()
-            .get(5);
-    internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_EndInteraction_descriptor,
-            new java.lang.String[] {});
     internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_MixedAudio_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3_ResponseMessage_descriptor
             .getNestedTypes()
