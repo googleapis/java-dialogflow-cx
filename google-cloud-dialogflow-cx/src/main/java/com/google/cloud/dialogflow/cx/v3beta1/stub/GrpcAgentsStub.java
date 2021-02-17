@@ -28,15 +28,18 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.Agent;
+import com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -116,6 +119,29 @@ public class GrpcAgentsStub extends AgentsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ValidateAgentRequest, AgentValidationResult>
+      validateAgentMethodDescriptor =
+          MethodDescriptor.<ValidateAgentRequest, AgentValidationResult>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Agents/ValidateAgent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ValidateAgentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultMethodDescriptor =
+          MethodDescriptor.<GetAgentValidationResultRequest, AgentValidationResult>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.dialogflow.cx.v3beta1.Agents/GetAgentValidationResult")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAgentValidationResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListAgentsRequest, ListAgentsResponse> listAgentsCallable;
   private final UnaryCallable<ListAgentsRequest, ListAgentsPagedResponse> listAgentsPagedCallable;
   private final UnaryCallable<GetAgentRequest, Agent> getAgentCallable;
@@ -127,6 +153,9 @@ public class GrpcAgentsStub extends AgentsStub {
       exportAgentOperationCallable;
   private final UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable;
   private final OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable;
+  private final UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable;
+  private final UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -258,6 +287,33 @@ public class GrpcAgentsStub extends AgentsStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ValidateAgentRequest, AgentValidationResult> validateAgentTransportSettings =
+        GrpcCallSettings.<ValidateAgentRequest, AgentValidationResult>newBuilder()
+            .setMethodDescriptor(validateAgentMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ValidateAgentRequest>() {
+                  @Override
+                  public Map<String, String> extract(ValidateAgentRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
+        getAgentValidationResultTransportSettings =
+            GrpcCallSettings.<GetAgentValidationResultRequest, AgentValidationResult>newBuilder()
+                .setMethodDescriptor(getAgentValidationResultMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetAgentValidationResultRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetAgentValidationResultRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listAgentsCallable =
         callableFactory.createUnaryCallable(
@@ -295,6 +351,14 @@ public class GrpcAgentsStub extends AgentsStub {
             settings.restoreAgentOperationSettings(),
             clientContext,
             operationsStub);
+    this.validateAgentCallable =
+        callableFactory.createUnaryCallable(
+            validateAgentTransportSettings, settings.validateAgentSettings(), clientContext);
+    this.getAgentValidationResultCallable =
+        callableFactory.createUnaryCallable(
+            getAgentValidationResultTransportSettings,
+            settings.getAgentValidationResultSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -343,6 +407,15 @@ public class GrpcAgentsStub extends AgentsStub {
 
   public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
     return restoreAgentOperationCallable;
+  }
+
+  public UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable() {
+    return validateAgentCallable;
+  }
+
+  public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultCallable() {
+    return getAgentValidationResultCallable;
   }
 
   @Override

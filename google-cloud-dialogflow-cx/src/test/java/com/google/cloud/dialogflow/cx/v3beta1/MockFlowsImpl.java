@@ -144,4 +144,35 @@ public class MockFlowsImpl extends FlowsImplBase {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
+
+  @Override
+  public void validateFlow(
+      ValidateFlowRequest request, StreamObserver<FlowValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof FlowValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((FlowValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getFlowValidationResult(
+      GetFlowValidationResultRequest request,
+      StreamObserver<FlowValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof FlowValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((FlowValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
 }

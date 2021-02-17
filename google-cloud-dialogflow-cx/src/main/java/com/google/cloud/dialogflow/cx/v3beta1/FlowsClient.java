@@ -458,6 +458,88 @@ public class FlowsClient implements BackgroundResource {
     return stub.trainFlowCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Validates the specified flow and creates or updates validation results. Please call this API
+   * after the training is completed to get the complete validation results.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlowValidationResult validateFlow(ValidateFlowRequest request) {
+    return validateFlowCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Validates the specified flow and creates or updates validation results. Please call this API
+   * after the training is completed to get the complete validation results.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ValidateFlowRequest, FlowValidationResult> validateFlowCallable() {
+    return stub.validateFlowCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest flow validation result. Flow validation is performed when ValidateFlow is
+   * called.
+   *
+   * @param name Required. The flow name. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
+   *     ID&gt;/validationResult`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlowValidationResult getFlowValidationResult(FlowValidationResultName name) {
+    GetFlowValidationResultRequest request =
+        GetFlowValidationResultRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getFlowValidationResult(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest flow validation result. Flow validation is performed when ValidateFlow is
+   * called.
+   *
+   * @param name Required. The flow name. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
+   *     ID&gt;/validationResult`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlowValidationResult getFlowValidationResult(String name) {
+    GetFlowValidationResultRequest request =
+        GetFlowValidationResultRequest.newBuilder().setName(name).build();
+    return getFlowValidationResult(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest flow validation result. Flow validation is performed when ValidateFlow is
+   * called.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FlowValidationResult getFlowValidationResult(
+      GetFlowValidationResultRequest request) {
+    return getFlowValidationResultCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest flow validation result. Flow validation is performed when ValidateFlow is
+   * called.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultCallable() {
+    return stub.getFlowValidationResultCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

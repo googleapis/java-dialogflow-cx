@@ -646,7 +646,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An **entity entry** for an associated entity type.
-   * Next Id = 8
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.EntityType.Entity}
@@ -1072,7 +1071,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An **entity entry** for an associated entity type.
-     * Next Id = 8
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.EntityType.Entity}

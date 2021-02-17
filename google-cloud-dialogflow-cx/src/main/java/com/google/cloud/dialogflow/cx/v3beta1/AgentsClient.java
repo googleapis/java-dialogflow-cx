@@ -474,6 +474,88 @@ public class AgentsClient implements BackgroundResource {
     return stub.restoreAgentCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Validates the specified agent and creates or updates validation results. The agent in draft
+   * version is validated. Please call this API after the training is completed to get the complete
+   * validation results.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentValidationResult validateAgent(ValidateAgentRequest request) {
+    return validateAgentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Validates the specified agent and creates or updates validation results. The agent in draft
+   * version is validated. Please call this API after the training is completed to get the complete
+   * validation results.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable() {
+    return stub.validateAgentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest agent validation result. Agent validation is performed when ValidateAgent is
+   * called.
+   *
+   * @param name Required. The agent name. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/validationResult`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentValidationResult getAgentValidationResult(AgentValidationResultName name) {
+    GetAgentValidationResultRequest request =
+        GetAgentValidationResultRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getAgentValidationResult(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest agent validation result. Agent validation is performed when ValidateAgent is
+   * called.
+   *
+   * @param name Required. The agent name. Format: `projects/&lt;Project
+   *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/validationResult`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentValidationResult getAgentValidationResult(String name) {
+    GetAgentValidationResultRequest request =
+        GetAgentValidationResultRequest.newBuilder().setName(name).build();
+    return getAgentValidationResult(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest agent validation result. Agent validation is performed when ValidateAgent is
+   * called.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final AgentValidationResult getAgentValidationResult(
+      GetAgentValidationResultRequest request) {
+    return getAgentValidationResultCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the latest agent validation result. Agent validation is performed when ValidateAgent is
+   * called.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultCallable() {
+    return stub.getAgentValidationResultCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

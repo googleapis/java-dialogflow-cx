@@ -159,4 +159,35 @@ public class MockAgentsImpl extends AgentsImplBase {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
+
+  @Override
+  public void validateAgent(
+      ValidateAgentRequest request, StreamObserver<AgentValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AgentValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((AgentValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void getAgentValidationResult(
+      GetAgentValidationResultRequest request,
+      StreamObserver<AgentValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AgentValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((AgentValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
 }
