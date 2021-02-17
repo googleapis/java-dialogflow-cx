@@ -115,6 +115,27 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
               agent_ = s;
               break;
             }
+          case 50:
+            {
+              com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Builder subBuilder =
+                  null;
+              if (coverageTypeCase_ == 6) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_)
+                        .toBuilder();
+              }
+              coverageType_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_);
+                coverageType_ = subBuilder.buildPartial();
+              }
+              coverageTypeCase_ = 6;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -158,6 +179,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INTENT_COVERAGE(2),
     TRANSITION_COVERAGE(4),
+    ROUTE_GROUP_COVERAGE(6),
     COVERAGETYPE_NOT_SET(0);
     private final int value;
 
@@ -180,6 +202,8 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
           return INTENT_COVERAGE;
         case 4:
           return TRANSITION_COVERAGE;
+        case 6:
+          return ROUTE_GROUP_COVERAGE;
         case 0:
           return COVERAGETYPE_NOT_SET;
         default:
@@ -303,7 +327,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Transition coverage.
+   * Transition (excluding transition route groups) coverage.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -318,7 +342,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Transition coverage.
+   * Transition (excluding transition route groups) coverage.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -336,7 +360,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Transition coverage.
+   * Transition (excluding transition route groups) coverage.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -348,6 +372,61 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       return (com.google.cloud.dialogflow.cx.v3.TransitionCoverage) coverageType_;
     }
     return com.google.cloud.dialogflow.cx.v3.TransitionCoverage.getDefaultInstance();
+  }
+
+  public static final int ROUTE_GROUP_COVERAGE_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Transition route group coverage.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+   * </code>
+   *
+   * @return Whether the routeGroupCoverage field is set.
+   */
+  @java.lang.Override
+  public boolean hasRouteGroupCoverage() {
+    return coverageTypeCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Transition route group coverage.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+   * </code>
+   *
+   * @return The routeGroupCoverage.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage getRouteGroupCoverage() {
+    if (coverageTypeCase_ == 6) {
+      return (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Transition route group coverage.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverageOrBuilder
+      getRouteGroupCoverageOrBuilder() {
+    if (coverageTypeCase_ == 6) {
+      return (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_;
+    }
+    return com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -373,6 +452,10 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
     if (!getAgentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, agent_);
     }
+    if (coverageTypeCase_ == 6) {
+      output.writeMessage(
+          6, (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -394,6 +477,11 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
     }
     if (!getAgentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, agent_);
+    }
+    if (coverageTypeCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -420,6 +508,9 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       case 4:
         if (!getTransitionCoverage().equals(other.getTransitionCoverage())) return false;
         break;
+      case 6:
+        if (!getRouteGroupCoverage().equals(other.getRouteGroupCoverage())) return false;
+        break;
       case 0:
       default:
     }
@@ -444,6 +535,10 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       case 4:
         hash = (37 * hash) + TRANSITION_COVERAGE_FIELD_NUMBER;
         hash = (53 * hash) + getTransitionCoverage().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + ROUTE_GROUP_COVERAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getRouteGroupCoverage().hashCode();
         break;
       case 0:
       default:
@@ -640,6 +735,13 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
           result.coverageType_ = transitionCoverageBuilder_.build();
         }
       }
+      if (coverageTypeCase_ == 6) {
+        if (routeGroupCoverageBuilder_ == null) {
+          result.coverageType_ = coverageType_;
+        } else {
+          result.coverageType_ = routeGroupCoverageBuilder_.build();
+        }
+      }
       result.coverageTypeCase_ = coverageTypeCase_;
       onBuilt();
       return result;
@@ -704,6 +806,11 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
         case TRANSITION_COVERAGE:
           {
             mergeTransitionCoverage(other.getTransitionCoverage());
+            break;
+          }
+        case ROUTE_GROUP_COVERAGE:
+          {
+            mergeRouteGroupCoverage(other.getRouteGroupCoverage());
             break;
           }
         case COVERAGETYPE_NOT_SET:
@@ -1085,7 +1192,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1100,7 +1207,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1125,7 +1232,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1148,7 +1255,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1168,7 +1275,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1201,7 +1308,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1226,7 +1333,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1239,7 +1346,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1260,7 +1367,7 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Transition coverage.
+     * Transition (excluding transition route groups) coverage.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.TransitionCoverage transition_coverage = 4;</code>
@@ -1288,6 +1395,232 @@ public final class CalculateCoverageResponse extends com.google.protobuf.Generat
       onChanged();
       ;
       return transitionCoverageBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage,
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Builder,
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverageOrBuilder>
+        routeGroupCoverageBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     *
+     * @return Whether the routeGroupCoverage field is set.
+     */
+    @java.lang.Override
+    public boolean hasRouteGroupCoverage() {
+      return coverageTypeCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     *
+     * @return The routeGroupCoverage.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage getRouteGroupCoverage() {
+      if (routeGroupCoverageBuilder_ == null) {
+        if (coverageTypeCase_ == 6) {
+          return (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.getDefaultInstance();
+      } else {
+        if (coverageTypeCase_ == 6) {
+          return routeGroupCoverageBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    public Builder setRouteGroupCoverage(
+        com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage value) {
+      if (routeGroupCoverageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        coverageType_ = value;
+        onChanged();
+      } else {
+        routeGroupCoverageBuilder_.setMessage(value);
+      }
+      coverageTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    public Builder setRouteGroupCoverage(
+        com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Builder builderForValue) {
+      if (routeGroupCoverageBuilder_ == null) {
+        coverageType_ = builderForValue.build();
+        onChanged();
+      } else {
+        routeGroupCoverageBuilder_.setMessage(builderForValue.build());
+      }
+      coverageTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    public Builder mergeRouteGroupCoverage(
+        com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage value) {
+      if (routeGroupCoverageBuilder_ == null) {
+        if (coverageTypeCase_ == 6
+            && coverageType_
+                != com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage
+                    .getDefaultInstance()) {
+          coverageType_ =
+              com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage)
+                          coverageType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          coverageType_ = value;
+        }
+        onChanged();
+      } else {
+        if (coverageTypeCase_ == 6) {
+          routeGroupCoverageBuilder_.mergeFrom(value);
+        }
+        routeGroupCoverageBuilder_.setMessage(value);
+      }
+      coverageTypeCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    public Builder clearRouteGroupCoverage() {
+      if (routeGroupCoverageBuilder_ == null) {
+        if (coverageTypeCase_ == 6) {
+          coverageTypeCase_ = 0;
+          coverageType_ = null;
+          onChanged();
+        }
+      } else {
+        if (coverageTypeCase_ == 6) {
+          coverageTypeCase_ = 0;
+          coverageType_ = null;
+        }
+        routeGroupCoverageBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Builder
+        getRouteGroupCoverageBuilder() {
+      return getRouteGroupCoverageFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverageOrBuilder
+        getRouteGroupCoverageOrBuilder() {
+      if ((coverageTypeCase_ == 6) && (routeGroupCoverageBuilder_ != null)) {
+        return routeGroupCoverageBuilder_.getMessageOrBuilder();
+      } else {
+        if (coverageTypeCase_ == 6) {
+          return (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_;
+        }
+        return com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Transition route group coverage.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage route_group_coverage = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage,
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Builder,
+            com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverageOrBuilder>
+        getRouteGroupCoverageFieldBuilder() {
+      if (routeGroupCoverageBuilder_ == null) {
+        if (!(coverageTypeCase_ == 6)) {
+          coverageType_ =
+              com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.getDefaultInstance();
+        }
+        routeGroupCoverageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage,
+                com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage.Builder,
+                com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverageOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3.TransitionRouteGroupCoverage) coverageType_,
+                getParentForChildren(),
+                isClean());
+        coverageType_ = null;
+      }
+      coverageTypeCase_ = 6;
+      onChanged();
+      ;
+      return routeGroupCoverageBuilder_;
     }
 
     @java.lang.Override

@@ -1525,8 +1525,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -1538,8 +1538,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -1551,8 +1551,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -1563,8 +1563,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -1576,8 +1576,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -1589,8 +1589,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -2091,8 +2091,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -2107,8 +2107,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -2125,8 +2125,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-     * name and displayname will be set.
+     * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -2142,8 +2142,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -2158,8 +2158,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -2176,8 +2176,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-     * name and displayname will be set.
+     * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+     * will be set.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -3728,8 +3728,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3743,8 +3743,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3764,8 +3764,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3787,8 +3787,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3808,8 +3808,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3835,8 +3835,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3856,8 +3856,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3871,8 +3871,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3890,8 +3890,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only some fields such as
-       * name and displayname will be set.
+       * The [Intent][google.cloud.dialogflow.cx.v3.Intent] that triggered the response. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Intent triggered_intent = 7;</code>
@@ -3923,8 +3923,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -3938,8 +3938,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -3959,8 +3959,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -3982,8 +3982,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -4003,8 +4003,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -4030,8 +4030,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -4051,8 +4051,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -4066,8 +4066,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>
@@ -4085,8 +4085,8 @@ public final class ConversationTurn extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only some fields such as
-       * name and displayname will be set.
+       * The [Page][google.cloud.dialogflow.cx.v3.Page] on which the utterance was spoken. Only name and displayName
+       * will be set.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3.Page current_page = 8;</code>

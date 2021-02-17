@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "38d77abda7059f562774af4ea4107415224d2674",
-        "internalRef": "357757017"
+        "sha": "2bea43cdc7a4443876380732980d83cd8d560582",
+        "internalRef": "357788001"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "38d77abda7059f562774af4ea4107415224d2674",
-        "internalRef": "357757017"
+        "sha": "2bea43cdc7a4443876380732980d83cd8d560582",
+        "internalRef": "357788001"
       }
     },
     {
@@ -729,6 +729,8 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionCoverageOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRoute.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRouteGroup.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRouteGroupCoverage.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRouteGroupCoverageOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRouteGroupName.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRouteGroupOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/TransitionRouteGroupProto.java",

@@ -22,8 +22,9 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * Transition coverage represents the percentage of all possible transitions
- * present within any of a parent's test cases.
+ * Transition coverage represents the percentage of all possible page
+ * transitions (page-level transition routes and event handlers, excluding
+ * transition route groups) present within any of a parent's test cases.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.TransitionCoverage}
@@ -1554,7 +1555,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A transition in the agent's graph.
+   * A transition in a page.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition}
@@ -2244,7 +2245,7 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A transition in the agent's graph.
+     * A transition in a page.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.cx.v3.TransitionCoverage.Transition}
@@ -3728,8 +3729,9 @@ public final class TransitionCoverage extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Transition coverage represents the percentage of all possible transitions
-   * present within any of a parent's test cases.
+   * Transition coverage represents the percentage of all possible page
+   * transitions (page-level transition routes and event handlers, excluding
+   * transition route groups) present within any of a parent's test cases.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.TransitionCoverage}
