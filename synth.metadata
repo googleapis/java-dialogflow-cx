@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
-        "sha": "d38deefc49b6fd2bd805748c4046691dbeb3964d"
+        "sha": "f745beb41ed7844909c7acd43235a490faefc619"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "551ddbb55b96147012c00b66250dd5907556807c",
+        "internalRef": "364734171"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "1305ca41d554eb0725237561e34129373bb8cbc1",
-        "internalRef": "362856902"
+        "sha": "551ddbb55b96147012c00b66250dd5907556807c",
+        "internalRef": "364734171"
       }
     },
     {
@@ -955,6 +955,8 @@
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetSessionEntityTypeRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTestCaseRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTestCaseRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTestCaseResultRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTestCaseResultRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTransitionRouteGroupRequest.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetTransitionRouteGroupRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3beta1/src/main/java/com/google/cloud/dialogflow/cx/v3beta1/GetVersionRequest.java",
