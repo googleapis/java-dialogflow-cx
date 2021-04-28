@@ -18,16 +18,16 @@
 
 package com.google.cloud.dialogflow.cx.v3beta1;
 
-public interface GetFlowRequestOrBuilder
+public interface ExportFlowRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.GetFlowRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The name of the flow to get.
+   * Required. The name of the flow to export.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
@@ -43,7 +43,7 @@ public interface GetFlowRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The name of the flow to get.
+   * Required. The name of the flow to export.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
@@ -60,44 +60,43 @@ public interface GetFlowRequestOrBuilder
    *
    *
    * <pre>
-   * The language to retrieve the flow for. The following fields are language
-   * dependent:
-   * *  `Flow.event_handlers.trigger_fulfillment.messages`
-   * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
-   * *  `Flow.transition_routes.trigger_fulfillment.messages`
-   * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
-   * If not specified, the agent's default language is used.
-   * [Many
-   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
-   * are supported.
-   * Note: languages must be enabled in the agent before they can be used.
+   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   * export the flow to. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * If left unspecified, the serialized flow is returned inline.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string flow_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The languageCode.
+   * @return The flowUri.
    */
-  java.lang.String getLanguageCode();
+  java.lang.String getFlowUri();
   /**
    *
    *
    * <pre>
-   * The language to retrieve the flow for. The following fields are language
-   * dependent:
-   * *  `Flow.event_handlers.trigger_fulfillment.messages`
-   * *  `Flow.event_handlers.trigger_fulfillment.conditional_cases`
-   * *  `Flow.transition_routes.trigger_fulfillment.messages`
-   * *  `Flow.transition_routes.trigger_fulfillment.conditional_cases`
-   * If not specified, the agent's default language is used.
-   * [Many
-   * languages](https://cloud.google.com/dialogflow/cx/docs/reference/language)
-   * are supported.
-   * Note: languages must be enabled in the agent before they can be used.
+   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   * export the flow to. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * If left unspecified, the serialized flow is returned inline.
    * </pre>
    *
-   * <code>string language_code = 2;</code>
+   * <code>string flow_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
-   * @return The bytes for languageCode.
+   * @return The bytes for flowUri.
    */
-  com.google.protobuf.ByteString getLanguageCodeBytes();
+  com.google.protobuf.ByteString getFlowUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to export flows referenced by the specified flow.
+   * </pre>
+   *
+   * <code>bool include_referenced_flows = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeReferencedFlows.
+   */
+  boolean getIncludeReferencedFlows();
 }
