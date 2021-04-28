@@ -4,23 +4,23 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dialogflow-cx.git",
-        "sha": "1bec3d5f13e3e1879d3013031ce06a682f389e23"
+        "sha": "a55e7af7c5ab337d4db25b646ba50e5ab4290d47"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "9a386bc12400c03f81c97f599d7ba7cb0b440577",
-        "internalRef": "367052612"
+        "sha": "ef119e7aa2eee147ecf854e5154c93351ed7de25",
+        "internalRef": "370860251"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "9a386bc12400c03f81c97f599d7ba7cb0b440577",
-        "internalRef": "367052612"
+        "sha": "ef119e7aa2eee147ecf854e5154c93351ed7de25",
+        "internalRef": "370860251"
       }
     },
     {
@@ -508,6 +508,10 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportAgentRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportAgentResponse.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportAgentResponseOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportFlowRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportFlowRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportFlowResponse.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportFlowResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportTestCasesMetadata.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportTestCasesMetadataOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ExportTestCasesRequest.java",
@@ -562,6 +566,10 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/GetVersionRequestOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/GetWebhookRequest.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/GetWebhookRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportFlowRequest.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportFlowRequestOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportFlowResponse.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportFlowResponseOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportTestCasesMetadata.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportTestCasesMetadataOrBuilder.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ImportTestCasesRequest.java",
