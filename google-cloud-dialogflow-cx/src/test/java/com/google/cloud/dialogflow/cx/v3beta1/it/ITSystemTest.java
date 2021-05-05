@@ -380,8 +380,19 @@ public class ITSystemTest {
 
   @Test
   public void trainFlowTest() throws ExecutionException, InterruptedException {
+    // to fix the overlapping resource usage.
+    Flow flow = Flow.newBuilder()
+        .setNluSettings(NLUSETTINGS)
+        .setDisplayName(DISPLAY_NAME)
+        .setDescription(DESCRIPTION)
+        .build();
+    CreateFlowRequest createFlowRequest =
+        CreateFlowRequest.newBuilder().setParent(agentName).setFlow(flow).build();
+    Flow flowResponse = flowsClient.createFlow(createFlowRequest);
+    trianFlowName = flowResponse.getName();
+
     Empty expectedResponse = Empty.newBuilder().build();
-    Empty response = flowsClient.trainFlowAsync(flowName).get();
+    Empty response = flowsClient.trainFlowAsync(trianFlowName).get();
     assertEquals(expectedResponse, response);
   }
 
