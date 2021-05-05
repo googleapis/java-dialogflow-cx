@@ -389,11 +389,16 @@ public class ITSystemTest {
     CreateFlowRequest createFlowRequest =
         CreateFlowRequest.newBuilder().setParent(agentName).setFlow(flow).build();
     Flow flowResponse = flowsClient.createFlow(createFlowRequest);
-    trianFlowName = flowResponse.getName();
+    String trianFlowName = flowResponse.getName();
 
     Empty expectedResponse = Empty.newBuilder().build();
     Empty response = flowsClient.trainFlowAsync(trianFlowName).get();
     assertEquals(expectedResponse, response);
+
+    // clean up
+    DeleteFlowRequest deleteFlowRequest = DeleteFlowRequest.newBuilder().setName(trianFlowName).build();
+    flowsClient.deleteFlow(deleteFlowRequest);
+    flowsClient.close();
   }
 
   @Test
