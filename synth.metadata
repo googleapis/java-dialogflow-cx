@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0506eca9c02abc87d927bc17a9f8b8643ef1c1e9",
-        "internalRef": "372385924"
+        "sha": "3e32fd102910803198332eb5039cbc0b6dee9850",
+        "internalRef": "372602458"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "0506eca9c02abc87d927bc17a9f8b8643ef1c1e9",
-        "internalRef": "372385924"
+        "sha": "3e32fd102910803198332eb5039cbc0b6dee9850",
+        "internalRef": "372602458"
       }
     },
     {
@@ -692,6 +692,7 @@
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/SecuritySettingsProto.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/SentimentAnalysisResult.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/SentimentAnalysisResultOrBuilder.java",
+    "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/ServiceName.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/SessionEntityType.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/SessionEntityTypeName.java",
     "proto-google-cloud-dialogflow-cx-v3/src/main/java/com/google/cloud/dialogflow/cx/v3/SessionEntityTypeOrBuilder.java",
