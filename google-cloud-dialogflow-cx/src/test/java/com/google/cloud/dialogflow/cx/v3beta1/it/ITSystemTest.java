@@ -173,8 +173,9 @@ public class ITSystemTest {
         CreateFlowRequest.newBuilder().setParent(agentName).setFlow(flow).build();
     Flow flowResponse = flowsClient.createFlow(createFlowRequest);
     flowName = flowResponse.getName();
-    
-    Flow trainFlow = Flow.newBuilder()
+
+    Flow trainFlow =
+        Flow.newBuilder()
             .setNluSettings(NLUSETTINGS)
             .setDisplayName(DISPLAY_NAME)
             .setDescription(DESCRIPTION)
@@ -183,7 +184,6 @@ public class ITSystemTest {
         CreateFlowRequest.newBuilder().setParent(agentName).setFlow(trainFlow).build();
     Flow trainFlowResponse = flowsClient.createFlow(createTrainFlowRequest);
     trainFlowName = trainFlowResponse.getName();
-    
 
     /* create intents */
     intentsClient = IntentsClient.create();
@@ -257,8 +257,9 @@ public class ITSystemTest {
     /* delete flows */
     DeleteFlowRequest deleteFlowRequest = DeleteFlowRequest.newBuilder().setName(flowName).build();
     flowsClient.deleteFlow(deleteFlowRequest);
-    
-    DeleteFlowRequest deleteTrainFlowRequest = DeleteFlowRequest.newBuilder().setName(trainFlowName).build();
+
+    DeleteFlowRequest deleteTrainFlowRequest =
+        DeleteFlowRequest.newBuilder().setName(trainFlowName).build();
     flowsClient.deleteFlow(deleteTrainFlowRequest);
     flowsClient.close();
 
