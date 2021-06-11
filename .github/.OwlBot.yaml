@@ -20,6 +20,9 @@ deep-remove-regex:
 - "/proto-google-.*/src"
 - "/google-.*/src"
 
+deep-preserve-regex:
+- "/google-cloud-dialogflow-cx/src/test/java/com/google/cloud/dialogflow/cx/v.*/it/ITSystemTest.java"
+
 deep-copy-regex:
 - source: "/google/cloud/dialogflow/cx/(v.*)/.*-java/proto-google-.*/src"
   dest: "/owl-bot-staging/$1/proto-google-cloud-dialogflow-cx-$1/src"
