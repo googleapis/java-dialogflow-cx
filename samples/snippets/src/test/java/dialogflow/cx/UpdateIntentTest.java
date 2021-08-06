@@ -22,7 +22,6 @@ import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
-import com.google.cloud.dialogflow.cx.v3.CreateIntentRequest.Builder;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 
 import java.io.IOException;
@@ -61,7 +60,7 @@ public class UpdateIntentTest {
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
       com.google.cloud.dialogflow.cx.v3.Intent.Builder intent = Intent.newBuilder();
-      intent.setDisplayName("temp_intent_"+UUID.randomUUID().toString());
+      intent.setDisplayName("temp_intent_" + UUID.randomUUID().toString());
 
       UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
       UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[7];
