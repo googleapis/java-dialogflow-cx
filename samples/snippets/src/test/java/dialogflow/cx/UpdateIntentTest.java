@@ -16,12 +16,17 @@
 
 package dialogflow.cx;
 
-import com.google.cloud.dialogflow.cx.v3.Intent;
-import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
+import com.google.cloud.dialogflow.cx.v3.Agent;
+import com.google.cloud.dialogflow.cx.v3.AgentsClient;
+import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
+import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
+import com.google.cloud.dialogflow.cx.v3.CreateIntentRequest.Builder;
+import com.google.cloud.dialogflow.cx.v3.Intent;
 
 import java.io.IOException;
 import java.util.UUID;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +36,7 @@ public class UpdateIntentTest {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
   private static String intentID = "";
+  private static String intentPath = "";
   private static String agentID = "";
 
   @Before
@@ -44,7 +50,7 @@ public class UpdateIntentTest {
     Agent agent = build.build();
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
-    String parentPath = "projects/" + parent + "/locations/global";
+    String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
     AgentsClient client = AgentsClient.create(agentsSettings);
@@ -53,11 +59,23 @@ public class UpdateIntentTest {
     UpdateIntentTest.agentID = parent.split("/")[5];
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
+      com.google.cloud.dialogflow.cx.v3.Intent.Builder intent = Intent.newBuilder();
+      intent.setDisplayName("temp_intent_"+UUID.randomUUID().toString());
 
-      for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
-        UpdateIntentTest.intentID = intent.getName().split("/")[7];
-      }
+      UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
+      UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[7];
     }
+  }
+
+  @After
+  public void tearDown() throws IOException {
+    String apiEndpoint = "global-dialogflow.googleapis.com:443";
+    String parentPath = "projects/" + PROJECT_ID + "/locations/global";
+
+    AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
+    AgentsClient client = AgentsClient.create(agentsSettings);
+
+    client.deleteAgent(parent);
   }
 
   @Test
