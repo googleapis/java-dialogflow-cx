@@ -17,6 +17,7 @@
 package dialogflow.cx;
 
 import com.google.cloud.dialogflow.cx.v3.Agent;
+import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
