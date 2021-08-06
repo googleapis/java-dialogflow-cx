@@ -22,7 +22,6 @@ import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
 
 import java.io.IOException;
-
 import java.util.UUID;
 
 import org.junit.Assert;
