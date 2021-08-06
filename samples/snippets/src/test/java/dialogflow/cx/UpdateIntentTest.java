@@ -21,9 +21,8 @@ import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
-import com.google.cloud.dialogflow.cx.v3.IntentsClient;
 import com.google.cloud.dialogflow.cx.v3.Intent;
-
+import com.google.cloud.dialogflow.cx.v3.IntentsClient;
 import java.io.IOException;
 import java.util.UUID;
 import org.junit.After;
