@@ -16,8 +16,8 @@
 
 package dialogflow.cx;
 
-import com.google.cloud.dialogflow.cx.v3.IntentsClient;
 import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
+import com.google.cloud.dialogflow.cx.v3.IntentsClient;
 import com.google.cloud.dialogflow.cx.v3.UpdateIntentRequest;
 import com.google.protobuf.FieldMask;
 

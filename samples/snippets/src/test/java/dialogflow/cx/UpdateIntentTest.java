@@ -20,6 +20,7 @@ import com.google.cloud.dialogflow.cx.v3.AgentName;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
+
 import java.io.IOException;
 import java.util.UUID;
 import org.junit.Assert;
@@ -37,19 +38,18 @@ public class UpdateIntentTest {
   @Before
   public void setUp() throws IOException {
 
-    String apiEndpoint = "global-dialogflow.googleapis.com:443";
-
-    String parentPath = "projects/" + parent + "/locations/global";
-
-    AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
-
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
     build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
     build.setTimeZone("America/Los_Angeles");
 
     Agent agent = build.build();
+
+    String apiEndpoint = "global-dialogflow.googleapis.com:443";
+    String parentPath = "projects/" + parent + "/locations/global";
+    
+    AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
+    AgentsClient client = AgentsClient.create(agentsSettings);
 
     parent = client.createAgent(parentPath, agent).getName();
     agentID = parent.split("/")[5];
