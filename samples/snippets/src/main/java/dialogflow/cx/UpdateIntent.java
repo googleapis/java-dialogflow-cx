@@ -27,7 +27,7 @@ import java.io.IOException;
 
 public class UpdateIntent {
 
-  public static com.google.cloud.dialogflow.cx.v3beta1.Intent updateIntent(String projectId,
+  public static com.google.cloud.dialogflow.cx.v3.Intent updateIntent(String projectId,
       String agentId, String intentId, String location, String displayName) throws IOException {
     IntentsClient client = IntentsClient.create();
 
@@ -46,7 +46,7 @@ public class UpdateIntent {
         .setLanguageCode("en")
         .setUpdateMask(fieldMask)
         .build();
-    System.out.println(client.updateIntent(request));
+    return client.updateIntent(request);
   }
 
 }
