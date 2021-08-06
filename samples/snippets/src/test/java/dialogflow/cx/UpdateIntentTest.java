@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-package com.example.dialogflow;
+package dialogflow.cx;
 
-import com.google.cloud.dialogflow.cx.v3.AgentName;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
@@ -29,9 +28,9 @@ import org.junit.Test;
 public class UpdateIntentTest {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String parent = "";
   private static String intentID = "";
   private static String agentID = "";
-  private static String parent = "";
 
   @Before
   public void setUp() throws IOException {
@@ -50,12 +49,12 @@ public class UpdateIntentTest {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     parent = client.createAgent(parentPath, agent).getName();
-    agentID = parent.split("/")[5];
+    UpdateIntentTest.agentID = parent.split("/")[5];
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
 
       for (Intent intent : intentsClient.listIntents(parent).iterateAll()) {
-        intentID = intent.getName().split("/")[7];
+        UpdateIntentTest.intentID = intent.getName().split("/")[7];
       }
     }
   }
@@ -65,7 +64,7 @@ public class UpdateIntentTest {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
-    Intent actualResponse = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global",
+    Intent actualResponse = UpdateIntent.updateIntent(PROJECT_ID, UpdateIntentTest.agentID, UpdateIntentTest.intentID, "global",
         fakeIntent);
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
