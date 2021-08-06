@@ -16,32 +16,36 @@
 
 package dialogflow.cx;
 
-import java.io.*;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
-import com.google.cloud.dialogflow.cx.v3.UpdateIntentRequest;
 import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
+import com.google.cloud.dialogflow.cx.v3.UpdateIntentRequest;
 import com.google.protobuf.FieldMask;
 
-public class UpdateIntent 
-{
+import java.io.IOException;
 
-    public static com.google.cloud.dialogflow.cx.v3beta1.Intent updateIntent(String projectId,String agentId,String intentId,String location,String displayName) throws IOException{
-        IntentsClient client = IntentsClient.create();
 
-        String intentPath = "projects/"+projectId+"/locations/"+location+"/agents/"+agentId+"/intents/"+intentId;
+public class UpdateIntent {
 
-        Builder intentBuilder = client.getIntent(intentPath).toBuilder();
+  public static com.google.cloud.dialogflow.cx.v3beta1.Intent updateIntent(String projectId,
+      String agentId, String intentId, String location, String displayName) throws IOException {
+    IntentsClient client = IntentsClient.create();
 
-        intentBuilder.setDisplayName(displayName);
-        FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
-    
-        Intent intent = intentBuilder.build();
-        UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
-            .setIntent(intent)
-            .setLanguageCode("en")
-            .setUpdateMask(fieldMask)
-            .build();
-        System.out.println(client.updateIntent(request));
-    }
+    String intentPath =
+        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/intents/"
+            + intentId;
+
+    Builder intentBuilder = client.getIntent(intentPath).toBuilder();
+
+    intentBuilder.setDisplayName(displayName);
+    FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
+
+    Intent intent = intentBuilder.build();
+    UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
+        .setIntent(intent)
+        .setLanguageCode("en")
+        .setUpdateMask(fieldMask)
+        .build();
+    System.out.println(client.updateIntent(request));
+  }
 
 }

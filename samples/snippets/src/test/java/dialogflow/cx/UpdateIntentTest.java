@@ -39,21 +39,20 @@ public class UpdateIntentTest {
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
-    String parentPath = "projects/"+parent+"/locations/global";
+    String parentPath = "projects/" + parent + "/locations/global";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
-    build.setDisplayName("temp_agent_"+UUID.randomUUID().toString());
+    build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
     build.setTimeZone("America/Los_Angeles");
 
     Agent agent = build.build();
 
-    parent = client.createAgent(parentPath,agent).getName();
-    agentID = parent.split("/")[5];  
-
+    parent = client.createAgent(parentPath, agent).getName();
+    agentID = parent.split("/")[5];
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
 
@@ -68,7 +67,7 @@ public class UpdateIntentTest {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
-    Intent actualResponse = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global", 
+    Intent actualResponse = UpdateIntent.updateIntent(PROJECT_ID, IntentID, "global",
         fakeIntent);
 
     try (IntentsClient intentsClient = IntentsClient.create()) {
