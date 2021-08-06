@@ -20,8 +20,11 @@ import com.google.cloud.dialogflow.cx.v3.AgentName;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
+
 import java.io.IOException;
+
 import java.util.UUID;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
