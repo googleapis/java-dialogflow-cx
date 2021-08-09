@@ -25,6 +25,9 @@ import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
+import com.google.common.base.Strings;
+import com.google.protobuf.ByteString;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 import org.junit.After;
@@ -94,11 +97,6 @@ public class UpdateIntentTest {
     UpdateIntent
         .updateIntent(PROJECT_ID, UpdateIntentTest.agentID, UpdateIntentTest.intentID, "global",
             fakeIntent);
-
-    try (IntentsClient intentsClient = IntentsClient.create()) {
-      // Set the project agent name using the projectID (my-project-id)
-      intentsClient.deleteIntent(actualResponse.getName());
-    }
 
     assertThat(stdOut.toString()).contains(fakeIntent);
   }
