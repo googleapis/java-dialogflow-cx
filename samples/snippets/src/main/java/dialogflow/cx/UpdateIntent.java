@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2021 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package dialogflow.cx;
 
+// [START dialogflow_cx_update_intent]
+
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.Intent.Builder;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
@@ -25,26 +27,39 @@ import java.io.IOException;
 
 public class UpdateIntent {
 
+  public static void main(main(String[] args) {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String agentId = "my-agent-id";
+    String location = "my-location";
+    String displayName = "my-display-name";
+    updateIntent(projectId, agentId, location, displayName);
+  }
+
+  // DialogFlow API Update Intent sample. 
   public static com.google.cloud.dialogflow.cx.v3.Intent updateIntent(String projectId,
       String agentId, String intentId, String location, String displayName) throws IOException {
-    IntentsClient client = IntentsClient.create();
+    try(IntentsClient client = IntentsClient.create()){
+      String intentPath =
+          "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/intents/"
+              + intentId;
 
-    String intentPath =
-        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/intents/"
-            + intentId;
+      Builder intentBuilder = client.getIntent(intentPath).toBuilder();
 
-    Builder intentBuilder = client.getIntent(intentPath).toBuilder();
+      intentBuilder.setDisplayName(displayName);
+      FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
 
-    intentBuilder.setDisplayName(displayName);
-    FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
+      Intent intent = intentBuilder.build();
+      UpdateIntentRequest request = UpdateIntentRequest.newBuilder() 
+          .setIntent(intent)
+          .setLanguageCode("en")
+          .setUpdateMask(fieldMask)
+          .build();
+    }
 
-    Intent intent = intentBuilder.build();
-    UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
-        .setIntent(intent)
-        .setLanguageCode("en")
-        .setUpdateMask(fieldMask)
-        .build();
-    return client.updateIntent(request);
+    Intent response = client.updateIntent(request); //Make API request to update intent using fieldmask
+    return response;
   }
 
 }
+// [END dialogflow_cx_update_intent]
