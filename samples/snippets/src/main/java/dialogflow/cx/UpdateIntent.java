@@ -37,7 +37,7 @@ public class UpdateIntent {
   }
 
   // DialogFlow API Update Intent sample. 
-  public static com.google.cloud.dialogflow.cx.v3.Intent updateIntent(String projectId,
+  public static void updateIntent(String projectId,
       String agentId, String intentId, String location, String displayName) throws IOException {
     try (IntentsClient client = IntentsClient.create()) {
       String intentPath =
@@ -55,11 +55,13 @@ public class UpdateIntent {
           .setLanguageCode("en")
           .setUpdateMask(fieldMask)
           .build();
-    }
+    
 
-    Intent response = client
-        .updateIntent(request); //Make API request to update intent using fieldmask
-    return response;
+      //Make API request to update intent using fieldmask
+      Intent response = client.updateIntent(request);
+      System.out.println(response);
+
+    }
   }
 
 }

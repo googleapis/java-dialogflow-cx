@@ -16,6 +16,8 @@
 
 package dialogflow.cx;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
@@ -38,8 +40,13 @@ public class UpdateIntentTest {
   private static String intentPath = "";
   private static String agentID = "";
 
+  private ByteArrayOutputStream stdOut;
+
   @Before
   public void setUp() throws IOException {
+
+    stdOut = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(stdOut));
 
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
@@ -68,6 +75,8 @@ public class UpdateIntentTest {
 
   @After
   public void tearDown() throws IOException {
+    stdOut = null;
+    System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
     String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
@@ -82,7 +91,7 @@ public class UpdateIntentTest {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
-    Intent actualResponse = UpdateIntent
+    UpdateIntent
         .updateIntent(PROJECT_ID, UpdateIntentTest.agentID, UpdateIntentTest.intentID, "global",
             fakeIntent);
 
@@ -91,6 +100,6 @@ public class UpdateIntentTest {
       intentsClient.deleteIntent(actualResponse.getName());
     }
 
-    Assert.assertEquals(actualResponse.getDisplayName(), fakeIntent);
+    assertThat(stdOut.toString()).contains(fakeIntent);
   }
 }
