@@ -27,7 +27,7 @@ import java.io.IOException;
 
 public class UpdateIntent {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String agentId = "my-agent-id";
