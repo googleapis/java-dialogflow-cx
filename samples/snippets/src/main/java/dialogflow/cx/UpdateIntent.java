@@ -31,9 +31,10 @@ public class UpdateIntent {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String agentId = "my-agent-id";
+    String intentId = "my-intent-id";
     String location = "my-location";
     String displayName = "my-display-name";
-    updateIntent(projectId, agentId, location, displayName);
+    updateIntent(projectId, agentId, intentId, location, displayName);
   }
 
   // DialogFlow API Update Intent sample. 
