@@ -29,6 +29,7 @@ import com.google.common.base.Strings;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Assert;
