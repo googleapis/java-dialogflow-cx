@@ -26,7 +26,7 @@ import com.google.protobuf.FieldMask;
 import java.io.IOException;
 
 public class UpdateIntent {
-  
+
   public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
@@ -39,7 +39,7 @@ public class UpdateIntent {
   // DialogFlow API Update Intent sample. 
   public static com.google.cloud.dialogflow.cx.v3.Intent updateIntent(String projectId,
       String agentId, String intentId, String location, String displayName) throws IOException {
-    try(IntentsClient client = IntentsClient.create()){
+    try (IntentsClient client = IntentsClient.create()) {
       String intentPath =
           "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/intents/"
               + intentId;
@@ -50,14 +50,15 @@ public class UpdateIntent {
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
 
       Intent intent = intentBuilder.build();
-      UpdateIntentRequest request = UpdateIntentRequest.newBuilder() 
+      UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
           .setIntent(intent)
           .setLanguageCode("en")
           .setUpdateMask(fieldMask)
           .build();
     }
 
-    Intent response = client.updateIntent(request); //Make API request to update intent using fieldmask
+    Intent response = client
+        .updateIntent(request); //Make API request to update intent using fieldmask
     return response;
   }
 
