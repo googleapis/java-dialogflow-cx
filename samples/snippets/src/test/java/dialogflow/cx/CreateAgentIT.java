@@ -50,8 +50,8 @@ public class CreateAgentIT {
     String fakeAgent = "fake_agent_" + UUID.randomUUID().toString();
 
     Agent response = CreateAgent.createAgent(PROJECT_ID, fakeAgent);
-    CreateAgentIT.agentPath = response.name;
+    CreateAgentIT.agentPath = response.getName();
 
-    assertEquals(response.getDisplayName, fakeAgent);
+    assertEquals(response.getDisplayName(), fakeAgent);
   }
 }
