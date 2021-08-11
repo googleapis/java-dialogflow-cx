@@ -24,7 +24,6 @@ import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import java.io.IOException;
 
-
 public class CreateAgent {
 
   public static void main(String[] args) throws IOException {
@@ -35,7 +34,7 @@ public class CreateAgent {
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
-    //Set the details of the Agent to create 
+    // Set the details of the Agent to create
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
     build.setDisplayName(agentName);
@@ -43,13 +42,12 @@ public class CreateAgent {
 
     Agent agent = build.build();
     String parentPath = "projects/" + parent + "/locations/global";
-    
+
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
     AgentsClient client = AgentsClient.create(agentsSettings);
 
-    //Make API request to create agent
+    // Make API request to create agent
     return client.createAgent(parentPath, agent);
   }
-
 }
 // [END dialogflow_cx_create_agent]
