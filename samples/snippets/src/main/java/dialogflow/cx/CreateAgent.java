@@ -35,18 +35,19 @@ public class CreateAgent {
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
-    String parentPath = "projects/" + parent + "/locations/global";
-
-    AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
-
+    //Set the details of the Agent to create 
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
     build.setDisplayName(agentName);
     build.setTimeZone("America/Los_Angeles");
 
     Agent agent = build.build();
+    String parentPath = "projects/" + parent + "/locations/global";
+    
+    AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
+    AgentsClient client = AgentsClient.create(agentsSettings);
 
+    //Make API request to create agent
     return client.createAgent(parentPath, agent);
   }
 
