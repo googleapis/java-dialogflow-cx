@@ -37,12 +37,19 @@ public class UpdateIntent {
     updateIntent(projectId, agentId, intentId, location, displayName);
   }
 
-  // DialogFlow API Update Intent sample. 
-  public static void updateIntent(String projectId,
-      String agentId, String intentId, String location, String displayName) throws IOException {
+  // DialogFlow API Update Intent sample.
+  public static void updateIntent(
+      String projectId, String agentId, String intentId, String location, String displayName)
+      throws IOException {
     try (IntentsClient client = IntentsClient.create()) {
       String intentPath =
-          "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/intents/"
+          "projects/"
+              + projectId
+              + "/locations/"
+              + location
+              + "/agents/"
+              + agentId
+              + "/intents/"
               + intentId;
 
       Builder intentBuilder = client.getIntent(intentPath).toBuilder();
@@ -51,19 +58,17 @@ public class UpdateIntent {
       FieldMask fieldMask = FieldMask.newBuilder().addPaths("display_name").build();
 
       Intent intent = intentBuilder.build();
-      UpdateIntentRequest request = UpdateIntentRequest.newBuilder()
-          .setIntent(intent)
-          .setLanguageCode("en")
-          .setUpdateMask(fieldMask)
-          .build();
-    
+      UpdateIntentRequest request =
+          UpdateIntentRequest.newBuilder()
+              .setIntent(intent)
+              .setLanguageCode("en")
+              .setUpdateMask(fieldMask)
+              .build();
 
-      //Make API request to update intent using fieldmask
+      // Make API request to update intent using fieldmask
       Intent response = client.updateIntent(request);
       System.out.println(response);
-
     }
   }
-
 }
 // [END dialogflow_cx_update_intent]

@@ -22,17 +22,13 @@ import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
-import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
-import com.google.common.base.Strings;
-import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -95,9 +91,8 @@ public class UpdateIntentTest {
 
     String fakeIntent = "fake_intent_" + UUID.randomUUID().toString();
 
-    UpdateIntent
-        .updateIntent(PROJECT_ID, UpdateIntentTest.agentID, UpdateIntentTest.intentID, "global",
-            fakeIntent);
+    UpdateIntent.updateIntent(
+        PROJECT_ID, UpdateIntentTest.agentID, UpdateIntentTest.intentID, "global", fakeIntent);
 
     assertThat(stdOut.toString()).contains(fakeIntent);
   }
