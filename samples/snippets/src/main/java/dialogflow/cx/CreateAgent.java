@@ -45,7 +45,8 @@ public class CreateAgent {
 
       build.setDefaultLanguageCode("en");
       build.setDisplayName(displayName);
-      //Correct format for timezone is location/city for example America/Los_Angeles, Europe/Madrid, Asia/Tokyo
+      //Correct format for timezone is location/city
+      //For example America/Los_Angeles, Europe/Madrid, Asia/Tokyo
       build.setTimeZone("America/Los_Angeles");
 
       Agent agent = build.build();
