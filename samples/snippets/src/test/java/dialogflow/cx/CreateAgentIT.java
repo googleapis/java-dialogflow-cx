@@ -47,7 +47,6 @@ public class CreateAgentIT {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
-    String parentPath = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, "global");
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
     AgentsClient client = AgentsClient.create(agentsSettings);
