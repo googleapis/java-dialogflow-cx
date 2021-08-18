@@ -33,6 +33,7 @@ public class CreateAgentIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String agentPath = "";
+  private ByteArrayOutputStream stdOut;
 
   @Before
   public void setUp() throws IOException {
