@@ -34,7 +34,7 @@ public class CreateAgent {
     createAgent(projectId, displayName);
   }
 
-  public static void createAgent(String parent, String displayName) throws IOException {
+  public static Agent createAgent(String parent, String displayName) throws IOException {
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
@@ -53,8 +53,12 @@ public class CreateAgent {
       String parentPath = String.format("projects/%s/locations/%s", parent, "global");
 
       // Make API request to create agent
-      System.out.println(client.createAgent(parentPath, agent));
+      Agent response = client.createAgent(parentPath, agent);
+      System.out.println(response);
+      return response;
     }
+
+    return null
   }
 }
 // [END dialogflow_cx_create_agent]
