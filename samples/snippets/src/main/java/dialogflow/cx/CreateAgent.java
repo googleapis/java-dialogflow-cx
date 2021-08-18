@@ -29,7 +29,7 @@ public class CreateAgent {
   public static void main(String[] args) throws IOException {
 
     String projectId = "my-project-id";
-    String displayName = "my-display-name"
+    String displayName = "my-display-name";
 
     createAgent(projectId, displayName);
   }
