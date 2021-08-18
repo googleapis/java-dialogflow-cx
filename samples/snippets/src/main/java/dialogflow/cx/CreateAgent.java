@@ -27,27 +27,32 @@ import java.io.IOException;
 public class CreateAgent {
 
   public static void main(String[] args) throws IOException {
-    createAgent("My-Project-Id", "Agent-Name");
+
+    String projectId = "my-project-id";
+    String displayName = "my-display-name"
+
+    createAgent(projectId, displayName);
   }
 
-  public static Agent createAgent(String parent, String agentName) throws IOException {
+  public static void createAgent(String parent, String displayName) throws IOException {
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
-    // Set the details of the Agent to create
-    Builder build = Agent.newBuilder();
-    build.setDefaultLanguageCode("en");
-    build.setDisplayName(agentName);
-    build.setTimeZone("America/Los_Angeles");
-
-    Agent agent = build.build();
-    String parentPath = "projects/" + parent + "/locations/global";
-
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
+    try (AgentsClient client = AgentsClient.create(agentsSettings)) {
+      // Set the details of the Agent to create
+      Builder build = Agent.newBuilder();
 
-    // Make API request to create agent
-    return client.createAgent(parentPath, agent);
+      build.setDefaultLanguageCode("en");
+      build.setDisplayName(displayName);
+      build.setTimeZone("America/Los_Angeles");
+
+      Agent agent = build.build();
+      String parentPath = "projects/" + parent + "/locations/global";
+
+      // Make API request to create agent
+      System.log.println(client.createAgent(parentPath, agent));
+    }
   }
 }
 // [END dialogflow_cx_create_agent]

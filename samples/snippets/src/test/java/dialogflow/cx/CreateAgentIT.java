@@ -16,14 +16,17 @@
 
 package dialogflow.cx;
 
-import static org.junit.Assert.assertEquals;
+import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CreateAgentIT {
@@ -31,8 +34,17 @@ public class CreateAgentIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String agentPath = "";
 
+  @Before
+  public void setUp() throws IOException {
+    stdOut = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(stdOut));
+
+  }
+
   @After
   public void tearDown() throws IOException {
+    stdOut = null;
+    System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
     String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
@@ -44,12 +56,10 @@ public class CreateAgentIT {
 
   @Test
   public void testCreateAgent() throws IOException {
-
     String fakeAgent = "fake_agent_" + UUID.randomUUID().toString();
 
-    Agent response = CreateAgent.createAgent(PROJECT_ID, fakeAgent);
-    CreateAgentIT.agentPath = response.getName();
+    CreateAgent.createAgent(PROJECT_ID, fakeAgent);
 
-    assertEquals(response.getDisplayName(), fakeAgent);
+    assertThat(stdOut.toString()).contains(fakeAgent);
   }
 }
