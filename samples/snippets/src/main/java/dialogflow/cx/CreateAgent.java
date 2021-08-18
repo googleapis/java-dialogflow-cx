@@ -50,10 +50,10 @@ public class CreateAgent {
       build.setTimeZone("America/Los_Angeles");
 
       Agent agent = build.build();
-      String parentPath = "projects/" + parent + "/locations/global";
+      String parentPath = String.format("projects/%s/locations/%s", parent, "global");
 
       // Make API request to create agent
-      System.log.println(client.createAgent(parentPath, agent));
+      System.out.println(client.createAgent(parentPath, agent));
     }
   }
 }
