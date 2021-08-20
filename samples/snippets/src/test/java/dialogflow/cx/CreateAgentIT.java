@@ -18,7 +18,6 @@ package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import java.io.ByteArrayOutputStream;
@@ -41,7 +40,6 @@ public class CreateAgentIT {
     originalOut = System.out;
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
   }
 
   @After
