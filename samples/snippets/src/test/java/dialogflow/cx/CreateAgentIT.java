@@ -34,9 +34,11 @@ public class CreateAgentIT {
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String agentPath = "";
   private ByteArrayOutputStream stdOut;
+  private static PrintStream originalOut;
 
   @Before
   public void setUp() throws IOException {
+    originalOut = System.out;
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
 
@@ -44,8 +46,7 @@ public class CreateAgentIT {
 
   @After
   public void tearDown() throws IOException {
-    stdOut = null;
-    System.setOut(null);
+    System.setOut(originalOut);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();

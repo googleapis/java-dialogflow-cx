@@ -27,7 +27,7 @@ import java.io.IOException;
 public class CreateAgent {
 
   public static void main(String[] args) throws IOException {
-
+    // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String displayName = "my-display-name";
 
@@ -52,7 +52,7 @@ public class CreateAgent {
       Agent agent = build.build();
       String parentPath = String.format("projects/%s/locations/%s", parent, "global");
 
-      // Make API request to create agent
+      // Calls the create agent api and returns the created Agent 
       Agent response = client.createAgent(parentPath, agent);
       System.out.println(response);
       return response;
