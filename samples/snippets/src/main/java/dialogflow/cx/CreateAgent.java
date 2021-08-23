@@ -52,7 +52,7 @@ public class CreateAgent {
       Agent agent = build.build();
       String parentPath = String.format("projects/%s/locations/%s", parent, "global");
 
-      // Calls the create agent api and returns the created Agent 
+      // Calls the create agent api and returns the created Agent
       Agent response = client.createAgent(parentPath, agent);
       System.out.println(response);
       return response;
