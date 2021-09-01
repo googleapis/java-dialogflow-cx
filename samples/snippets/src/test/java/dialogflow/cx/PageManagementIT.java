@@ -37,7 +37,7 @@ import org.junit.Test;
 /**
  * Integration (system) tests for {@link PageManagment}.
  */
-public class PageManagmentIT {
+public class PageManagementIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
