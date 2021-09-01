@@ -29,12 +29,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-import org.json.JSONObject;  
+import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/** Integration (system) tests for {@link PageManagment}. */
+/**
+ * Integration (system) tests for {@link PageManagment}.
+ */
 public class PageManagmentIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
@@ -86,9 +88,11 @@ public class PageManagmentIT {
 
   @Test
   public void testCreatePage() throws IOException {
-    PageManagment.createPage(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID,PageManagmentIT.flowID, PageManagmentIT.location, PageManagmentIT.displayName);
+    PageManagment
+        .createPage(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID,
+            PageManagmentIT.location, PageManagmentIT.displayName);
 
-    JSONParser parser = new JSONParser();  
+    JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(stdOut.toString());
 
     PageManagmentIT.pageID = json.name.split("/")[9]
@@ -101,7 +105,9 @@ public class PageManagmentIT {
 
   @Test
   public void testListPages() throws IOException {
-    PageManagment.listPages(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID,PageManagmentIT.flowID, PageManagmentIT.location);
+    PageManagment
+        .listPages(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID,
+            PageManagmentIT.location);
     assertThat(stdOut.toString()).contains(PageManagmentIT.displayName);
 
     stdOut = null;
@@ -111,10 +117,11 @@ public class PageManagmentIT {
   @Test
   public void testDeletePage() throws IOException {
     try {
-      PageManagment.deletePage(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID, PageManagmentIT.pageID, PageManagmentIT.location);
+      PageManagment
+          .deletePage(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID,
+              PageManagmentIT.pageID, PageManagmentIT.location);
       assertTrue(true);
-    }
-    catch(Exception e) {
+    } catch (Exception e) {
       assertTrue(false);
     }
   }
