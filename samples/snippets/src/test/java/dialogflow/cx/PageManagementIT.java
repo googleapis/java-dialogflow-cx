@@ -44,8 +44,8 @@ public class PageManagementIT {
   private static String parent = "";
   private static String agentID = "";
   private static String pageID = "";
-  private static String flowID = "";
-  private static String location = "";
+  private static String flowID = "00000000-0000-0000-0000-000000000000";
+  private static String location = "global";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
 
   private ByteArrayOutputStream stdOut;
