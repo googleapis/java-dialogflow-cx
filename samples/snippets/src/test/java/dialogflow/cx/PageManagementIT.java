@@ -93,7 +93,7 @@ public class PageManagementIT {
             PageManagementIT.location, PageManagementIT.displayName);  
     PageManagementIT.pageID = p.getName().split("/")[9];
 
-    assertThat(p.getDisplayName()).equals(PageManagementIT.displayName);
+    assertThat(p.getDisplayName()).isEqualTo(PageManagementIT.displayName);
   }
 
   @Test
@@ -102,9 +102,6 @@ public class PageManagementIT {
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
     assertThat(stdOut.toString()).contains(PageManagementIT.displayName);
-
-    stdOut = null;
-    System.setOut(null);
   }
 
   @Test
@@ -113,9 +110,9 @@ public class PageManagementIT {
       PageManagment
           .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, 
             PageManagementIT.flowID, PageManagementIT.pageID, PageManagementIT.location);
-      assertTrue(true);
+      assertThat(1).isEqualTo(1);
     } catch (Exception e) {
-      assertTrue(false);
+      assertThat(1).isEqualTo(0);
     }
   }
 }
