@@ -95,7 +95,7 @@ public class PageManagementIT {
     JSONParser parser = new JSONParser();
     JSONObject json = (JSONObject) parser.parse(stdOut.toString());
 
-    PageManagmentIT.pageID = json.name.split("/")[9]
+    PageManagmentIT.pageID = json.name.split("/")[9];
 
     assertThat(json.display_name).equals(PageManagmentIT.displayName);
 
