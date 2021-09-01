@@ -93,7 +93,8 @@ public class PageManagementIT {
             PageManagementIT.location, PageManagementIT.displayName);
 
     Gson g = new Gson();
-    com.google.cloud.dialogflow.cx.v3.Page p = g.fromJson(stdOut.toString(), com.google.cloud.dialogflow.cx.v3.Page);
+    com.google.cloud.dialogflow.cx.v3.Page p = 
+        g.fromJson(stdOut.toString(), com.google.cloud.dialogflow.cx.v3.Page);
 
     PageManagementIT.pageID = p.name.split("/")[9];
 
