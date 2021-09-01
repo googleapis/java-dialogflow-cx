@@ -40,7 +40,7 @@ public class PageManagment {
   }
 
   // [START dialogflow_cx_create_page]
-  public static void createPage(String projectId, String agentId, String flowId, String location,
+  public static Page createPage(String projectId, String agentId, String flowId, String location,
       String displayName) throws IOException {
     com.google.cloud.dialogflow.cx.v3.CreatePageRequest.Builder createRequestBuilder = 
         CreatePageRequest.newBuilder();
@@ -55,7 +55,7 @@ public class PageManagment {
 
     PagesClient client = PagesClient.create();
     
-    System.out.println(client.createPage(createRequestBuilder.build()));
+    return client.createPage(createRequestBuilder.build());
   }
   // [END dialogflow_cx_create_page]
 

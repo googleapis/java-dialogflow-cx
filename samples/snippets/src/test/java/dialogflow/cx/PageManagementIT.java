@@ -89,19 +89,12 @@ public class PageManagementIT {
 
   @Test
   public void testCreatePage() throws IOException {
-    PageManagment
+    Page p = PageManagment
         .createPage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
-            PageManagementIT.location, PageManagementIT.displayName);
-
-    Gson g = new Gson();
-    Page p = g.fromJson(stdOut.toString(), Page.class);
-
+            PageManagementIT.location, PageManagementIT.displayName);  
     PageManagementIT.pageID = p.getName().split("/")[9];
 
     assertThat(p.getDisplayName()).equals(PageManagementIT.displayName);
-
-    stdOut = null;
-    System.setOut(null);
   }
 
   @Test
