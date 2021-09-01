@@ -43,11 +43,11 @@ public class PageManagementIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
-  private static String agentID = "";
   private static String pageID = "";
   private static String flowID = "";
   private static String location = "";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
+  public static String agentID = "";
 
   private ByteArrayOutputStream stdOut;
 
