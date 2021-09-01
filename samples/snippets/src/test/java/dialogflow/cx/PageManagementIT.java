@@ -23,8 +23,10 @@ import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
+import com.google.cloud.dialogflow.cx.v3.Page;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
+import com.google.gson.Gson;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -89,15 +91,15 @@ public class PageManagementIT {
   @Test
   public void testCreatePage() throws IOException {
     PageManagment
-        .createPage(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID,
-            PageManagmentIT.location, PageManagmentIT.displayName);
+        .createPage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
+            PageManagementIT.location, PageManagementIT.displayName);
 
-    JSONParser parser = new JSONParser();
-    JSONObject json = (JSONObject) parser.parse(stdOut.toString());
+    Gson g = new Gson();
+    Page p = g.fromJson(stdOut.toString(), Page)
 
-    PageManagmentIT.pageID = json.name.split("/")[9];
+    PageManagementIT.pageID = p.name.split("/")[9];
 
-    assertThat(json.display_name).equals(PageManagmentIT.displayName);
+    assertThat(p.display_name).equals(PageManagementIT.displayName);
 
     stdOut = null;
     System.setOut(null);
@@ -106,9 +108,9 @@ public class PageManagementIT {
   @Test
   public void testListPages() throws IOException {
     PageManagment
-        .listPages(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID,
-            PageManagmentIT.location);
-    assertThat(stdOut.toString()).contains(PageManagmentIT.displayName);
+        .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
+            PageManagementIT.location);
+    assertThat(stdOut.toString()).contains(PageManagementIT.displayName);
 
     stdOut = null;
     System.setOut(null);
@@ -118,8 +120,8 @@ public class PageManagementIT {
   public void testDeletePage() throws IOException {
     try {
       PageManagment
-          .deletePage(PageManagmentIT.PROJECT_ID, PageManagmentIT.agentID, PageManagmentIT.flowID,
-              PageManagmentIT.pageID, PageManagmentIT.location);
+          .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
+              PageManagementIT.pageID, PageManagementIT.location);
       assertTrue(true);
     } catch (Exception e) {
       assertTrue(false);
