@@ -25,6 +25,7 @@ import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import com.google.cloud.dialogflow.cx.v3.Intent;
 import com.google.cloud.dialogflow.cx.v3.IntentsClient;
+import com.google.cloud.dialogflow.cx.v3.Page;
 import com.google.gson.Gson;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -93,12 +94,11 @@ public class PageManagementIT {
             PageManagementIT.location, PageManagementIT.displayName);
 
     Gson g = new Gson();
-    com.google.cloud.dialogflow.cx.v3.Page p = 
-        g.fromJson(stdOut.toString(), com.google.cloud.dialogflow.cx.v3.Page);
+    Page p = g.fromJson(stdOut.toString(), Page);
 
-    PageManagementIT.pageID = p.name.split("/")[9];
+    PageManagementIT.pageID = p.getName().split("/")[9];
 
-    assertThat(p.display_name).equals(PageManagementIT.displayName);
+    assertThat(p.getDisplayName()).equals(PageManagementIT.displayName);
 
     stdOut = null;
     System.setOut(null);
