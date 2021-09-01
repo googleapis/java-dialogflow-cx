@@ -30,7 +30,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,11 +41,11 @@ public class PageManagementIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
+  private static String agentID = "";
   private static String pageID = "";
   private static String flowID = "";
   private static String location = "";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
-  public static String agentID = "";
 
   private ByteArrayOutputStream stdOut;
 
@@ -70,7 +69,7 @@ public class PageManagementIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     parent = client.createAgent(parentPath, agent).getName();
-    UpdateIntentTest.agentID = parent.split("/")[5];
+    PageManagementIT.agentID = parent.split("/")[5];
 
   }
 
