@@ -95,7 +95,7 @@ public class PageManagementIT {
             PageManagementIT.location, PageManagementIT.displayName);
 
     Gson g = new Gson();
-    Page p = g.fromJson(stdOut.toString(), Page)
+    Page p = g.fromJson(stdOut.toString(), Page);
 
     PageManagementIT.pageID = p.name.split("/")[9];
 
