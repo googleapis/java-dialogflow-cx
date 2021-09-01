@@ -120,8 +120,8 @@ public class PageManagementIT {
   public void testDeletePage() throws IOException {
     try {
       PageManagment
-          .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
-              PageManagementIT.pageID, PageManagementIT.location);
+          .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, 
+            PageManagementIT.flowID, PageManagementIT.pageID, PageManagementIT.location);
       assertTrue(true);
     } catch (Exception e) {
       assertTrue(false);
