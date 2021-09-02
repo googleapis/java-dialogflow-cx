@@ -97,7 +97,7 @@ public class PageManagementIT {
     String response = PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
-    assertThat(response).contains(PageManagementIT.displayName);
+    assertThat(response).isEqualTo("");
   }
 
   @Test
