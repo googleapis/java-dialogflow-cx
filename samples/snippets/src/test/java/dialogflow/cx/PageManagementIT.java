@@ -70,7 +70,7 @@ public class PageManagementIT {
   }
 
   @AfterClass
-  public static void tearDown() throws IOException {\
+  public static void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
