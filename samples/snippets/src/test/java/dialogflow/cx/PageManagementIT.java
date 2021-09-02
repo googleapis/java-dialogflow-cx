@@ -94,10 +94,16 @@ public class PageManagementIT {
 
   @Test
   public void testListPages() throws IOException {
+    String name = "temp_page_" + UUID.randomUUID().toString();
+
+    Page p = PageManagment
+    .createPage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
+        PageManagementIT.location, name);  
+
     String response = PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
-    assertThat(response).isEqualTo("");
+    assertThat(response).isEqualTo(name);
   }
 
   @Test
