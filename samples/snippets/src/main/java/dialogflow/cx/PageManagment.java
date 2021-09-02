@@ -71,9 +71,8 @@ public class PageManagment {
             + flowId);
     listRequestBuilder.setLanguageCode("en");
 
-    for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
-      System.out.println(element);
-    }
+    System.out.println(client.listPages(listRequestBuilder.build()));
+    
   }
   // [END dialogflow_cx_list_pages]
 
