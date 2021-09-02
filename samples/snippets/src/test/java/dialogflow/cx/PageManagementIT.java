@@ -30,9 +30,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 
 /**
  * Integration (system) tests for {@link PageManagment}.
@@ -47,13 +47,11 @@ public class PageManagementIT {
   private static String location = "global";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
 
-  private ByteArrayOutputStream stdOut;
+  private ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
+  System.setOut(new PrintStream(stdOut));
 
-  @BeforeAll
-  public void setUp() throws IOException {
-
-    stdOut = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(stdOut));
+  @BeforeClass
+  public static void setUp() throws IOException {
 
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
@@ -73,8 +71,8 @@ public class PageManagementIT {
 
   }
 
-  @AfterAll
-  public void tearDown() throws IOException {
+  @AfterClass
+  public static void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
