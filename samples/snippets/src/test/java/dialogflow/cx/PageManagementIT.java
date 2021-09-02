@@ -52,7 +52,7 @@ public class PageManagementIT {
   @BeforeClass
   public static void setUp() throws IOException {
 
-    stdOut = new ByteArrayOutputStream();
+    static stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
 
     Builder build = Agent.newBuilder();
