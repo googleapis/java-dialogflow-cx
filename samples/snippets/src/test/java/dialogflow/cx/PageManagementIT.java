@@ -97,8 +97,8 @@ public class PageManagementIT {
     String name = "temp_page_" + UUID.randomUUID().toString();
 
     Page p = PageManagment
-    .createPage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
-        PageManagementIT.location, name);  
+                .createPage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
+                    PageManagementIT.location, name);  
 
     String response = PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
