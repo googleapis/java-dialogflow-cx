@@ -30,8 +30,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.AfterAll;
+import org.junit.BeforeAll;
 import org.junit.Test;
 
 /**
@@ -49,10 +49,10 @@ public class PageManagementIT {
 
   private ByteArrayOutputStream stdOut;
 
-  @BeforeClass
-  public static void setUp() throws IOException {
+  @BeforeAll
+  public void setUp() throws IOException {
 
-    static stdOut = new ByteArrayOutputStream();
+    stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
 
     Builder build = Agent.newBuilder();
@@ -73,8 +73,8 @@ public class PageManagementIT {
 
   }
 
-  @AfterClass
-  public static void tearDown() throws IOException {
+  @AfterAll
+  public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
@@ -97,7 +97,7 @@ public class PageManagementIT {
   }
 
   @Test
-  public static void testListPages() throws IOException {
+  public void testListPages() throws IOException {
     PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
@@ -105,7 +105,7 @@ public class PageManagementIT {
   }
 
   @Test
-  public static void testDeletePage() throws IOException {
+  public void testDeletePage() throws IOException {
     try {
       PageManagment
           .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, 
