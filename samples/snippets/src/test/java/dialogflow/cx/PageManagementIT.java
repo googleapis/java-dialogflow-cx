@@ -30,8 +30,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -49,7 +49,7 @@ public class PageManagementIT {
 
   private ByteArrayOutputStream stdOut;
 
-  @Before
+  @BeforeClass
   public void setUp() throws IOException {
 
     stdOut = new ByteArrayOutputStream();
@@ -73,7 +73,7 @@ public class PageManagementIT {
 
   }
 
-  @After
+  @AfterClass
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
@@ -101,7 +101,7 @@ public class PageManagementIT {
     PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
-    assertThat(stdOut.toString()).contains(PageManagementIT.displayName);
+    assertThat(stdOut.toString()).isEqualTo("");
   }
 
   @Test
@@ -112,7 +112,7 @@ public class PageManagementIT {
             PageManagementIT.flowID, PageManagementIT.pageID, PageManagementIT.location);
       assertThat(1).isEqualTo(1);
     } catch (Exception e) {
-      assertThat(1).isEqualTo(0);
+      assertThat(e).isEqualTo("");
     }
   }
 }
