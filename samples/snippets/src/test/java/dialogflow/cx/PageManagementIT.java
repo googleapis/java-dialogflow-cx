@@ -48,11 +48,10 @@ public class PageManagementIT {
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
 
   private ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
-  System.setOut(new PrintStream(stdOut));
 
   @BeforeClass
   public static void setUp() throws IOException {
-
+    System.setOut(new PrintStream(stdOut));
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
     build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
