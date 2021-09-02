@@ -50,7 +50,7 @@ public class PageManagementIT {
   private ByteArrayOutputStream stdOut;
 
   @BeforeClass
-  public void setUp() throws IOException {
+  public static void setUp() throws IOException {
 
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
@@ -74,7 +74,7 @@ public class PageManagementIT {
   }
 
   @AfterClass
-  public void tearDown() throws IOException {
+  public static void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
@@ -97,7 +97,7 @@ public class PageManagementIT {
   }
 
   @Test
-  public void testListPages() throws IOException {
+  public static void testListPages() throws IOException {
     PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
@@ -105,7 +105,7 @@ public class PageManagementIT {
   }
 
   @Test
-  public void testDeletePage() throws IOException {
+  public static void testDeletePage() throws IOException {
     try {
       PageManagment
           .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, 
