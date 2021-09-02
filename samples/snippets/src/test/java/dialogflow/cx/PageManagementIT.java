@@ -30,8 +30,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
-import org.junit.AfterAll;
-import org.junit.BeforeAll;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.Test;
 
 /**
