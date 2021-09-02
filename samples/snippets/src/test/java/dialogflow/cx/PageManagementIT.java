@@ -101,7 +101,7 @@ public class PageManagementIT {
     PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
-    assertThat(stdOut.toString()).isEqualTo("");
+    assertThat(stdOut.toString()).contains(PageManagementIT.displayName);
   }
 
   @Test
