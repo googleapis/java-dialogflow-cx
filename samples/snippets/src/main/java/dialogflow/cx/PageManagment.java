@@ -71,13 +71,13 @@ public class PageManagment {
             + flowId);
     listRequestBuilder.setLanguageCode("en");
 
-    String result = ""
+    String result = "";
 
     for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
       result += element.toString() + "\n";
     }
 
-    System.out.println(result)
+    System.out.println(result);
   }
   // [END dialogflow_cx_list_pages]
 
