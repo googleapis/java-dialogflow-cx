@@ -60,7 +60,7 @@ public class PageManagment {
   // [END dialogflow_cx_create_page]
 
   // [START dialogflow_cx_list_pages]
-  public static void listPages(String projectId, String agentId, String flowId, String location)
+  public static String listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
     PagesClient client = PagesClient.create();
     com.google.cloud.dialogflow.cx.v3.ListPagesRequest.Builder listRequestBuilder = ListPagesRequest
@@ -77,7 +77,7 @@ public class PageManagment {
       result += element.toString() + "\n";
     }
 
-    System.out.println(result);
+    return result
   }
   // [END dialogflow_cx_list_pages]
 

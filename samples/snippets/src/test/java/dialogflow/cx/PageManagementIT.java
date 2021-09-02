@@ -94,10 +94,10 @@ public class PageManagementIT {
 
   @Test
   public void testListPages() throws IOException {
-    PageManagment
+    String response = PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
-    assertThat(stdOut.toString()).isEqualTo("");
+    assertThat(response).contains(PageManagementIT.displayName);
   }
 
   @Test
