@@ -47,10 +47,11 @@ public class PageManagementIT {
   private static String location = "global";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
 
-  private static ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
+  private static ByteArrayOutputStream stdOut;
 
   @BeforeClass
   public static void setUp() throws IOException {
+    stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
@@ -96,7 +97,7 @@ public class PageManagementIT {
     PageManagment
         .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
             PageManagementIT.location);
-    assertThat(stdOut.toString()).contains(PageManagementIT.displayName);
+    assertThat(stdOut.toString()).isEqualTo("");
   }
 
   @Test
