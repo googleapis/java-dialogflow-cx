@@ -47,11 +47,10 @@ public class PageManagementIT {
   private static String location = "global";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();
 
-  private ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
+  private static ByteArrayOutputStream stdOut = new ByteArrayOutputStream();
 
   @BeforeClass
   public static void setUp() throws IOException {
-    System.setOut(new PrintStream(stdOut));
     Builder build = Agent.newBuilder();
     build.setDefaultLanguageCode("en");
     build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
@@ -71,7 +70,7 @@ public class PageManagementIT {
   }
 
   @AfterClass
-  public static void tearDown() throws IOException {
+  public static void tearDown() throws IOException {\
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
