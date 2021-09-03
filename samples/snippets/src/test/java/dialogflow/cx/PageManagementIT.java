@@ -17,14 +17,11 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
-import com.google.cloud.dialogflow.cx.v3.Intent;
-import com.google.cloud.dialogflow.cx.v3.IntentsClient;
 import com.google.cloud.dialogflow.cx.v3.Page;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -34,9 +31,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * Integration (system) tests for {@link PageManagment}.
- */
+/** Integration (system) tests for {@link PageManagment}. */
 public class PageManagementIT {
 
   private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
@@ -68,7 +63,6 @@ public class PageManagementIT {
 
     parent = client.createAgent(parentPath, agent).getName();
     PageManagementIT.agentID = parent.split("/")[5];
-
   }
 
   @AfterClass
@@ -84,9 +78,13 @@ public class PageManagementIT {
 
   @Test
   public void testCreatePage() throws IOException {
-    Page p = PageManagment
-        .createPage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
-            PageManagementIT.location, PageManagementIT.displayName);  
+    Page p =
+        PageManagment.createPage(
+            PageManagementIT.PROJECT_ID,
+            PageManagementIT.agentID,
+            PageManagementIT.flowID,
+            PageManagementIT.location,
+            PageManagementIT.displayName);
     PageManagementIT.pageID = p.getName().split("/")[9];
 
     assertThat(p.getDisplayName()).isEqualTo(PageManagementIT.displayName);
@@ -96,13 +94,19 @@ public class PageManagementIT {
   public void testListPages() throws IOException {
     String name = "temp_page_" + UUID.randomUUID().toString();
 
-    Page p = PageManagment
-                .createPage(PageManagementIT.PROJECT_ID, 
-                    PageManagementIT.agentID, PageManagementIT.flowID,
-                    PageManagementIT.location, name);  
+    Page p =
+        PageManagment.createPage(
+            PageManagementIT.PROJECT_ID,
+            PageManagementIT.agentID,
+            PageManagementIT.flowID,
+            PageManagementIT.location,
+            name);
 
-    String response = PageManagment
-        .listPages(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, PageManagementIT.flowID,
+    String response =
+        PageManagment.listPages(
+            PageManagementIT.PROJECT_ID,
+            PageManagementIT.agentID,
+            PageManagementIT.flowID,
             PageManagementIT.location);
     assertThat(response).contains(name);
   }
@@ -110,9 +114,12 @@ public class PageManagementIT {
   @Test
   public void testDeletePage() throws IOException {
     try {
-      PageManagment
-          .deletePage(PageManagementIT.PROJECT_ID, PageManagementIT.agentID, 
-            PageManagementIT.flowID, PageManagementIT.pageID, PageManagementIT.location);
+      PageManagment.deletePage(
+          PageManagementIT.PROJECT_ID,
+          PageManagementIT.agentID,
+          PageManagementIT.flowID,
+          PageManagementIT.pageID,
+          PageManagementIT.location);
       assertThat(1).isEqualTo(1);
     } catch (Exception e) {
       assertThat(e).isEqualTo("");

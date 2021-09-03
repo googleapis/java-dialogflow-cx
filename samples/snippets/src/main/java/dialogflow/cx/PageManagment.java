@@ -40,21 +40,28 @@ public class PageManagment {
   }
 
   // [START dialogflow_cx_create_page]
-  public static Page createPage(String projectId, String agentId, String flowId, String location,
-      String displayName) throws IOException {
-    com.google.cloud.dialogflow.cx.v3.CreatePageRequest.Builder createRequestBuilder = 
+  public static Page createPage(
+      String projectId, String agentId, String flowId, String location, String displayName)
+      throws IOException {
+    com.google.cloud.dialogflow.cx.v3.CreatePageRequest.Builder createRequestBuilder =
         CreatePageRequest.newBuilder();
     com.google.cloud.dialogflow.cx.v3.Page.Builder pageBuilder = Page.newBuilder();
 
     pageBuilder.setDisplayName(displayName);
 
     createRequestBuilder.setParent(
-        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/flows/"
+        "projects/"
+            + projectId
+            + "/locations/"
+            + location
+            + "/agents/"
+            + agentId
+            + "/flows/"
             + flowId);
     createRequestBuilder.setPage(pageBuilder);
 
     PagesClient client = PagesClient.create();
-    
+
     return client.createPage(createRequestBuilder.build());
   }
   // [END dialogflow_cx_create_page]
@@ -63,11 +70,17 @@ public class PageManagment {
   public static String listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
     PagesClient client = PagesClient.create();
-    com.google.cloud.dialogflow.cx.v3.ListPagesRequest.Builder listRequestBuilder = ListPagesRequest
-        .newBuilder();
+    com.google.cloud.dialogflow.cx.v3.ListPagesRequest.Builder listRequestBuilder =
+        ListPagesRequest.newBuilder();
 
     listRequestBuilder.setParent(
-        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/flows/"
+        "projects/"
+            + projectId
+            + "/locations/"
+            + location
+            + "/agents/"
+            + agentId
+            + "/flows/"
             + flowId);
     listRequestBuilder.setLanguageCode("en");
 
@@ -82,15 +95,24 @@ public class PageManagment {
   // [END dialogflow_cx_list_pages]
 
   // [START dialogflow_cx_delete_page]
-  public static void deletePage(String projectId, String agentId, String flowId, String pageId,
-      String location) throws IOException {
+  public static void deletePage(
+      String projectId, String agentId, String flowId, String pageId, String location)
+      throws IOException {
     PagesClient client = PagesClient.create();
-    com.google.cloud.dialogflow.cx.v3.DeletePageRequest.Builder deleteRequestBuilder = 
+    com.google.cloud.dialogflow.cx.v3.DeletePageRequest.Builder deleteRequestBuilder =
         DeletePageRequest.newBuilder();
 
     deleteRequestBuilder.setName(
-        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/flows/"
-            + flowId + "/pages/" + pageId);
+        "projects/"
+            + projectId
+            + "/locations/"
+            + location
+            + "/agents/"
+            + agentId
+            + "/flows/"
+            + flowId
+            + "/pages/"
+            + pageId);
 
     client.deletePage(deleteRequestBuilder.build());
   }
