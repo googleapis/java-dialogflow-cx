@@ -17,9 +17,7 @@
 package dialogflow.cx;
 
 import com.google.cloud.dialogflow.cx.v3.CreatePageRequest;
-import com.google.cloud.dialogflow.cx.v3.CreatePageRequest.Builder;
 import com.google.cloud.dialogflow.cx.v3.Page;
-import com.google.cloud.dialogflow.cx.v3.Page.Builder;
 import com.google.cloud.dialogflow.cx.v3.PagesClient;
 import java.io.IOException;
 
@@ -42,8 +40,8 @@ public class CreateSimplePage {
   public static Page createPage(
       String projectId, String agentId, String flowId, String location, String displayName)
       throws IOException {
-    Builder createRequestBuilder = CreatePageRequest.newBuilder();
-    Builder pageBuilder = Page.newBuilder();
+    CreatePageRequest.Builder createRequestBuilder = CreatePageRequest.newBuilder();
+    Page.Builder pageBuilder = Page.newBuilder();
 
     pageBuilder.setDisplayName(displayName);
 
