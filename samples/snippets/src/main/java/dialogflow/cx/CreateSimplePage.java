@@ -60,7 +60,6 @@ public class CreateSimplePage {
       System.out.println("Successfully created page!");
       return client.createPage(createRequestBuilder.build());
     }
-    return null;
   }
   // [END dialogflow_cx_create_page]
 }
