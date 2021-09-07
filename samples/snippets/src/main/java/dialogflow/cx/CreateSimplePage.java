@@ -16,6 +16,7 @@
 
 package dialogflow.cx;
 
+// [START dialogflow_cx_create_page]
 import com.google.cloud.dialogflow.cx.v3.CreatePageRequest;
 import com.google.cloud.dialogflow.cx.v3.Page;
 import com.google.cloud.dialogflow.cx.v3.PagesClient;
@@ -36,7 +37,6 @@ public class CreateSimplePage {
 
   // DialogFlow API Create Page Sample.
   // Creates a page from the provided parameters 
-  // [START dialogflow_cx_create_page]
   public static Page createPage(
       String projectId, String agentId, String flowId, String location, String displayName)
       throws IOException {

@@ -16,6 +16,7 @@
 
 package dialogflow.cx;
 
+// [START dialogflow_cx_list_pages]
 import com.google.cloud.dialogflow.cx.v3.ListPagesRequest;
 import com.google.cloud.dialogflow.cx.v3.ListPagesRequest.Builder;
 import com.google.cloud.dialogflow.cx.v3.Page;
@@ -36,7 +37,6 @@ public class ListPages {
 
   // DialogFlow API List Pages Sample.
   // Lists all pages from the provided parameters 
-  // [START dialogflow_cx_list_pages]
   public static String listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
     PagesClient client = PagesClient.create();

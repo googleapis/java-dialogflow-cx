@@ -16,6 +16,7 @@
 
 package dialogflow.cx;
 
+// [START dialogflow_cx_delete_page]
 import com.google.cloud.dialogflow.cx.v3.DeletePageRequest;
 import com.google.cloud.dialogflow.cx.v3.DeletePageRequest.Builder;
 import com.google.cloud.dialogflow.cx.v3.Page;
@@ -37,7 +38,6 @@ public class DeletePage {
 
   // DialogFlow API Delete Page Sample.
   // Deletes a page from the provided parameters 
-  // [START dialogflow_cx_delete_page]
   public static void deletePage(
       String projectId, String agentId, String flowId, String pageId, String location)
       throws IOException {
