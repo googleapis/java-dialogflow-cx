@@ -59,7 +59,7 @@ public class CreateSimplePage {
 
     // Make API request to create page
     try (PagesClient client = PagesClient.create()) {
-      System.out.println("Successfully created page!")
+      System.out.println("Successfully created page!");
       return client.createPage(createRequestBuilder.build());
     }
     return null;
