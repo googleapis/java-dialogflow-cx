@@ -60,6 +60,7 @@ public class CreateSimplePage {
     try (PagesClient client = PagesClient.create()) {
       response = client.createPage(createRequestBuilder.build());
       System.out.println("Successfully created page!");
+      return response;
     }
   }
   // [END dialogflow_cx_create_page]
