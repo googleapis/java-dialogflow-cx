@@ -57,7 +57,7 @@ public class ListPages {
 
     // Make API request to list all pages in the project
     for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
-      System.out.println(element)
+      System.out.println(element);
     }
   }
   // [END dialogflow_cx_list_pages]
