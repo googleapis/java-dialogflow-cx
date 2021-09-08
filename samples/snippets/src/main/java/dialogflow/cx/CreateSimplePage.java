@@ -40,6 +40,7 @@ public class CreateSimplePage {
   public static Page createPage(
       String projectId, String agentId, String flowId, String location, String displayName)
       throws IOException {
+    Page response;
     CreatePageRequest.Builder createRequestBuilder = CreatePageRequest.newBuilder();
     Page.Builder pageBuilder = Page.newBuilder();
 
@@ -57,8 +58,8 @@ public class CreateSimplePage {
 
     // Make API request to create page
     try (PagesClient client = PagesClient.create()) {
+      response = client.createPage(createRequestBuilder.build());
       System.out.println("Successfully created page!");
-      return client.createPage(createRequestBuilder.build());
     }
   }
   // [END dialogflow_cx_create_page]

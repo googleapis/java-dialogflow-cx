@@ -41,24 +41,26 @@ public class DeletePage {
   public static void deletePage(
       String projectId, String agentId, String flowId, String pageId, String location)
       throws IOException {
-    PagesClient client = PagesClient.create();
-    Builder deleteRequestBuilder =
-        DeletePageRequest.newBuilder();
+    try (PagesClient client = PagesClient.create()) {
+      Builder deleteRequestBuilder =
+          DeletePageRequest.newBuilder();
 
-    deleteRequestBuilder.setName(
-        "projects/"
-            + projectId
-            + "/locations/"
-            + location
-            + "/agents/"
-            + agentId
-            + "/flows/"
-            + flowId
-            + "/pages/"
-            + pageId);
-    
-    // Make API request to delete page
-    client.deletePage(deleteRequestBuilder.build());
+      deleteRequestBuilder.setName(
+          "projects/"
+              + projectId
+              + "/locations/"
+              + location
+              + "/agents/"
+              + agentId
+              + "/flows/"
+              + flowId
+              + "/pages/"
+              + pageId);
+      
+      // Make API request to delete page
+      client.deletePage(deleteRequestBuilder.build());
+      System.out.println("Successfully deleted page!");
+    }
   }
   // [END dialogflow_cx_delete_page]
 }

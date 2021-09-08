@@ -37,7 +37,7 @@ public class ListPages {
 
   // DialogFlow API List Pages Sample.
   // Lists all pages from the provided parameters 
-  public static String listPages(String projectId, String agentId, String flowId, String location)
+  public static void listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
     PagesClient client = PagesClient.create();
     Builder listRequestBuilder = ListPagesRequest.newBuilder();
@@ -57,9 +57,8 @@ public class ListPages {
 
     // Make API request to list all pages in the project
     for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
-      result += element.toString() + "\n";
+      System.out.println(element)
     }
-    return result;
   }
   // [END dialogflow_cx_list_pages]
 }
