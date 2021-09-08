@@ -89,9 +89,8 @@ public class PageManagementIT {
 
     Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, name);
 
-    String response = ListPages.listPages(
-            PROJECT_ID, agentID, flowID, location);
-    assertThat(response).contains(name);
+    ListPages.listPages(PROJECT_ID, agentID, flowID, location);
+    assertThat(stdOut.toString()).contains(name);
   }
 
   @Test
