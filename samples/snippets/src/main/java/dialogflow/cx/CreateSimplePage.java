@@ -36,7 +36,7 @@ public class CreateSimplePage {
   }
 
   // DialogFlow API Create Page Sample.
-  // Creates a page from the provided parameters 
+  // Creates a page from the provided parameters
   public static Page createPage(
       String projectId, String agentId, String flowId, String location, String displayName)
       throws IOException {
@@ -46,15 +46,17 @@ public class CreateSimplePage {
 
     pageBuilder.setDisplayName(displayName);
 
-    createRequestBuilder.setParent(
-        "projects/"
-            + projectId
-            + "/locations/"
-            + location
-            + "/agents/"
-            + agentId
-            + "/flows/"
-            + flowId).setPage(pageBuilder);
+    createRequestBuilder
+        .setParent(
+            "projects/"
+                + projectId
+                + "/locations/"
+                + location
+                + "/agents/"
+                + agentId
+                + "/flows/"
+                + flowId)
+        .setPage(pageBuilder);
 
     // Make API request to create page
     try (PagesClient client = PagesClient.create()) {

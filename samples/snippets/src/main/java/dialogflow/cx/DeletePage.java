@@ -19,7 +19,6 @@ package dialogflow.cx;
 // [START dialogflow_cx_delete_page]
 import com.google.cloud.dialogflow.cx.v3.DeletePageRequest;
 import com.google.cloud.dialogflow.cx.v3.DeletePageRequest.Builder;
-import com.google.cloud.dialogflow.cx.v3.Page;
 import com.google.cloud.dialogflow.cx.v3.PagesClient;
 import java.io.IOException;
 
@@ -37,13 +36,12 @@ public class DeletePage {
   }
 
   // DialogFlow API Delete Page Sample.
-  // Deletes a page from the provided parameters 
+  // Deletes a page from the provided parameters
   public static void deletePage(
       String projectId, String agentId, String flowId, String pageId, String location)
       throws IOException {
     try (PagesClient client = PagesClient.create()) {
-      Builder deleteRequestBuilder =
-          DeletePageRequest.newBuilder();
+      Builder deleteRequestBuilder = DeletePageRequest.newBuilder();
 
       deleteRequestBuilder.setName(
           "projects/"
@@ -56,7 +54,7 @@ public class DeletePage {
               + flowId
               + "/pages/"
               + pageId);
-      
+
       // Make API request to delete page
       client.deletePage(deleteRequestBuilder.build());
       System.out.println("Successfully deleted page!");
