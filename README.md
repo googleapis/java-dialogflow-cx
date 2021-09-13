@@ -11,10 +11,12 @@ Java idiomatic client for [Dialogflow CX][product-docs].
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
 
+
 ## Quickstart
 
 
 If you are using Maven, add this to your pom.xml file:
+
 
 ```xml
 <dependency>
@@ -25,11 +27,13 @@ If you are using Maven, add this to your pom.xml file:
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
+
 ```Groovy
-compile 'com.google.cloud:google-cloud-dialogflow-cx:0.9.0'
+implementation 'com.google.cloud:google-cloud-dialogflow-cx:0.9.0'
 ```
 
 If you are using SBT, add this to your dependencies
+
 ```Scala
 libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow-cx" % "0.9.0"
 ```
@@ -37,6 +41,10 @@ libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow-cx" % "0.9.
 ## Authentication
 
 See the [Authentication][authentication] section in the base directory's README.
+
+## Authorization
+
+The client application making API calls must be granted [authorization scopes][auth-scopes] required for the desired Dialogflow CX APIs, and the authenticated principal must have the [IAM role(s)][predefined-iam-roles] required to access GCP resources using the Dialogflow CX API calls.
 
 ## Getting Started
 
@@ -67,16 +75,17 @@ use this Dialogflow CX Client Library.
 
 ## Samples
 
-Samples are in the [`samples/`](https://github.com/googleapis/java-dialogflow-cx/tree/master/samples) directory. The samples' `README.md`
-has instructions for running the samples.
+Samples are in the [`samples/`](https://github.com/googleapis/java-dialogflow-cx/tree/master/samples) directory.
 
 | Sample                      | Source Code                       | Try it |
 | --------------------------- | --------------------------------- | ------ |
+| Create Agent | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/CreateAgent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/CreateAgent.java) |
 | Create Flow | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/CreateFlow.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/CreateFlow.java) |
 | Create Intent | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/CreateIntent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/CreateIntent.java) |
 | Create Page | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/CreatePage.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/CreatePage.java) |
 | Detect Intent | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/DetectIntent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/DetectIntent.java) |
 | Detect Intent Stream | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/DetectIntentStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/DetectIntentStream.java) |
+| Update Intent | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/master/samples/snippets/src/main/java/dialogflow/cx/UpdateIntent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/UpdateIntent.java) |
 
 
 
@@ -141,6 +150,7 @@ This library follows [Semantic Versioning](http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything may change at any time
 and the public API should not be considered stable.
 
+
 ## Contributing
 
 
@@ -151,6 +161,7 @@ See [CONTRIBUTING][contributing] for more information how to get started.
 Please note that this project is released with a Contributor Code of Conduct. By participating in
 this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more
 information.
+
 
 ## License
 
@@ -184,6 +195,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dialogflow-cx.svg
 [maven-version-link]: https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-dialogflow-cx&core=gav
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
+[auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
+[predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles
+[iam-policy]: https://cloud.google.com/iam/docs/overview#cloud-iam-policy
 [developer-console]: https://console.developers.google.com/
 [create-project]: https://cloud.google.com/resource-manager/docs/creating-managing-projects
 [cloud-sdk]: https://cloud.google.com/sdk/
