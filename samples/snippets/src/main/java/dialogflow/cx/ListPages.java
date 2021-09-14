@@ -53,8 +53,6 @@ public class ListPages {
             + flowId);
     listRequestBuilder.setLanguageCode("en");
 
-    String result = "";
-
     // Make API request to list all pages in the project
     for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
       System.out.println(element);
