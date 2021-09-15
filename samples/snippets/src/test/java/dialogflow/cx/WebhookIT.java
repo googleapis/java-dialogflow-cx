@@ -46,9 +46,12 @@ import com.google.gson.GsonBuilder;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-private ByteArrayOutputStream stdOut;
 
-private static BufferedReader getRequestJSONReader() {
+public class WebhookIT {
+
+    private ByteArrayOutputStream stdOut;
+
+    private static BufferedReader getRequestJSONReader() {
     byte[] b =
         ("{
             \"fulfillmentInfo\": {
@@ -68,12 +71,13 @@ private static BufferedReader getRequestJSONReader() {
 
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
   }
 
-public class WebhookIT {
+  @Test
+  public void testWebhook() throws IOException {
     when(request.getReader()).thenReturn(getRequestJSONReader());
     Webhook.handleWebhook()
     assertThat(stdOut.toString()).contains("Hi from a GCF Webhook");
 
+  }
 }
