@@ -64,11 +64,6 @@
         <version>0.10.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.cloud.functions</groupId>
-        <artifactId>google-cloud-functions</artifactId>
-        <version>2.1.2-SNAPSHOT</version><!-- {x-version-update:google-cloud-functions:current} -->
-      </dependency>
-      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dialogflow-cx-v3beta1</artifactId>
         <version>0.10.2-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dialogflow-cx-v3beta1:current} -->
