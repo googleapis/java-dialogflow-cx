@@ -37,11 +37,11 @@ public class ListTestCaseResults {
     listTestCaseResults(projectId, agentId, testId, location);
   }
 
-  public static void listTestCaseResults(String project_id, String agent_id, String test_id,
+  public static void listTestCaseResults(String projectId, String agentId, String testId,
       String location) throws IOException {
     String parent =
-        "projects/" + project_id + "/locations/" + location + "/agents/" + agent_id + "/testCases/"
-            + test_id;
+        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/testCases/"
+            + testId;
 
     Builder req = ListTestCaseResultsRequest.newBuilder();
 
