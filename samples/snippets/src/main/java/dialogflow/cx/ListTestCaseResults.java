@@ -26,33 +26,35 @@ import com.google.cloud.dialogflow.cx.v3.TestCasesSettings;
 
 import java.io.IOException;
 
-public class ListTestCaseResults 
-{
+public class ListTestCaseResults {
 
-    public static void main( String[] args ) throws IOException
-    {
-        // TODO(developer): Replace these variables before running the sample.
-        String projectId = "my-project-id";
-        String agentId = "my-agent-id";
-        String testId = "my-test-id";
-        String location = "my-location";
-        listTestCaseResults(projectId, agentId,testId,location);
+  public static void main(String[] args) throws IOException {
+    // TODO(developer): Replace these variables before running the sample.
+    String projectId = "my-project-id";
+    String agentId = "my-agent-id";
+    String testId = "my-test-id";
+    String location = "my-location";
+    listTestCaseResults(projectId, agentId, testId, location);
+  }
+
+  public static void listTestCaseResults(String project_id, String agent_id, String test_id,
+      String location) throws IOException {
+    String parent =
+        "projects/" + project_id + "/locations/" + location + "/agents/" + agent_id + "/testCases/"
+            + test_id;
+
+    Builder req = ListTestCaseResultsRequest.newBuilder();
+
+    req.setParent(parent);
+    req.setFilter("environment=draft");
+
+    TestCasesSettings testCasesSettings = TestCasesSettings.newBuilder()
+        .setEndpoint(location + "-dialogflow.googleapis.com:443").build();
+    TestCasesClient client = TestCasesClient.create(testCasesSettings);
+
+    for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
+      System.out.println(element);
     }
-
-    public static void listTestCaseResults(String project_id,String agent_id,String test_id,String location) throws IOException{
-        String parent = "projects/" + project_id + "/locations/" + location + "/agents/" + agent_id + "/testCases/" + test_id;
-      
-        Builder req = ListTestCaseResultsRequest.newBuilder();
-        
-        req.setParent(parent);
-        req.setFilter("environment=draft");
-
-        TestCasesSettings testCasesSettings = TestCasesSettings.newBuilder().setEndpoint(location + "-dialogflow.googleapis.com:443").build();
-        TestCasesClient client = TestCasesClient.create(testCasesSettings);
-
-        for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
-            System.out.println(element);
-        }
-    }
+  }
 }
 // [END dialogflow_cx_list_testcase_result_sample]
