@@ -36,10 +36,16 @@ public class ListTestCaseResults {
     listTestCaseResults(projectId, agentId, testId, location);
   }
 
-  public static void listTestCaseResults(String projectId, String agentId, String testId,
-      String location) throws IOException {
+  public static void listTestCaseResults(
+      String projectId, String agentId, String testId, String location) throws IOException {
     String parent =
-        "projects/" + projectId + "/locations/" + location + "/agents/" + agentId + "/testCases/"
+        "projects/"
+            + projectId
+            + "/locations/"
+            + location
+            + "/agents/"
+            + agentId
+            + "/testCases/"
             + testId;
 
     Builder req = ListTestCaseResultsRequest.newBuilder();
@@ -47,8 +53,10 @@ public class ListTestCaseResults {
     req.setParent(parent);
     req.setFilter("environment=draft");
 
-    TestCasesSettings testCasesSettings = TestCasesSettings.newBuilder()
-        .setEndpoint(location + "-dialogflow.googleapis.com:443").build();
+    TestCasesSettings testCasesSettings =
+        TestCasesSettings.newBuilder()
+            .setEndpoint(location + "-dialogflow.googleapis.com:443")
+            .build();
     TestCasesClient client = TestCasesClient.create(testCasesSettings);
 
     for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
