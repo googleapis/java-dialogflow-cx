@@ -20,10 +20,9 @@ package dialogflow.cx;
 
 import com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest.Builder;
-import com.google.cloud.dialogflow.cx.v3.TestCasesClient;
 import com.google.cloud.dialogflow.cx.v3.TestCaseResult;
+import com.google.cloud.dialogflow.cx.v3.TestCasesClient;
 import com.google.cloud.dialogflow.cx.v3.TestCasesSettings;
-
 import java.io.IOException;
 
 public class ListTestCaseResults {
