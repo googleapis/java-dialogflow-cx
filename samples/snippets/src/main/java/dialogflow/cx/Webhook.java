@@ -16,7 +16,6 @@
 
 package dialogflow.cx;
 
-// [START dialogflow_cx_webhook]
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
@@ -26,36 +25,32 @@ import com.google.gson.JsonElement;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedWriter;
-import java.io.*;
 
-public class Webhook {
+public class Webhook implements HttpFunction {
 
-    public static void main(String[] args) throws IOException {
-        // TODO(developer): Replace these variables before running the sample.
-
-      }
-
-  public void handleWebhook(HttpRequest request, HttpResponse response) throws Exception {
+  public void service (HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
     Gson gson = new GsonBuilder().create();
     
     JsonObject job = gson.fromJson(request.getReader(), JsonObject.class);
     String str=job.getAsJsonObject("fulfillmentInfo").getAsJsonPrimitive("tag").toString();
     JsonObject o = null;
-    String a = "\"welcome\"";
-    String b = "\"get-name\"";
+    String a = '"' + "Default Welcome Intent" + '"';
+    String b = '"' + "get-agent-name" + '"';
+    String responseText = "";
 
     if(str.equals(a)){
-      o = parser.parse("{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [\"Hi from a GCF Webhook\"] } } ] } }").getAsJsonObject();
+      responseText = '"' + "Hello from a Java GCF Webhook" + '"';
     } else if(str.equals(b)){
-      o = parser.parse("{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [\"My name is Flowhook\"] } } ] } }").getAsJsonObject();
+      responseText = '"' + "My name is Flowhook" + '"';
     } else {
-      o = parser.parse("{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [\"Sorry I didn't get that\"] } } ] } }").getAsJsonObject();
+      responseText = '"' + "Sorry I didn't get that" + '"';
     }
 
+    o = parser.parse(
+        "{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [" + responseText + "] } } ] } }"
+        ).getAsJsonObject();
     BufferedWriter writer = response.getWriter();
-    System.out.println(o.toString());
     writer.write(o.toString());
   }
 }
-// [END dialogflow_cx_webhook]
