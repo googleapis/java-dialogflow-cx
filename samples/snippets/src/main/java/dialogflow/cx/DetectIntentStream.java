@@ -33,6 +33,9 @@ import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.VoiceSelectionParams;
 import com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
+import com.google.cloud.dialogflow.cx.v3beta1.SsmlVoiceGender;
+
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -84,7 +87,7 @@ public class DetectIntentStream {
       // Specify sssml name and gender
       VoiceSelectionParams voiceSelection = VoiceSelectionParams.newBuilder()
           .setName("en-GB-Standard-A")
-          .setGender("SSML_VOICE_GENDER_FEMALE")
+          .setSsmlGender(SsmlVoiceGender.SSML_VOICE_GENDER_FEMALE)
           .build();
 
       SynthesizeSpeechConfig speechConfig = SynthesizeSpeechConfig.newBuilder()
