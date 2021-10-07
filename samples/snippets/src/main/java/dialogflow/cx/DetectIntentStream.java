@@ -35,7 +35,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.VoiceSelectionParams;
-
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
