@@ -84,21 +84,22 @@ public class DetectIntentStream {
           sessionsClient.streamingDetectIntentCallable().call();
 
       // Specify sssml name and gender
-      VoiceSelectionParams voiceSelection = VoiceSelectionParams.newBuilder()
-          .setName("en-GB-Standard-A")
-          .setSsmlGender(SsmlVoiceGender.SSML_VOICE_GENDER_FEMALE)
-          .build();
+      VoiceSelectionParams voiceSelection =
+          VoiceSelectionParams.newBuilder()
+              .setName("en-GB-Standard-A")
+              .setSsmlGender(SsmlVoiceGender.SSML_VOICE_GENDER_FEMALE)
+              .build();
 
-      SynthesizeSpeechConfig speechConfig = SynthesizeSpeechConfig.newBuilder()
-          .setVoice(voiceSelection)
-          .build();
+      SynthesizeSpeechConfig speechConfig =
+          SynthesizeSpeechConfig.newBuilder().setVoice(voiceSelection).build();
 
       // Setup audio config
-      OutputAudioConfig audioConfig = OutputAudioConfig.newBuilder()
-          .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED)
-          .setAudioEncodingValue(1)
-          .setSynthesizeSpeechConfig(speechConfig)
-          .build();
+      OutputAudioConfig audioConfig =
+          OutputAudioConfig.newBuilder()
+              .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED)
+              .setAudioEncodingValue(1)
+              .setSynthesizeSpeechConfig(speechConfig)
+              .build();
 
       // The first request must **only** contain the audio configuration:
       bidiStream.send(
