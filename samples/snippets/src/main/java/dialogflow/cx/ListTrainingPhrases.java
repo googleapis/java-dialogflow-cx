@@ -32,12 +32,7 @@ public class ListTrainingPhrases {
     String agentId = "my-agent-id";
     String intentId = "my-intent-id";
 
-    String p = "python-docs-samples-tests";
-    String i = "04def868-ccd3-4e16-8773-3eb347727923";
-    String a = "53516802-3e2a-4016-80b6-a3df0d240240";
-    String l = "global";
-
-    listTrainingPhrases(p, l, a, i);
+    listTrainingPhrases(projectId, location, agentId, intentId);
   }
 
   // DialogFlow API List Training Phrases sample.
