@@ -48,6 +48,6 @@ public class ListTrainingPhrasesTest {
   @Test
   public void testListTrainingPhrases() throws IOException {
     ListTrainingPhrases.listTrainingPhrases(PROJECT_ID, LOCATION, AGENT_ID, INTENT_ID);
-    assertThat(stdOut.toString()).contains("red");
+    assertThat(stdOut.toString()).contains("green");
   }
 }
