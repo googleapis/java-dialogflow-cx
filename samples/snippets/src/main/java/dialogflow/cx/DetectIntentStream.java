@@ -85,6 +85,7 @@ public class DetectIntentStream {
 
       // Specify sssml name and gender
       VoiceSelectionParams voiceSelection =
+          // Voices that are available https://cloud.google.com/text-to-speech/docs/voices
           VoiceSelectionParams.newBuilder()
               .setName("en-GB-Standard-A")
               .setSsmlGender(SsmlVoiceGender.SSML_VOICE_GENDER_FEMALE)
@@ -95,6 +96,7 @@ public class DetectIntentStream {
 
       // Setup audio config
       OutputAudioConfig audioConfig =
+          // Output enconding explanation https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#outputaudioencoding
           OutputAudioConfig.newBuilder()
               .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED)
               .setAudioEncodingValue(1)
