@@ -96,7 +96,8 @@ public class DetectIntentStream {
 
       // Setup audio config
       OutputAudioConfig audioConfig =
-          // Output enconding explanation https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#outputaudioencoding
+          // Output enconding explanation
+          // https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#outputaudioencoding
           OutputAudioConfig.newBuilder()
               .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED)
               .setAudioEncodingValue(1)
