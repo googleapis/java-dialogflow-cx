@@ -26,37 +26,38 @@ package dialogflow.cx;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.google.gson.JsonElement;
-import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedWriter;
 
 public class Example implements HttpFunction {
 
-  public void service (HttpRequest request, HttpResponse response) throws Exception {
+  public void service(HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
     Gson gson = new GsonBuilder().create();
-    
+
     JsonObject job = gson.fromJson(request.getReader(), JsonObject.class);
-    String str=job.getAsJsonObject("fulfillmentInfo").getAsJsonPrimitive("tag").toString();
+    String str = job.getAsJsonObject("fulfillmentInfo").getAsJsonPrimitive("tag").toString();
     JsonObject o = null;
     String a = '"' + "Default Welcome Intent" + '"';
     String b = '"' + "get-agent-name" + '"';
     String responseText = "";
 
-    if(str.equals(a)){
+    if (str.equals(a)) {
       responseText = '"' + "Hello from a Java GCF Webhook" + '"';
-    } else if(str.equals(b)){
+    } else if (str.equals(b)) {
       responseText = '"' + "My name is Flowhook" + '"';
     } else {
       responseText = '"' + "Sorry I didn't get that" + '"';
     }
 
     o = parser.parse(
-        "{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [" + responseText + "] } } ] } }"
-        ).getAsJsonObject();
+        "{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [" + responseText
+            + "] } } ] } }"
+    ).getAsJsonObject();
     BufferedWriter writer = response.getWriter();
     writer.write(o.toString());
   }
