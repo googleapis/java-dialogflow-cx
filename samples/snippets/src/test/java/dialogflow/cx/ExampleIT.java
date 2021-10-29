@@ -36,8 +36,11 @@ import org.mockito.MockitoAnnotations;
 
 
 public class ExampleIT {
-  @Mock private HttpRequest request;
-  @Mock private HttpResponse response;
+
+  @Mock
+  private HttpRequest request;
+  @Mock
+  private HttpResponse response;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
