@@ -35,7 +35,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 
-public class WebhookIT {
+public class ExampleIT {
   @Mock private HttpRequest request;
   @Mock private HttpResponse response;
 
@@ -57,7 +57,7 @@ public class WebhookIT {
   }
 
   @Test
-  public void helloHttp_bodyParamsPost() throws IOException {
+  public void helloHttp_bodyParamsPost() throws IOException, Exception {
     BufferedReader jsonReader = new BufferedReader(new StringReader("{
       \"fulfillmentInfo\": {
       \"tag\": \"Default Welcome Intent\",
@@ -68,7 +68,7 @@ public class WebhookIT {
 
     when(request.getReader()).thenReturn(jsonReader);
 
-    new Webhook().service(request, response);
+    new Example().service(request, response);
     writerOut.flush();
 
     assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");

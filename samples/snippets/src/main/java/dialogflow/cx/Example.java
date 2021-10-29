@@ -16,6 +16,13 @@
 
 package dialogflow.cx;
 
+// [START dialogflow_webhook]
+
+// TODO: add GSON dependency to Pom file
+// (https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5)
+// TODO: Uncomment the line bellow before running cloud function
+// package com.example;
+
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
@@ -26,7 +33,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.BufferedWriter;
 
-public class Webhook implements HttpFunction {
+public class Example implements HttpFunction {
 
   public void service (HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
@@ -54,3 +61,4 @@ public class Webhook implements HttpFunction {
     writer.write(o.toString());
   }
 }
+// [END dialogflow_webhook]
