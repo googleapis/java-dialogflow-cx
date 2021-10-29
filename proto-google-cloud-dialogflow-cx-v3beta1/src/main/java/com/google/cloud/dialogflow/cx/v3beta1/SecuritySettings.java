@@ -1269,12 +1269,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Resource name of the settings.
+   * Resource name of the settings.
+   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+   * automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    *
    * @return The name.
    */
@@ -1294,12 +1297,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. Resource name of the settings.
+   * Resource name of the settings.
+   * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+   * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+   * automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1;</code>
    *
    * @return The bytes for name.
    */
@@ -1834,10 +1840,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
     if (redactionStrategy_
@@ -1862,13 +1868,13 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < purgeDataTypes_.size(); i++) {
       output.writeEnumNoTag(purgeDataTypes_.get(i));
     }
-    if (!getInspectTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, inspectTemplate_);
     }
     if (insightsExportSettings_ != null) {
       output.writeMessage(13, getInsightsExportSettings());
     }
-    if (!getDeidentifyTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deidentifyTemplate_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, deidentifyTemplate_);
     }
     unknownFields.writeTo(output);
@@ -1880,10 +1886,10 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
-    if (!getNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!getDisplayNameBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (redactionStrategy_
@@ -1916,14 +1922,14 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
       }
       purgeDataTypesMemoizedSerializedSize = dataSize;
     }
-    if (!getInspectTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inspectTemplate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, inspectTemplate_);
     }
     if (insightsExportSettings_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getInsightsExportSettings());
     }
-    if (!getDeidentifyTemplateBytes().isEmpty()) {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deidentifyTemplate_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, deidentifyTemplate_);
     }
     size += unknownFields.getSerializedSize();
@@ -2365,12 +2371,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      *
      * @return The name.
      */
@@ -2389,12 +2398,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      *
      * @return The bytes for name.
      */
@@ -2413,12 +2425,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2436,12 +2451,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -2455,12 +2473,15 @@ public final class SecuritySettings extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. Resource name of the settings.
+     * Resource name of the settings.
+     * Required for the [SecuritySettingsService.UpdateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.UpdateSecuritySettings] method.
+     * [SecuritySettingsService.CreateSecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService.CreateSecuritySettings] populates the name
+     * automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
      * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1;</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
