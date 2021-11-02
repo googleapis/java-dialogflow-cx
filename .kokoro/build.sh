@@ -43,7 +43,7 @@ if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTI
 fi
 
 RETURN_CODE=0
-set +e
+# set +e
 
 case ${JOB_TYPE} in
 test)
@@ -97,6 +97,7 @@ samples)
           -Dclirr.skip=true \
           -Denforcer.skip=true \
           -fae \
+          -X \
           verify
         RETURN_CODE=$?
         popd
