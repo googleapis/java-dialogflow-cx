@@ -90,6 +90,7 @@ samples)
         done
 
         pushd ${SAMPLES_DIR}
+        mvn compile
         mvn -B \
           -Penable-samples \
           -ntp \
