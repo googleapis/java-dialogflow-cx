@@ -43,8 +43,8 @@ if [[ ! -z "${GOOGLE_APPLICATION_CREDENTIALS}" && "${GOOGLE_APPLICATION_CREDENTI
 fi
 
 RETURN_CODE=0
-# set +e
-
+set +e
+set -x
 case ${JOB_TYPE} in
 test)
     mvn test -B -Dclirr.skip=true -Denforcer.skip=true
@@ -90,7 +90,7 @@ samples)
         done
 
         pushd ${SAMPLES_DIR}
-        mvn compile
+        mvn -B -fae -ntp compile
         mvn -B \
           -Penable-samples \
           -ntp \
