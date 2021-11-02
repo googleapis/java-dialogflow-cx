@@ -27,20 +27,15 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.Map;
-import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-
 public class ExampleIT {
 
-  @Mock
-  private HttpRequest request;
-  @Mock
-  private HttpResponse response;
+  @Mock private HttpRequest request;
+  @Mock private HttpResponse response;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
@@ -62,8 +57,9 @@ public class ExampleIT {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String json = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\"}"
-      + ",\"text\": \"hi\",\"languageCode\": \"en\"}";
+    String json =
+        "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\"}"
+            + ",\"text\": \"hi\",\"languageCode\": \"en\"}";
 
     BufferedReader jsonReader = new BufferedReader(new StringReader(json));
 
@@ -75,4 +71,3 @@ public class ExampleIT {
     assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");
   }
 }
-
