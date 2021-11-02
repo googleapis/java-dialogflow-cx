@@ -97,7 +97,6 @@ samples)
           -Dclirr.skip=true \
           -Denforcer.skip=true \
           -fae \
-          -X \
           verify
         RETURN_CODE=$?
         popd
