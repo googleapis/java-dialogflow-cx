@@ -27,20 +27,15 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.util.Map;
-import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-
 public class ExampleIT {
 
-  @Mock
-  private HttpRequest request;
-  @Mock
-  private HttpResponse response;
+  @Mock private HttpRequest request;
+  @Mock private HttpResponse response;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;

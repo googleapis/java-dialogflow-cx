@@ -28,7 +28,6 @@ import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.BufferedWriter;
@@ -54,10 +53,13 @@ public class Example implements HttpFunction {
       responseText = '"' + "Sorry I didn't get that" + '"';
     }
 
-    o = parser.parse(
-        "{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": [" + responseText
-            + "] } } ] } }"
-    ).getAsJsonObject();
+    o =
+        parser
+            .parse(
+                "{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": ["
+                    + responseText
+                    + "] } } ] } }")
+            .getAsJsonObject();
     BufferedWriter writer = response.getWriter();
     writer.write(o.toString());
   }
