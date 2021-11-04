@@ -44,7 +44,7 @@ fi
 
 RETURN_CODE=0
 set +e
-set -x
+
 case ${JOB_TYPE} in
 test)
     mvn test -B -Dclirr.skip=true -Denforcer.skip=true
@@ -77,10 +77,10 @@ graalvm)
 samples)
     SAMPLES_DIR=samples
     # only run ITs in snapshot/ on presubmit PRs. run ITs in all 3 samples/ subdirectories otherwise.
-    # if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
-    # then
-    #   SAMPLES_DIR=samples/snapshot
-    # fi
+    if [[ ! -z ${KOKORO_GITHUB_PULL_REQUEST_NUMBER} ]]
+    then
+      SAMPLES_DIR=samples/snapshot
+    fi
 
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
@@ -90,7 +90,6 @@ samples)
         done
 
         pushd ${SAMPLES_DIR}
-        mvn -B -fae -ntp -X compile
         mvn -B \
           -Penable-samples \
           -ntp \
@@ -98,7 +97,6 @@ samples)
           -Dclirr.skip=true \
           -Denforcer.skip=true \
           -fae \
-          -DskipTests \
           verify
         RETURN_CODE=$?
         popd
