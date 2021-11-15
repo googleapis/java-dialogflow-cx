@@ -399,9 +399,15 @@ public class ITSystemTest {
   @Test
   public void trainFlowTest() throws ExecutionException, InterruptedException {
     try {
-      OperationFuture<Empty, OperationMetadata> future = flowsClient.trainFlowAsync(trainFlowName));
-      future.get();
-      assertTrue(true);
+      TrainFlowRequest request =
+             TrainFlowRequest.newBuilder()
+                 .setName(flowName)
+                 .build();
+         OperationFuture<Empty, Struct> future =
+             flowsClient.trainFlowOperationCallable().futureCall(request);
+         // Do something.
+         future.get(); 
+         assertTrue(true);
     } catch (Exception e) {
       assertEquals(e, "");
     }
