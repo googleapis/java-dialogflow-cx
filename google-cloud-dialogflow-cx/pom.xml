@@ -17,6 +17,13 @@
     <site.installationModule>google-cloud-dialogflow-cx</site.installationModule>
   </properties>
   <dependencies>
+      <!-- {x-version-update-start:google-cloud-dialogflow-cx:current} -->
+    <dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-dialogflow-cx</artifactId>
+      <version>0.10.2-SNAPSHOT</version>
+    </dependency>
+    <!-- {x-version-update-end} -->
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
