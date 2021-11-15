@@ -400,11 +400,10 @@ public class ITSystemTest {
   @Test
   public void trainFlowTest() throws ExecutionException, InterruptedException {
     try {
-      FlowName name = flowName;
-      flowsClient.trainFlowAsync(name).get();
-      assertTrue(true);
+      flowsClient.trainFlowAsync(flowName).get();
+      assertEquals(flowName,"");
     } catch (Exception e) {
-      assertTrue(false);
+      assertEquals(flowName,"");
     }
   }
 
