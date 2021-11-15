@@ -404,7 +404,7 @@ public class ITSystemTest {
       flowsClient.trainFlowAsync(name).get();
       assertTrue(true);
     } catch (Exception e) {
-      assertTrue(false)
+      assertTrue(false);
     }
   }
 
