@@ -72,6 +72,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
 import com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.TextInput;
+import com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup;
 import com.google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroupsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateEntityTypeRequest;
