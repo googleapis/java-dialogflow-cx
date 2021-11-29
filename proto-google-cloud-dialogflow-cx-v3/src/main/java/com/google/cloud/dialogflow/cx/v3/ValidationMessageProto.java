@@ -45,11 +45,10 @@ public final class ValidationMessageProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "6google/cloud/dialogflow/cx/v3/validation_message.proto\022\035google.cloud.dialogflo"
-          + "w.cx.v3\032\034google/protobuf/struct.proto\032\034google/api/annotations.proto\"\370\004\n"
+          + "6google/cloud/dialogflow/cx/v3/validation_message.proto\022\035google.cloud.dialogflow.cx.v3\032\034google/protobuf/struct.proto\032\034google/api/annotations.proto\"\370\004\n"
           + "\021ValidationMessage\022T\n\r"
-          + "resource_type\030\001 \001(\0162=.googl"
-          + "e.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType\022\025\n"
+          + "resource_type\030\001"
+          + " \001(\0162=.google.cloud.dialogflow.cx.v3.ValidationMessage.ResourceType\022\025\n"
           + "\tresources\030\002 \003(\tB\002\030\001\022C\n"
           + "\016resource_names\030\006"
           + " \003(\0132+.google.cloud.dialogflow.cx.v3.ResourceName\022K\n"
