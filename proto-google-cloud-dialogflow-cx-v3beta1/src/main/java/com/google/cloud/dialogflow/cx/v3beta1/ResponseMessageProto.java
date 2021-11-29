@@ -73,8 +73,7 @@ public final class ResponseMessageProto {
   static {
     java.lang.String[] descriptorData = {
       "\n"
-          + "9google/cloud/dialogflow/cx/v3beta1/response_message.proto\022\"google.cloud.dialog"
-          + "flow.cx.v3beta1\032\037google/api/field_behavior.proto\032\034google/protobuf/struct.proto\032\034google/api/annotations.proto\"\255\n\n"
+          + "9google/cloud/dialogflow/cx/v3beta1/response_message.proto\022\"google.cloud.dialogflow.cx.v3beta1\032\037google/api/field_behavior.proto\032\034google/protobuf/struct.proto\032\034google/api/annotations.proto\"\255\n\n"
           + "\017ResponseMessage\022H\n"
           + "\004text\030\001"
           + " \001(\01328.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.TextH\000\022*\n"
