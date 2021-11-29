@@ -44,7 +44,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.EntityTypesClient;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
-import com.google.cloud.dialogflow.cx.v3beta1.FlowName;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.Form;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest;
@@ -400,7 +399,7 @@ public class ITSystemTest {
   @Test
   public void trainFlowTest() throws ExecutionException, InterruptedException {
     try {
-      System.out.println(flowsClient.trainFlowAsync(trainFlowName).get());
+      System.out.println(flowsClient.trainFlowAsync(trainFlowName));
       assertTrue(true);
     } catch (Exception e) {
       assertEquals(e, "");
