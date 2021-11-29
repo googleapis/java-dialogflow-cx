@@ -400,7 +400,7 @@ public class ITSystemTest {
   @Test
   public void trainFlowTest() throws ExecutionException, InterruptedException {
     try {
-      console.log(flowsClient.trainFlowAsync(trainFlowName).get());
+      System.out.println(flowsClient.trainFlowAsync(trainFlowName).get());
       assertTrue(true);
     } catch (Exception e) {
       assertEquals(e, "");
