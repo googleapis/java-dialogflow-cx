@@ -79,7 +79,7 @@ public class ExportAgentIT {
   public void testUpdateIntent() throws IOException {
 
     ExportAgent.exportAgent(
-      PROJECT_ID, ExportAgentIT.agentID, "global");
+        PROJECT_ID, ExportAgentIT.agentID, "global");
 
     assertThat(stdOut.toString()).contains(ExportAgentIT.agentID);
   }
