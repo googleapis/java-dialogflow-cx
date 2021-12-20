@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package dialogflow.cx;
+package com.example;
 
 import static com.google.common.truth.Truth.assertThat;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
-import java.util.UUID;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -61,6 +64,7 @@ public class ExportAgentIT {
     parent = client.createAgent(parentPath, agent).getName();
     ExportAgentIT.agentPath = parent;
     ExportAgentIT.agentID = parent.split("/")[5];
+    client.close()
   }
 
   @After
@@ -73,10 +77,11 @@ public class ExportAgentIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(ExportAgentIT.agentPath);
+    client.close()
   }
 
   @Test
-  public void testUpdateIntent() throws IOException {
+  public void testUpdateIntent() throws IOException, InterruptedException, ExecutionException  {
 
     ExportAgent.exportAgent(
         PROJECT_ID, ExportAgentIT.agentID, "global");
