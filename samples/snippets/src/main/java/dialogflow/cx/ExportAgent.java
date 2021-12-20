@@ -1,5 +1,3 @@
-package dialogflow.cx;
-
 /*
  * Copyright 2021 Google LLC
  *
@@ -16,6 +14,8 @@ package dialogflow.cx;
  * limitations under the License.
  */
 
+package dialogflow.cx;
+
 // [START dialogflow_cx_export_agent]
 
 import com.google.api.gax.longrunning.OperationFuture;
@@ -28,7 +28,6 @@ import com.google.cloud.dialogflow.cx.v3.ExportAgentResponse;
 import com.google.protobuf.Struct;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
-
 
 public class ExportAgent {
 
