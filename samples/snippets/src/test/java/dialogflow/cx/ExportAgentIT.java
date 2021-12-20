@@ -81,7 +81,7 @@ public class ExportAgentIT {
   }
 
   @Test
-  public void testUpdateIntent() throws IOException, InterruptedException, ExecutionException  {
+  public void testUpdateExportAgent() throws IOException, InterruptedException, ExecutionException  {
 
     ExportAgent.exportAgent(
         PROJECT_ID, ExportAgentIT.agentID, "global");
