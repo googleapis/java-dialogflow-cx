@@ -64,7 +64,7 @@ public class ExportAgentIT {
     parent = client.createAgent(parentPath, agent).getName();
     ExportAgentIT.agentPath = parent;
     ExportAgentIT.agentID = parent.split("/")[5];
-    client.close()
+    client.close();
   }
 
   @After
@@ -77,7 +77,7 @@ public class ExportAgentIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(ExportAgentIT.agentPath);
-    client.close()
+    client.close();
   }
 
   @Test
