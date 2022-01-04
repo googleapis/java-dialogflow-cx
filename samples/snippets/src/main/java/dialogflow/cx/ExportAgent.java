@@ -19,7 +19,6 @@ package dialogflow.cx;
 // [START dialogflow_cx_export_agent]
 
 import com.google.api.gax.longrunning.OperationFuture;
-import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.AgentName;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;

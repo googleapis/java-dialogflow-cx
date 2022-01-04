@@ -18,17 +18,15 @@ package com.example;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.dialogflow.cx.v3.Agent;
+import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
+import com.google.cloud.dialogflow.cx.v3.AgentsClient;
+import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-
-import com.google.cloud.dialogflow.cx.v3.Agent;
-import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
-import com.google.cloud.dialogflow.cx.v3.AgentsClient;
-import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -81,10 +79,9 @@ public class ExportAgentIT {
   }
 
   @Test
-  public void testUpdateExportAgent() throws IOException, InterruptedException, ExecutionException  {
+  public void testUpdateExportAgent() throws IOException, InterruptedException, ExecutionException {
 
-    ExportAgent.exportAgent(
-        PROJECT_ID, ExportAgentIT.agentID, "global");
+    ExportAgent.exportAgent(PROJECT_ID, ExportAgentIT.agentID, "global");
 
     assertThat(stdOut.toString()).contains(ExportAgentIT.agentID);
   }
