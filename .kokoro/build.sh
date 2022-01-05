@@ -23,9 +23,6 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-#set java version to 11
-sudo update-java-alternatives --set java-1.11.0-openjdk-amd64
-
 # Print out Maven & Java version
 mvn -version
 echo ${JOB_TYPE}
