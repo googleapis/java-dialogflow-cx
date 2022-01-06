@@ -23,8 +23,6 @@ cd ${scriptDir}/..
 # include common functions
 source ${scriptDir}/common.sh
 
-export  JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
-
 # Print out Maven & Java version
 mvn -version
 echo ${JOB_TYPE}
