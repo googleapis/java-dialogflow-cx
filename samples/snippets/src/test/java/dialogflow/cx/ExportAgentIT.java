@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example;
+package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
 
