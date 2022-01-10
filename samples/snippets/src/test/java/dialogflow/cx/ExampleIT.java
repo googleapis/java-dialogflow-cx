@@ -45,19 +45,12 @@ public class ExampleIT {
   public void beforeTest() throws IOException {
     MockitoAnnotations.initMocks(this);
 
-    // use an empty string as the default request content
-    BufferedReader reader = new BufferedReader(new StringReader(""));
-    when(request.getReader()).thenReturn(reader);
-
-    responseOut = new StringWriter();
-    writerOut = new BufferedWriter(responseOut);
-    when(response.getWriter()).thenReturn(writerOut);
   }
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
+    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",\"name\": \"test\",}";
     String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
 
     BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
