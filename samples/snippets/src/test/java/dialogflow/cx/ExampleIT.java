@@ -45,28 +45,29 @@ public class ExampleIT {
   public void beforeTest() throws IOException {
     MockitoAnnotations.initMocks(this);
 
-    // use an empty string as the default request content
-    BufferedReader reader = new BufferedReader(new StringReader(""));
-    when(request.getReader()).thenReturn(reader);
+    stdOut = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(stdOut));
 
-    responseOut = new StringWriter();
-    writerOut = new BufferedWriter(responseOut);
-    when(response.getWriter()).thenReturn(writerOut);
+  }
+
+ @After
+  public void tearDown() throws IOException {
+    stdOut = null;
+    System.setOut(null);
   }
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    // String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
-    // String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
+    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
+    String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
 
-    // BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
+    BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
 
-    // when(request.getReader()).thenReturn(jsonReader);
+    when(request.getReader()).thenReturn(jsonReader);
 
     new Example().service(request, response);
-    writerOut.flush();
 
-    assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");
+    assertThat(stdOut.toString()).contains("Hello from a Java GCF Webhook");
   }
 }
