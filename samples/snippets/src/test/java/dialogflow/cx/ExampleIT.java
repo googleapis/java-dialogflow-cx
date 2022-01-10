@@ -57,12 +57,12 @@ public class ExampleIT {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
-    String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
+    // String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
+    // String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
+    // BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
 
-    when(request.getReader()).thenReturn(jsonReader);
+    // when(request.getReader()).thenReturn(jsonReader);
 
     new Example().service(request, response);
     writerOut.flush();
