@@ -45,12 +45,19 @@ public class ExampleIT {
   public void beforeTest() throws IOException {
     MockitoAnnotations.initMocks(this);
 
+    // use an empty string as the default request content
+    BufferedReader reader = new BufferedReader(new StringReader(""));
+    when(request.getReader()).thenReturn(reader);
+
+    responseOut = new StringWriter();
+    writerOut = new BufferedWriter(responseOut);
+    when(response.getWriter()).thenReturn(writerOut);
   }
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",\"name\": \"test\",}";
+    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
     String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
 
     BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
@@ -58,6 +65,7 @@ public class ExampleIT {
     when(request.getReader()).thenReturn(jsonReader);
 
     new Example().service(request, response);
+    writerOut.flush();
 
     assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");
   }
