@@ -65,7 +65,6 @@ public class ExampleIT {
     when(request.getReader()).thenReturn(jsonReader);
 
     new Example().service(request, response);
-    writerOut.flush();
 
     assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");
   }
