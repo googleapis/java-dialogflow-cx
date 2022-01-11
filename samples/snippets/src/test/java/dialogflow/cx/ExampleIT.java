@@ -43,6 +43,7 @@ public class ExampleIT {
   private BufferedWriter writerOut;
   private StringWriter responseOut;
   private static final Gson gson = new Gson();
+  private static ByteArrayOutputStream stdOut;
 
   @Before
   public void beforeTest() throws IOException {
