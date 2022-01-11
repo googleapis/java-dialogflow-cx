@@ -21,7 +21,6 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -42,7 +41,6 @@ public class ExampleIT {
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
-  private static final Gson gson = new Gson();
   private static ByteArrayOutputStream stdOut;
 
   @Before
@@ -63,10 +61,9 @@ public class ExampleIT {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String firstHalf = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
-    String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
+    String firstHalf = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",},\"text\": \"hi\",\"languageCode\": \"en\"}"
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
+    BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf));
 
     when(request.getReader()).thenReturn(jsonReader);
 
