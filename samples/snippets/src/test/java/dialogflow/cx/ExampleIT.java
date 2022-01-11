@@ -52,8 +52,8 @@ public class ExampleIT {
     System.setOut(new PrintStream(stdOut));
 
   }
-
- @After
+  
+  @After
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
