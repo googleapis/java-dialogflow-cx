@@ -21,6 +21,7 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -28,6 +29,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
 import java.io.StringWriter;
+import org.json.simple.JSONObject;
+import org.json.simple.parser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,14 +44,19 @@ public class ExampleIT {
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
+  private static final Gson gson = new Gson();
   private static ByteArrayOutputStream stdOut;
 
   @Before
   public void beforeTest() throws IOException {
     MockitoAnnotations.initMocks(this);
 
-    stdOut = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(stdOut));
+    BufferedReader reader = new BufferedReader(new StringReader(""));
+    when(request.getReader()).thenReturn(reader);
+
+    responseOut = new StringWriter();
+    writerOut = new BufferedWriter(responseOut);
+    when(response.getWriter()).thenReturn(writerOut);
 
   }
   
@@ -63,12 +71,12 @@ public class ExampleIT {
 
     String firstHalf = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\"}}";
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf));
+    JsonObject o = new JsonParser().parse(firstHalf).getAsJsonObject();
 
-    when(request.getReader()).thenReturn(jsonReader);
-
-    new Example().service(request, response);
-
-    assertThat(stdOut.toString()).contains("Hello from a Java GCF Webhook");
+    when(request.getReader()).thenReturn(o);
+    new Example().service(request,response)
+    writerOut.flush();
+    
+    assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");
   }
 }
