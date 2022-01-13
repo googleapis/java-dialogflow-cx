@@ -102,7 +102,14 @@ public class CreatePage {
       // Performs the create page request.
       response = pagesClient.createPage(parent, page);
     }
-    System.out.format("Page created: %s\n", response);
+
+    try {
+			System.out.format("Page created: %s\n", response);
+		}
+		catch(NullPointerException e) {
+			System.out.println("NullPointerException thrown!");
+		}
+   
     return response;
   }
 }

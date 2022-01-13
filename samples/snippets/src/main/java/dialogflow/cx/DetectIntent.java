@@ -51,7 +51,7 @@ public class DetectIntent {
     }
     SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
 
-    Map<String, QueryResult> queryResults = Maps.newHashMap();
+    Map<String, QueryResult> queryResultsMap = Maps.newHashMap();
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       // Set the session name using the projectID (my-project-id), locationID (global), agentID
@@ -80,16 +80,21 @@ public class DetectIntent {
         // Display the query result.
         QueryResult queryResult = response.getQueryResult();
 
-        System.out.println("====================");
-        System.out.format("Query Text: '%s'\n", queryResult.getText());
-        System.out.format(
-            "Detected Intent: %s (confidence: %f)\n",
-            queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
+        try {
+            System.out.println("====================");
+            System.out.format("Query Text: '%s'\n", queryResult.getText());
+            System.out.format(
+                "Detected Intent: %s (confidence: %f)\n",
+                queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
 
-        queryResults.put(text, queryResult);
+            queryResultsMap.put(text, queryResult);
+        }
+        catch(NullPointerException e) {
+          System.out.println("NullPointerException thrown!");
+        }
       }
     }
-    return queryResults;
+    return queryResultsMap;
   }
 }
 // [END dialogflow_cx_detect_intent_text]
