@@ -57,7 +57,6 @@ public class CreateIntentIT {
     if (newIntentNameGlobal != null) {
       try (IntentsClient intentsClient = IntentsClient.create()) {
         intentsClient.deleteIntent(newIntentNameGlobal);
-        IntentsClient.shutdown();
       }
     }
 
@@ -69,7 +68,6 @@ public class CreateIntentIT {
               .build();
       try (IntentsClient intentsClient = IntentsClient.create(intentsSettings)) {
         intentsClient.deleteIntent(newIntentNameRegional);
-        IntentsClient.shutdown();
       }
     }
   }
