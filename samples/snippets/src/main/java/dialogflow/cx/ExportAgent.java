@@ -43,6 +43,7 @@ public class ExportAgent {
   public static void exportAgent(String projectId, String agentId, String location)
       throws IOException, InterruptedException, ExecutionException {
 
+    // Sets the api endpoint to specified location 
     String apiEndpoint = String.format("%s-dialogflow.googleapis.com:443", location);
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();

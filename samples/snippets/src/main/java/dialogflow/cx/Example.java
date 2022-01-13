@@ -62,8 +62,6 @@ public class Example implements HttpFunction {
             .getAsJsonObject();
     BufferedWriter writer = response.getWriter();
     writer.write(o.toString());
-    
-    System.out.println(o.toString());
   }
 }
 // [END dialogflow_webhook]
