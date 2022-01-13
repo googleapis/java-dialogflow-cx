@@ -21,7 +21,9 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
@@ -29,8 +31,6 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.StringReader;
 import java.io.StringWriter;
-import org.json.simple.JSONObject;
-import org.json.simple.parser;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -69,11 +69,13 @@ public class ExampleIT {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String firstHalf = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\"}}";
+    String jsonString = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\"}}";
 
-    JsonObject o = new JsonParser().parse(firstHalf).getAsJsonObject();
+    JsonElement jsonElement = new JsonParser().parse(jsonString);
+         
+    JsonObject jsonObject = jsonElement.getAsJsonObject();
 
-    when(request.getReader()).thenReturn(o);
+    when(request.getReader()).thenReturn(jsonObject);
     new Example().service(request, response);
     writerOut.flush();
     
