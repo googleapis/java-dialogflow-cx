@@ -71,11 +71,10 @@ public class ExampleIT {
 
     String jsonString = "{\"fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\"}}";
 
-    JsonElement jsonElement = new JsonParser().parse(jsonString);
-         
-    JsonObject jsonObject = jsonElement.getAsJsonObject();
+    BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
-    when(request.getReader()).thenReturn(jsonObject);
+    when(request.getReader()).thenReturn(jsonReader);
+
     new Example().service(request, response);
     writerOut.flush();
     
