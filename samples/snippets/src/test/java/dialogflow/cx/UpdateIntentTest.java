@@ -71,6 +71,8 @@ public class UpdateIntentTest {
       UpdateIntentTest.intentPath = intentsClient.createIntent(parent, intent.build()).getName();
       UpdateIntentTest.intentID = UpdateIntentTest.intentPath.split("/")[7];
     }
+
+    client.shutdown()
   }
 
   @After
@@ -84,6 +86,7 @@ public class UpdateIntentTest {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(parent);
+    client.shutdown()
   }
 
   @Test

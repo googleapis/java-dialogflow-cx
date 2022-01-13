@@ -51,6 +51,7 @@ public class CreateAgentIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(CreateAgentIT.agentPath);
+    client.shutdown();
   }
 
   @Test

@@ -62,6 +62,7 @@ public class PageManagementIT {
 
     parent = client.createAgent(parentPath, agent).getName();
     agentID = parent.split("/")[5];
+    client.shutdown()
   }
 
   @AfterClass
@@ -73,6 +74,7 @@ public class PageManagementIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(parent);
+    client.shutdown()
   }
 
   @Test
