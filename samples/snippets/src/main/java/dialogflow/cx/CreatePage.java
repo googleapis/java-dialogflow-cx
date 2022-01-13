@@ -50,7 +50,7 @@ public class CreatePage {
       pagesSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
     }
     PagesSettings pagesSettings = pagesSettingsBuilder.build();
-
+    Page response = null;
     // Instantiates a client
     try (PagesClient pagesClient = PagesClient.create(pagesSettings)) {
       // Set the flow name using the projectID (my-project-id), locationID (global), agentID (UUID)
@@ -100,11 +100,10 @@ public class CreatePage {
               .build();
 
       // Performs the create page request.
-      Page response = pagesClient.createPage(parent, page);
-      System.out.format("Page created: %s\n", response);
-
-      return response;
+      response = pagesClient.createPage(parent, page);
     }
+    System.out.format("Page created: %s\n", response);
+    return response;
   }
 }
 // [END dialogflow_cx_create_page]
