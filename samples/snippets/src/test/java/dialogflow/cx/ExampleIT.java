@@ -74,7 +74,7 @@ public class ExampleIT {
     JsonObject o = new JsonParser().parse(firstHalf).getAsJsonObject();
 
     when(request.getReader()).thenReturn(o);
-    new Example().service(request,response);
+    new Example().service(request, response);
     writerOut.flush();
     
     assertThat(responseOut.toString()).contains("Hello from a Java GCF Webhook");
