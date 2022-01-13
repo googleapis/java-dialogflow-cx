@@ -46,6 +46,7 @@ public class CreateIntent {
       intentsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
     }
     IntentsSettings intentsSettings = intentsSettingsBuilder.build();
+    Intent response = null;
 
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create(intentsSettings)) {
@@ -71,11 +72,10 @@ public class CreateIntent {
               .build();
 
       // Performs the create intent request.
-      Intent response = intentsClient.createIntent(parent, intent);
-      System.out.format("Intent created: %s\n", response);
-
-      return response;
+      response = intentsClient.createIntent(parent, intent);
     }
+    System.out.format("Intent created: %s\n", response);
+    return response;
   }
 }
 // [END dialogflow_cx_create_intent]
