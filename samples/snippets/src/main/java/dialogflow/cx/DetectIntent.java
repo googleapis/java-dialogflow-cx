@@ -51,12 +51,13 @@ public class DetectIntent {
     }
     SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
 
-    Map<String, QueryResult> queryResultsMap = Maps.newHashMap();
+    Map<String, QueryResult> queryResults = Maps.newHashMap();
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       // Set the session name using the projectID (my-project-id), locationID (global), agentID
       // (UUID), and sessionId (UUID).
       SessionName session = SessionName.of(projectId, locationId, agentId, sessionId);
+      System.out.println("Session Path: " + session.toString());
 
       // Detect intents for each text input.
       for (String text : texts) {
@@ -80,21 +81,16 @@ public class DetectIntent {
         // Display the query result.
         QueryResult queryResult = response.getQueryResult();
 
-        try {
-            System.out.println("====================");
-            System.out.format("Query Text: '%s'\n", queryResult.getText());
-            System.out.format(
-                "Detected Intent: %s (confidence: %f)\n",
-                queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
+        System.out.println("====================");
+        System.out.format("Query Text: '%s'\n", queryResult.getText());
+        System.out.format(
+            "Detected Intent: %s (confidence: %f)\n",
+            queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
 
-            queryResultsMap.put(text, queryResult);
-        }
-        catch(NullPointerException e) {
-          System.out.println("NullPointerException thrown!");
-        }
+        queryResults.put(text, queryResult);
       }
     }
-    return queryResultsMap;
+    return queryResults;
   }
 }
 // [END dialogflow_cx_detect_intent_text]

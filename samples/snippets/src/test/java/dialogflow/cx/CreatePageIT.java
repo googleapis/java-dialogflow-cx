@@ -56,7 +56,6 @@ public class CreatePageIT {
     if (newPageNameGlobal != null) {
       try (PagesClient pagesClient = PagesClient.create()) {
         pagesClient.deletePage(newPageNameGlobal);
-        pagesClient.shutdown();
       }
     }
 
@@ -68,7 +67,6 @@ public class CreatePageIT {
               .build();
       try (PagesClient pagesClient = PagesClient.create(pagesSettings)) {
         pagesClient.deletePage(newPageNameRegional);
-        pagesClient.shutdown();
       }
     }
   }
