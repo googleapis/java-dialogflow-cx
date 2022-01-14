@@ -56,7 +56,6 @@ public class CreateFlowIT {
     if (newFlowNameGlobal != null) {
       try (FlowsClient flowsClient = FlowsClient.create()) {
         flowsClient.deleteFlow(newFlowNameGlobal);
-        flowsClient.shutdown();
       }
     }
 
@@ -68,7 +67,6 @@ public class CreateFlowIT {
               .build();
       try (FlowsClient flowsClient = FlowsClient.create(flowsSettings)) {
         flowsClient.deleteFlow(newFlowNameRegional);
-        flowsClient.shutdown();
       }
     }
   }
