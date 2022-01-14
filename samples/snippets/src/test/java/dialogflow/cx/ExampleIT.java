@@ -39,6 +39,6 @@ public class ExampleIT {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    assertThat(true).equals(true);
+    assertThat(true).isEqualTo(true);
   }
 }
