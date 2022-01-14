@@ -80,7 +80,10 @@ public class CreateFlowIT {
             LOCATION_GLOBAL,
             AGENT_ID_GLOBAL,
             EVENT_TO_FULFILLMENT_MESSAGES);
-    newFlowNameGlobal = result.getName();
+    
+    if(result != null){
+      newFlowNameGlobal = result.getName();
+    }
 
     assertEquals(result.getDisplayName(), DISPLAY_NAME);
     // Number of added event handlers + 2 default event handlers.
