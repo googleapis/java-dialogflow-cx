@@ -46,7 +46,7 @@ public class CreateIntent {
       intentsSettingsBuilder.setEndpoint(locationId + "-dialogflow.googleapis.com:443");
     }
     IntentsSettings intentsSettings = intentsSettingsBuilder.build();
-    Intent response = "";
+    Intent response = null;
 
     // Instantiates a client
     try (IntentsClient intentsClient = IntentsClient.create(intentsSettings)) {
