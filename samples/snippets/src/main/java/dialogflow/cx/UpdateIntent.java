@@ -67,7 +67,10 @@ public class UpdateIntent {
 
       // Make API request to update intent using fieldmask
       Intent response = client.updateIntent(request);
-      System.out.println(response);
+      
+      if(response != null){
+        System.out.println(response);
+      }
     }
   }
 }

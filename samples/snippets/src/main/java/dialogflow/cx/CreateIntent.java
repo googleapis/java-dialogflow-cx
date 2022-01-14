@@ -72,9 +72,10 @@ public class CreateIntent {
 
       // Performs the create intent request.
       Intent response = intentsClient.createIntent(parent, intent);
-      System.out.format("Intent created: %s\n", response);
-
-      return response;
+      if ( response != null) {
+        System.out.format("Intent created: %s\n", response);
+        return response;
+      }
     }
   }
 }
