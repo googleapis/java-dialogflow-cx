@@ -56,20 +56,19 @@ public class CreateFlowIT {
   @Before
   public void beforeTest() throws Exception {
     try (FlowsClient flowsClient = FlowsClient.create()) {
-      String global_path = 
+      String globalPath = 
           String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
 
-      for (ListFlowsPagedResponse global_flow : flowsClient.listFlows(global_path).iterateAll()) { 
-        System.out.println(global_flow);
+      for (ListFlowsPagedResponse globalFlow : flowsClient.listFlows(globalPath).iterateAll()) { 
+        System.out.println(globalFlow);
       }
 
-      String regional_path = 
+      String regionalPath = 
           String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL);
-      ListFlowsResponse resp = flowsClient.listFlows(regional_path);
 
-      for (Flow regional_flow : flowsClient.listFlows(global_path).iterateAll()) { 
-        if (regional_flow.display_name.contains("flow-")) { 
-          flowsClient.deleteFlow(regional_flow.name);
+      for (Flow regionalFlow : flowsClient.listFlows(regionalPath).iterateAll()) { 
+        if (regionalFlow.display_name.contains("flow-")) { 
+          flowsClient.deleteFlow(regionalFlow.name);
         }
       }
     }
