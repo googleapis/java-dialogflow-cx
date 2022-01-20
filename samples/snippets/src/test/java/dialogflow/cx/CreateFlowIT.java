@@ -60,9 +60,10 @@ public class CreateFlowIT {
           String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
 
       ListFlowsPagedResponse globalFlow = flowsClient.listFlows(globalPath);
-      for (Flow globalFlow : globalFlow.flows.iterateAll()) { 
-        if (globalFlow.display_name.contains("flow-")) { 
-          flowsClient.deleteFlow(globalFlow.name);
+        for (Flow globalFlow : globalFlow.flows.iterateAll()) { 
+          if (globalFlow.display_name.contains("flow-")) { 
+            flowsClient.deleteFlow(globalFlow.name);
+        }
       }
 
       String regionalPath = 
