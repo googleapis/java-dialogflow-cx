@@ -57,10 +57,9 @@ public class ExampleIT {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
-    String firstHalf = "{\fulfillmentInfo\": {\"tag\": \"Default Welcome Intent\",}";
-    String secondHalf = ",\"text\": \"hi\",\"languageCode\": \"en\",}";
+    String jsonString = "{'fulfillmentInfo': {'tag': 'Default Welcome Intent'}}";
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader(firstHalf + secondHalf));
+    BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
 
