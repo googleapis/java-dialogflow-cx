@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
+import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsSettings;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
@@ -52,22 +53,22 @@ public class CreateFlowIT {
   private static String newFlowNameRegional;
 
   @Before
-  public void beforeTest() throws IOException {
+  public void beforeTest() throws Exception {
     try (FlowsClient flowsClient = FlowsClient.create()) {
-      String path = String.format("projects/%s/locations/%s/agents/%s",PROJECT_ID,LOCATION_GLOBAL,AGENT_ID_GLOBAL);
+      String path = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
       ListFlowsResponse resp = flowsClient.listFlows(path);
 
-      for (FLow flow : resp.flows){ 
-        if(flow.display_name.contains("flow-")){ 
+      for (Flow flow : resp.flows){ 
+        if (flow.display_name.contains("flow-")){ 
           flowsClient.deleteFlow(flow.name);
         }
       }
 
-      String path = String.format("projects/%s/locations/%s/agents/%s",PROJECT_ID,LOCATION_REGIONAL,AGENT_ID_REGIONAL);
+      String path = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL);
       ListFlowsResponse resp = flowsClient.listFlows(path);
 
-      for (FLow flow : resp.flows){ 
-        if(flow.display_name.contains("flow-")){ 
+      for (Flow flow : resp.flows){ 
+        if (flow.display_name.contains("flow-")){ 
           flowsClient.deleteFlow(flow.name);
         }
       }
