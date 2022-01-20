@@ -25,6 +25,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.UUID;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -49,6 +50,30 @@ public class CreateFlowIT {
 
   private static String newFlowNameGlobal;
   private static String newFlowNameRegional;
+
+  @Before
+  public void beforeTest() throws IOException {
+    try (FlowsClient flowsClient = FlowsClient.create()) {
+
+            String path = String.format('projects/%s/locations/%s/agents/%s',PROJECT_ID,LOCATION_GLOBAL,AGENT_ID_GLOBAL);
+            ListFlowsResponse resp = flowsClient.listFlows(path);
+
+            for (FLow flow : resp.flows){ 
+              if(flow.display_name.contains('flow-')){ 
+                flowsClient.deleteFlow(flow.name);
+              }
+            }
+
+            String path = String.format('projects/%s/locations/%s/agents/%s',PROJECT_ID,LOCATION_REGIONAL,AGENT_ID_REGIONAL);
+            ListFlowsResponse resp = flowsClient.listFlows(path);
+
+            for (FLow flow : resp.flows){ 
+              if(flow.display_name.contains('flow-')){ 
+                flowsClient.deleteFlow(flow.name);
+              }
+            }
+          }
+  }
 
   @AfterClass
   public static void tearDown() throws Exception {
