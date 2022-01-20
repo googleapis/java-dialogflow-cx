@@ -60,7 +60,7 @@ public class CreateFlowIT {
           String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
 
       for (ListFlowsPagedResponse globalFlow : flowsClient.listFlows(globalPath).iterateAll()) { 
-        System.out.println(globalFlow);
+        throw new Exception(String(globalFlow)); 
       }
 
       String regionalPath = 
