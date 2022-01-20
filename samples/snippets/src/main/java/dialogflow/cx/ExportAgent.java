@@ -59,7 +59,7 @@ public class ExportAgent {
 
       // get the export agent response after the operation is completed
       ExportAgentResponse response = future.get();
-      if (response != null){
+      if (response != null) {
         System.out.println(response);
       }
     }
