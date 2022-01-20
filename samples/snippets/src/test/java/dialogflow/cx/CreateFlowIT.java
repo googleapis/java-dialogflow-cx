@@ -21,13 +21,10 @@ import static org.junit.Assert.assertEquals;
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsSettings;
-import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
-import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsPagedResponse;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.UUID;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -52,29 +49,6 @@ public class CreateFlowIT {
 
   private static String newFlowNameGlobal;
   private static String newFlowNameRegional;
-
-  @Before
-  public void beforeTest() throws Exception {
-    try (FlowsClient flowsClient = FlowsClient.create()) {
-      String globalPath = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
-      ListFlowsPagedResponse globalFlow = flowsClient.listFlows(globalPath);
-
-      for (Flow globalFlow : globalFlow.flows.iterateAll()) { 
-        if (globalFlow.display_name.contains("flow-")) { 
-          flowsClient.deleteFlow(globalFlow.name);
-        }
-      }
-
-      String regionalPath = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL);
-
-      ListFlowsPagedResponse globalFlow = flowsClient.listFlows(regionalPath);
-      for (Flow regionalFlow : globalFlow.flows.iterateAll()) { 
-        if (regionalFlow.display_name.contains("flow-")) { 
-          flowsClient.deleteFlow(regionalFlow.name);
-        }
-      }
-    }
-  }
 
   @AfterClass
   public static void tearDown() throws Exception {
