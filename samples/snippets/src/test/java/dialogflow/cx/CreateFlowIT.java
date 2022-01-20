@@ -20,8 +20,9 @@ import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
-import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsSettings;
+import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsPagedResponse;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.UUID;
@@ -55,21 +56,20 @@ public class CreateFlowIT {
   @Before
   public void beforeTest() throws Exception {
     try (FlowsClient flowsClient = FlowsClient.create()) {
-      String path = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
-      ListFlowsResponse resp = flowsClient.listFlows(path);
+      String global_path = 
+          String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
 
-      for (Flow flow : resp.flows){ 
-        if (flow.display_name.contains("flow-")){ 
-          flowsClient.deleteFlow(flow.name);
-        }
+      for (ListFlowsPagedResponse global_flow : flowsClient.listFlows(global_path).iterateAll()) { 
+        System.out.println(global_flow)
       }
 
-      String path = String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL);
-      ListFlowsResponse resp = flowsClient.listFlows(path);
+      String regional_path = 
+          String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL);
+      ListFlowsResponse resp = flowsClient.listFlows(regional_path);
 
-      for (Flow flow : resp.flows){ 
-        if (flow.display_name.contains("flow-")){ 
-          flowsClient.deleteFlow(flow.name);
+      for (Flow regional_flow : flowsClient.listFlows(global_path).iterateAll()) { 
+        if (regional_flow.display_name.contains("flow-")) { 
+          flowsClient.deleteFlow(regional_flow.name);
         }
       }
     }
