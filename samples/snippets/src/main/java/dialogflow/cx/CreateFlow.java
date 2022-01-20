@@ -83,7 +83,7 @@ public class CreateFlow {
 
       Flow test = new Flow();
 
-      return (response == null) test : response;
+      return (response == null) ? test : response;
     }
   }
 }
