@@ -54,25 +54,24 @@ public class CreateFlowIT {
   @Before
   public void beforeTest() throws IOException {
     try (FlowsClient flowsClient = FlowsClient.create()) {
+      String path = String.format('projects/%s/locations/%s/agents/%s',PROJECT_ID,LOCATION_GLOBAL,AGENT_ID_GLOBAL);
+      ListFlowsResponse resp = flowsClient.listFlows(path);
 
-            String path = String.format('projects/%s/locations/%s/agents/%s',PROJECT_ID,LOCATION_GLOBAL,AGENT_ID_GLOBAL);
-            ListFlowsResponse resp = flowsClient.listFlows(path);
+      for (FLow flow : resp.flows){ 
+        if(flow.display_name.contains('flow-')){ 
+          flowsClient.deleteFlow(flow.name);
+        }
+      }
 
-            for (FLow flow : resp.flows){ 
-              if(flow.display_name.contains('flow-')){ 
-                flowsClient.deleteFlow(flow.name);
-              }
-            }
+      String path = String.format('projects/%s/locations/%s/agents/%s',PROJECT_ID,LOCATION_REGIONAL,AGENT_ID_REGIONAL);
+      ListFlowsResponse resp = flowsClient.listFlows(path);
 
-            String path = String.format('projects/%s/locations/%s/agents/%s',PROJECT_ID,LOCATION_REGIONAL,AGENT_ID_REGIONAL);
-            ListFlowsResponse resp = flowsClient.listFlows(path);
-
-            for (FLow flow : resp.flows){ 
-              if(flow.display_name.contains('flow-')){ 
-                flowsClient.deleteFlow(flow.name);
-              }
-            }
-          }
+      for (FLow flow : resp.flows){ 
+        if(flow.display_name.contains('flow-')){ 
+          flowsClient.deleteFlow(flow.name);
+        }
+      }
+    }
   }
 
   @AfterClass
