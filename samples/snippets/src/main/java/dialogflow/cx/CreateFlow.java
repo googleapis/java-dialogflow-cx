@@ -81,7 +81,9 @@ public class CreateFlow {
       Flow response = flowsClient.createFlow(parent, flow);
       System.out.format("Flow created: %s\n", response);
 
-      return (response == null) ? "" : response;
+      Flow test = new Flow()
+
+      return (response == null) test : response;
     }
   }
 }
