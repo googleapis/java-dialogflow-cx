@@ -81,7 +81,7 @@ public class CreateFlow {
       Flow response = flowsClient.createFlow(parent, flow);
       System.out.format("Flow created: %s\n", response);
 
-      Flow test = Flow.newBuilder().setDisplayName("error").build()
+      Flow test = Flow.newBuilder().setDisplayName("error").build();
 
       return (response == null) ? test : response;
     }
