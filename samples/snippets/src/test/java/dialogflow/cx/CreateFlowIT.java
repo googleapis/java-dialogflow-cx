@@ -59,14 +59,17 @@ public class CreateFlowIT {
       String globalPath = 
           String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL);
 
-      for (ListFlowsPagedResponse globalFlow : flowsClient.listFlows(globalPath).iterateAll()) { 
-        throw new Exception(String(globalFlow)); 
+      ListFlowsPagedResponse globalFlow = flowsClient.listFlows(globalPath);
+      for (Flow globalFlow : globalFlow.flows.iterateAll()) { 
+        if (globalFlow.display_name.contains("flow-")) { 
+          flowsClient.deleteFlow(globalFlow.name);
       }
 
       String regionalPath = 
           String.format("projects/%s/locations/%s/agents/%s", PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL);
 
-      for (Flow regionalFlow : flowsClient.listFlows(regionalPath).iterateAll()) { 
+      ListFlowsPagedResponse globalFlow = flowsClient.listFlows(regionalPath);
+      for (Flow regionalFlow : globalFlow.flows.iterateAll()) { 
         if (regionalFlow.display_name.contains("flow-")) { 
           flowsClient.deleteFlow(regionalFlow.name);
         }
