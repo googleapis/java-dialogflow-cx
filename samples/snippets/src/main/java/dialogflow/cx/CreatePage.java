@@ -101,15 +101,9 @@ public class CreatePage {
 
       // Performs the create page request.
       Page response = pagesClient.createPage(parent, page);
+      System.out.format("Page created: %s\n", (response == null) ? "" : name);
 
-      Page errorPage =
-          Page.newBuilder()
-              .setDisplayName("error")
-              .build();
-
-      System.out.format("Page created: %s\n", (response == null) ? errorPage : response);
-
-      return (response == null) ? errorPage : response;
+      return response;
     }
   }
 }
