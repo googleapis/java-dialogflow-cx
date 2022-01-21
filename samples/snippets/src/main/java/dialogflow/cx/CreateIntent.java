@@ -72,9 +72,15 @@ public class CreateIntent {
 
       // Performs the create intent request.
       Intent response = intentsClient.createIntent(parent, intent);
-      System.out.format("Intent created: %s\n", response);
+      Intent errorIntent =
+              Intent.newBuilder()
+                  .setDisplayName("error")
+                  .build();
 
-      return response;
+      
+      System.out.format("Intent created: %s\n", (response == null) ? errorIntent : response);
+
+      return (response == null) ? errorIntent : response;
     }
   }
 }
