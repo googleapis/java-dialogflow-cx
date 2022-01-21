@@ -80,7 +80,7 @@ public class CreateFlow {
       // Performs the create flow request.
       Flow response = flowsClient.createFlow(parent, flow);
       Flow errorFlow = Flow.newBuilder().setDisplayName("error").build();
-      
+
       System.out.format("Flow created: %s\n", (response == null) ? errorFlow : response);
 
       return (response == null) ? errorFlow : response;

@@ -69,11 +69,8 @@ public class CreateIntent {
               .setDisplayName(displayName)
               .addAllTrainingPhrases(trainingPhrases)
               .build();
-      
-      Intent errorIntent =
-          Intent.newBuilder()
-              .setDisplayName("error")
-              .build();
+
+      Intent errorIntent = Intent.newBuilder().setDisplayName("error").build();
 
       // Performs the create intent request.
       Intent response = intentsClient.createIntent(parent, intent);
