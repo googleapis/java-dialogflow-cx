@@ -79,9 +79,11 @@ public class CreateFlow {
 
       // Performs the create flow request.
       Flow response = flowsClient.createFlow(parent, flow);
-      System.out.format("Flow created: %s\n", response);
+      Flow errorFlow = Flow.newBuilder().setDisplayName("error").build();
+      
+      System.out.format("Flow created: %s\n", (response == null) ? errorFlow : response);
 
-      return response;
+      return (response == null) ? errorFlow : response;
     }
   }
 }
