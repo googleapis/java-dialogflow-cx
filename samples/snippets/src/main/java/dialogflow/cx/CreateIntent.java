@@ -71,9 +71,9 @@ public class CreateIntent {
               .build();
       
       Intent errorIntent =
-        Intent.newBuilder()
-            .setDisplayName("error")
-            .build();
+          Intent.newBuilder()
+              .setDisplayName("error")
+              .build();
 
       // Performs the create intent request.
       Intent response = intentsClient.createIntent(parent, intent);
