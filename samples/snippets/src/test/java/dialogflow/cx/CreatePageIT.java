@@ -16,6 +16,7 @@
 
 package dialogflow.cx;
 
+import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3beta1.Page;
@@ -25,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -49,6 +51,11 @@ public class CreatePageIT {
 
   private static String newPageNameGlobal;
   private static String newPageNameRegional;
+
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
 
   @AfterClass
   public static void tearDown() throws Exception {
