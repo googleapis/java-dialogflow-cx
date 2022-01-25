@@ -70,13 +70,11 @@ public class CreateIntent {
               .addAllTrainingPhrases(trainingPhrases)
               .build();
 
-      Intent errorIntent = Intent.newBuilder().setDisplayName("error").build();
-
       // Performs the create intent request.
       Intent response = intentsClient.createIntent(parent, intent);
-      System.out.format("Intent created: %s\n", (response == null) ? errorIntent : response);
+      System.out.format("Intent created: %s\n", response);
 
-      return (response == null) ? errorIntent : response;
+      return response;
     }
   }
 }

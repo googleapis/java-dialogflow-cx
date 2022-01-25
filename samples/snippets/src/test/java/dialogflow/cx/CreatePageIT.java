@@ -106,7 +106,7 @@ public class CreatePageIT {
             ENTRY_TEXTS);
     newPageNameRegional = result.getName();
 
-    assertEquals(result.getDisplayName(), DISPLAY_NAME + "2");
+    assertEquals(result.getDisplayName(), DISPLAY_NAME);
     assertEquals(result.getEntryFulfillment().getMessagesCount(), ENTRY_TEXTS.size());
   }
 }
