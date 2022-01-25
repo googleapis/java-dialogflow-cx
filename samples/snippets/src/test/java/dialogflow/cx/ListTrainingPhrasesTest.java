@@ -23,15 +23,21 @@ import java.io.IOException;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class ListTrainingPhrasesTest {
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION = "global";
   private static String AGENT_ID = "b8d0e85d-0741-4e6d-a66a-3671184b7b93";
   private static String INTENT_ID = "45974f75-9412-445a-9863-47bfdfa3d96d";
 
   private ByteArrayOutputStream stdOut;
+
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
 
   @Before
   public void setUp() throws IOException {

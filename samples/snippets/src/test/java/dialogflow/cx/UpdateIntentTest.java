@@ -30,17 +30,23 @@ import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class UpdateIntentTest {
 
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
   private static String intentID = "";
   private static String intentPath = "";
   private static String agentID = "";
 
   private ByteArrayOutputStream stdOut;
+
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
 
   @Before
   public void setUp() throws IOException {
