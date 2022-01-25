@@ -34,17 +34,12 @@ import org.junit.Test;
 
 public class ExportAgentIT {
 
-  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
   private static String agentPath = "";
   private static String agentID = "";
 
   private ByteArrayOutputStream stdOut;
-
-  @BeforeClass
-  public static void beforeAll() {
-    assertThat(PROJECT_ID).isNotNull();
-  }
 
   @Before
   public void setUp() throws IOException {

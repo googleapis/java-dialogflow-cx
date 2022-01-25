@@ -37,7 +37,7 @@ import org.junit.runners.JUnit4;
 public class CreatePageIT {
 
   private static String DISPLAY_NAME = "page-" + UUID.randomUUID().toString();
-  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION_GLOBAL = "global";
   private static String LOCATION_REGIONAL = "us-central1";
   private static String AGENT_ID_GLOBAL =
@@ -51,11 +51,6 @@ public class CreatePageIT {
 
   private static String newPageNameGlobal;
   private static String newPageNameRegional;
-
-  @BeforeClass
-  public static void beforeAll() {
-    assertThat(PROJECT_ID).isNotNull();
-  }
 
   @AfterClass
   public static void tearDown() throws Exception {
