@@ -68,9 +68,9 @@ public class CreateAgentIT {
     assertThat(stdOut.toString()).contains(fakeAgent);
   }
 
-   @Test
-  public void testFail() throws IOException {
+  // @Test
+  // public void testFail() throws IOException {
   
-    assertEquals(true, false);
-  }
+  //   assertEquals(true, false);
+  // }
 }
