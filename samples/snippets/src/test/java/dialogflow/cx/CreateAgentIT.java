@@ -71,6 +71,6 @@ public class CreateAgentIT {
    @Test
   public void testFail() throws IOException {
   
-    assertEquals(true, false)
+    assertEquals(true, false);
   }
 }
