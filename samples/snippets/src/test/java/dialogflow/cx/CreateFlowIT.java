@@ -52,6 +52,11 @@ public class CreateFlowIT {
   private static String newFlowNameGlobal;
   private static String newFlowNameRegional;
 
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
+
   @AfterClass
   public static void tearDown() throws Exception {
     // Delete the newly created Flow in the global location.

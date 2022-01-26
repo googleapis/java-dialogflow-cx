@@ -35,7 +35,7 @@ import org.junit.Test;
 
 public class UpdateIntentTest {
 
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String parent = "";
   private static String intentID = "";
   private static String intentPath = "";

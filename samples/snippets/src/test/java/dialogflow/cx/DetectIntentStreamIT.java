@@ -47,6 +47,11 @@ public class DetectIntentStreamIT {
   private ByteArrayOutputStream bout;
   private PrintStream original;
 
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
+
   @Before
   public void setUp() {
     original = System.out;

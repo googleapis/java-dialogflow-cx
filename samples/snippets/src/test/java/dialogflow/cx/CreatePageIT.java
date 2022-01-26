@@ -52,6 +52,11 @@ public class CreatePageIT {
   private static String newPageNameGlobal;
   private static String newPageNameRegional;
 
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
+
   @AfterClass
   public static void tearDown() throws Exception {
     // Delete the newly created Page in the global location.

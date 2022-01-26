@@ -17,6 +17,7 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
@@ -34,6 +35,11 @@ public class CreateAgentIT {
   private static String agentPath = "";
   private ByteArrayOutputStream stdOut;
   private static PrintStream originalOut;
+
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
 
   @Before
   public void setUp() throws IOException {
@@ -60,5 +66,11 @@ public class CreateAgentIT {
     CreateAgentIT.agentPath = CreateAgent.createAgent(PROJECT_ID, fakeAgent).getName();
 
     assertThat(stdOut.toString()).contains(fakeAgent);
+  }
+
+   @Test
+  public void testFail() throws IOException {
+  
+    assertEquals(true, false)
   }
 }

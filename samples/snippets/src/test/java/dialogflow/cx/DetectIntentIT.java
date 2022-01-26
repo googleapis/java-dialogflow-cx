@@ -47,6 +47,11 @@ public class DetectIntentIT {
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
 
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
+
   @Test
   public void testDetectIntentGlobal() throws Exception {
     Map<String, QueryResult> queryResults =
