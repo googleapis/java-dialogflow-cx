@@ -17,7 +17,6 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
@@ -71,7 +70,7 @@ public class CreateAgentIT {
 
   // @Test
   // public void testFail() throws IOException {
-  
+
   //   assertEquals(true, false);
   // }
 }
