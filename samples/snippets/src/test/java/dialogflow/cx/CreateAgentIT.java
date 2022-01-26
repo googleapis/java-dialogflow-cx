@@ -32,7 +32,7 @@ import org.junit.Test;
 
 public class CreateAgentIT {
 
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String agentPath = "";
   private ByteArrayOutputStream stdOut;
   private static PrintStream originalOut;

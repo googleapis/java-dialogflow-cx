@@ -43,6 +43,11 @@ public class UpdateIntentTest {
 
   private ByteArrayOutputStream stdOut;
 
+  @BeforeClass
+  public static void beforeAll() {
+    assertThat(PROJECT_ID).isNotNull();
+  }
+
   @Before
   public void setUp() throws IOException {
 
