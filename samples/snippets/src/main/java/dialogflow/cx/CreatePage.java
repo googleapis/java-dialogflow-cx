@@ -101,7 +101,7 @@ public class CreatePage {
 
       // Performs the create page request.
       Page response = pagesClient.createPage(parent, page);
-      System.out.format("Page created: %s\n", response);
+      System.out.format("Page created: %s\n", response.toString());
 
       return response;
     }
