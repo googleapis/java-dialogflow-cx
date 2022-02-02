@@ -34,7 +34,6 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreateFlowIT {
 
-  private static String DISPLAY_NAME = "flow-" + UUID.randomUUID().toString();
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION_GLOBAL = "global";
   private static String LOCATION_REGIONAL = "us-central1";
@@ -73,6 +72,7 @@ public class CreateFlowIT {
 
   @Test
   public void testCreateFlowGlobal() throws Exception {
+    String DISPLAY_NAME = "flow-" + UUID.randomUUID().toString();
     Flow result =
         CreateFlow.createFlow(
             DISPLAY_NAME,
@@ -89,6 +89,7 @@ public class CreateFlowIT {
 
   @Test
   public void testCreateFlowRegional() throws Exception {
+    String DISPLAY_NAME = "flow-" + UUID.randomUUID().toString();
     Flow result =
         CreateFlow.createFlow(
             DISPLAY_NAME,

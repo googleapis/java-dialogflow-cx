@@ -33,8 +33,6 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreatePageIT {
-
-  private static String DISPLAY_NAME = "page-" + UUID.randomUUID().toString();
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION_GLOBAL = "global";
   private static String LOCATION_REGIONAL = "us-central1";
@@ -73,6 +71,7 @@ public class CreatePageIT {
 
   @Test
   public void testCreatePageGlobal() throws Exception {
+    String DISPLAY_NAME = "page-" + UUID.randomUUID().toString();
     Page result =
         CreatePage.createPage(
             DISPLAY_NAME,
@@ -89,6 +88,7 @@ public class CreatePageIT {
 
   @Test
   public void testCreatePageRegional() throws Exception {
+    String DISPLAY_NAME = "page-" + UUID.randomUUID().toString();
     Page result =
         CreatePage.createPage(
             DISPLAY_NAME,
