@@ -56,7 +56,8 @@ public class DetectIntent {
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
       // Set the session name using the projectID (my-project-id), locationID (global), agentID
       // (UUID), and sessionId (UUID).
-      SessionName session = SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
+      SessionName session = 
+            SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
       System.out.println("Session Path: " + session.toString());
 
       // Detect intents for each text input.
