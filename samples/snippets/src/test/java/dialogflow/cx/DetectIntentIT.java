@@ -41,12 +41,12 @@ public class DetectIntentIT {
   private static String AGENT_ID_REGIONAL =
       System.getenv()
           .getOrDefault("DIALOGFLOW_CX_AGENT_ID_REGIONAL", "1ea2bf10-d5ef-4442-b93f-a917d1991014");
+  private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
 
   @Test
   public void testDetectIntentGlobal() throws Exception {
-    String SESSION_ID = UUID.randomUUID().toString();
     Map<String, QueryResult> queryResults =
         DetectIntent.detectIntent(
             PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL, SESSION_ID, TEXTS, LANGUAGE_CODE);
@@ -59,7 +59,6 @@ public class DetectIntentIT {
 
   @Test
   public void testDetectIntentRegional() throws Exception {
-    String SESSION_ID = UUID.randomUUID().toString();
     Map<String, QueryResult> queryResults =
         DetectIntent.detectIntent(
             PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL, SESSION_ID, TEXTS, LANGUAGE_CODE);

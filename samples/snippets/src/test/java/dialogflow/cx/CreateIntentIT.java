@@ -36,6 +36,7 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class CreateIntentIT {
 
+  private static String DISPLAY_NAME = "intent-" + UUID.randomUUID().toString();
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION_GLOBAL = "global";
   private static String LOCATION_REGIONAL = "us-central1";
@@ -73,7 +74,6 @@ public class CreateIntentIT {
 
   @Test
   public void testCreateIntentGlobal() throws Exception {
-    String DISPLAY_NAME = "intent-" + UUID.randomUUID().toString();
     Intent result =
         CreateIntent.createIntent(
             DISPLAY_NAME, PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL, TRAINING_PHRASES_PARTS);
@@ -89,7 +89,6 @@ public class CreateIntentIT {
 
   @Test
   public void testCreateIntentRegional() throws Exception {
-    String DISPLAY_NAME = "intent-" + UUID.randomUUID().toString();
     Intent result =
         CreateIntent.createIntent(
             DISPLAY_NAME, PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL, TRAINING_PHRASES_PARTS);
