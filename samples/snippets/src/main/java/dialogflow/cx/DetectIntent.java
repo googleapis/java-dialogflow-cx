@@ -59,7 +59,7 @@ public class DetectIntent {
       SessionName session =
           SessionName
               .ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
-      System.out.println("Session Path: " + session.toString());
+      // System.out.println("Session Path: " + session.toString());
 
       // Detect intents for each text input.
       for (String text : texts) {
@@ -83,11 +83,11 @@ public class DetectIntent {
         // Display the query result.
         QueryResult queryResult = response.getQueryResult();
 
-        System.out.println("====================");
-        System.out.format("Query Text: '%s'\n", queryResult.getText());
-        System.out.format(
-            "Detected Intent: %s (confidence: %f)\n",
-            queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
+        // System.out.println("====================");
+        // System.out.format("Query Text: '%s'\n", queryResult.getText());
+        // System.out.format(
+        //     "Detected Intent: %s (confidence: %f)\n",
+        //     queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
 
         queryResults.put(text, queryResult);
       }
