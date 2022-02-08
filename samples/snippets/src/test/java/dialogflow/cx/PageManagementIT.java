@@ -34,7 +34,7 @@ import org.junit.Test;
 /** Integration (system) tests for {@link PageManagment}. */
 public class PageManagementIT {
 
-  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String flowID = "00000000-0000-0000-0000-000000000000";
   private static String location = "global";
   private static String displayName = "temp_page_" + UUID.randomUUID().toString();

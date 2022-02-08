@@ -16,7 +16,6 @@
 
 package dialogflow.cx;
 
-import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
@@ -26,7 +25,6 @@ import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.UUID;
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -51,11 +49,6 @@ public class CreateFlowIT {
 
   private static String newFlowNameGlobal;
   private static String newFlowNameRegional;
-
-  @BeforeClass
-  public static void beforeAll() {
-    assertThat(PROJECT_ID).isNotNull();
-  }
 
   @AfterClass
   public static void tearDown() throws Exception {

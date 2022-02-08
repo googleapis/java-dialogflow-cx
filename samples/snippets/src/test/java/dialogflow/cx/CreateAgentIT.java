@@ -26,20 +26,14 @@ import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CreateAgentIT {
 
-  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String agentPath = "";
   private ByteArrayOutputStream stdOut;
   private static PrintStream originalOut;
-
-  @BeforeClass
-  public static void beforeAll() {
-    assertThat(PROJECT_ID).isNotNull();
-  }
 
   @Before
   public void setUp() throws IOException {
@@ -67,10 +61,4 @@ public class CreateAgentIT {
 
     assertThat(stdOut.toString()).contains(fakeAgent);
   }
-
-  // @Test
-  // public void testFail() throws IOException {
-
-  //   assertEquals(true, false);
-  // }
 }

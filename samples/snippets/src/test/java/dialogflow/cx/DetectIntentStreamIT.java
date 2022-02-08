@@ -24,7 +24,6 @@ import java.io.PrintStream;
 import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -35,7 +34,7 @@ import org.junit.runners.JUnit4;
 public class DetectIntentStreamIT {
 
   private static String AUDIO_FILE_PATH = "resources/book_a_room.wav";
-  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION_GLOBAL = "global";
   private static String LOCATION_REGIONAL = "us-central1";
   private static String AGENT_ID_GLOBAL =
@@ -47,11 +46,6 @@ public class DetectIntentStreamIT {
   private static String SESSION_ID = UUID.randomUUID().toString();
   private ByteArrayOutputStream bout;
   private PrintStream original;
-
-  @BeforeClass
-  public static void beforeAll() {
-    assertThat(PROJECT_ID).isNotNull();
-  }
 
   @Before
   public void setUp() {
