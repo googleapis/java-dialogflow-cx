@@ -57,8 +57,7 @@ public class DetectIntent {
       // Set the session name using the projectID (my-project-id), locationID (global), agentID
       // (UUID), and sessionId (UUID).
       SessionName session =
-          SessionName
-              .ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
+          SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
 
       // TODO : Uncomment if you want to print session path
       // System.out.println("Session Path: " + session.toString());
@@ -90,7 +89,7 @@ public class DetectIntent {
         // System.out.format("Query Text: '%s'\n", queryResult.getText());
         // System.out.format(
         //     "Detected Intent: %s (confidence: %f)\n",
-        //     queryResult.getIntent().getDisplayName(), 
+        //     queryResult.getIntent().getDisplayName(),
         //         queryResult.getIntentDetectionConfidence());
 
         queryResults.put(text, queryResult);

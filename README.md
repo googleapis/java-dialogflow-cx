@@ -22,20 +22,20 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dialogflow-cx</artifactId>
-  <version>0.11.0</version>
+  <version>0.11.2</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-dialogflow-cx:0.11.0'
+implementation 'com.google.cloud:google-cloud-dialogflow-cx:0.11.2'
 ```
 
 If you are using SBT, add this to your dependencies
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow-cx" % "0.11.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dialogflow-cx" % "0.11.2"
 ```
 
 ## Authentication
@@ -87,7 +87,7 @@ Samples are in the [`samples/`](https://github.com/googleapis/java-dialogflow-cx
 | Delete Page | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/DeletePage.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/DeletePage.java) |
 | Detect Intent | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/DetectIntent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/DetectIntent.java) |
 | Detect Intent Stream | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/DetectIntentStream.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/DetectIntentStream.java) |
-| Example | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/Example.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/Example.java) |
+| Export Agent | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/ExportAgent.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/ExportAgent.java) |
 | List Pages | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/ListPages.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/ListPages.java) |
 | List Test Case Results | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/ListTestCaseResults.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/ListTestCaseResults.java) |
 | List Training Phrases | [source code](https://github.com/googleapis/java-dialogflow-cx/blob/main/samples/snippets/src/main/java/dialogflow/cx/ListTrainingPhrases.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-dialogflow-cx&page=editor&open_in_editor=samples/snippets/src/main/java/dialogflow/cx/ListTrainingPhrases.java) |
