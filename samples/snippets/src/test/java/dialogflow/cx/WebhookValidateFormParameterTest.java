@@ -14,7 +14,7 @@
 //  * limitations under the License.
 //  */
 
-// package com.example.dialogflow.cx;
+// package dialogflow.cx;
 
 // import static com.google.common.truth.Truth.assertThat;
 // import static org.mockito.Mockito.when;
@@ -32,7 +32,7 @@
 // import org.mockito.Mock;
 // import org.mockito.MockitoAnnotations;
 
-// public class BasicWebhookIT {
+// public class WebhookValidateFormParameter {
 
 //   @Mock private HttpRequest request;
 //   @Mock private HttpResponse response;
@@ -56,18 +56,17 @@
 
 //   @Test
 //   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-//     String jsonString = "{'fulfillmentInfo': {'tag': 'Default Welcome Intent'}}";
+//     String jsonString = "{'fulfillmentInfo': {'tag': 'optional-or-required'}}";
 
 //     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
 //     when(request.getReader()).thenReturn(jsonReader);
 
-//     new BasicWebhook().service(request, response);
+//     new WebhookValidateFormParameter().service(request, response);
 //     writerOut.flush();
 
-//     String expectedResponse = 
-//                 "{\"fulfillment_response\":{\"messages\":[{\"text\":{\"text\":["
-//                    + "\"Hello from a Java GCF Webhook\"" + "]}}]}}";
+//     String expectedResponse =  "{\"page_info\":{\"form_info\":{\"parameter_info\":
+//     [{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}]}}}";
 
 //     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
 //   }

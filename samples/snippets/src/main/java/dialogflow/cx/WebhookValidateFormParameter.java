@@ -1,4 +1,4 @@
-// /*
+/*
 //  * Copyright 2022 Google LLC
 //  *
 //  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,11 +14,11 @@
 //  * limitations under the License.
 //  */
 
-// package com.example.dialogflow.cx;
+// package dialogflow.cx;
 
 // // The following snippet is used in https://cloud.google.com/dialogflow/cx/docs/concept/webhook
 
-// // [START dialogflow_webhook]
+// // [START dialogflow_cx_v3_configure_webhooks_to_set_form_parameter_as_optional_or_required]
 
 // // TODO: Change class name to Example
 // // TODO: add GSON dependency to Pom file
@@ -35,42 +35,32 @@
 // import com.google.gson.JsonParser;
 // import java.io.BufferedWriter;
 
-// public class BasicWebhook implements HttpFunction {
+// public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements HttpFunction {
 //   @Override
 //   public void service(HttpRequest request, HttpResponse response) throws Exception {
 //     JsonParser parser = new JsonParser();
 //     Gson gson = new GsonBuilder().create();
 //     JsonObject parsedRequest = gson.fromJson(request.getReader(), JsonObject.class);
 
-//     // For more information on the structure of this object https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
-//     String requestTag = parsedRequest.getAsJsonObject("fulfillmentInfo")
-//         .getAsJsonPrimitive("tag").toString();
+//     // For more information on the structure of this object, visit https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
 //     JsonObject responseObject = null;
-//     String defaultIntent = "\"Default Welcome Intent\"";
-//     String secondIntent = "\"get-agent-name\"";
-//     String responseText = "";
-
-//     // Compares the Intent Tag to provide the correct response
-//     if (requestTag.equals(defaultIntent)) {
-//       responseText = "\"Hello from a Java GCF Webhook\"";
-//     } else if (requestTag.equals(secondIntent)) {
-//       responseText = "\"My name is Flowhook\"";
-//     } else {
-//       responseText = "\"Sorry I didn't get that\"";
-//     }
 
 //     // Constructing the response jsonObject
+
+//    String responseString = String.join("{\"page_info\":{\"form_info\":{\"parameter_info\":",
+//    "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}",
+//    "]}}}");
 //     responseObject =
 //         parser
-//             .parse(
-//                 "{ \"fulfillment_response\": { \"messages\": [ { \"text\": { \"text\": ["
-//                     + responseText
-//                     + "] } } ] } }")
+//             .parse(responseString);
 //             .getAsJsonObject();
 //     BufferedWriter writer = response.getWriter();
+
+//     System.out.println("Parameter Info: \n");
+//     System.out.println(responseObject.toString());
 
 //     //Sends the responseObject
 //     writer.write(responseObject.toString());
 //   }
 // }
-// // [END dialogflow_webhook]
+// // [END dialogflow_cx_v3_configure_webhooks_to_set_form_parameter_as_optional_or_required]
