@@ -49,9 +49,9 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements 
     responseObject =
         parser
             .parse(
-              "{\"page_info\":{\"form_info\":{\"parameter_info\":
-              [{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}
-              ]}}}")
+              "{\"page_info\":{\"form_info\":{\"parameter_info\":"
+              + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}"
+              + "]}}}")
             .getAsJsonObject();
     BufferedWriter writer = response.getWriter();
 
