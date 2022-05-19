@@ -65,7 +65,7 @@
 //     new BasicWebhook().service(request, response);
 //     writerOut.flush();
 
-//     String expectedResponse = 
+//     String expectedResponse =
 //                 "{\"fulfillment_response\":{\"messages\":[{\"text\":{\"text\":["
 //                    + "\"Hello from a Java GCF Webhook\"" + "]}}]}}";
 
