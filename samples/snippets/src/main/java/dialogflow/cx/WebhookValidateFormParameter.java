@@ -42,7 +42,8 @@
 //     Gson gson = new GsonBuilder().create();
 //     JsonObject parsedRequest = gson.fromJson(request.getReader(), JsonObject.class);
 
-//     // For more information on the structure of this object, visit https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
+//     // For more information on the structure of this object, visit
+// https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
 //     JsonObject responseObject = null;
 
 //     // Constructing the response jsonObject

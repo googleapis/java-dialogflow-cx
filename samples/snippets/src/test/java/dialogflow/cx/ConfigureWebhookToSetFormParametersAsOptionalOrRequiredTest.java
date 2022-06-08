@@ -65,8 +65,9 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();
 
-    String expectedResponse =  "{\"page_info\":{\"form_info\":{\"parameter_info\":"
-        + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}]}}}";
+    String expectedResponse =
+        "{\"page_info\":{\"form_info\":{\"parameter_info\":"
+            + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}]}}}";
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }

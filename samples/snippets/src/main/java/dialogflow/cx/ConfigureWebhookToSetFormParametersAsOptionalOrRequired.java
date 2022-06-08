@@ -27,7 +27,6 @@ package dialogflow.cx;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.BufferedWriter;
@@ -37,24 +36,31 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements 
   public void service(HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
 
-    // For more information on the structure of this object, visit https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
+    // For more information on the structure of this object, visit
+    // https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
     JsonObject responseObject = null;
 
     // Constructing the response jsonObject
     responseObject =
         parser
             .parse(
+<<<<<<< HEAD
               "{\"page_info\":{\"form_info\":{\"parameter_info\":"
               + "[{\"display_name\":\"order-number\",\"required\":"
               + "\"true\",\"state\":\"VALID\"}"
               + "]}}}")
+=======
+                "{\"page_info\":{\"form_info\":{\"parameter_info\":"
+                    + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}"
+                    + "]}}}")
+>>>>>>> 3b3d65ff0a39cac9bbb86566d1c59666e07d12d4
             .getAsJsonObject();
     BufferedWriter writer = response.getWriter();
 
     System.out.println("Parameter Info: \n");
     System.out.println(responseObject.toString());
 
-    //Sends the responseObject
+    // Sends the responseObject
     writer.write(responseObject.toString());
   }
 }
