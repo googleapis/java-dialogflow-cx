@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dialogflow-cx</artifactId>
-      <version>0.12.2-SNAPSHOT</version>
+      <version>0.13.0</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
@@ -39,7 +39,7 @@
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
-      <version>4.5.1</version>
+      <version>4.6.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
