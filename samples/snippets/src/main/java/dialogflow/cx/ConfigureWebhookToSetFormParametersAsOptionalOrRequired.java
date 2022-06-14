@@ -21,7 +21,7 @@ package dialogflow.cx;
 // [START dialogflow_cx_v3_configure_webhooks_to_set_form_parameter_as_optional_or_required]
 
 // TODO: Change class name to Example
-// TODO: Uncomment the line bellow before running cloud function
+// TODO: Uncomment the line below before running cloud function
 // package com.example;
 
 import com.google.cloud.functions.HttpFunction;
@@ -35,9 +35,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements 
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
-
-    // For more information on the structure of this object, visit
-    // https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
     JsonObject responseObject = null;
 
     // Constructing the response jsonObject
