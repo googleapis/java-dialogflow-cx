@@ -36,16 +36,14 @@ public class WebhookConfigureSessionParameters implements HttpFunction {
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
-	JsonObject responseObject = null;
+    JsonObject responseObject = null;
 
     // Constructing the response jsonObject
-    responseObject =
-        parser
-            .parse(
-              "{\"session_info\":{\"parameters\":"
-              + "{\"order-number\":\"12345\"}"
-              + "}}")
-            .getAsJsonObject();
+    responseObject = parser.parse(
+        "{\"session_info\":{\"parameters\":"
+            + "{\"order-number\":\"12345\"}"
+            + "}}")
+        .getAsJsonObject();
     BufferedWriter writer = response.getWriter();
 
     System.out.println("Parameter Info: \n");

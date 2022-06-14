@@ -64,7 +64,7 @@ public class WebhookConfigureSessionParametersTest {
     writerOut.flush();
 
     String expectedResponse =
-    "{\"session_info\":{\"parameters\":"
+        "{\"session_info\":{\"parameters\":"
         + "{\"order-number\":\"12345\"}"
         + "}}";
 

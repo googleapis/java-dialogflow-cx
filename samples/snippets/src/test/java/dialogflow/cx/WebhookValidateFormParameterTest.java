@@ -66,7 +66,8 @@ public class WebhookValidateFormParameterTest {
     writerOut.flush();
 
     String expectedResponse =  "{\"page_info\":{\"form_info\":{\"parameter_info\":"
-    + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"INVALID\",\"value\":\"123\"}]}}}";
+        + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":"
+        + "\"INVALID\",\"value\":\"123\"}]}}}";
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
