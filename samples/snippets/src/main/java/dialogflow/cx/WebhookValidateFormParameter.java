@@ -39,19 +39,20 @@ public class WebhookValidateFormParameter implements HttpFunction {
 
     // Constructing the response jsonObject
     responseObject =
-      parser.parse(
-        "{\"page_info\":{\"form_info\":{\"parameter_info\":"
-        + "[{\"display_name\":\"order-number\",\"required\":"
-        + "\"true\",\"state\":\"INVALID\",\"value\":\"123\"}"
-        + "]}}}")
-        .getAsJsonObject();
+        parser
+            .parse(
+                "{\"page_info\":{\"form_info\":{\"parameter_info\":"
+                    + "[{\"display_name\":\"order-number\",\"required\":"
+                    + "\"true\",\"state\":\"INVALID\",\"value\":\"123\"}"
+                    + "]}}}")
+            .getAsJsonObject();
 
     BufferedWriter writer = response.getWriter();
 
     System.out.println("Parameter Info: \n");
     System.out.println(responseObject.toString());
 
-    //Sends the responseObject
+    // Sends the responseObject
     writer.write(responseObject.toString());
   }
 }

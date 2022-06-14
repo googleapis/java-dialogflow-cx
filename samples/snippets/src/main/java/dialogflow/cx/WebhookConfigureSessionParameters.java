@@ -39,11 +39,10 @@ public class WebhookConfigureSessionParameters implements HttpFunction {
     JsonObject responseObject = null;
 
     // Constructing the response jsonObject
-    responseObject = parser.parse(
-        "{\"session_info\":{\"parameters\":"
-            + "{\"order-number\":\"12345\"}"
-            + "}}")
-        .getAsJsonObject();
+    responseObject =
+        parser
+            .parse("{\"session_info\":{\"parameters\":" + "{\"order-number\":\"12345\"}" + "}}")
+            .getAsJsonObject();
     BufferedWriter writer = response.getWriter();
 
     System.out.println("Parameter Info: \n");

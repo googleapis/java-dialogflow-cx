@@ -64,9 +64,7 @@ public class WebhookConfigureSessionParametersTest {
     writerOut.flush();
 
     String expectedResponse =
-        "{\"session_info\":{\"parameters\":"
-        + "{\"order-number\":\"12345\"}"
-        + "}}";
+        "{\"session_info\":{\"parameters\":" + "{\"order-number\":\"12345\"}" + "}}";
 
     System.out.println(responseOut.toString());
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
