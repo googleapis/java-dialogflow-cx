@@ -21,7 +21,6 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -39,7 +38,6 @@ public class WebhookConfigureSessionParametersTest {
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
-  private static final Gson gson = new Gson();
 
   @Before
   public void beforeTest() throws IOException {

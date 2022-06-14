@@ -36,7 +36,7 @@ public class WebhookConfigureSessionParameters implements HttpFunction {
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
     JsonParser parser = new JsonParser();
-		JSONObject responseObject = null;
+		JsonObject responseObject = null;
 
     // Constructing the response jsonObject
     responseObject =
