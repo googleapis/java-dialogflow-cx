@@ -14,60 +14,60 @@
 //  * limitations under the License.
 //  */
 
-// package dialogflow.cx;
+package dialogflow.cx;
 
-// import static com.google.common.truth.Truth.assertThat;
-// import static org.mockito.Mockito.when;
+import static com.google.common.truth.Truth.assertThat;
+import static org.mockito.Mockito.when;
 
-// import com.google.cloud.functions.HttpRequest;
-// import com.google.cloud.functions.HttpResponse;
-// import com.google.gson.Gson;
-// import java.io.BufferedReader;
-// import java.io.BufferedWriter;
-// import java.io.IOException;
-// import java.io.StringReader;
-// import java.io.StringWriter;
-// import org.junit.Before;
-// import org.junit.Test;
-// import org.mockito.Mock;
-// import org.mockito.MockitoAnnotations;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.StringReader;
+import java.io.StringWriter;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-// public class WebhookValidateFormParameter {
+public class WebhookValidateFormParameterTest {
 
-//   @Mock private HttpRequest request;
-//   @Mock private HttpResponse response;
+  @Mock private HttpRequest request;
+  @Mock private HttpResponse response;
 
-//   private BufferedWriter writerOut;
-//   private StringWriter responseOut;
-//   private static final Gson gson = new Gson();
+  private BufferedWriter writerOut;
+  private StringWriter responseOut;
+  private static final Gson gson = new Gson();
 
-//   @Before
-//   public void beforeTest() throws IOException {
-//     MockitoAnnotations.initMocks(this);
+  @Before
+  public void beforeTest() throws IOException {
+    MockitoAnnotations.initMocks(this);
 
-//     // use an empty string as the default request content
-//     BufferedReader reader = new BufferedReader(new StringReader(""));
-//     when(request.getReader()).thenReturn(reader);
+    // use an empty string as the default request content
+    BufferedReader reader = new BufferedReader(new StringReader(""));
+    when(request.getReader()).thenReturn(reader);
 
-//     responseOut = new StringWriter();
-//     writerOut = new BufferedWriter(responseOut);
-//     when(response.getWriter()).thenReturn(writerOut);
-//   }
+    responseOut = new StringWriter();
+    writerOut = new BufferedWriter(responseOut);
+    when(response.getWriter()).thenReturn(writerOut);
+  }
 
-//   @Test
-//   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-//     String jsonString = "{'fulfillmentInfo': {'tag': 'optional-or-required'}}";
+  @Test
+  public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    String jsonString = "{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}";
 
-//     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
+    BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
-//     when(request.getReader()).thenReturn(jsonReader);
+    when(request.getReader()).thenReturn(jsonReader);
 
-//     new WebhookValidateFormParameter().service(request, response);
-//     writerOut.flush();
+    new WebhookValidateFormParameter().service(request, response);
+    writerOut.flush();
 
-//     String expectedResponse =  "{\"page_info\":{\"form_info\":{\"parameter_info\":
-//     [{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}]}}}";
+    String expectedResponse =  "{\"page_info\":{\"form_info\":{\"parameter_info\":"
+    + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"INVALID\",\"value\":\"123\"}]}}}";
 
-//     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
-//   }
-// }
+    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+  }
+}

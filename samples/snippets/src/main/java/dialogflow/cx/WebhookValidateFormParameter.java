@@ -14,54 +14,46 @@
 //  * limitations under the License.
 //  */
 
-// package dialogflow.cx;
+package dialogflow.cx;
 
-// // The following snippet is used in https://cloud.google.com/dialogflow/cx/docs/concept/webhook
+// The following snippet is used in https://cloud.google.com/dialogflow/cx/docs/concept/webhook
 
-// // [START dialogflow_cx_v3_configure_webhooks_to_set_form_parameter_as_optional_or_required]
+// [START dialogflow_cx_v3_webhook_validate_form_parameter]
 
-// // TODO: Change class name to Example
-// // TODO: add GSON dependency to Pom file
-// // (https://mvnrepository.com/artifact/com.google.code.gson/gson/2.8.5)
-// // TODO: Uncomment the line bellow before running cloud function
-// // package com.example;
+// TODO: Change class name to Example
+// TODO: Uncomment the line bellow before running cloud function
+// package com.example;
 
-// import com.google.cloud.functions.HttpFunction;
-// import com.google.cloud.functions.HttpRequest;
-// import com.google.cloud.functions.HttpResponse;
-// import com.google.gson.Gson;
-// import com.google.gson.GsonBuilder;
-// import com.google.gson.JsonObject;
-// import com.google.gson.JsonParser;
-// import java.io.BufferedWriter;
+import com.google.cloud.functions.HttpFunction;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
 
-// public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements HttpFunction {
-//   @Override
-//   public void service(HttpRequest request, HttpResponse response) throws Exception {
-//     JsonParser parser = new JsonParser();
-//     Gson gson = new GsonBuilder().create();
-//     JsonObject parsedRequest = gson.fromJson(request.getReader(), JsonObject.class);
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import java.io.BufferedWriter;
 
-//     // For more information on the structure of this object, visit
-// https://cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment
-//     JsonObject responseObject = null;
+public class WebhookValidateFormParameter implements HttpFunction {
+  @Override
+  public void service(HttpRequest request, HttpResponse response) throws Exception {
+    JsonParser parser = new JsonParser();
+    JsonObject responseObject = null;
 
-//     // Constructing the response jsonObject
+    // Constructing the response jsonObject
+    responseObject =
+      parser.parse(
+				"{\"page_info\":{\"form_info\":{\"parameter_info\":"
+					+ "[{\"display_name\":\"order-number\",\"required\":"
+					+ "\"true\",\"state\":\"INVALID\",\"value\":\"123\"}"
+					+ "]}}}")
+				.getAsJsonObject();
 
-//    String responseString = String.join("{\"page_info\":{\"form_info\":{\"parameter_info\":",
-//    "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}",
-//    "]}}}");
-//     responseObject =
-//         parser
-//             .parse(responseString);
-//             .getAsJsonObject();
-//     BufferedWriter writer = response.getWriter();
+    BufferedWriter writer = response.getWriter();
 
-//     System.out.println("Parameter Info: \n");
-//     System.out.println(responseObject.toString());
+    System.out.println("Parameter Info: \n");
+    System.out.println(responseObject.toString());
 
-//     //Sends the responseObject
-//     writer.write(responseObject.toString());
-//   }
-// }
-// // [END dialogflow_cx_v3_configure_webhooks_to_set_form_parameter_as_optional_or_required]
+    //Sends the responseObject
+    writer.write(responseObject.toString());
+  }
+}
+// [END dialogflow_cx_v3_webhook_validate_form_parameter]
