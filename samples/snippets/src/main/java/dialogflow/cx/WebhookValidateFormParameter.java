@@ -27,7 +27,6 @@ package dialogflow.cx;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.BufferedWriter;
@@ -41,11 +40,11 @@ public class WebhookValidateFormParameter implements HttpFunction {
     // Constructing the response jsonObject
     responseObject =
       parser.parse(
-				"{\"page_info\":{\"form_info\":{\"parameter_info\":"
-					+ "[{\"display_name\":\"order-number\",\"required\":"
-					+ "\"true\",\"state\":\"INVALID\",\"value\":\"123\"}"
-					+ "]}}}")
-				.getAsJsonObject();
+		"{\"page_info\":{\"form_info\":{\"parameter_info\":"
+			+ "[{\"display_name\":\"order-number\",\"required\":"
+			+ "\"true\",\"state\":\"INVALID\",\"value\":\"123\"}"
+			+ "]}}}")
+		.getAsJsonObject();
 
     BufferedWriter writer = response.getWriter();
 
