@@ -93,7 +93,6 @@ public class CreateIntentIT {
         CreateIntent.createIntent(
             DISPLAY_NAME, PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL, TRAINING_PHRASES_PARTS);
     newIntentNameRegional = result.getName();
-    System.out.println("intent name new:" + newIntentNameRegional);
 
     assertEquals(result.getTrainingPhrasesCount(), TRAINING_PHRASES_PARTS.size());
     for (TrainingPhrase trainingPhrase : result.getTrainingPhrasesList()) {
