@@ -70,6 +70,9 @@ public class CreateIntentIT {
         intentsClient.deleteIntent(newIntentNameRegional);
       }
     }
+
+    // Small delay to prevent reaching quota limit of requests per minute  
+    Thread.sleep(250);
   }
 
   @Test

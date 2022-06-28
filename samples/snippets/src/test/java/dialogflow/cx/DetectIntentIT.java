@@ -45,6 +45,12 @@ public class DetectIntentIT {
   private static String LANGUAGE_CODE = "en-US";
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
 
+  @After
+  public void tearDown() throws InterruptedExpection {
+    // Small delay to prevent reaching quota limit of requests per minute  
+    Thread.sleep(250);
+  }
+
   @Test
   public void testDetectIntentGlobal() throws Exception {
     Map<String, QueryResult> queryResults =

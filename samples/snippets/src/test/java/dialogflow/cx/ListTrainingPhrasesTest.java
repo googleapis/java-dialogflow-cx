@@ -43,6 +43,9 @@ public class ListTrainingPhrasesTest {
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
+
+    // Small delay to prevent reaching quota limit of requests per minute  
+    Thread.sleep(250);
   }
 
   @Test

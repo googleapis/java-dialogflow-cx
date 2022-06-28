@@ -58,6 +58,9 @@ public class DetectIntentStreamIT {
   public void tearDown() {
     System.setOut(original);
     bout.reset();
+
+    // Small delay to prevent reaching quota limit of requests per minute  
+    Thread.sleep(250);
   }
 
   @Test

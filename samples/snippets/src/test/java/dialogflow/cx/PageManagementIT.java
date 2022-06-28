@@ -73,6 +73,9 @@ public class PageManagementIT {
     AgentsClient client = AgentsClient.create(agentsSettings);
 
     client.deleteAgent(parent);
+
+    // Small delay to prevent reaching quota limit of requests per minute  
+    Thread.sleep(250);
   }
 
   @Test

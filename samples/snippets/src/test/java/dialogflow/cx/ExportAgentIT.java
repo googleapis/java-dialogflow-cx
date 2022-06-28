@@ -81,6 +81,9 @@ public class ExportAgentIT {
 
     client.deleteAgent(ExportAgentIT.agentPath);
     client.close();
+
+    // Small delay to prevent reaching quota limit of requests per minute  
+    Thread.sleep(250);
   }
 
   @Test
