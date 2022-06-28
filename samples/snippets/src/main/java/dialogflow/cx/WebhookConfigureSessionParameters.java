@@ -47,13 +47,21 @@ public class WebhookConfigureSessionParameters implements HttpFunction {
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     String jsonResponseObject = gson.toJson(webhookResponse);
-    System.out.println("JSON response: " + jsonResponseObject);
-
-    BufferedWriter writer = response.getWriter();
 
     System.out.println("Session Parameter Info: \n");
     System.out.println(jsonResponseObject.toString());
 
+    /**
+     * {
+          "session_info": {
+            "parameters": {
+              "order_number": "12345"
+            }
+          }
+        }
+     */
+
+    BufferedWriter writer = response.getWriter();
     // Sends the webhookResponseObject
     writer.write(jsonResponseObject.toString());
   }
