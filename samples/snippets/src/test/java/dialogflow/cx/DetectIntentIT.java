@@ -23,6 +23,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -46,7 +47,7 @@ public class DetectIntentIT {
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
 
   @After
-  public void tearDown() throws InterruptedExpection {
+  public void tearDown() throws InterruptedException {
     // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
   }
