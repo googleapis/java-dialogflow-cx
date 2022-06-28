@@ -25,31 +25,37 @@ package dialogflow.cx;
 // TODO: Uncomment the line below before running cloud function
 // package com.example;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import java.io.BufferedWriter;
 
 public class WebhookConfigureSessionParameters implements HttpFunction {
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
-    JsonParser parser = new JsonParser();
-    JsonObject responseObject = null;
+    // Creates webhook response object
+    JsonObject webhookResponse = new JsonObject();
+    JsonObject parameterObject = new JsonObject();
+    JsonObject orderParameter = new JsonObject();
+    orderParameter.addProperty("order_number", "12345");
+    parameterObject.add("parameters", orderParameter);
+    webhookResponse.add("session_info", parameterObject);
 
-    // Constructing the response jsonObject
-    responseObject =
-        parser
-            .parse("{\"session_info\":{\"parameters\":" + "{\"order-number\":\"12345\"}" + "}}")
-            .getAsJsonObject();
+
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String jsonResponseObject = gson.toJson(webhookResponse);
+    System.out.println("JSON response: " + jsonResponseObject);
+
     BufferedWriter writer = response.getWriter();
 
-    System.out.println("Parameter Info: \n");
-    System.out.println(responseObject.toString());
+    System.out.println("Session Parameter Info: \n");
+    System.out.println(jsonResponseObject.toString());
 
-    // Sends the responseObject
-    writer.write(responseObject.toString());
+    // Sends the webhookResponseObject
+    writer.write(jsonResponseObject.toString());
   }
 }
 // [END dialogflow_cx_v3_webhook_configure_session_parameters]

@@ -19,6 +19,16 @@ package dialogflow.cx;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
+
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.SessionInfo;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.protobuf.Value;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import java.io.BufferedReader;
@@ -54,8 +64,14 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    String jsonString = "{'fulfillmentInfo': {'tag': 'configure-session-parameter'}}";
+    FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
+      .setTag("configure-session-parameters").build();
 
+    WebhookRequest webhookRequest = WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
+
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    String jsonString = gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
@@ -63,10 +79,14 @@ public class WebhookConfigureSessionParametersTest {
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
 
-    String expectedResponse =
-        "{\"session_info\":{\"parameters\":" + "{\"order-number\":\"12345\"}" + "}}";
+    JsonObject webhookResponse = new JsonObject();
+    JsonObject parameterObject = new JsonObject();
+    JsonObject orderParameter = new JsonObject();
+    orderParameter.addProperty("order_number", "12345");
+    parameterObject.add("parameters", orderParameter);
+    webhookResponse.add("session_info", parameterObject);
+    String jsonResponseObject = gson.toJson(webhookResponse);
 
-    System.out.println(responseOut.toString());
-    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+    assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
   }
 }
