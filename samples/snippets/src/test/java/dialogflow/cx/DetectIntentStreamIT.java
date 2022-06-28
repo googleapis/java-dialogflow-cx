@@ -59,7 +59,7 @@ public class DetectIntentStreamIT {
     System.setOut(original);
     bout.reset();
 
-    // Small delay to prevent reaching quota limit of requests per minute  
+    // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
   }
 

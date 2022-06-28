@@ -85,7 +85,7 @@ public class UpdateIntentTest {
 
     client.deleteAgent(parent);
 
-    // Small delay to prevent reaching quota limit of requests per minute  
+    // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
   }
 

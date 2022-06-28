@@ -44,7 +44,7 @@ public class ListTrainingPhrasesTest {
     stdOut = null;
     System.setOut(null);
 
-    // Small delay to prevent reaching quota limit of requests per minute  
+    // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
   }
 

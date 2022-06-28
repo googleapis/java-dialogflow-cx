@@ -46,7 +46,7 @@ public class ListTestCaseResultsIT {
   public void tearDown() throws IOException {
     System.setOut(originalOut);
 
-    // Small delay to prevent reaching quota limit of requests per minute  
+    // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
   }
 

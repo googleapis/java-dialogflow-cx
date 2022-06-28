@@ -58,8 +58,8 @@ public class CreatePageIT {
         pagesClient.deletePage(newPageNameGlobal);
       }
 
-    // Small delay to prevent reaching quota limit of requests per minute  
-    Thread.sleep(250);
+      // Small delay to prevent reaching quota limit of requests per minute
+      Thread.sleep(250);
     }
 
     // Delete the newly created Page in the regional location.

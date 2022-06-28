@@ -52,7 +52,7 @@ public class CreateAgentIT {
 
     client.deleteAgent(CreateAgentIT.agentPath);
 
-    // Small delay to prevent reaching quota limit of requests per minute  
+    // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
   }
 
