@@ -68,28 +68,10 @@ public class WebhookValidateFormParameter implements HttpFunction {
     System.out.println("Response Object: \n");
     System.out.println(jsonResponseObject.toString());
     /**
-     * {
-          "page_info": {
-            "form_info": {
-              "parameter_info": [
-                {
-                  "display_name": "order_number",
-                  "required": "true",
-                  "state": "INVALID",
-                  "value": "123"
-                }
-              ]
-            }
-          },
-          "session_info": {
-            "parameters": {
-              "order_number": "null"
-            }
-          }
-        }
+     * { "page_info": { "form_info": { "parameter_info": [ { "display_name": "order_number",
+     * "required": "true", "state": "INVALID", "value": "123" } ] } }, "session_info": {
+     * "parameters": { "order_number": "null" } } }
      */
-
-
     BufferedWriter writer = response.getWriter();
 
     // Sends the responseObject
