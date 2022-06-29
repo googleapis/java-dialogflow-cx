@@ -1,27 +1,32 @@
 /*
-//  * Copyright 2022 Google LLC
-//  *
-//  * Licensed under the Apache License, Version 2.0 (the "License");
-//  * you may not use this file except in compliance with the License.
-//  * You may obtain a copy of the License at
-//  *
-//  *     http://www.apache.org/licenses/LICENSE-2.0
-//  *
-//  * Unless required by applicable law or agreed to in writing, software
-//  * distributed under the License is distributed on an "AS IS" BASIS,
-//  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  * See the License for the specific language governing permissions and
-//  * limitations under the License.
-//  */
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -56,8 +61,13 @@ public class WebhookValidateFormParameterTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    String jsonString = "{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}";
+    FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
+    .setTag("configure-session-parameters").build();
 
+    WebhookRequest webhookRequest = WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    String jsonString = gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
@@ -65,11 +75,31 @@ public class WebhookValidateFormParameterTest {
     new WebhookValidateFormParameter().service(request, response);
     writerOut.flush();
 
-    String expectedResponse =
-        "{\"page_info\":{\"form_info\":{\"parameter_info\":"
-            + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":"
-            + "\"INVALID\",\"value\":\"123\"}]}}}";
+    JsonObject webhookResponse = new JsonObject();
 
-    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+    JsonObject sessionInfo = new JsonObject();
+    JsonObject sessionParameter = new JsonObject();
+
+    sessionParameter.addProperty("order_number", "null");
+    sessionInfo.add("parameters", sessionParameter);
+
+    JsonObject formInfo = new JsonObject();
+    JsonObject parameterInfoObject = new JsonObject();
+    JsonArray parameterInfoList = new JsonArray();
+    JsonObject parameterObject = new JsonObject();
+    parameterObject.addProperty("display_name", "order_number");
+    parameterObject.addProperty("required", "true");
+    parameterObject.addProperty("state", "INVALID");
+    parameterObject.addProperty("value", "123");
+
+    parameterInfoList.add(parameterObject);
+    parameterInfoObject.add("parameter_info", parameterInfoList);
+    formInfo.add("form_info", parameterInfoObject);
+    webhookResponse.add("page_info", formInfo);
+    webhookResponse.add("session_info", sessionInfo);
+
+    String jsonResponseObject = gson.toJson(webhookResponse);
+
+    assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
   }
 }

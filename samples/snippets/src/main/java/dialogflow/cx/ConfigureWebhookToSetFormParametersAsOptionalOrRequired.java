@@ -50,14 +50,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements 
     parameterInfoObject.add("parameter_info", parameterInfoList);
     formInfo.add("form_info", parameterInfoObject);
     webhookResponse.add("page_info", formInfo);
-    // responseObject =
-    //     parser
-    //         .parse(
-    //             "{\"page_info\":{\"form_info\":{\"parameter_info\":"
-    //                 + "[{\"display_name\":\"order-number\",\"required\":"
-    //                 + "\"true\",\"state\":\"VALID\"}"
-    //                 + "]}}}")
-    //         .getAsJsonObject();
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     String jsonResponseObject = gson.toJson(webhookResponse);
