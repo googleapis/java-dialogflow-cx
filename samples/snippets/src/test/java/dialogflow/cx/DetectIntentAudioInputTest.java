@@ -63,7 +63,13 @@ public class DetectIntentAudioInputTest {
   public void testDetectIntentAudioInput() throws Exception {
 
     DetectIntentAudioInput.detectIntent(
-        PROJECT_ID, LOCATION, AGENT_ID, AUDIO_FILE_NAME, SAMPLE_RATE_HERTZ, SESSION_ID, LANGUAGE_CODE);
+        PROJECT_ID,
+        LOCATION,
+        AGENT_ID,
+        AUDIO_FILE_NAME,
+        SAMPLE_RATE_HERTZ,
+        SESSION_ID,
+        LANGUAGE_CODE);
     System.out.println(stdOut.toString());
     assertThat(stdOut.toString()).contains("?");
   }

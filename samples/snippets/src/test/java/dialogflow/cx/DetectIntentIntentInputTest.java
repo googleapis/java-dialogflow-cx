@@ -40,7 +40,8 @@ public class DetectIntentIntentInputTest {
   private static String INTENT_ID = "00000000-0000-0000-0000-000000000000";
   private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
-  private static String INTENT = "projects/" + PROJECT_ID + "/locations/" + LOCATION + "/agents/" + AGENT_ID + "/intents/" + INTENT_ID;
+  private static String INTENT = "projects/"
+      + PROJECT_ID + "/locations/" + LOCATION + "/agents/" + AGENT_ID + "/intents/" + INTENT_ID;
 
 
   private ByteArrayOutputStream stdOut;
