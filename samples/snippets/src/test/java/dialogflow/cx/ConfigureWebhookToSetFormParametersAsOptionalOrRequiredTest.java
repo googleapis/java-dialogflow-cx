@@ -19,9 +19,14 @@ package dialogflow.cx;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -56,8 +61,13 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    String jsonString = "{'fulfillmentInfo': {'tag': 'optional-or-required'}}";
+    FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
+    .setTag("configure-session-parameters").build();
 
+    WebhookRequest webhookRequest = WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    String jsonString = gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
@@ -65,10 +75,22 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();
 
-    String expectedResponse =
-        "{\"page_info\":{\"form_info\":{\"parameter_info\":"
-            + "[{\"display_name\":\"order-number\",\"required\":\"true\",\"state\":\"VALID\"}]}}}";
+    JsonObject webhookResponse = new JsonObject();
+    JsonObject formInfo = new JsonObject();
+    JsonObject parameterInfoObject = new JsonObject();
+    JsonArray parameterInfoList = new JsonArray();
+    JsonObject parameterObject = new JsonObject();
+    parameterObject.addProperty("display_name", "order_number");
+    parameterObject.addProperty("required", "true");
+    parameterObject.addProperty("state", "VALID");
 
-    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+    parameterInfoList.add(parameterObject);
+    parameterInfoObject.add("parameter_info", parameterInfoList);
+    formInfo.add("form_info", parameterInfoObject);
+    webhookResponse.add("page_info", formInfo);
+
+    String jsonResponseObject = gson.toJson(webhookResponse);
+
+    assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
   }
 }

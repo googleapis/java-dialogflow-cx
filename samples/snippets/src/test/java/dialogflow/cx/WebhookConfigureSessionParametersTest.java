@@ -27,7 +27,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.SessionInfo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.google.protobuf.Value;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
