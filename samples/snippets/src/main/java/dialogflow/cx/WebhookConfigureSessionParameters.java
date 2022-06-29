@@ -25,23 +25,25 @@ package dialogflow.cx;
 // TODO: Uncomment the line below before running cloud function
 // package com.example;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import java.io.BufferedWriter;
 
 public class WebhookConfigureSessionParameters implements HttpFunction {
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
-    // Creates webhook response object
-    JsonObject webhookResponse = new JsonObject();
-    JsonObject parameterObject = new JsonObject();
     JsonObject orderParameter = new JsonObject();
     orderParameter.addProperty("order_number", "12345");
+
+    JsonObject parameterObject = new JsonObject();
     parameterObject.add("parameters", orderParameter);
+
+    // Creates webhook response object
+    JsonObject webhookResponse = new JsonObject();
     webhookResponse.add("session_info", parameterObject);
 
 

@@ -21,12 +21,12 @@ import static org.mockito.Mockito.when;
 
 import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -62,9 +62,10 @@ public class WebhookValidateFormParameterTest {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
     FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
-    .setTag("configure-session-parameters").build();
+        .setTag("configure-session-parameters").build();
 
-    WebhookRequest webhookRequest = WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
+    WebhookRequest webhookRequest = WebhookRequest.newBuilder()
+        .setFulfillmentInfo(fulfillmentInfo).build();
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     String jsonString = gson.toJson(webhookRequest);
@@ -75,26 +76,28 @@ public class WebhookValidateFormParameterTest {
     new WebhookValidateFormParameter().service(request, response);
     writerOut.flush();
 
-    JsonObject webhookResponse = new JsonObject();
+    JsonObject sessionParameter = new JsonObject();
+    sessionParameter.addProperty("order_number", "null");
 
     JsonObject sessionInfo = new JsonObject();
-    JsonObject sessionParameter = new JsonObject();
-
-    sessionParameter.addProperty("order_number", "null");
     sessionInfo.add("parameters", sessionParameter);
 
-    JsonObject formInfo = new JsonObject();
-    JsonObject parameterInfoObject = new JsonObject();
-    JsonArray parameterInfoList = new JsonArray();
     JsonObject parameterObject = new JsonObject();
     parameterObject.addProperty("display_name", "order_number");
     parameterObject.addProperty("required", "true");
     parameterObject.addProperty("state", "INVALID");
     parameterObject.addProperty("value", "123");
 
+    JsonArray parameterInfoList = new JsonArray();
     parameterInfoList.add(parameterObject);
+
+    JsonObject parameterInfoObject = new JsonObject();
     parameterInfoObject.add("parameter_info", parameterInfoList);
+
+    JsonObject formInfo = new JsonObject();
     formInfo.add("form_info", parameterInfoObject);
+
+    JsonObject webhookResponse = new JsonObject();
     webhookResponse.add("page_info", formInfo);
     webhookResponse.add("session_info", sessionInfo);
 

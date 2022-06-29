@@ -24,38 +24,57 @@ package dialogflow.cx;
 // TODO: Uncomment the line below before running cloud function
 // package com.example;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.io.BufferedWriter;
 
 public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements HttpFunction {
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
-    // Constructs the webhook response object
-    JsonObject webhookResponse = new JsonObject();
-    JsonObject formInfo = new JsonObject();
-    JsonObject parameterInfoObject = new JsonObject();
-    JsonArray parameterInfoList = new JsonArray();
     JsonObject parameterObject = new JsonObject();
     parameterObject.addProperty("display_name", "order_number");
     parameterObject.addProperty("required", "true");
     parameterObject.addProperty("state", "VALID");
 
+    JsonArray parameterInfoList = new JsonArray();
     parameterInfoList.add(parameterObject);
+
+    JsonObject parameterInfoObject = new JsonObject();
     parameterInfoObject.add("parameter_info", parameterInfoList);
+
+    JsonObject formInfo = new JsonObject();
     formInfo.add("form_info", parameterInfoObject);
+
+    // Constructs the webhook response object
+    JsonObject webhookResponse = new JsonObject();
     webhookResponse.add("page_info", formInfo);
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     String jsonResponseObject = gson.toJson(webhookResponse);
 
-    System.out.println("Parameter Info: \n");
+    System.out.println("Response Object: \n");
     System.out.println(jsonResponseObject.toString());
+
+    /**
+     * {
+          "page_info": {
+            "form_info": {
+              "parameter_info": [
+                {
+                  "display_name": "order_number",
+                  "required": "true",
+                  "state": "VALID"
+                }
+              ]
+            }
+          }
+        }
+     */
 
     BufferedWriter writer = response.getWriter();
 

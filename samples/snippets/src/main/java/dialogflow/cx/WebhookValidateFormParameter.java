@@ -24,48 +24,71 @@ package dialogflow.cx;
 // TODO: Uncomment the line below before running cloud function
 // package com.example;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonArray;
 import com.google.cloud.functions.HttpFunction;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import java.io.BufferedWriter;
 
 public class WebhookValidateFormParameter implements HttpFunction {
   @Override
   public void service(HttpRequest request, HttpResponse response) throws Exception {
-    // Constructs the webhook response object
-    JsonObject webhookResponse = new JsonObject();
-
     JsonObject sessionInfo = new JsonObject();
     JsonObject sessionParameter = new JsonObject();
 
     sessionParameter.addProperty("order_number", "null");
     sessionInfo.add("parameters", sessionParameter);
 
-    JsonObject pageInfo = new JsonObject();
-    JsonObject parameterInfoObject = new JsonObject();
-    JsonArray parameterInfoList = new JsonArray();
     JsonObject parameterObject = new JsonObject();
     parameterObject.addProperty("display_name", "order_number");
     parameterObject.addProperty("required", "true");
     parameterObject.addProperty("state", "INVALID");
     parameterObject.addProperty("value", "123");
 
+    JsonArray parameterInfoList = new JsonArray();
     parameterInfoList.add(parameterObject);
+
+    JsonObject parameterInfoObject = new JsonObject();
     parameterInfoObject.add("parameter_info", parameterInfoList);
+
+    JsonObject pageInfo = new JsonObject();
     pageInfo.add("form_info", parameterInfoObject);
+
+    // Constructs the webhook response object
+    JsonObject webhookResponse = new JsonObject();
     webhookResponse.add("page_info", pageInfo);
     webhookResponse.add("session_info", sessionInfo);
-
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     String jsonResponseObject = gson.toJson(webhookResponse);
 
-    System.out.println("Parameter Info: \n");
+    System.out.println("Response Object: \n");
     System.out.println(jsonResponseObject.toString());
+    /**
+     * {
+          "page_info": {
+            "form_info": {
+              "parameter_info": [
+                {
+                  "display_name": "order_number",
+                  "required": "true",
+                  "state": "INVALID",
+                  "value": "123"
+                }
+              ]
+            }
+          },
+          "session_info": {
+            "parameters": {
+              "order_number": "null"
+            }
+          }
+        }
+     */
+
 
     BufferedWriter writer = response.getWriter();
 

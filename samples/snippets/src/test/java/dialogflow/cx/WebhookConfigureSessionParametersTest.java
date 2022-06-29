@@ -19,14 +19,13 @@ package dialogflow.cx;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
-
 import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.google.cloud.functions.HttpRequest;
-import com.google.cloud.functions.HttpResponse;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -61,9 +60,10 @@ public class WebhookConfigureSessionParametersTest {
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
     FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
-      .setTag("configure-session-parameters").build();
+        .setTag("configure-session-parameters").build();
 
-    WebhookRequest webhookRequest = WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
+    WebhookRequest webhookRequest = WebhookRequest.newBuilder()
+        .setFulfillmentInfo(fulfillmentInfo).build();
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
