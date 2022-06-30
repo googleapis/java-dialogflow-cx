@@ -17,7 +17,6 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,7 +25,6 @@ import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /** Unit test for {@link DetectIntentIntentInput}. */
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -40,9 +38,15 @@ public class DetectIntentIntentInputTest {
   private static String INTENT_ID = "00000000-0000-0000-0000-000000000000";
   private static String SESSION_ID = UUID.randomUUID().toString();
   private static String LANGUAGE_CODE = "en-US";
-  private static String INTENT = "projects/"
-      + PROJECT_ID + "/locations/" + LOCATION + "/agents/" + AGENT_ID + "/intents/" + INTENT_ID;
-
+  private static String INTENT =
+      "projects/"
+          + PROJECT_ID
+          + "/locations/"
+          + LOCATION
+          + "/agents/"
+          + AGENT_ID
+          + "/intents/"
+          + INTENT_ID;
 
   private ByteArrayOutputStream stdOut;
 
@@ -51,14 +55,12 @@ public class DetectIntentIntentInputTest {
 
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
   }
 
   @After
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
-
   }
 
   @Test
@@ -70,5 +72,4 @@ public class DetectIntentIntentInputTest {
     System.out.println(stdOut.toString());
     assertThat(stdOut.toString()).contains(intentName);
   }
-
 }

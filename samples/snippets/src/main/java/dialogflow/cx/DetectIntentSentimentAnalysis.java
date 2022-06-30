@@ -74,8 +74,7 @@ public class DetectIntentSentimentAnalysis {
 
         // Build the query parameters to analyze the sentiment of the query.
         QueryParameters queryParameters =
-            QueryParameters.newBuilder().setAnalyzeQueryTextSentiment(true)
-            .build();
+            QueryParameters.newBuilder().setAnalyzeQueryTextSentiment(true).build();
 
         // Build the DetectIntentRequest with the SessionName, QueryInput, and QueryParameters.
         DetectIntentRequest request =

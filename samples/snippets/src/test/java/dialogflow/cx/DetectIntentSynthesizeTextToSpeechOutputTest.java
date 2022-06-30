@@ -17,7 +17,6 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -48,14 +47,12 @@ public class DetectIntentSynthesizeTextToSpeechOutputTest {
 
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
   }
 
   @After
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
-
   }
 
   @Test

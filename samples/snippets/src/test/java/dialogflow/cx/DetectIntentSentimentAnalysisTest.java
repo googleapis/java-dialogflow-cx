@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /** Unit test for {@link DetectIntentSentimentAnalysis}. */
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -46,14 +45,12 @@ public class DetectIntentSentimentAnalysisTest {
 
     Map<String, QueryResult> queryResults =
         DetectIntentSentimentAnalysis.detectIntent(
-        PROJECT_ID, LOCATION, AGENT_ID, SESSION_ID, TEXTS, LANGUAGE_CODE);
+            PROJECT_ID, LOCATION, AGENT_ID, SESSION_ID, TEXTS, LANGUAGE_CODE);
 
     for (int i = 0; i < TEXTS.size(); i++) {
       String text = TEXTS.get(i);
-      float score = queryResults.get(text)
-            .getSentimentAnalysisResult().getScore();
+      float score = queryResults.get(text).getSentimentAnalysisResult().getScore();
       assertTrue(min <= score && score <= max);
     }
   }
-
 }
