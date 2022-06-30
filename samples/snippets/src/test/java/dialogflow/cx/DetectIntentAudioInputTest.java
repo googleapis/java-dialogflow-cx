@@ -67,6 +67,6 @@ public class DetectIntentAudioInputTest {
         SESSION_ID,
         LANGUAGE_CODE);
     System.out.println(stdOut.toString());
-    assertThat(stdOut.toString()).contains("?");
+    assertThat(stdOut.toString()).contains("Detected Intent:");
   }
 }
