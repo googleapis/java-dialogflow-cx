@@ -27,9 +27,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-/** Unit test for {@link DetectIntentSynthesizeTTSOutput}. */
+/** Unit test for {@link DetectIntentSynthesizeTtSOutput}. */
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class DetectIntentSynthesizeTTSOutputTest {
+public class DetectIntentSynthesizeTextToSpeechOutputTest {
 
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION = "global";
@@ -59,9 +59,9 @@ public class DetectIntentSynthesizeTTSOutputTest {
   }
 
   @Test
-  public void testDetectIntentSynthesizeTTSOutput() throws Exception {
+  public void testDetectIntentSynthesizeTextToSpeechOutput() throws Exception {
 
-    DetectIntentSynthesizeTTSOutput.detectIntent(
+    DetectIntentSynthesizeTextToSpeechOutput.detectIntent(
         PROJECT_ID,
         LOCATION,
         AGENT_ID,

@@ -20,12 +20,12 @@ package dialogflow.cx;
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.cloud.dialogflow.cx.v3beta1.AudioEncoding;
-import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
 import com.google.cloud.dialogflow.cx.v3beta1.AudioInput;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
@@ -39,9 +39,9 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-public class DetectIntentSynthesizeTTSOutput {
+public class DetectIntentSynthesizeTextToSpeechOutput {
 
-  // DialogFlow API Detect Intent sample with Intent input.
+  // DialogFlow API Detect Intent sample with synthesize TTS output.
   public static void main(String[] args) throws IOException, ApiException {
     String projectId = "my-project-id";
     String locationId = "my-location-id";
@@ -108,13 +108,13 @@ public class DetectIntentSynthesizeTTSOutput {
             .build();
 
         SynthesizeSpeechConfig speechConfig =
-          SynthesizeSpeechConfig.newBuilder()
+            SynthesizeSpeechConfig.newBuilder()
             .setSpeakingRate(1.25)
             .setPitch(10.0)
             .build();
 
         OutputAudioConfig outputAudioConfig =
-          OutputAudioConfig.newBuilder()
+            OutputAudioConfig.newBuilder()
             .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_LINEAR_16)
             .setSynthesizeSpeechConfig(speechConfig)
             .build();
@@ -131,7 +131,7 @@ public class DetectIntentSynthesizeTTSOutput {
 
         // Display the output audio config retrieved from the response.
         OutputAudioConfig audioConfigFromResponse =
-          response.getOutputAudioConfig();
+            response.getOutputAudioConfig();
 
         System.out.println("====================");
         System.out.format("Output Audio Config: %s \n",

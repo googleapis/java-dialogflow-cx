@@ -106,12 +106,12 @@ public class DetectIntentStreamingPartialResponse {
 
 
       StreamingDetectIntentRequest streamingDetectIntentRequest =
-        StreamingDetectIntentRequest.newBuilder()
-        .setSession(session.toString())
-        .setQueryInput(queryInput)
-        .setEnablePartialResponse(true)
-        .setOutputAudioConfig(audioConfig)
-        .build();
+          StreamingDetectIntentRequest.newBuilder()
+          .setSession(session.toString())
+          .setQueryInput(queryInput)
+          .setEnablePartialResponse(true)
+          .setOutputAudioConfig(audioConfig)
+          .build();
       System.out.println(streamingDetectIntentRequest.toString());
 
       // The first request must **only** contain the audio configuration:
@@ -147,7 +147,8 @@ public class DetectIntentStreamingPartialResponse {
       //     System.out.format("Query Text: '%s'\n", queryResult.getTranscript());
       //     System.out.format(
       //         "Detected Intent: %s (confidence: %f)\n",
-      //         queryResult.getIntent().getDisplayName(), queryResult.getIntentDetectionConfidence());
+      //         queryResult.getIntent()
+      //         .getDisplayName(), queryResult.getIntentDetectionConfidence());
       //   }
     }
   }
