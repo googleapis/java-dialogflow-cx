@@ -16,18 +16,18 @@
 
 package dialogflow.cx;
 
-// [START dialogflow_cx_detect_intent_disable_webhook]
+// [START dialogflow_cx_v3_detect_intent_disable_webhook]
 
 import com.google.api.gax.rpc.ApiException;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryParameters;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
-import com.google.cloud.dialogflow.cx.v3beta1.TextInput;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.QueryInput;
+import com.google.cloud.dialogflow.cx.v3.QueryParameters;
+import com.google.cloud.dialogflow.cx.v3.QueryResult;
+import com.google.cloud.dialogflow.cx.v3.SessionName;
+import com.google.cloud.dialogflow.cx.v3.SessionsClient;
+import com.google.cloud.dialogflow.cx.v3.SessionsSettings;
+import com.google.cloud.dialogflow.cx.v3.TextInput;
 import com.google.common.collect.Maps;
 import java.io.IOException;
 import java.util.List;
@@ -105,4 +105,4 @@ public class DetectIntentDisableWebhook {
     return queryResults;
   }
 }
-// [END dialogflow_cx_detect_intent_disable_webhook]
+// [END dialogflow_cx_v3_detect_intent_disable_webhook]

@@ -16,17 +16,17 @@
 
 package dialogflow.cx;
 
-// [START dialogflow_cx_detect_intent_event_input]
+// [START dialogflow_cx_v3_detect_intent_event_input]
 
 import com.google.api.gax.rpc.ApiException;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
-import com.google.cloud.dialogflow.cx.v3beta1.EventInput;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.EventInput;
+import com.google.cloud.dialogflow.cx.v3.QueryInput;
+import com.google.cloud.dialogflow.cx.v3.QueryResult;
+import com.google.cloud.dialogflow.cx.v3.SessionName;
+import com.google.cloud.dialogflow.cx.v3.SessionsClient;
+import com.google.cloud.dialogflow.cx.v3.SessionsSettings;
 import java.io.IOException;
 
 public class DetectIntentEventInput {
@@ -96,4 +96,4 @@ public class DetectIntentEventInput {
   }
 }
 
-// [END dialogflow_cx_detect_intent_event_input]
+// [END dialogflow_cx_v3_detect_intent_event_input]

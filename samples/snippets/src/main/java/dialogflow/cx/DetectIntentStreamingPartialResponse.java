@@ -16,24 +16,24 @@
 
 package dialogflow.cx;
 
-// [START dialogflow_cx_detect_intent_streaming_partial_response]
+// [START dialogflow_cx_v3_detect_intent_streaming_partial_response]
 
 import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.BidiStream;
-import com.google.cloud.dialogflow.cx.v3beta1.AudioEncoding;
-import com.google.cloud.dialogflow.cx.v3beta1.AudioInput;
-import com.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig;
-import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
-import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
-import com.google.cloud.dialogflow.cx.v3beta1.SsmlVoiceGender;
-import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.StreamingDetectIntentResponse;
-import com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig;
-import com.google.cloud.dialogflow.cx.v3beta1.VoiceSelectionParams;
+import com.google.cloud.dialogflow.cx.v3.AudioEncoding;
+import com.google.cloud.dialogflow.cx.v3.AudioInput;
+import com.google.cloud.dialogflow.cx.v3.InputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3.OutputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding;
+import com.google.cloud.dialogflow.cx.v3.QueryInput;
+import com.google.cloud.dialogflow.cx.v3.SessionName;
+import com.google.cloud.dialogflow.cx.v3.SessionsClient;
+import com.google.cloud.dialogflow.cx.v3.SessionsSettings;
+import com.google.cloud.dialogflow.cx.v3.SsmlVoiceGender;
+import com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest;
+import com.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig;
+import com.google.cloud.dialogflow.cx.v3.VoiceSelectionParams;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -152,4 +152,4 @@ public class DetectIntentStreamingPartialResponse {
     }
   }
 }
-// [END dialogflow_cx_detect_intent_streaming_partial_response]
+// [END dialogflow_cx_v3_detect_intent_streaming_partial_response]

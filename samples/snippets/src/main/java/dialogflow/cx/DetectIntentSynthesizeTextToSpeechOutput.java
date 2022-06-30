@@ -16,21 +16,21 @@
 
 package dialogflow.cx;
 
-// [START dialogflow_cx_detect_intent_synthesize_tts_output]
+// [START dialogflow_cx_v3_detect_intent_synthesize_tts_output]
 
 import com.google.api.gax.rpc.ApiException;
-import com.google.cloud.dialogflow.cx.v3beta1.AudioEncoding;
-import com.google.cloud.dialogflow.cx.v3beta1.AudioInput;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
-import com.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig;
-import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
-import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
-import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
-import com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig;
+import com.google.cloud.dialogflow.cx.v3.AudioEncoding;
+import com.google.cloud.dialogflow.cx.v3.AudioInput;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentRequest;
+import com.google.cloud.dialogflow.cx.v3.DetectIntentResponse;
+import com.google.cloud.dialogflow.cx.v3.InputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3.OutputAudioConfig;
+import com.google.cloud.dialogflow.cx.v3.OutputAudioEncoding;
+import com.google.cloud.dialogflow.cx.v3.QueryInput;
+import com.google.cloud.dialogflow.cx.v3.SessionName;
+import com.google.cloud.dialogflow.cx.v3.SessionsClient;
+import com.google.cloud.dialogflow.cx.v3.SessionsSettings;
+import com.google.cloud.dialogflow.cx.v3.SynthesizeSpeechConfig;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -129,4 +129,4 @@ public class DetectIntentSynthesizeTextToSpeechOutput {
     }
   }
 }
-// [END dialogflow_cx_detect_intent_synthesize_tts_output]
+// [END dialogflow_cx_v3_detect_intent_synthesize_tts_output]
