@@ -27,10 +27,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
-import com.google.common.collect.Maps;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 public class DetectIntentEventInput {
 
@@ -81,10 +78,10 @@ public class DetectIntentEventInput {
 
       // Build the DetectIntentRequest with the SessionName and QueryInput.
       DetectIntentRequest request =
-           DetectIntentRequest.newBuilder()
-          .setSession(session.toString())
-          .setQueryInput(queryInput)
-          .build();
+          DetectIntentRequest.newBuilder()
+              .setSession(session.toString())
+              .setQueryInput(queryInput)
+              .build();
 
       // Performs the detect intent request.
       DetectIntentResponse response = sessionsClient.detectIntent(request);
@@ -94,9 +91,7 @@ public class DetectIntentEventInput {
 
       // TODO : Uncomment if you want to print queryResult
       System.out.println("====================");
-      System.out.format(
-          "Triggering Event: %s \n",
-          queryResult.getTriggerEvent());
+      System.out.format("Triggering Event: %s \n", queryResult.getTriggerEvent());
     }
   }
 }

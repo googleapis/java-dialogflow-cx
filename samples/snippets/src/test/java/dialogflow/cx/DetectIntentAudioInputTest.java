@@ -17,7 +17,6 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -48,14 +47,12 @@ public class DetectIntentAudioInputTest {
 
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
   }
 
   @After
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
-
   }
 
   @Test
@@ -72,5 +69,4 @@ public class DetectIntentAudioInputTest {
     System.out.println(stdOut.toString());
     assertThat(stdOut.toString()).contains("?");
   }
-
 }

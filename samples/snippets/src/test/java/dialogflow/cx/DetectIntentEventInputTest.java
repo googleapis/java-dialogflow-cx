@@ -17,7 +17,6 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,7 +25,6 @@ import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 /** Unit test for {@link DetectIntentEventInput}. */
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
@@ -48,14 +46,12 @@ public class DetectIntentEventInputTest {
 
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-
   }
 
   @After
   public void tearDown() throws IOException {
     stdOut = null;
     System.setOut(null);
-
   }
 
   @Test
@@ -67,5 +63,4 @@ public class DetectIntentEventInputTest {
     System.out.println(stdOut.toString());
     assertThat(stdOut.toString()).contains(triggeringEvent);
   }
-
 }

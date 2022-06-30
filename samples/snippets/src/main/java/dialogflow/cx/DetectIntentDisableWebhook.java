@@ -74,8 +74,7 @@ public class DetectIntentDisableWebhook {
 
         // Build the query parameters and setDisableWebhook to true.
         QueryParameters queryParameters =
-            QueryParameters.newBuilder().setDisableWebhook(true)
-            .build();
+            QueryParameters.newBuilder().setDisableWebhook(true).build();
 
         // Build the DetectIntentRequest with the SessionName, QueryInput, and QueryParameters.
         DetectIntentRequest request =

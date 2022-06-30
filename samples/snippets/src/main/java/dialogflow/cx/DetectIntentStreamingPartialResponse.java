@@ -26,7 +26,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
@@ -104,14 +103,13 @@ public class DetectIntentStreamingPartialResponse {
               .setSynthesizeSpeechConfig(speechConfig)
               .build();
 
-
       StreamingDetectIntentRequest streamingDetectIntentRequest =
           StreamingDetectIntentRequest.newBuilder()
-          .setSession(session.toString())
-          .setQueryInput(queryInput)
-          .setEnablePartialResponse(true)
-          .setOutputAudioConfig(audioConfig)
-          .build();
+              .setSession(session.toString())
+              .setQueryInput(queryInput)
+              .setEnablePartialResponse(true)
+              .setOutputAudioConfig(audioConfig)
+              .build();
       System.out.println(streamingDetectIntentRequest.toString());
 
       // The first request must **only** contain the audio configuration:

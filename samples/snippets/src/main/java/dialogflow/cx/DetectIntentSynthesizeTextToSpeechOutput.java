@@ -27,17 +27,13 @@ import com.google.cloud.dialogflow.cx.v3beta1.InputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioConfig;
 import com.google.cloud.dialogflow.cx.v3beta1.OutputAudioEncoding;
 import com.google.cloud.dialogflow.cx.v3beta1.QueryInput;
-import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.SynthesizeSpeechConfig;
-import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 public class DetectIntentSynthesizeTextToSpeechOutput {
 
@@ -51,13 +47,8 @@ public class DetectIntentSynthesizeTextToSpeechOutput {
     String sessionId = "my-session-id";
     String languageCode = "my-language-code";
 
-    detectIntent(projectId,
-        locationId,
-        agentId,
-        audioFileName,
-        sampleRateHertz,
-        sessionId,
-        languageCode);
+    detectIntent(
+        projectId, locationId, agentId, audioFileName, sampleRateHertz, sessionId, languageCode);
   }
 
   public static void detectIntent(
@@ -87,9 +78,11 @@ public class DetectIntentSynthesizeTextToSpeechOutput {
 
       // TODO : Uncomment if you want to print session path
       // System.out.println("Session Path: " + session.toString());
-      InputAudioConfig inputAudioConfig = InputAudioConfig.newBuilder()
-          .setAudioEncoding(AudioEncoding.AUDIO_ENCODING_LINEAR_16)
-          .setSampleRateHertz(sampleRateHertz).build();
+      InputAudioConfig inputAudioConfig =
+          InputAudioConfig.newBuilder()
+              .setAudioEncoding(AudioEncoding.AUDIO_ENCODING_LINEAR_16)
+              .setSampleRateHertz(sampleRateHertz)
+              .build();
 
       try (FileInputStream audioStream = new FileInputStream(audioFileName)) {
         // Subsequent requests must **only** contain the audio data.
@@ -98,46 +91,41 @@ public class DetectIntentSynthesizeTextToSpeechOutput {
         byte[] buffer = new byte[4096];
         int bytes = audioStream.read(buffer);
         AudioInput audioInput =
-            AudioInput.newBuilder().setAudio(ByteString.copyFrom(buffer, 0, bytes))
-              .setConfig(inputAudioConfig)
-              .build();
+            AudioInput.newBuilder()
+                .setAudio(ByteString.copyFrom(buffer, 0, bytes))
+                .setConfig(inputAudioConfig)
+                .build();
         QueryInput queryInput =
             QueryInput.newBuilder()
-            .setAudio(audioInput)
-            .setLanguageCode("en-US") // languageCode = "en-US"
-            .build();
+                .setAudio(audioInput)
+                .setLanguageCode("en-US") // languageCode = "en-US"
+                .build();
 
         SynthesizeSpeechConfig speechConfig =
-            SynthesizeSpeechConfig.newBuilder()
-            .setSpeakingRate(1.25)
-            .setPitch(10.0)
-            .build();
+            SynthesizeSpeechConfig.newBuilder().setSpeakingRate(1.25).setPitch(10.0).build();
 
         OutputAudioConfig outputAudioConfig =
             OutputAudioConfig.newBuilder()
-            .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_LINEAR_16)
-            .setSynthesizeSpeechConfig(speechConfig)
-            .build();
+                .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_LINEAR_16)
+                .setSynthesizeSpeechConfig(speechConfig)
+                .build();
 
         DetectIntentRequest request =
             DetectIntentRequest.newBuilder()
-            .setSession(session.toString())
-            .setQueryInput(queryInput)
-            .setOutputAudioConfig(outputAudioConfig)
-            .build();
+                .setSession(session.toString())
+                .setQueryInput(queryInput)
+                .setOutputAudioConfig(outputAudioConfig)
+                .build();
 
         // Performs the detect intent request.
         DetectIntentResponse response = sessionsClient.detectIntent(request);
 
         // Display the output audio config retrieved from the response.
-        OutputAudioConfig audioConfigFromResponse =
-            response.getOutputAudioConfig();
+        OutputAudioConfig audioConfigFromResponse = response.getOutputAudioConfig();
 
         System.out.println("====================");
-        System.out.format("Output Audio Config: %s \n",
-            audioConfigFromResponse.toString());
+        System.out.format("Output Audio Config: %s \n", audioConfigFromResponse.toString());
       }
-
     }
   }
 }

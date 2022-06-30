@@ -29,12 +29,9 @@ import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionName;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.SessionsSettings;
-import com.google.common.collect.Maps;
 import com.google.protobuf.ByteString;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 public class DetectIntentAudioInput {
 
@@ -48,13 +45,8 @@ public class DetectIntentAudioInput {
     String sessionId = "my-session-id";
     String languageCode = "my-language-code";
 
-    detectIntent(projectId,
-        locationId,
-        agentId,
-        audioFileName,
-        sampleRateHertz,
-        sessionId,
-        languageCode);
+    detectIntent(
+        projectId, locationId, agentId, audioFileName, sampleRateHertz, sessionId, languageCode);
   }
 
   public static void detectIntent(
@@ -84,9 +76,11 @@ public class DetectIntentAudioInput {
 
       // TODO : Uncomment if you want to print session path
       // System.out.println("Session Path: " + session.toString());
-      InputAudioConfig inputAudioConfig = InputAudioConfig.newBuilder()
-          .setAudioEncoding(AudioEncoding.AUDIO_ENCODING_LINEAR_16)
-          .setSampleRateHertz(sampleRateHertz).build();
+      InputAudioConfig inputAudioConfig =
+          InputAudioConfig.newBuilder()
+              .setAudioEncoding(AudioEncoding.AUDIO_ENCODING_LINEAR_16)
+              .setSampleRateHertz(sampleRateHertz)
+              .build();
 
       try (FileInputStream audioStream = new FileInputStream(audioFileName)) {
         // Subsequent requests must **only** contain the audio data.
@@ -95,21 +89,22 @@ public class DetectIntentAudioInput {
         byte[] buffer = new byte[4096];
         int bytes = audioStream.read(buffer);
         AudioInput audioInput =
-            AudioInput.newBuilder().setAudio(ByteString.copyFrom(buffer, 0, bytes))
-              .setConfig(inputAudioConfig)
-              .build();
+            AudioInput.newBuilder()
+                .setAudio(ByteString.copyFrom(buffer, 0, bytes))
+                .setConfig(inputAudioConfig)
+                .build();
         QueryInput queryInput =
             QueryInput.newBuilder()
-            .setAudio(audioInput)
-            .setLanguageCode("en-US") // languageCode = "en-US"
-            .build();
+                .setAudio(audioInput)
+                .setLanguageCode("en-US") // languageCode = "en-US"
+                .build();
 
         DetectIntentRequest request =
             DetectIntentRequest.newBuilder()
-            .setSession(session.toString())
-            .setQueryInput(queryInput)
-            .build();
-    
+                .setSession(session.toString())
+                .setQueryInput(queryInput)
+                .build();
+
         // Performs the detect intent request.
         DetectIntentResponse response = sessionsClient.detectIntent(request);
 
@@ -117,11 +112,10 @@ public class DetectIntentAudioInput {
         QueryResult queryResult = response.getQueryResult();
 
         System.out.println("====================");
-        System.out.format("Detected Intent: %s (confidence: %f)\n",
-            queryResult.getTranscript(),
-            queryResult.getIntentDetectionConfidence());
+        System.out.format(
+            "Detected Intent: %s (confidence: %f)\n",
+            queryResult.getTranscript(), queryResult.getIntentDetectionConfidence());
       }
-
     }
   }
 }
