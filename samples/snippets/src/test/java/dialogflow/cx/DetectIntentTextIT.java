@@ -27,10 +27,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link DetectIntent}. */
+/** Integration (system) tests for {@link DetectIntentText}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class DetectIntentIT {
+public class DetectIntentTextIT {
 
   private static String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private static String LOCATION_GLOBAL = "global";
@@ -46,9 +46,9 @@ public class DetectIntentIT {
   private static List<String> TEXTS = Arrays.asList("hello", "book a meeting room");
 
   @Test
-  public void testDetectIntentGlobal() throws Exception {
+  public void testDetectIntentTextGlobal() throws Exception {
     Map<String, QueryResult> queryResults =
-        DetectIntent.detectIntent(
+        DetectIntentText.detectIntent(
             PROJECT_ID, LOCATION_GLOBAL, AGENT_ID_GLOBAL, SESSION_ID, TEXTS, LANGUAGE_CODE);
     assertEquals(queryResults.size(), TEXTS.size());
     for (int i = 0; i < TEXTS.size(); i++) {
@@ -58,9 +58,9 @@ public class DetectIntentIT {
   }
 
   @Test
-  public void testDetectIntentRegional() throws Exception {
+  public void testDetectIntentTextRegional() throws Exception {
     Map<String, QueryResult> queryResults =
-        DetectIntent.detectIntent(
+        DetectIntentText.detectIntent(
             PROJECT_ID, LOCATION_REGIONAL, AGENT_ID_REGIONAL, SESSION_ID, TEXTS, LANGUAGE_CODE);
     assertEquals(queryResults.size(), TEXTS.size());
     for (int i = 0; i < TEXTS.size(); i++) {
