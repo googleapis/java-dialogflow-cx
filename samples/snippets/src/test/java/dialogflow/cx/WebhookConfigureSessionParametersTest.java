@@ -59,11 +59,11 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
-        .setTag("configure-session-parameters").build();
+    FulfillmentInfo fulfillmentInfo =
+        FulfillmentInfo.newBuilder().setTag("configure-session-parameters").build();
 
-    WebhookRequest webhookRequest = WebhookRequest.newBuilder()
-        .setFulfillmentInfo(fulfillmentInfo).build();
+    WebhookRequest webhookRequest =
+        WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
