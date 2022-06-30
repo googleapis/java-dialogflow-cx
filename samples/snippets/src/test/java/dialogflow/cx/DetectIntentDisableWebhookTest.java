@@ -18,7 +18,7 @@ package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.dialogflow.cx.v3beta1.QueryResult;
+import com.google.cloud.dialogflow.cx.v3.QueryResult;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
