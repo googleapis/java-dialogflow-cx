@@ -35,7 +35,7 @@ import java.io.IOException;
 
 public class DetectIntentAudioInput {
 
-  // DialogFlow API Detect Intent sample with Intent input.
+  // DialogFlow API Detect Intent sample with Audio input.
   public static void main(String[] args) throws IOException, ApiException {
     String projectId = "my-project-id";
     String locationId = "my-location-id";

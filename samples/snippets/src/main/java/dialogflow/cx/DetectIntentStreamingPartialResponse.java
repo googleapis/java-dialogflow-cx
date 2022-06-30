@@ -40,7 +40,8 @@ import java.io.IOException;
 
 public class DetectIntentStreamingPartialResponse {
 
-  // DialogFlow API Detect Intent sample with audio files processes as an audio stream.
+  // DialogFlow API Detect Intent sample with audio files
+  // that processes as an audio stream.
   public static void detectIntentStreamingPartialResponse(
       String projectId, String locationId, String agentId, String sessionId, String audioFilePath)
       throws ApiException, IOException {
@@ -95,7 +96,7 @@ public class DetectIntentStreamingPartialResponse {
 
       // Setup audio config
       OutputAudioConfig audioConfig =
-          // Output enconding explanation
+          // Output encoding explanation
           // https://cloud.google.com/dialogflow/cx/docs/reference/rpc/google.cloud.dialogflow.cx.v3#outputaudioencoding
           OutputAudioConfig.newBuilder()
               .setAudioEncoding(OutputAudioEncoding.OUTPUT_AUDIO_ENCODING_UNSPECIFIED)

@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class DetectIntentSentimentAnalysis {
 
-  // DialogFlow API Detect Intent sample with text inputs.
+  // DialogFlow API Detect Intent sample with sentiment analysis.
   public static Map<String, QueryResult> detectIntent(
       String projectId,
       String locationId,
