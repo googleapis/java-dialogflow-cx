@@ -19,8 +19,8 @@ package dialogflow.cx;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
-import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
+import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
+import com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import com.google.gson.Gson;
