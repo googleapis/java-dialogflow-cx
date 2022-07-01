@@ -55,7 +55,7 @@ public class DetectIntentStreamIT {
   }
 
   @After
-  public void tearDown() {
+  public void tearDown() throws InterruptedException {
     System.setOut(original);
     bout.reset();
 

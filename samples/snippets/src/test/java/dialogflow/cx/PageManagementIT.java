@@ -65,7 +65,7 @@ public class PageManagementIT {
   }
 
   @AfterClass
-  public static void tearDown() throws IOException {
+  public static void tearDown() throws IOException, InterruptedException {
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
     String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 

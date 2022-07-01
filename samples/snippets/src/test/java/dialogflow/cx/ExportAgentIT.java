@@ -71,7 +71,7 @@ public class ExportAgentIT {
   }
 
   @After
-  public void tearDown() throws IOException {
+  public void tearDown() throws IOException, InterruptedException {
     stdOut = null;
     System.setOut(null);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";

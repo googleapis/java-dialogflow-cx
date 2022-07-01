@@ -43,7 +43,7 @@ public class CreateAgentIT {
   }
 
   @After
-  public void tearDown() throws IOException {
+  public void tearDown() throws IOException, InterruptedException {
     System.setOut(originalOut);
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
 
