@@ -17,13 +17,13 @@
 package dialogflow.cx;
 
 // [START dialogflow_cx_create_agent]
-import com.google.cloud.functions.HttpFunction;
-import com.google.cloud.functions.HttpRequest;
-import com.google.cloud.functions.HttpResponse;
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
+import com.google.cloud.functions.HttpFunction;
+import com.google.cloud.functions.HttpRequest;
+import com.google.cloud.functions.HttpResponse;
 import java.io.IOException;
 
 public class CreateAgent {
