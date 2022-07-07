@@ -37,9 +37,9 @@ public class DetectIntentAudioInput {
 
   // DialogFlow API Detect Intent sample with Audio input.
   public static void main(String[] args) throws IOException, ApiException {
-  /**
-   * TODO (developer): replace these values with your own values
-  */
+    /**
+     * TODO (developer): replace these values with your own values
+    */
     String projectId = "my-project-id";
     String locationId = "global";
     String agentId = "my-agent-id";
