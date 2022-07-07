@@ -37,13 +37,16 @@ public class DetectIntentAudioInput {
 
   // DialogFlow API Detect Intent sample with Audio input.
   public static void main(String[] args) throws IOException, ApiException {
+  /**
+   * TODO (developer): replace these values with your own values
+  */
     String projectId = "my-project-id";
-    String locationId = "my-location-id";
+    String locationId = "global";
     String agentId = "my-agent-id";
-    String audioFileName = "my-audio-file-name";
+    String audioFileName = "resources/book_a_room.wav";
     int sampleRateHertz = 16000;
-    String sessionId = "my-session-id";
-    String languageCode = "my-language-code";
+    String sessionId = "my-UUID";
+    String languageCode = "en";
 
     detectIntent(
         projectId, locationId, agentId, audioFileName, sampleRateHertz, sessionId, languageCode);
