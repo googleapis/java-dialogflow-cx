@@ -45,6 +45,12 @@ public class DetectIntentAudioInput {
     String agentId = "my-agent-id";
     String audioFileName = "resources/book_a_room.wav";
     int sampleRateHertz = 16000;
+    /*
+     * A session ID is a string of at most 36 bytes in size.
+     * Your system is responsible for generating unique session IDs.
+     * They can be random numbers, hashed end-user identifiers,
+     * or any other values that are convenient for you to generate.
+     */
     String sessionId = "my-UUID";
     String languageCode = "en";
 
@@ -72,8 +78,8 @@ public class DetectIntentAudioInput {
 
     // Instantiates a client
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
-      // Set the session name using the projectID (my-project-id), locationID (global), agentID
-      // (UUID), and sessionId (UUID).
+      // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+	    // ID>/sessions/<Session ID>`.
       SessionName session =
           SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
 
