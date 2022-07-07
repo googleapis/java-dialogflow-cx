@@ -45,6 +45,7 @@ public class DetectIntentSentimentAnalysis {
 
     detectIntent(projectId, locationId, agentId, sessionId, texts, languageCode);
   }
+
   // DialogFlow API Detect Intent sample with sentiment analysis.
   public static Map<String, QueryResult> detectIntent(
       String projectId,
