@@ -63,10 +63,10 @@ public class DetectIntentSentimentAnalysis {
     SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
 
     Map<String, QueryResult> queryResults = Maps.newHashMap();
-    // Instantiates a client
+
+    // Instantiates a client by setting the session name.
+    // Format:`projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/sessions/<SessionID>`
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
-      // Set the session name using the projectID (my-project-id), locationID (global), agentID
-      // (UUID), and sessionId (UUID).
       SessionName session =
           SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
 

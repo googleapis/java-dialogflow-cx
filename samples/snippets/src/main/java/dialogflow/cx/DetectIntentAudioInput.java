@@ -76,10 +76,9 @@ public class DetectIntentAudioInput {
     }
     SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
 
-    // Instantiates a client
+    // Instantiates a client by setting the session name.
+    // Format:`projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/sessions/<SessionID>`
     try (SessionsClient sessionsClient = SessionsClient.create(sessionsSettings)) {
-      // Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
-	    // ID>/sessions/<Session ID>`.
       SessionName session =
           SessionName.ofProjectLocationAgentSessionName(projectId, locationId, agentId, sessionId);
 
