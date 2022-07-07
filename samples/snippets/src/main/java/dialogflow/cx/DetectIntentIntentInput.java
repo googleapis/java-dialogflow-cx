@@ -34,11 +34,11 @@ public class DetectIntentIntentInput {
   // DialogFlow API Detect Intent sample with Intent input.
   public static void main(String[] args) throws IOException, ApiException {
     String projectId = "my-project-id";
-    String locationId = "my-location-id";
+    String locationId = "global";
     String agentId = "my-agent-id";
-    String sessionId = "my-session-id";
+    String sessionId = "my-UUID";
     String intent = "my-intent-id";
-    String languageCode = "my-language-code";
+    String languageCode = "en";
 
     detectIntent(projectId, locationId, agentId, sessionId, intent, languageCode);
   }

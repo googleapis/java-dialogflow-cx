@@ -35,6 +35,17 @@ import java.util.Map;
 
 public class DetectIntentDisableWebhook {
 
+  public static void main(String[] args) throws IOException, ApiException {
+    String projectId = "my-project-id";
+    String locationId = "global";
+    String agentId = "my-agent-id";
+    String sessionId = "my-UUID";
+    List<String> texts = "my-texts";
+    String languageCode = "en";
+
+    detectIntent(projectId, locationId, agentId, sessionId, texts, languageCode);
+  }
+
   // DialogFlow API Detect Intent sample with webhook disabled.
   public static Map<String, QueryResult> detectIntent(
       String projectId,
