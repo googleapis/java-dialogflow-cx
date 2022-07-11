@@ -28,6 +28,7 @@ for library in s.get_staging_dirs():
         r'<maven.compiler.source>1.8</maven.compiler.source>',
         r'<maven.compiler.source>11</maven.compiler.source>'
     )
+    s.replace('**/samples.yaml', r'java-version: 8', r'java-version: 11')
 
     s.move(library)
 
