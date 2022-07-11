@@ -17,29 +17,20 @@
 package dialogflow.cx;
 
 // [START dialogflow_cx_create_agent]
+
 import com.google.cloud.dialogflow.cx.v3.Agent;
 import com.google.cloud.dialogflow.cx.v3.Agent.Builder;
 import com.google.cloud.dialogflow.cx.v3.AgentsClient;
 import com.google.cloud.dialogflow.cx.v3.AgentsSettings;
-import com.google.cloud.functions.HttpFunction;
-import com.google.cloud.functions.HttpRequest;
-import com.google.cloud.functions.HttpResponse;
 import java.io.IOException;
 
 public class CreateAgent {
   
-  public class HelloWorld implements HttpFunction {
-    @Override
-    public void service(HttpRequest request, HttpResponse response)
-        throws Exception {
-      response.getWriter().write("Hello, World\n");
-    }
-  }  
-
   public static void main(String[] args) throws IOException {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "my-project-id";
     String displayName = "my-display-name";
+
     createAgent(projectId, displayName);
   }
 

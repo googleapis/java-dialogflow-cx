@@ -26,11 +26,6 @@
   <dependencies>
     <!-- TODO: switch to libraries-bom after this artifact is included -->
     <dependency>
-      <groupId>com.google.cloud.functions</groupId>
-      <artifactId>functions-framework-api</artifactId>
-      <version>1.0.4</version>
-    </dependency>
-    <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-dialogflow-cx</artifactId>
       <version>0.13.0</version>
