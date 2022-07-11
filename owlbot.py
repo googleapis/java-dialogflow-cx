@@ -29,7 +29,7 @@ for library in s.get_staging_dirs():
         r'<maven.compiler.source>11</maven.compiler.source>'
     )
     s.replace(
-        '**/samples.cfg',
+        '.kokoro/**/samples.cfg',
         r'gcr.io/cloud-devrel-kokoro-resources/java8',
         r'gcr.io/cloud-devrel-kokoro-resources/java11'
     )
