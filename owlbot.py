@@ -28,12 +28,13 @@ for library in s.get_staging_dirs():
         r'<maven.compiler.source>1.8</maven.compiler.source>',
         r'<maven.compiler.source>11</maven.compiler.source>'
     )
-    s.replace('**/samples.yaml', r'java-version: 8', r'java-version: 11')
+    s.replace(
+        '**/samples.cfg',
+        r'gcr.io/cloud-devrel-kokoro-resources/java8',
+        r'gcr.io/cloud-devrel-kokoro-resources/java11'
+    )
 
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates(excludes=[
-    '.kokoro/nightly/samples.cfg',
-    '.kokoro/presubmit/samples.cfg',
-  ])
+java.common_templates()
