@@ -15,6 +15,7 @@
 import synthtool as s
 from synthtool.languages import java
 
+java.common_templates()
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
@@ -37,4 +38,4 @@ for library in s.get_staging_dirs():
     s.move(library)
 
 s.remove_staging_dirs()
-java.common_templates()
+
