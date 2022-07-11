@@ -15,27 +15,27 @@
 import synthtool as s
 from synthtool.languages import java
 
-java.common_templates()
 
 for library in s.get_staging_dirs():
     # put any special-case replacements here
-    s.replace(
-        '**/pom.xml',
-        r'<maven.compiler.target>1.8</maven.compiler.target>',
-        r'<maven.compiler.target>11</maven.compiler.target>'
-    )
-    s.replace(
-        '**/pom.xml',
-        r'<maven.compiler.source>1.8</maven.compiler.source>',
-        r'<maven.compiler.source>11</maven.compiler.source>'
-    )
-    s.replace(
-        '.kokoro/**/samples.cfg',
-        r'gcr.io/cloud-devrel-kokoro-resources/java8',
-        r'gcr.io/cloud-devrel-kokoro-resources/java11'
-    )
 
     s.move(library)
 
 s.remove_staging_dirs()
+java.common_templates()
 
+s.replace(
+    '**/pom.xml',
+    r'<maven.compiler.target>1.8</maven.compiler.target>',
+    r'<maven.compiler.target>11</maven.compiler.target>'
+)
+s.replace(
+    '**/pom.xml',
+    r'<maven.compiler.source>1.8</maven.compiler.source>',
+    r'<maven.compiler.source>11</maven.compiler.source>'
+)
+s.replace(
+    '.kokoro/**/samples.cfg',
+    r'gcr.io/cloud-devrel-kokoro-resources/java8',
+    r'gcr.io/cloud-devrel-kokoro-resources/java11'
+)
