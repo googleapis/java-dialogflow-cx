@@ -30,6 +30,7 @@ import com.google.cloud.dialogflow.cx.v3.SessionsSettings;
 import com.google.cloud.dialogflow.cx.v3.TextInput;
 import com.google.common.collect.Maps;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
