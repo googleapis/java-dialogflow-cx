@@ -97,7 +97,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
     writerOut.flush();
 
-
     assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
   }
 }
