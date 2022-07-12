@@ -23,15 +23,14 @@ import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
 import com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -44,7 +43,6 @@ public class WebhookValidateFormParameterTest {
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
-  private static final Gson gson = new Gson();
 
   @Before
   public void beforeTest() throws IOException {
@@ -59,16 +57,16 @@ public class WebhookValidateFormParameterTest {
     when(response.getWriter()).thenReturn(writerOut);
   }
 
+  private static String fromFile(String fileName) throws IOException {
+    Path absolutePath = Paths.get("resources", fileName);
+
+    return new String(Files.readAllBytes(absolutePath));
+  }
+
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    FulfillmentInfo fulfillmentInfo =
-        FulfillmentInfo.newBuilder().setTag("configure-session-parameters").build();
+    String jsonString = "{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}";
 
-    WebhookRequest webhookRequest =
-        WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-    String jsonString = gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
@@ -76,33 +74,8 @@ public class WebhookValidateFormParameterTest {
     new WebhookValidateFormParameter().service(request, response);
     writerOut.flush();
 
-    JsonObject sessionParameter = new JsonObject();
-    sessionParameter.addProperty("order_number", "null");
+    String expectedResponse = fromFile("validate_form_parameter.json");
 
-    JsonObject sessionInfo = new JsonObject();
-    sessionInfo.add("parameters", sessionParameter);
-
-    JsonObject parameterObject = new JsonObject();
-    parameterObject.addProperty("display_name", "order_number");
-    parameterObject.addProperty("required", "true");
-    parameterObject.addProperty("state", "INVALID");
-    parameterObject.addProperty("value", "123");
-
-    JsonArray parameterInfoList = new JsonArray();
-    parameterInfoList.add(parameterObject);
-
-    JsonObject parameterInfoObject = new JsonObject();
-    parameterInfoObject.add("parameter_info", parameterInfoList);
-
-    JsonObject formInfo = new JsonObject();
-    formInfo.add("form_info", parameterInfoObject);
-
-    JsonObject webhookResponse = new JsonObject();
-    webhookResponse.add("page_info", formInfo);
-    webhookResponse.add("session_info", sessionInfo);
-
-    String jsonResponseObject = gson.toJson(webhookResponse);
-
-    assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
+    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
 }
