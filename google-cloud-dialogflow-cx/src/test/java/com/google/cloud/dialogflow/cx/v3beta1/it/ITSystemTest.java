@@ -79,6 +79,7 @@ import com.google.cloud.dialogflow.cx.v3beta1.UpdateTransitionRouteGroupRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateVersionRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.Version;
 import com.google.cloud.dialogflow.cx.v3beta1.VersionsClient;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
@@ -89,6 +90,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
 
 public class ITSystemTest {
@@ -131,6 +133,8 @@ public class ITSystemTest {
           .setClassificationThreshold(0.3f)
           .setModelTrainingModeValue(1)
           .build();
+
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @BeforeClass
   public static void setUp() throws IOException, ExecutionException, InterruptedException {
