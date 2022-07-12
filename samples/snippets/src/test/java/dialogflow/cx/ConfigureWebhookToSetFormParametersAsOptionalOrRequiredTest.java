@@ -66,6 +66,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
     WebhookRequest webhookRequest =
         WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
+
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     String jsonString = gson.toJson(webhookRequest);
@@ -74,7 +75,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     when(request.getReader()).thenReturn(jsonReader);
 
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
-    writerOut.flush();
 
     JsonObject parameterObject = new JsonObject();
     parameterObject.addProperty("display_name", "order_number");
@@ -94,6 +94,9 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     webhookResponse.add("page_info", formInfo);
 
     String jsonResponseObject = gson.toJson(webhookResponse);
+
+    writerOut.flush();
+
 
     assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
   }

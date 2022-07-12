@@ -61,8 +61,19 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequired implements 
     System.out.println(jsonResponseObject.toString());
 
     /**
-     * { "page_info": { "form_info": { "parameter_info": [ { "display_name": "order_number",
-     * "required": "true", "state": "VALID" } ] } } }
+     * {
+     *   "page_info": {
+     *     "form_info": {
+     *       "parameter_info": [
+     *         {
+     *           "display_name": "order_number",
+     *           "required": "true",
+     *           "state": "VALID"
+     *         }
+     *       ]
+     *     }
+     *   }
+     * }
      */
     BufferedWriter writer = response.getWriter();
 
