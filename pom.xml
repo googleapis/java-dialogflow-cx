@@ -56,6 +56,15 @@
     <site.installationModule>google-cloud-dialogflow-cx-parent</site.installationModule>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>google-cloud-core</artifactId>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -83,12 +92,7 @@
         <artifactId>grpc-google-cloud-dialogflow-cx-v3</artifactId>
         <version>0.14.2-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3:current} -->
       </dependency>
-      <dependency>
-        <groupId>${project.groupId}</groupId>
-        <artifactId>google-cloud-core</artifactId>
-        <type>test-jar</type>
-        <scope>test</scope>
-      </dependency>
+
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-shared-dependencies</artifactId>
