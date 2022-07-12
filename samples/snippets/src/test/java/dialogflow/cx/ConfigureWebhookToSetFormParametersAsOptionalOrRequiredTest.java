@@ -44,7 +44,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
-  private static final Gson gson = new Gson();
 
   @Before
   public void beforeTest() throws IOException {
@@ -69,7 +68,8 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-    String jsonString = gson.toJson(webhookRequest);
+    String jsonString = webhookRequest.toString();
+    // gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
