@@ -69,7 +69,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     String jsonString = webhookRequest.toString();
-    // gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
