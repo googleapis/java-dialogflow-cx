@@ -40,7 +40,7 @@ public class DetectIntentSentimentAnalysis {
     String locationId = "global";
     String agentId = "my-agent-id";
     String sessionId = "my-UUID";
-    List<String> texts = "my-texts";
+    List<String> texts = new ArrayList<>(List.of("my-list", "of-texts"));
     String languageCode = "en";
 
     detectIntent(projectId, locationId, agentId, sessionId, texts, languageCode);
