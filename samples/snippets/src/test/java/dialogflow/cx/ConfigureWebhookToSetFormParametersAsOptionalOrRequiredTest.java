@@ -23,15 +23,14 @@ import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
 import com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -58,44 +57,26 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     when(response.getWriter()).thenReturn(writerOut);
   }
 
+  private static String fromFile(String fileName) throws IOException {
+    Path absolutePath = Paths.get("resources", fileName);
+
+    return new String(Files.readAllBytes(absolutePath));
+  }
+
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    FulfillmentInfo fulfillmentInfo =
-        FulfillmentInfo.newBuilder().setTag("configure-session-parameters").build();
+    String jsonString = "{'fulfillmentInfo': {'tag': 'optional-or-required'}}";
 
-    WebhookRequest webhookRequest =
-        WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
-
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-    String jsonString = webhookRequest.toString();
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
 
-    JsonObject parameterObject = new JsonObject();
-    parameterObject.addProperty("display_name", "order_number");
-    parameterObject.addProperty("required", "true");
-    parameterObject.addProperty("state", "VALID");
-
-    JsonArray parameterInfoList = new JsonArray();
-    parameterInfoList.add(parameterObject);
-
-    JsonObject parameterInfoObject = new JsonObject();
-    parameterInfoObject.add("parameter_info", parameterInfoList);
-
-    JsonObject formInfo = new JsonObject();
-    formInfo.add("form_info", parameterInfoObject);
-
-    JsonObject webhookResponse = new JsonObject();
-    webhookResponse.add("page_info", formInfo);
-
-    String jsonResponseObject = gson.toJson(webhookResponse);
+    String expectedResponse = fromFile("set_form_parameter_as_optional_or_required.json");
 
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
 
     writerOut.flush();
 
-    assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
+    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
 }
