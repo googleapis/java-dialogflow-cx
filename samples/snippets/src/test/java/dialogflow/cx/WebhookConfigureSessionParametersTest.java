@@ -23,14 +23,14 @@ import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
 import com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -57,17 +57,16 @@ public class WebhookConfigureSessionParametersTest {
     when(response.getWriter()).thenReturn(writerOut);
   }
 
+  private static String fromFile(String fileName) throws IOException {
+    Path absolutePath = Paths.get("resources", fileName);
+
+    return new String(Files.readAllBytes(absolutePath));
+  }
+
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    FulfillmentInfo fulfillmentInfo =
-        FulfillmentInfo.newBuilder().setTag("configure-session-parameters").build();
+    String jsonString = "{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}";
 
-    WebhookRequest webhookRequest =
-        WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
-
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-    String jsonString = gson.toJson(webhookRequest);
     BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
     when(request.getReader()).thenReturn(jsonReader);
@@ -75,14 +74,8 @@ public class WebhookConfigureSessionParametersTest {
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
 
-    JsonObject webhookResponse = new JsonObject();
-    JsonObject parameterObject = new JsonObject();
-    JsonObject orderParameter = new JsonObject();
-    orderParameter.addProperty("order_number", "12345");
-    parameterObject.add("parameters", orderParameter);
-    webhookResponse.add("session_info", parameterObject);
-    String jsonResponseObject = gson.toJson(webhookResponse);
+    String expectedResponse = fromFile("configure_session_parameters.json");
 
-    assertThat(responseOut.toString()).isEqualTo(jsonResponseObject.toString());
+    assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
 }
