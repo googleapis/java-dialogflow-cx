@@ -53,7 +53,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Before
   public void beforeTest() throws IOException {
-    // MockitoAnnotations.initMocks(this);
+    MockitoAnnotations.initMocks(this);
 
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
@@ -70,7 +70,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     doReturn(writerOut).when(response).getWriter();
   }
 
-  public static String fromFile(String fileName) throws IOException {
+  public String fromFile(String fileName) throws IOException {
     Path absolutePath = Paths.get("resources", fileName);
 
     return new String(Files.readAllBytes(absolutePath));
@@ -78,8 +78,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-
-
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();
 

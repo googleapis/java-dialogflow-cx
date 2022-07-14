@@ -81,7 +81,7 @@ public class WebhookValidateFormParameterTest {
     // when(response.getWriter()).thenReturn(writerOut);
   }
 
-  public static String fromFile(String fileName) throws IOException {
+  public String fromFile(String fileName) throws IOException {
     Path absolutePath = Paths.get("resources", fileName);
 
     return new String(Files.readAllBytes(absolutePath));
