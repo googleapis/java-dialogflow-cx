@@ -61,12 +61,16 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
+
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'optional-or-required'}}"));
     // doReturn(jsonReader).when(request).getReader();
-
+    when(request.getReader()).thenReturn(jsonReader);
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
+
+    when(response.getWriter()).thenReturn(writerOut);
+
 
 
     // doReturn(writerOut).when(response).getWriter();
@@ -80,8 +84,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    when(request.getReader()).thenReturn(jsonReader);
-    when(response.getWriter()).thenReturn(writerOut);
+
 
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();

@@ -64,6 +64,7 @@ public class WebhookConfigureSessionParametersTest {
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
+
     // use an empty string as the default request content
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
     // when(request.getReader()).thenReturn(jsonReader);
@@ -71,6 +72,8 @@ public class WebhookConfigureSessionParametersTest {
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
 
     // doReturn(writerOut).when(response).getWriter();
     // when(response.getWriter()).thenReturn(writerOut);
@@ -85,8 +88,7 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    when(request.getReader()).thenReturn(jsonReader);
-    when(response.getWriter()).thenReturn(writerOut);
+
 
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();

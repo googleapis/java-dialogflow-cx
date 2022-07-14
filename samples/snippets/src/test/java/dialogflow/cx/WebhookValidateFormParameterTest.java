@@ -78,6 +78,9 @@ public class WebhookValidateFormParameterTest {
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
 
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
+
     // doReturn(jsonReader).when(request).getReader();
 
     // doReturn(writerOut).when(response).getWriter();
@@ -94,8 +97,6 @@ public class WebhookValidateFormParameterTest {
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
 
-    when(request.getReader()).thenReturn(jsonReader);
-    when(response.getWriter()).thenReturn(writerOut);
 
 
     new WebhookValidateFormParameter().service(request, response);
