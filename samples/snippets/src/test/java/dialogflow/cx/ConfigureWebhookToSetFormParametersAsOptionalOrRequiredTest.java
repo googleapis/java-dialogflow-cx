@@ -39,7 +39,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
   @Mock
   HttpRequest request;
@@ -53,7 +55,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.initMocks(this);
+    // MockitoAnnotations.initMocks(this);
 
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
