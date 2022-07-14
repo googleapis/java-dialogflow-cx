@@ -35,6 +35,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
+import org.junit.runner.Runwith;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
