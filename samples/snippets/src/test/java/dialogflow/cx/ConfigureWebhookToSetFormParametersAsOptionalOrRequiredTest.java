@@ -35,32 +35,40 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
+  @InjectMocks
+  WebhookValidateFormParameter webhookValidateFormParameter;
 
-  private HttpRequest request;
-  private HttpResponse response;
+  @Mock
+  HttpRequest httpRequest;
+
+  @Mock
+  HttpResponse httpResponse;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {
-    // MockitoAnnotations.initMocks(this);
-    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    MockitoAnnotations.openMocks(this);
+
+    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'optional-or-required'}}"));
-    doReturn(jsonReader).when(request).getReader();
+    // doReturn(jsonReader).when(request).getReader();
 
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
 
-    doReturn(writerOut).when(response).getWriter();
+
+    // doReturn(writerOut).when(response).getWriter();
   }
 
   private static String fromFile(String fileName) throws IOException {
@@ -71,6 +79,9 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
+
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();
 

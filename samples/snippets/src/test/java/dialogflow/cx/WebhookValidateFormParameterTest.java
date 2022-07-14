@@ -35,31 +35,39 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterTest {
+  @InjectMocks
+  WebhookValidateFormParameter webhookValidateFormParameter;
 
-  // @Mock private HttpRequest request;
-  // @Mock private HttpResponse response;
+  @Mock
+  HttpRequest httpRequest;
 
-  private HttpRequest request;
-  private HttpResponse response;
+  @Mock
+  HttpResponse httpResponse;
+
+  // private HttpRequest request;
+  // private HttpResponse response;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {
-    // MockitoAnnotations.initMocks(this);
+    MockitoAnnotations.openMocks(this);
 
-    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    // when(request.getReader()).thenReturn(jsonReader);
+
+    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
     // System.out.println("READER" + jsonReader);
-    doReturn(jsonReader).when(request).getReader();
+    // doReturn(jsonReader).when(request).getReader();
     // when(request.getReader()).thenReturn(jsonReader);
 
     responseOut = new StringWriter();
@@ -67,7 +75,7 @@ public class WebhookValidateFormParameterTest {
 
     // doReturn(jsonReader).when(request).getReader();
 
-    doReturn(writerOut).when(response).getWriter();
+    // doReturn(writerOut).when(response).getWriter();
     // when(response.getWriter()).thenReturn(writerOut);
   }
 
@@ -81,8 +89,8 @@ public class WebhookValidateFormParameterTest {
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
 
-    // when(request.getReader()).thenReturn(jsonReader);
-    // when(response.getWriter()).thenReturn(writerOut);
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
 
 
     new WebhookValidateFormParameter().service(request, response);

@@ -36,6 +36,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
@@ -43,28 +44,34 @@ import org.mockito.stubbing.Answer;
 
 
 public class WebhookConfigureSessionParametersTest {
+  @InjectMocks
+  WebhookValidateFormParameter webhookValidateFormParameter;
 
-  private HttpRequest request;
-  private HttpResponse response;
+  @Mock
+  HttpRequest httpRequest;
+
+  @Mock
+  HttpResponse httpResponse;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {
-    // MockitoAnnotations.initMocks(this);
+    MockitoAnnotations.openMocks(this);
 
-    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     // use an empty string as the default request content
     BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
-    doReturn(jsonReader).when(request).getReader();
+    // when(request.getReader()).thenReturn(jsonReader);
+    // doReturn(jsonReader).when(request).getReader();
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
 
-    doReturn(writerOut).when(response).getWriter();
+    // doReturn(writerOut).when(response).getWriter();
     // when(response.getWriter()).thenReturn(writerOut);
 
   }
@@ -77,6 +84,8 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
 
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
