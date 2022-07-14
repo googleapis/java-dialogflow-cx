@@ -53,8 +53,8 @@ public class WebhookValidateFormParameterTest {
   public void beforeTest() throws IOException {
     // MockitoAnnotations.initMocks(this);
 
-    httpRequest = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    httpResponse = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     // when(request.getReader()).thenReturn(jsonReader);
 
