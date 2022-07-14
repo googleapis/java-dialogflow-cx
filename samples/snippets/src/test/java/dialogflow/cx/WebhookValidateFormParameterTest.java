@@ -17,6 +17,8 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
+
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
@@ -34,27 +36,39 @@ import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterTest {
 
-  @Mock private HttpRequest request;
-  @Mock private HttpResponse response;
+  // @Mock private HttpRequest request;
+  // @Mock private HttpResponse response;
+
+  private HttpRequest request;
+  private HttpResponse response;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.initMocks(this);
+    // MockitoAnnotations.initMocks(this);
 
-    // use an empty string as the default request content
-    BufferedReader reader = new BufferedReader(new StringReader(""));
-    when(request.getReader()).thenReturn(reader);
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+
+    BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
+    // System.out.println("READER" + jsonReader);
+    doReturn(jsonReader).when(request).getReader();
+    // when(request.getReader()).thenReturn(jsonReader);
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
-    when(response.getWriter()).thenReturn(writerOut);
+
+    // doReturn(jsonReader).when(request).getReader();
+
+    doReturn(writerOut).when(response).getWriter();
+    // when(response.getWriter()).thenReturn(writerOut);
   }
 
   private static String fromFile(String fileName) throws IOException {
@@ -65,11 +79,11 @@ public class WebhookValidateFormParameterTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    String jsonString = "{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}";
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
 
-    when(request.getReader()).thenReturn(jsonReader);
+    // when(request.getReader()).thenReturn(jsonReader);
+    // when(response.getWriter()).thenReturn(writerOut);
+
 
     new WebhookValidateFormParameter().service(request, response);
     writerOut.flush();

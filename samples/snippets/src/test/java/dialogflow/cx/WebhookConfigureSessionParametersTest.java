@@ -17,6 +17,9 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
+
+import static org.mockito.Mockito.doAnswer;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
 import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
@@ -34,27 +37,36 @@ import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.mockito.stubbing.Answer;
+
 
 public class WebhookConfigureSessionParametersTest {
 
-  @Mock private HttpRequest request;
-  @Mock private HttpResponse response;
+  private HttpRequest request;
+  private HttpResponse response;
 
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.initMocks(this);
+    // MockitoAnnotations.initMocks(this);
+
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     // use an empty string as the default request content
-    BufferedReader reader = new BufferedReader(new StringReader(""));
-    when(request.getReader()).thenReturn(reader);
+    BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
+    doReturn(jsonReader).when(request).getReader();
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
-    when(response.getWriter()).thenReturn(writerOut);
+
+    doReturn(writerOut).when(response).getWriter();
+    // when(response.getWriter()).thenReturn(writerOut);
+
   }
 
   private static String fromFile(String fileName) throws IOException {
@@ -65,11 +77,6 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    String jsonString = "{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}";
-
-    BufferedReader jsonReader = new BufferedReader(new StringReader(jsonString));
-
-    when(request.getReader()).thenReturn(jsonReader);
 
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
