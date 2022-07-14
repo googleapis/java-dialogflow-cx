@@ -60,6 +60,9 @@ public class WebhookValidateFormParameterTest {
   public void beforeTest() throws IOException {
     MockitoAnnotations.openMocks(this);
 
+    request = mock(HttpRequest.class);
+    response = mock(HttpResponse.class);
+
     // when(request.getReader()).thenReturn(jsonReader);
 
     // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
@@ -79,7 +82,7 @@ public class WebhookValidateFormParameterTest {
     // when(response.getWriter()).thenReturn(writerOut);
   }
 
-  private static String fromFile(String fileName) throws IOException {
+  public static String fromFile(String fileName) throws IOException {
     Path absolutePath = Paths.get("resources", fileName);
 
     return new String(Files.readAllBytes(absolutePath));

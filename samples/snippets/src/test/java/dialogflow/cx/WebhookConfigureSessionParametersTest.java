@@ -76,7 +76,7 @@ public class WebhookConfigureSessionParametersTest {
 
   }
 
-  private static String fromFile(String fileName) throws IOException {
+  public static String fromFile(String fileName) throws IOException {
     Path absolutePath = Paths.get("resources", fileName);
 
     return new String(Files.readAllBytes(absolutePath));
