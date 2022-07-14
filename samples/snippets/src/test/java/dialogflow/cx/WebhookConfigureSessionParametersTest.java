@@ -44,8 +44,8 @@ import org.mockito.stubbing.Answer;
 
 
 public class WebhookConfigureSessionParametersTest {
-  private HttpRequest httpRequest;
-  private HttpResponse httpResponse;
+  private HttpRequest request;
+  private HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;

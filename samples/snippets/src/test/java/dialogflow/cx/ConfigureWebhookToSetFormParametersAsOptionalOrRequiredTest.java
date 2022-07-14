@@ -45,10 +45,10 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
   WebhookValidateFormParameter webhookValidateFormParameter;
 
   @Mock
-  HttpRequest httpRequest;
+  HttpRequest request;
 
   @Mock
-  HttpResponse httpResponse;
+  HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
