@@ -44,14 +44,8 @@ import org.mockito.stubbing.Answer;
 
 
 public class WebhookConfigureSessionParametersTest {
-  @InjectMocks
-  WebhookValidateFormParameter webhookValidateFormParameter;
-
-  @Mock
-  HttpRequest httpRequest;
-
-  @Mock
-  HttpResponse httpResponse;
+  private HttpRequest httpRequest;
+  private HttpResponse httpResponse;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
@@ -59,7 +53,7 @@ public class WebhookConfigureSessionParametersTest {
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.initMocks(this);
+    // MockitoAnnotations.initMocks(this);
 
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
@@ -68,14 +62,14 @@ public class WebhookConfigureSessionParametersTest {
     // use an empty string as the default request content
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
     // when(request.getReader()).thenReturn(jsonReader);
-    // doReturn(jsonReader).when(request).getReader();
+    doReturn(jsonReader).when(request).getReader();
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
-    when(request.getReader()).thenReturn(jsonReader);
-    when(response.getWriter()).thenReturn(writerOut);
+    // when(request.getReader()).thenReturn(jsonReader);
+    // when(response.getWriter()).thenReturn(writerOut);
 
-    // doReturn(writerOut).when(response).getWriter();
+    doReturn(writerOut).when(response).getWriter();
     // when(response.getWriter()).thenReturn(writerOut);
 
   }

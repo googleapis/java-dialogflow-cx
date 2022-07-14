@@ -41,17 +41,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterTest {
-  @InjectMocks
-  WebhookValidateFormParameter webhookValidateFormParameter;
-
-  @Mock
-  HttpRequest httpRequest;
-
-  @Mock
-  HttpResponse httpResponse;
-
-  // private HttpRequest request;
-  // private HttpResponse response;
+  private HttpRequest httpRequest;
+  private HttpResponse httpResponse;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
@@ -60,10 +51,10 @@ public class WebhookValidateFormParameterTest {
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.initMocks(this);
+    // MockitoAnnotations.initMocks(this);
 
-    request = Mockito.mock(HttpRequest.class);
-    response = Mockito.mock(HttpResponse.class);
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     // when(request.getReader()).thenReturn(jsonReader);
 
@@ -72,7 +63,7 @@ public class WebhookValidateFormParameterTest {
 
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
     // System.out.println("READER" + jsonReader);
-    // doReturn(jsonReader).when(request).getReader();
+    doReturn(jsonReader).when(request).getReader();
     // when(request.getReader()).thenReturn(jsonReader);
 
     responseOut = new StringWriter();
@@ -83,7 +74,7 @@ public class WebhookValidateFormParameterTest {
 
     // doReturn(jsonReader).when(request).getReader();
 
-    // doReturn(writerOut).when(response).getWriter();
+    doReturn(writerOut).when(response).getWriter();
     // when(response.getWriter()).thenReturn(writerOut);
   }
 
