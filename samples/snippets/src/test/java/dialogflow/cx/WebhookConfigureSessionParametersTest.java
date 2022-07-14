@@ -44,8 +44,11 @@ import org.mockito.stubbing.Answer;
 
 
 public class WebhookConfigureSessionParametersTest {
-  private HttpRequest request;
-  private HttpResponse response;
+  @Mock
+  HttpRequest request;
+
+  @Mock
+  HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
@@ -54,7 +57,6 @@ public class WebhookConfigureSessionParametersTest {
   @Before
   public void beforeTest() throws IOException {
     // MockitoAnnotations.initMocks(this);
-
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
@@ -82,8 +84,6 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-
-
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
 

@@ -41,8 +41,11 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterTest {
-  private HttpRequest request;
-  private HttpResponse response;
+  @Mock
+  HttpRequest request;
+
+  @Mock
+  HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
@@ -69,8 +72,8 @@ public class WebhookValidateFormParameterTest {
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
 
-    when(request.getReader()).thenReturn(jsonReader);
-    when(response.getWriter()).thenReturn(writerOut);
+    // when(request.getReader()).thenReturn(jsonReader);
+    // when(response.getWriter()).thenReturn(writerOut);
 
     // doReturn(jsonReader).when(request).getReader();
 
@@ -86,8 +89,6 @@ public class WebhookValidateFormParameterTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-
-
 
 
     new WebhookValidateFormParameter().service(request, response);

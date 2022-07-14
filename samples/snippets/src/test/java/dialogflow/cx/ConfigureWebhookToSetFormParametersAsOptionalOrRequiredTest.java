@@ -41,9 +41,6 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
-  @InjectMocks
-  WebhookValidateFormParameter webhookValidateFormParameter;
-
   @Mock
   HttpRequest request;
 
