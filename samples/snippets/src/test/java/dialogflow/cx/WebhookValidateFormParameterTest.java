@@ -60,10 +60,10 @@ public class WebhookValidateFormParameterTest {
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.openMocks(this);
+    MockitoAnnotations.initMocks(this);
 
-    request = mock(HttpRequest.class);
-    response = mock(HttpResponse.class);
+    request = Mockito.mock(HttpRequest.class);
+    response = Mockito.mock(HttpResponse.class);
 
     // when(request.getReader()).thenReturn(jsonReader);
 

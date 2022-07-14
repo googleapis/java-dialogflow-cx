@@ -56,10 +56,10 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.openMocks(this);
+    MockitoAnnotations.initMocks(this);
 
-    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'optional-or-required'}}"));
     // doReturn(jsonReader).when(request).getReader();

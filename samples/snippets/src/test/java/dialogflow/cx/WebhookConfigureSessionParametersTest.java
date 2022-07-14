@@ -59,10 +59,10 @@ public class WebhookConfigureSessionParametersTest {
 
   @Before
   public void beforeTest() throws IOException {
-    MockitoAnnotations.openMocks(this);
+    MockitoAnnotations.initMocks(this);
 
-    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     // use an empty string as the default request content
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
