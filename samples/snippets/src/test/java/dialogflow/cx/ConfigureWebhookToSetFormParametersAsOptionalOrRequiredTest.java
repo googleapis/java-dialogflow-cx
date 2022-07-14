@@ -50,6 +50,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
   @Mock
   HttpResponse httpResponse;
 
+  private BufferedReader jsonReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
@@ -60,7 +61,7 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
     // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'optional-or-required'}}"));
+    jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'optional-or-required'}}"));
     // doReturn(jsonReader).when(request).getReader();
 
 

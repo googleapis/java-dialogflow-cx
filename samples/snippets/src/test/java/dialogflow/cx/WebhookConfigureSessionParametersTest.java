@@ -53,6 +53,7 @@ public class WebhookConfigureSessionParametersTest {
   @Mock
   HttpResponse httpResponse;
 
+  private BufferedReader jsonReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
@@ -64,7 +65,7 @@ public class WebhookConfigureSessionParametersTest {
     // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     // use an empty string as the default request content
-    BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
+    jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
     // when(request.getReader()).thenReturn(jsonReader);
     // doReturn(jsonReader).when(request).getReader();
 

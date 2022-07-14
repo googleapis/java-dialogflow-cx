@@ -53,8 +53,10 @@ public class WebhookValidateFormParameterTest {
   // private HttpRequest request;
   // private HttpResponse response;
 
+  private BufferedReader jsonReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
+
 
   @Before
   public void beforeTest() throws IOException {
@@ -68,7 +70,7 @@ public class WebhookValidateFormParameterTest {
     // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
-    BufferedReader jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
+    jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
     // System.out.println("READER" + jsonReader);
     // doReturn(jsonReader).when(request).getReader();
     // when(request.getReader()).thenReturn(jsonReader);
