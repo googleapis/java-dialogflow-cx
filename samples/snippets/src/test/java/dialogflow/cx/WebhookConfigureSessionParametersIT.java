@@ -17,13 +17,8 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
 
-import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
-import com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import java.io.BufferedReader;
@@ -38,16 +33,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.stubbing.Answer;
 
-public class WebhookConfigureSessionParametersTest {
-  // @Mock
+public class WebhookConfigureSessionParametersIT {
+  @Mock
   private HttpRequest request;
 
-  // @Mock
+  @Mock
   private HttpResponse response;
 
   private BufferedReader jsonReader;
@@ -56,22 +48,13 @@ public class WebhookConfigureSessionParametersTest {
 
   @Before
   public void beforeTest() throws IOException {
-    // MockitoAnnotations.initMocks(this);
-    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+    MockitoAnnotations.initMocks(this);
 
-
-    // use an empty string as the default request content
-    jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
-    // when(request.getReader()).thenReturn(jsonReader);
-    doReturn(jsonReader).when(request).getReader();
-
-    responseOut = new StringWriter();
+    stringReader = new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}");
+    jsonReader = new BufferedReader(stringReader);
     writerOut = new BufferedWriter(responseOut);
-    // when(request.getReader()).thenReturn(jsonReader);
-    // when(response.getWriter()).thenReturn(writerOut);
 
-    doReturn(writerOut).when(response).getWriter();
+    when(request.getReader()).thenReturn(jsonReader);
     when(response.getWriter()).thenReturn(writerOut);
 
   }
@@ -84,26 +67,10 @@ public class WebhookConfigureSessionParametersTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
-
-
-    // use an empty string as the default request content
-    // jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
-    // // when(request.getReader()).thenReturn(jsonReader);
-    // doReturn(jsonReader).when(request).getReader();
-
-    // responseOut = new StringWriter();
-    // writerOut = new BufferedWriter(responseOut);
-    // when(request.getReader()).thenReturn(jsonReader);
-    // when(response.getWriter()).thenReturn(writerOut);
-
-    // doReturn(writerOut).when(response).getWriter();
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
 
     String expectedResponse = fromFile("configure_session_parameters.json");
-
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
 }

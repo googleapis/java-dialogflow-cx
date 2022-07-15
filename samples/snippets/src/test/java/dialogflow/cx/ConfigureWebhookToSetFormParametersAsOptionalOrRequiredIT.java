@@ -17,12 +17,8 @@
 package dialogflow.cx;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.doAnswer;
 
-import com.google.cloud.dialogflow.cx.v3.WebhookRequest;
-import com.google.cloud.dialogflow.cx.v3.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
 import java.io.BufferedReader;
@@ -36,25 +32,33 @@ import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 
-public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
-  private HttpRequest request;
+public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
+  @Mock
+  HttpRequest request;
 
-  // @Mock
-  private HttpResponse response;
+  @Mock
+  HttpResponse response;
 
-  private BufferedReader jsonReader;
-  private BufferedWriter writerOut;
-  private StringWriter responseOut;
+  BufferedReader jsonReader;
+  StringReader stringReader;
+  BufferedWriter writerOut;
+  StringWriter responseOut;
 
-  // @Before
-  // public void beforeTest() throws IOException {
-    
-  // }
+  @Before
+  public void beforeTest() throws IOException {
+    MockitoAnnotations.initMocks(this);
+
+    stringReader = new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}");
+    jsonReader = new BufferedReader(stringReader);
+
+    responseOut = new StringWriter();
+    writerOut = new BufferedWriter(responseOut);
+
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
+  }
 
   public String fromFile(String fileName) throws IOException {
     Path absolutePath = Paths.get("resources", fileName);
@@ -64,26 +68,10 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
-    // MockitoAnnotations.initMocks(this);
-
-    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
-
-
-    jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'optional-or-required'}}"));
-    doReturn(jsonReader).when(request).getReader();
-    // when(request.getReader()).thenReturn(jsonReader);
-
-    responseOut = new StringWriter();
-    writerOut = new BufferedWriter(responseOut);
-
-    // when(response.getWriter()).thenReturn(writerOut);
-    doReturn(writerOut).when(response).getWriter();
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();
 
     String expectedResponse = fromFile("set_form_parameter_as_optional_or_required.json");
-
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
 }
