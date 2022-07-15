@@ -35,11 +35,9 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
-  @Mock
-  HttpRequest request;
+  @Mock HttpRequest request;
 
-  @Mock
-  HttpResponse response;
+  @Mock HttpResponse response;
 
   BufferedReader jsonReader;
   StringReader stringReader;
