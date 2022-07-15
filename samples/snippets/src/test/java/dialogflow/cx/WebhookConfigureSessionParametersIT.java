@@ -19,16 +19,18 @@ package dialogflow.cx;
 import static com.google.common.truth.Truth.assertThat;
 import static org.mockito.Mockito.when;
 
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.FulfillmentInfo;
 import com.google.cloud.functions.HttpRequest;
 import com.google.cloud.functions.HttpResponse;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.io.StringWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -50,24 +52,35 @@ public class WebhookConfigureSessionParametersIT {
 
     stringReader = new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}");
     jsonReader = new BufferedReader(stringReader);
+
+    responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
 
     when(request.getReader()).thenReturn(jsonReader);
     when(response.getWriter()).thenReturn(writerOut);
   }
 
-  public String fromFile(String fileName) throws IOException {
-    Path absolutePath = Paths.get("resources", fileName);
-
-    return new String(Files.readAllBytes(absolutePath));
-  }
-
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
+        .setTag("configure-session-parameters").build();
+
+    WebhookRequest webhookRequest = WebhookRequest.newBuilder()
+        .setFulfillmentInfo(fulfillmentInfo).build();
+
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
 
-    String expectedResponse = fromFile("configure_session_parameters.json");
+    JsonObject webhookResponse = new JsonObject();
+    JsonObject parameterObject = new JsonObject();
+    JsonObject orderParameter = new JsonObject();
+    orderParameter.addProperty("order_number", "12345");
+    parameterObject.add("parameters", orderParameter);
+    webhookResponse.add("session_info", parameterObject);
+
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String expectedResponse = gson.toJson(webhookResponse);
+
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
 }
