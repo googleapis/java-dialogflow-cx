@@ -40,6 +40,7 @@ public class WebhookConfigureSessionParametersIT {
   @Mock private HttpResponse response;
 
   private BufferedReader jsonReader;
+  private StringReader stringReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
