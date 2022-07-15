@@ -38,14 +38,13 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterIT {
-  @Mock private HttpRequest request;
-  @Mock private HttpResponse response;
+  @Mock HttpRequest request;
+  @Mock HttpResponse response;
 
-  private BufferedReader jsonReader;
-  private StringReader stringReader;
-  private BufferedWriter writerOut;
-  private StringWriter responseOut;
-  private static final Gson gson = new Gson();
+  BufferedReader jsonReader;
+  StringReader stringReader;
+  BufferedWriter writerOut;
+  StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {

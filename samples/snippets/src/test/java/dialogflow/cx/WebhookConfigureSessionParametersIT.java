@@ -37,14 +37,13 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookConfigureSessionParametersIT {
-  @Mock private HttpRequest request;
+  @Mock HttpRequest request;
+  @Mock HttpResponse response;
 
-  @Mock private HttpResponse response;
-
-  private BufferedReader jsonReader;
-  private StringReader stringReader;
-  private BufferedWriter writerOut;
-  private StringWriter responseOut;
+  BufferedReader jsonReader;
+  StringReader stringReader;
+  BufferedWriter writerOut;
+  StringWriter responseOut;
 
   @Before
   public void beforeTest() throws IOException {
