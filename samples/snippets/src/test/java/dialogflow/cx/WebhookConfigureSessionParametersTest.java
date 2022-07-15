@@ -35,7 +35,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
-import org.junit.runner.Runwith;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -55,36 +54,9 @@ public class WebhookConfigureSessionParametersTest {
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
-  // @Before
-  // public void beforeTest() throws IOException {
+  @Before
+  public void beforeTest() throws IOException {
     // MockitoAnnotations.initMocks(this);
-    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
-
-
-    // // use an empty string as the default request content
-    // jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
-    // // when(request.getReader()).thenReturn(jsonReader);
-    // doReturn(jsonReader).when(request).getReader();
-
-    // responseOut = new StringWriter();
-    // writerOut = new BufferedWriter(responseOut);
-    // // when(request.getReader()).thenReturn(jsonReader);
-    // // when(response.getWriter()).thenReturn(writerOut);
-
-    // doReturn(writerOut).when(response).getWriter();
-    // when(response.getWriter()).thenReturn(writerOut);
-
-  // }
-
-  public String fromFile(String fileName) throws IOException {
-    Path absolutePath = Paths.get("resources", fileName);
-
-    return new String(Files.readAllBytes(absolutePath));
-  }
-
-  @Test
-  public void helloHttp_bodyParamsPost() throws IOException, Exception {
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
@@ -100,6 +72,33 @@ public class WebhookConfigureSessionParametersTest {
     // when(response.getWriter()).thenReturn(writerOut);
 
     doReturn(writerOut).when(response).getWriter();
+    when(response.getWriter()).thenReturn(writerOut);
+
+  }
+
+  public String fromFile(String fileName) throws IOException {
+    Path absolutePath = Paths.get("resources", fileName);
+
+    return new String(Files.readAllBytes(absolutePath));
+  }
+
+  @Test
+  public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+
+
+    // use an empty string as the default request content
+    // jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'configure-session-parameters'}}"));
+    // // when(request.getReader()).thenReturn(jsonReader);
+    // doReturn(jsonReader).when(request).getReader();
+
+    // responseOut = new StringWriter();
+    // writerOut = new BufferedWriter(responseOut);
+    // when(request.getReader()).thenReturn(jsonReader);
+    // when(response.getWriter()).thenReturn(writerOut);
+
+    // doReturn(writerOut).when(response).getWriter();
     new WebhookConfigureSessionParameters().service(request, response);
     writerOut.flush();
 
