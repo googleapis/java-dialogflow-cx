@@ -45,28 +45,54 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 public class WebhookValidateFormParameterTest {
-  @Mock
-  HttpRequest request;
+  // @Mock
+  private HttpRequest request;
 
-  @Mock
-  HttpResponse response;
+  // @Mock
+  private HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
 
-  @Before
-  public void beforeTest() throws IOException {
+  // @Before
+  // public void beforeTest() throws IOException {
     // MockitoAnnotations.initMocks(this);
 
-    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
-    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
-
+    
     // when(request.getReader()).thenReturn(jsonReader);
 
     // request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
     // response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
+
+    // jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
+    // // System.out.println("READER" + jsonReader);
+    // doReturn(jsonReader).when(request).getReader();
+    // // when(request.getReader()).thenReturn(jsonReader);
+
+    // responseOut = new StringWriter();
+    // writerOut = new BufferedWriter(responseOut);
+
+    // // when(request.getReader()).thenReturn(jsonReader);
+    // // when(response.getWriter()).thenReturn(writerOut);
+
+    // // doReturn(jsonReader).when(request).getReader();
+
+    // doReturn(writerOut).when(response).getWriter();
+    // when(response.getWriter()).thenReturn(writerOut);
+  // }
+
+  public String fromFile(String fileName) throws IOException {
+    Path absolutePath = Paths.get("resources", fileName);
+
+    return new String(Files.readAllBytes(absolutePath));
+  }
+
+  @Test
+  public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
+    response = Mockito.mock(HttpResponse.class, Mockito.withSettings().verboseLogging());
 
     jsonReader = new BufferedReader(new StringReader("{'fulfillmentInfo': {'tag': 'validate-form-parameter'}}"));
     // System.out.println("READER" + jsonReader);
@@ -82,18 +108,6 @@ public class WebhookValidateFormParameterTest {
     // doReturn(jsonReader).when(request).getReader();
 
     doReturn(writerOut).when(response).getWriter();
-    // when(response.getWriter()).thenReturn(writerOut);
-  }
-
-  public String fromFile(String fileName) throws IOException {
-    Path absolutePath = Paths.get("resources", fileName);
-
-    return new String(Files.readAllBytes(absolutePath));
-  }
-
-  @Test
-  public void helloHttp_bodyParamsPost() throws IOException, Exception {
-
 
     new WebhookValidateFormParameter().service(request, response);
     writerOut.flush();

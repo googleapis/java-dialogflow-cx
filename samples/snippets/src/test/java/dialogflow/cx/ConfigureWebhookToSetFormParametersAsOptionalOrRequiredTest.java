@@ -43,20 +43,29 @@ import org.mockito.MockitoAnnotations;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
-  @Mock
-  HttpRequest request;
+  private HttpRequest request;
 
-  @Mock
-  HttpResponse response;
+  // @Mock
+  private HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
 
-  @Before
-  public void beforeTest() throws IOException {
+  // @Before
+  // public void beforeTest() throws IOException {
+    
+  // }
+
+  public String fromFile(String fileName) throws IOException {
+    Path absolutePath = Paths.get("resources", fileName);
+
+    return new String(Files.readAllBytes(absolutePath));
+  }
+
+  @Test
+  public void helloHttp_bodyParamsPost() throws IOException, Exception {
     // MockitoAnnotations.initMocks(this);
 
     request = Mockito.mock(HttpRequest.class, Mockito.withSettings().verboseLogging());
@@ -72,16 +81,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredTest {
 
     // when(response.getWriter()).thenReturn(writerOut);
     doReturn(writerOut).when(response).getWriter();
-  }
-
-  public String fromFile(String fileName) throws IOException {
-    Path absolutePath = Paths.get("resources", fileName);
-
-    return new String(Files.readAllBytes(absolutePath));
-  }
-
-  @Test
-  public void helloHttp_bodyParamsPost() throws IOException, Exception {
     new ConfigureWebhookToSetFormParametersAsOptionalOrRequired().service(request, response);
     writerOut.flush();
 
