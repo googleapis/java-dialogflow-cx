@@ -31,22 +31,18 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterIT {
-  @Mock
-  private HttpRequest request;
+  @Mock private HttpRequest request;
 
-  @Mock
-  private HttpResponse response;
+  @Mock private HttpResponse response;
 
   private BufferedReader jsonReader;
   private StringReader stringReader;
   private BufferedWriter writerOut;
   private StringWriter responseOut;
-
 
   @Before
   public void beforeTest() throws IOException {

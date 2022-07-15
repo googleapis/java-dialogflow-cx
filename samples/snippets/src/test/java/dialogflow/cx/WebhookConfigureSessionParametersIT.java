@@ -31,16 +31,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookConfigureSessionParametersIT {
-  @Mock
-  private HttpRequest request;
+  @Mock private HttpRequest request;
 
-  @Mock
-  private HttpResponse response;
+  @Mock private HttpResponse response;
 
   private BufferedReader jsonReader;
   private BufferedWriter writerOut;
@@ -56,7 +53,6 @@ public class WebhookConfigureSessionParametersIT {
 
     when(request.getReader()).thenReturn(jsonReader);
     when(response.getWriter()).thenReturn(writerOut);
-
   }
 
   public String fromFile(String fileName) throws IOException {
