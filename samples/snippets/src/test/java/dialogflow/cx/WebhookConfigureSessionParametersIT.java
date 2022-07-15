@@ -37,6 +37,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookConfigureSessionParametersIT {
+
   @Mock HttpRequest request;
   @Mock HttpResponse response;
 

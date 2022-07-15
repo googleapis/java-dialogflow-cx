@@ -38,6 +38,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class WebhookValidateFormParameterIT {
+
   @Mock HttpRequest request;
   @Mock HttpResponse response;
 
@@ -97,9 +98,7 @@ public class WebhookValidateFormParameterIT {
     webhookResponse.add("session_info", sessionInfo);
 
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
     String expectedResponse = gson.toJson(webhookResponse);
-    System.out.println("Response: " + expectedResponse);
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
   }
