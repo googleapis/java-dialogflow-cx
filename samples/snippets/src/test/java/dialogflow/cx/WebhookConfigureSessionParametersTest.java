@@ -44,7 +44,6 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
 
-@RunWith(MockitoJUnitRunner.class)
 public class WebhookConfigureSessionParametersTest {
   // @Mock
   private HttpRequest request;
