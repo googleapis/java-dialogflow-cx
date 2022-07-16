@@ -56,13 +56,13 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
 
     responseOut = new StringWriter();
     writerOut = new BufferedWriter(responseOut);
-
-    when(request.getReader()).thenReturn(jsonReader);
-    when(response.getWriter()).thenReturn(writerOut);
   }
 
   @Test
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
+    when(request.getReader()).thenReturn(jsonReader);
+    when(response.getWriter()).thenReturn(writerOut);
+
     FulfillmentInfo fulfillmentInfo = FulfillmentInfo.newBuilder()
         .setTag("configure-session-parameters").build();
 
