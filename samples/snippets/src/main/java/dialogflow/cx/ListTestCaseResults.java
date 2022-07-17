@@ -57,10 +57,10 @@ public class ListTestCaseResults {
         TestCasesSettings.newBuilder()
             .setEndpoint(location + "-dialogflow.googleapis.com:443")
             .build();
-    TestCasesClient client = TestCasesClient.create(testCasesSettings);
-
-    for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
-      System.out.println(element);
+    try(TestCasesClient client = TestCasesClient.create(testCasesSettings)) {
+      for (TestCaseResult element : client.listTestCaseResults(req.build()).iterateAll()) {
+        System.out.println(element);
+      }
     }
   }
 }
