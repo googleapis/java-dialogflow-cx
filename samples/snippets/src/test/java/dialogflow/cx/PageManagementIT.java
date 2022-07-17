@@ -47,21 +47,25 @@ public class PageManagementIT {
   public static void setUp() throws IOException {
     stdOut = new ByteArrayOutputStream();
     System.setOut(new PrintStream(stdOut));
-    Builder build = Agent.newBuilder();
-    build.setDefaultLanguageCode("en");
-    build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
-    build.setTimeZone("America/Los_Angeles");
-
-    Agent agent = build.build();
 
     String apiEndpoint = "global-dialogflow.googleapis.com:443";
-    String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
+    try (AgentsClient client = AgentsClient.create(agentsSettings)) {
 
-    parent = client.createAgent(parentPath, agent).getName();
-    agentID = parent.split("/")[5];
+      Builder build = Agent.newBuilder();
+      build.setDefaultLanguageCode("en");
+      build.setDisplayName("temp_agent_" + UUID.randomUUID().toString());
+      build.setTimeZone("America/Los_Angeles");
+
+      Agent agent = build.build();
+      String parentPath = "projects/" + PROJECT_ID + "/locations/global";
+
+      parent = client.createAgent(parentPath, agent).getName();
+
+      agentID = parent.split("/")[5];
+    }
+
   }
 
   @AfterClass
@@ -70,9 +74,9 @@ public class PageManagementIT {
     String parentPath = "projects/" + PROJECT_ID + "/locations/global";
 
     AgentsSettings agentsSettings = AgentsSettings.newBuilder().setEndpoint(apiEndpoint).build();
-    AgentsClient client = AgentsClient.create(agentsSettings);
-
-    client.deleteAgent(parent);
+    try (AgentsClient client = AgentsClient.create(agentsSettings)) {
+      client.deleteAgent(parent);
+    }
 
     // Small delay to prevent reaching quota limit of requests per minute
     Thread.sleep(250);
