@@ -93,8 +93,9 @@ public class PageManagementIT {
   @Test
   public void testListPages() throws IOException {
     String name = "temp_page_" + UUID.randomUUID().toString();
+    Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, name);
 
-    try (Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, name)) {
+    try {
       ListPages.listPages(PROJECT_ID, agentID, flowID, location);
     }
     assertThat(stdOut.toString()).contains(name);
