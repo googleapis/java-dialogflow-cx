@@ -101,6 +101,6 @@ public class WebhookValidateFormParameterIT {
     String expectedResponse = gson.toJson(webhookResponse);
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
-    Thread.sleep(200);
+    Thread.sleep(250);
   }
 }

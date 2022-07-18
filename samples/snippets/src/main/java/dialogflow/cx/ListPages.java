@@ -39,11 +39,11 @@ public class ListPages {
   // Lists all pages from the provided parameters
   public static void listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
-    PagesClient client = PagesClient.create();
-    Builder listRequestBuilder = ListPagesRequest.newBuilder();
+    try (PagesClient client = PagesClient.create()) {
+      Builder listRequestBuilder = ListPagesRequest.newBuilder();
 
-    listRequestBuilder.setParent(
-        "projects/"
+      listRequestBuilder.setParent(
+          "projects/"
             + projectId
             + "/locations/"
             + location
@@ -51,12 +51,15 @@ public class ListPages {
             + agentId
             + "/flows/"
             + flowId);
-    listRequestBuilder.setLanguageCode("en");
+      listRequestBuilder.setLanguageCode("en");
 
-    // Make API request to list all pages in the project
-    for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
-      System.out.println(element);
+      // Make API request to list all pages in the project
+      for (Page element : client.listPages(listRequestBuilder.build()).iterateAll()) {
+        System.out.println(element);
+      }
     }
+
+
   }
   // [END dialogflow_cx_list_pages]
 }

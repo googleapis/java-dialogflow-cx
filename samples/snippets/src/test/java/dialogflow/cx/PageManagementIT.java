@@ -84,19 +84,24 @@ public class PageManagementIT {
 
   @Test
   public void testCreatePage() throws IOException {
-    Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, displayName);
-    pageID = p.getName().split("/")[9];
-
-    assertThat(p.getDisplayName()).isEqualTo(displayName);
+      try {
+        Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, displayName);
+        pageID = p.getName().split("/")[9];
+        assertThat(p.getDisplayName()).isEqualTo(displayName);
+      }
   }
 
   @Test
   public void testListPages() throws IOException {
     String name = "temp_page_" + UUID.randomUUID().toString();
-    Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, name);
-
-    ListPages.listPages(PROJECT_ID, agentID, flowID, location);
-    assertThat(stdOut.toString()).contains(name);
+    // Page p
+    try {
+      CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, name);
+      ListPages.listPages(PROJECT_ID, agentID, flowID, location);
+      assertThat(stdOut.toString()).contains(name);
+    } catch (Exception e) {
+      assertThat(e).isEqualTo("");
+    }
   }
 
   @Test
