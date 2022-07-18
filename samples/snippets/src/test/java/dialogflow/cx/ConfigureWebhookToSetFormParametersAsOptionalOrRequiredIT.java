@@ -94,5 +94,6 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
     String expectedResponse = gson.toJson(webhookResponse);
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+    Thread.sleep(200);
   }
 }
