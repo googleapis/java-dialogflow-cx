@@ -44,13 +44,13 @@ public class ListPages {
 
       listRequestBuilder.setParent(
           "projects/"
-            + projectId
-            + "/locations/"
-            + location
-            + "/agents/"
-            + agentId
-            + "/flows/"
-            + flowId);
+              + projectId
+              + "/locations/"
+              + location
+              + "/agents/"
+              + agentId
+              + "/flows/"
+              + flowId);
       listRequestBuilder.setLanguageCode("en");
 
       // Make API request to list all pages in the project
@@ -58,8 +58,6 @@ public class ListPages {
         System.out.println(element);
       }
     }
-
-
   }
   // [END dialogflow_cx_list_pages]
 }
