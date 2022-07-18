@@ -95,9 +95,7 @@ public class PageManagementIT {
     String name = "temp_page_" + UUID.randomUUID().toString();
     Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, name);
 
-    try {
-      ListPages.listPages(PROJECT_ID, agentID, flowID, location);
-    }
+    ListPages.listPages(PROJECT_ID, agentID, flowID, location);
     assertThat(stdOut.toString()).contains(name);
   }
 
