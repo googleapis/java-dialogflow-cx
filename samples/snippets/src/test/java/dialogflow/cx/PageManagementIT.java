@@ -84,9 +84,9 @@ public class PageManagementIT {
 
   @Test
   public void testCreatePage() throws IOException {
-    try (Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, displayName)) {
-      pageID = p.getName().split("/")[9];
-    }
+    Page p = CreateSimplePage.createPage(PROJECT_ID, agentID, flowID, location, displayName);
+    pageID = p.getName().split("/")[9];
+
     assertThat(p.getDisplayName()).isEqualTo(displayName);
   }
 
