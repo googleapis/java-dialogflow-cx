@@ -82,5 +82,6 @@ public class WebhookConfigureSessionParametersIT {
     String expectedResponse = gson.toJson(webhookResponse);
 
     assertThat(responseOut.toString()).isEqualTo(expectedResponse);
+    Thread.sleep(200);
   }
 }
