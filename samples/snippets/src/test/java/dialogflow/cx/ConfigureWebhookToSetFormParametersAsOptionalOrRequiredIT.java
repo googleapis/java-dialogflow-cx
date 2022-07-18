@@ -65,7 +65,8 @@ public class ConfigureWebhookToSetFormParametersAsOptionalOrRequiredIT {
   public void helloHttp_bodyParamsPost() throws IOException, Exception {
 
     FulfillmentInfo fulfillmentInfo =
-        FulfillmentInfo.newBuilder().setTag("configure-form-parameters-optional-or-parameter").build();
+        FulfillmentInfo.newBuilder()
+            .setTag("configure-form-parameters-optional-or-parameter").build();
 
     WebhookRequest webhookRequest =
         WebhookRequest.newBuilder().setFulfillmentInfo(fulfillmentInfo).build();
