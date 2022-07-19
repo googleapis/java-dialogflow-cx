@@ -60,7 +60,7 @@ public class UpdateIntentTest {
       build.setTimeZone("America/Los_Angeles");
 
       Agent agent = build.build();
-      String parentPath = "projects/" + PROJECT_ID + "/locations/global";
+      String parentPath = String.format("projects/%s/locations/global", PROJECT_ID);
 
       parent = agentsClient.createAgent(parentPath, agent).getName();
 

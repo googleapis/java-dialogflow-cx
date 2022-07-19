@@ -45,15 +45,13 @@ public class ListPages {
     try (PagesClient client = PagesClient.create()) {
       Builder listRequestBuilder = ListPagesRequest.newBuilder();
 
-      listRequestBuilder.setParent(
-          "projects/"
-              + projectId
-              + "/locations/"
-              + location
-              + "/agents/"
-              + agentId
-              + "/flows/"
-              + flowId);
+      String parentPath = String
+          .format("projects/%s/locations/%s/agents/%s/flow/%s",
+          projectId,
+          location,
+          agentId,
+          flowId);
+      listRequestBuilder.setParent(parentPath);
       listRequestBuilder.setLanguageCode("en");
 
       // Make API request to list all pages in the project
