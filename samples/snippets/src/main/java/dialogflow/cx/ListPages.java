@@ -45,12 +45,9 @@ public class ListPages {
     try (PagesClient client = PagesClient.create()) {
       Builder listRequestBuilder = ListPagesRequest.newBuilder();
 
-      String parentPath = String
-          .format("projects/%s/locations/%s/agents/%s/flows/%s",
-          projectId,
-          location,
-          agentId,
-          flowId);
+      String parentPath =
+          String.format(
+              "projects/%s/locations/%s/agents/%s/flows/%s", projectId, location, agentId, flowId);
       listRequestBuilder.setParent(parentPath);
       listRequestBuilder.setLanguageCode("en");
 
