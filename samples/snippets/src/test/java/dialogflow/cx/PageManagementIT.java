@@ -65,7 +65,6 @@ public class PageManagementIT {
 
       agentID = parent.split("/")[5];
     }
-
   }
 
   @AfterClass
