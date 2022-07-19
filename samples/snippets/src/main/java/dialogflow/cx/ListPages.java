@@ -46,7 +46,7 @@ public class ListPages {
       Builder listRequestBuilder = ListPagesRequest.newBuilder();
 
       String parentPath = String
-          .format("projects/%s/locations/%s/agents/%s/flow/%s",
+          .format("projects/%s/locations/%s/agents/%s/flows/%s",
           projectId,
           location,
           agentId,
