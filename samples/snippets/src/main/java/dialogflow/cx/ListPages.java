@@ -39,6 +39,9 @@ public class ListPages {
   // Lists all pages from the provided parameters
   public static void listPages(String projectId, String agentId, String flowId, String location)
       throws IOException {
+    // Note: close() needs to be called on the PagesClient object to clean up resources
+    // such as threads. In the example below, try-with-resources is used,
+    // which automatically calls close().
     try (PagesClient client = PagesClient.create()) {
       Builder listRequestBuilder = ListPagesRequest.newBuilder();
 
