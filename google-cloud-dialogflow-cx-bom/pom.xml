@@ -61,7 +61,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dialogflow-cx-v3beta1</artifactId>
-        <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
+        <version>0.15.0</version><!-- {x-version-update:grpc-google-cloud-dialogflow-cx-v3beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
