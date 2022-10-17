@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-dialogflow-cx-parent</artifactId>
-    <version>0.14.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
+    <version>0.15.0</version><!-- {x-version-update:google-cloud-dialogflow-cx:current} -->
   </parent>
   <dependencies>
     <dependency>
